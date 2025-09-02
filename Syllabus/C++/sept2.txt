@@ -27,7 +27,8 @@ int main()
 
 If we pass a negative value in the argument domain error occurs and the output will be the Square root of -a, which is -nan.
 =============================================================================================
-int abs(int)	This function takes an integer number as an argument and returns its absolute value. It means the output will always be positive regardless of the sign of the input.
+int abs(int)	This function takes an integer number as an argument and returns its absolute value. 
+It means the output will always be positive regardless of the sign of the input.
 
 #include <math.h>
 #include <iostream>
@@ -483,7 +484,8 @@ int main()
 ================================================================
 Diamond Problem No 2:
 
- The diamond problem occurs when two superclasses of a class have a common base class. For example, in the following diagram, the TA class gets two copies of all attributes of Person class, this causes ambiguities.
+ The diamond problem occurs when two superclasses of a class have a common base class. For example, in the 
+following diagram, the TA class gets two copies of all attributes of Person class, this causes ambiguities.
 
 #include<iostream>
 using namespace std;
@@ -524,7 +526,10 @@ Faculty::Faculty(int ) called
 Person::Person(int ) called
 Student::Student(int ) called
 TA::TA(int ) called
-In the above program, constructor of ‘Person’ is called two times. Destructor of ‘Person’ will also be called two times when object ‘ta1’ is destructed. So object ‘ta1’ has two copies of all members of ‘Person’, this causes ambiguities. ========================================================================================
+In the above program, constructor of ‘Person’ is called two times. Destructor of 
+‘Person’ will also be called two times when object ‘ta1’ is destructed. So object ‘ta1’ has two 
+copies of all members of ‘Person’, this causes ambiguities.
+ ========================================================================================
 #include<iostream>
 using namespace std;
  class A
@@ -669,7 +674,9 @@ In general, it is not allowed to call the grandparent’s constructor directly, 
 Virtual base class in C++
 
 problem 1:
-If the base class contain a function with same name then while calling this function in the derived class or through an object of derived class, the compiler flashes an error of ambiguous call.
+If the base class contain a function with same name then while calling 
+this function in the derived class or through an object of derived class, 
+the compiler flashes an error of ambiguous call.
 
 problem 2:
 data duplication occurs when the derived class has multiple copies of the same base class.
@@ -777,32 +784,35 @@ int main()
     
 }
 
-
-
-
-
-
-
-
-
-
-
 ========================================================================
 Namespace:
 
-==>Namespace provide the space where we can define or declare identifier i.e. variable, function, classes. Namespace are necessary if you want more than one function with the same name. You can declare two different namespaces for these functions and call them by referencing their corresponding namespace. 
+==>Namespace provide the space where we can define or declare 
+identifier i.e. variable, function, classes. Namespace are necessary
+if you want more than one function with the same name. 
+You can declare two different namespaces for these functions and call 
+them by referencing their corresponding namespace. 
+==>A namespace is designed to overcome this difficulty and is used as 
+additional information to differentiate similar functions, classes, variables etc. 
+with the same name available in different libraries. 
+==> namespace helps in avoiding the ambiguity that may occur when 
+two identifiers have the same name.
 
-==>A namespace is designed to overcome this difficulty and is used as additional information to differentiate similar functions, classes, variables etc. with the same name available in different libraries. 
+For example, suppose you have two functions named calculate(), 
+and both are performing different tasks. One calculate() function is doing 
+the multiplication, and another is doing the addition. 
+So in this case, to avoid ambiguity, you will declare both the functions in two 
+different namespaces. These namespaces will differentiate both the functions and also 
+provide information regarding both the functions.
 
-==> namespace helps in avoiding the ambiguity that may occur when two identifiers have the same name.
-
-For example, suppose you have two functions named calculate(), and both are performing different tasks. One calculate() function is doing the multiplication, and another is doing the addition. So in this case, to avoid ambiguity, you will declare both the functions in two different namespaces. These namespaces will differentiate both the functions and also provide information regarding both the functions.
-
-==>The best example of namespace scope is the C++ standard library (std) where all the classes, methods and templates are declared. Hence while writing a C++ program we usually include the directive 
+==>The best example of namespace scope is the C++ standard library (std) 
+where all the classes, methods and templates are declared. 
+Hence while writing a C++ program we usually include the directive 
 using namespace std;
 ==============================================
 Defining a Namespace:
-A namespace definition begins with the keyword namespace followed by the namespace name as follows:
+A namespace definition begins with the keyword 
+namespace followed by the namespace name as follows:
 namespace  namespace_name 
 {
     // code declarations i.e. variable  (int a;)
@@ -1094,7 +1104,10 @@ ret_type func_name(T argumentname)
 {  
     // body of function.  
 }  
-Where T is a placeholder name for a data type used by the function and this list is called as template parameter list and it cannot be empty. It is used within the function definition. It is only a placeholder that the compiler will automatically replace this placeholder with the actual data type.
+Where T is a placeholder name for a data type used by the function and 
+this list is called as template parameter list and it cannot be empty. 
+It is used within the function definition. It is only a placeholder that 
+the compiler will automatically replace this placeholder with the actual data type.
 
 #include <iostream>  
 using namespace std;  
@@ -1118,7 +1131,9 @@ int main()
 }
   Addition of i and j is :5
 Addition of m and n is :3.5
-In the above example, we create the function template which can perform the addition operation on any type either it can be integer, float or double.
+In the above example, we create the function template which 
+can perform the addition operation on any type either it can be 
+integer, float or double.
 ===================================================================
 
 #include<iostream>
@@ -1263,7 +1278,8 @@ int main()
 =========================================================================
 CLASS TEMPLATE
 
-Class Template can also be defined similarly to the Function Template. When a class uses the concept of Template, then the class is known as generic class.
+Class Template can also be defined similarly to the Function Template.
+ When a class uses the concept of Template, then the class is known as generic class.
 
 Syntax
 template<class Ttype>  
@@ -1272,7 +1288,9 @@ class class_name
   .  
   .  
 }  
-Ttype is a placeholder name which will be determined when the class is instantiated. We can define more than one generic data type using a comma-separated list. The Ttype can be used inside the class body.
+Ttype is a placeholder name which will be determined when the class is instantiated.
+ We can define more than one generic data type using a comma-separated list.
+ The Ttype can be used inside the class body.
 
 Now, we create an instance of a class
 class_name<type> ob;  
@@ -1309,7 +1327,8 @@ int main()
     d.add();  
     return 0;  
 } 
-In the above example, we create a template for class A. Inside the main() method, we create the instance of class A named as, 'd'.
+In the above example, we create a template for class A. Inside 
+the main() method, we create the instance of class A named as, 'd'.
 =====================================================================================
 #include <iostream>  
 using namespace std;  
@@ -1366,7 +1385,8 @@ int main()
 =============================================================
 
 CLASS TEMPLATE WITH MULTIPLE PARAMETERS
-We can use more than one generic data type in a class template, and each generic data type is separated by the comma.
+We can use more than one generic data type in a class template, and each 
+generic data type is separated by the comma.
 
 Syntax
 template<class T1, class T2, ......>   
@@ -1428,7 +1448,8 @@ int main()
 } 
 
 ========================================================================
-The template can contain multiple arguments, and we can also use the non-type arguments In addition to the type T argument.
+The template can contain multiple arguments, and we can also use 
+the non-type arguments In addition to the type T argument.
 Let' s see the following example:
 
 template<class T, int size>  
@@ -1480,18 +1501,26 @@ int main()
 Output:
 
 1 2 3 4 5 6 7 8 9 10
-In the above example, the class template is created which contains the nontype template argument, i.e., size. It is specified when the object of class 'A' is created.
+In the above example, the class template is created which contains 
+the nontype template argument, i.e., size. It is specified when the object 
+of class 'A' is created.
 
 =========================================
 
 ======================================================
 Friend Class and Function in C++
 
-==>Data hiding is a fundamental concept of object-oriented programming. It restricts the access of private members from outside of the class.Similarly, protected members can only be accessed by derived classes and are inaccessible from outside.
-However, there is a feature in C++ called friend functions that break this rule and allow us to access private/protected member functions from outside the class.
+==>Data hiding is a fundamental concept of object-oriented programming.
+ It restricts the access of private members from outside of the class.
+Similarly, protected members can only be accessed by derived classes and are 
+inaccessible from outside.
+However, there is a feature in C++ called friend functions that break this 
+rule and allow us to access private/protected member functions from outside the class.
 
-==>A friend class can access private and protected members of other classes in which it is declared as a friend. 
-It is sometimes useful to allow a particular class to access private and protected members of other classes. 
+==>A friend class can access private and protected members of other classes in 
+which it is declared as a friend. 
+It is sometimes useful to allow a particular class to access private and 
+protected members of other classes. 
 
 We can declare a friend class in C++ by using the friend keyword.
 
@@ -1529,7 +1558,8 @@ private:
     friend class F;
 };
  // Here, class F is declared as a friend inside class Demo. Therefore,
-// F is a friend of class Demo. Class F can access the private/PROTECTED members of class Demo.
+// F is a friend of class Demo. Class F can access the private/PROTECTED 
+members of class Demo.
 class F {
 public:
     void display(Demo& t)
@@ -1555,8 +1585,13 @@ Note: We can declare friend class or function anywhere in the base class body wh
 
 Friend Function
 
-==>Like a friend class, a friend function can be granted special access to private and protected members of a class in C++. They are the non-member functions that can access and manipulate the private and protected members of the class in which they are declared as friends.
-==>If a function is defined as a friend function in C++, then the protected and private data of a class can be accessed using the function.
+==>Like a friend class, a friend function can be granted 
+special access to private and protected members of a class in C++.
+ They are the non-member functions that can access and 
+manipulate the private and protected members of the class in which they are 
+declared as friends.
+==>If a function is defined as a friend function in C++, then the protected and 
+private data of a class can be accessed using the function.
 
 ==>A friend function can be:
 friend return_type function_name (arguments);    // for a global function
@@ -1686,10 +1721,17 @@ Protected Variable: 99
 In the above example, we have used a global function as a friend function.==============================================================================================
 
 Features of Friend Functions
- ==>A friend function is a special function in C++ that in spite of not being a member function of a class has the privilege to access the private and protected data of a class.
-==>A friend function is a non-member function or ordinary function of a class, which is declared as a friend using the keyword “friend” inside the class. By declaring a function as a friend, all the access permissions are given to the function.
-==>The keyword “friend” is placed only in the function declaration of the friend function and not in the function definition or call.
-==>A friend function is called like an ordinary function. It cannot be called using the object name and dot operator. However, it may accept the object as an argument whose value it wants to access.
+ ==>A friend function is a special function in C++ that in spite of not being a 
+member function of a class has the privilege to access the private and protected data 
+of a class.
+==>A friend function is a non-member function or ordinary function of a class, 
+which is declared as a friend using the keyword “friend” inside the class. 
+By declaring a function as a friend, all the access permissions are given to the function.
+==>The keyword “friend” is placed only in the function declaration of the friend
+ function and not in the function definition or call.
+==>A friend function is called like an ordinary function. 
+It cannot be called using the object name and dot operator. However, 
+it may accept the object as an argument whose value it wants to access.
 ==>A friend function can be declared in any section of the class i.e. public or private or protected.
 =======================================================
 Advantages of Friend Functions
@@ -1868,7 +1910,13 @@ int main()
 
 What Is C++ Enum?
 
-==>Enum, which is also known as enumeration, is a user-defined data type that enables you to create a new data type that has a fixed range of possible values, and the variable can select one value from the set of values. For example, suppose you are the owner of an ice cream shop, and you sell a limited range of ice cream flavors. So you want the customers to select only from that collection of ice creams in your shop. This becomes an enumeration with ice cream as the name of enumeration and different flavors of ice creams as its elements.
+==>Enum, which is also known as enumeration, is a user-defined data type that 
+enables you to create a new data type that has a fixed range of possible values, 
+and the variable can select one value from the set of values. For example, 
+suppose you are the owner of an ice cream shop, and you sell a limited range 
+of ice cream flavors. So you want the customers to select only from that collection 
+of ice creams in your shop. This becomes an enumeration with ice cream as the name 
+of enumeration and different flavors of ice creams as its elements.
 
 ==>Enumeration (Enumerated type) is a user-defined data type that can be assigned some limited values. These values are defined by the programmer at the time of declaring the enumerated type.
 
@@ -1885,7 +1933,8 @@ enum Iceccream
 };
 Each of these elements has values starting from 0, like vanilla is 0, stawberry is 1, etc. The default values mentioned can be altered during the declaration of the enum in C++.
 ====================================================================
-To declare an enum variable, write the name of the enumeration along with the enum variable.
+To declare an enum variable, write the name of the enumeration along with 
+the enum variable.
 enum Iceccream
 {
 	vanilla,stawberry,mango
@@ -1912,7 +1961,12 @@ Output:
 
 ============================================================================
 Why use an enum in a program?
-One can utilise the enums in a program when they want the variables in the program to have just the set of values. For instance, let us consider the creation of a direction variable. Now, there are a total of four directions (N, S, W, E). Thus, a total of four values are possible with the direction variable. But here, the variable would be able to hold just a single value at any given time. Now, if a user provides any different value to the variable here, then we should get a compilation error.
+One can utilise the enums in a program when they want the variables in 
+the program to have just the set of values. For instance, let us consider 
+the creation of a direction variable. Now, there are a total of four 
+directions (N, S, W, E). Thus, a total of four values are possible with the 
+direction variable. But here, the variable would be able to hold just a single 
+value at any given time. Now, if a user provides any different value to the variable here, then we should get a compilation error.
 For vsuch scenario enum can be used.
 
 ==>enum is a userdefined datatype that consists of paired named-integer constants. 
@@ -2042,7 +2096,9 @@ int main(){
 
 Typedef:
 
-typedef keyword in C++ is used for aliasing existing data types, user-defined data types, and pointers to a more meaningful name. Typedefs allow you to give descriptive names to standard data types, which can also help you self-document your code. Mostly typedefs are used for aliasing, only if the predefined name is too long or complex to write again and again.  The unnecessary use of typedef is generally not a good practice.
+typedef keyword in C++ is used for aliasing existing data types, user-defined 
+data types, and pointers to a more meaningful name. Typedefs allow you to give 
+descriptive names to standard data types, which can also help you self-document your code. Mostly typedefs are used for aliasing, only if the predefined name is too long or complex to write again and again.  The unnecessary use of typedef is generally not a good practice.
 
 Syntax:
 typedef <current_name> <new_name>
