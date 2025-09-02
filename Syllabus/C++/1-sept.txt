@@ -81,7 +81,8 @@ Dynamic initialization of object in C++
 ==========================================
 Dynamic Constructor:
 The constructor used for allocating the memory at runtime is known as the dynamic constructor.
-The memory is allocated at runtime using a new operator and similarly, memory is deallocated at runtime using the delete operator.
+The memory is allocated at runtime using a new operator and similarly, memory is deallocated at runtime using the 
+delete operator.
 
 Ex:
 // C++ program for dynamic allocation
@@ -112,7 +113,8 @@ using namespace std;
 
 Output
 10
-In the above example, new is used to dynamically initialize the variable in default constructor and memory is allocated on the heap.
+In the above example, new is used to dynamically initialize the variable in default constructor and memory is allocated 
+on the heap.
 The objects of the class Demo calls the function and it displays the value of dynamically allocated variable i.e ptr.
 
 ===============================================================
