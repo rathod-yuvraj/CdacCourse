@@ -168,11 +168,11 @@ Adv:
 6)function is handled by compiler and thats why it is type safe.
 
 limitations:
-1)time req is more
-
-function should be used for larger program
+1)time req is more function should be used for larger program
 ===========================================
-Macro : It is also called preprocessors directive. The macros are defined by the #define keyword. Before the program compilation, the preprocessor examines the program whenever the preprocessor detects the macros then preprocessor replaces the macro by the macro definition. 
+Macro : It is also called preprocessors directive. The macros are defined by the 
+#define keyword. Before the program compilation, the preprocessor examines the program whenever 
+the preprocessor detects the macros then preprocessor replaces the macro by the macro definition. 
 Syntax of Macro:
 #define MACRO_NAME Macro_definition 
 
@@ -205,11 +205,18 @@ memory req is more
 macros are not typesafe since it is handled by preprocessor
 ================================================
 
-==>to overcome the limitations of function and macro,inline function is used.
+==>
+to overcome the limitations of function and macro,inline function is used.
 
 Inline Function
 
-==>C++ provides inline functions to reduce the function call overhead. An inline function is a function that is expanded in line when it is called. When the inline function is called whole code of the inline function gets inserted or substituted at the point of the inline function call. This substitution is performed by the C++ compiler at compile time. An inline function may increase efficiency if it is small.
+==>
+C++ provides inline functions to reduce the function call overhead. 
+An inline function is a function that is expanded in line when it is called. 
+When the inline function is called whole code of the inline function gets inserted or substituted 
+at the point of the inline function call. 
+This substitution is performed by the C++ compiler at compile time. 
+An inline function may increase efficiency if it is small.
 
 Syntax:
 inline return-type function-name(parameters)
@@ -217,7 +224,9 @@ inline return-type function-name(parameters)
     // function code
 }  
 
-==>Remember, inlining is only a request to the compiler, not a command. The compiler can ignore the request for inlining. 
+==>
+Remember, inlining is only a request to the compiler, not a command. 
+The compiler can ignore the request for inlining. 
 
 ==>The compiler may not perform inlining in such circumstances as: 
 If a function contains a loop. (for, while and do-while) 
@@ -226,21 +235,30 @@ If a function contains a switch or nested loop
 If a function contains static variables.
 
 Why Inline Functions are Used?
-When the program executes the function call instruction the CPU stores the memory address of the instruction following the function call, copies the arguments of the function on the stack, and finally transfers control to the specified function. The CPU then executes the function code, stores the function return value in a predefined memory location/register, and returns control to the calling function. This can become overhead if the execution time of the function is less than the switching time from the caller function to called function (callee). 
- However, for small, commonly-used functions, the time needed to make the function call is often a lot more than the time needed to actually execute the function’s code. This overhead occurs for small functions because the execution time of a small function is less than the switching time.
-======================================================================
-==>When a function is invoked, it expands in line and is known as an inline function. When an inline function is invoked, its entire body of code is added or replaced at the inline function call location. At compile time, the C++ compiler makes this substitution.
+When the program executes the function call instruction the CPU stores the memory address
+of the instruction following the function call, copies the arguments of the function on the stack, 
+and finally transfers control to the specified function. The CPU then executes the function code, stores the function 
+return value in a predefined memory location/register, and returns control to the calling function. This can become 
+overhead if the execution time of the function is less than the switching 
+time from the caller function to called function (callee). 
+However, for small, commonly-used functions, the time needed to make the function call is often a 
+lot more than the time needed to actually execute the function’s code. 
+This overhead occurs for small functions because the execution time of a small function is less than the switching time.
+========================================================================>
+When a function is invoked, it expands in line and is known as an inline function. When an inline function is invoked, its entire body of code is added or replaced at the inline function call location. At compile time, the C++ compiler makes this substitution.
 
 
 Inline functions Advantages: 
     Function call overhead doesn’t occur. 
     It also saves the overhead of push/pop variables on the stack when a function is called. 
     It also saves the overhead of a return call from a function. 
-    enhance the execution time and speed of your program.The compilation speed of the program gets increased since the inline functions prevent function call overhead. 
+    enhance the execution time and speed of your program.The compilation speed of the program gets increased since 
+    the inline functions prevent function call overhead. 
 
 
 Inline function Disadvantages: 
-1)If you use too many inline functions then the size of the binary executable file will be large, because of the duplication of the same code. 
+1)If you use too many inline functions then the size of the binary executable file will be large, 
+because of the duplication of the same code. 
 2)The inline function may increase compile time overhead if someone changes the code inside the inline function then all the calling location has to be recompiled because the compiler would be required to replace all the code once again to reflect the changes, otherwise it will continue with old functionality. 
 
 #include <iostream>
@@ -262,9 +280,14 @@ The cube of 3 is: 27
 ==========================================================
 Multiple Inheritance in C++:
 
-Multiple Inheritance is a feature of C++ where a class can inherit from more than one classes.  The constructors of inherited classes are called in the same order in which they are inherited.
-==>The list of base classes memtioned in the derived class declaration must be seperated by commas and each of the base classes should use its own specifier . If the class specifier is not specified,default is private.
-==>The order in which base class constructors are invoked is the same as the  order in which they appear in the derived class constructor's member initialization list.
+Multiple Inheritance is a feature of C++ where a class can inherit from more than one classes.  
+The constructors of inherited classes are called in the same order in which they are inherited.
+==>The list of base classes memtioned in the derived class declaration must be seperated by commas 
+and each of the base classes should use its own specifier . 
+If the class specifier is not specified,default is private.
+==>The order in which base class constructors are invoked is the same as the  order in 
+which they appear in the derived class constructor's member initialization list.
+
 Syntax:
 
 class A
