@@ -797,7 +797,6 @@ additional information to differentiate similar functions, classes, variables et
 with the same name available in different libraries. 
 ==> namespace helps in avoiding the ambiguity that may occur when 
 two identifiers have the same name.
-
 For example, suppose you have two functions named calculate(), 
 and both are performing different tasks. One calculate() function is doing 
 the multiplication, and another is doing the addition. 
@@ -876,7 +875,9 @@ Inside second_space
 
 =======================================================================
 2)By using  "using" directive 
-==>You use the "using" directive to import the entire namespace into a program or another namespace. This directive eliminates the need to use the "namespace-name" every time. So it is better to use the "using" if you need several functions or classes from the namespace. Otherwise, if you only need to use it once or twice, "namespace-name::" would be a better choice.
+==>You use the "using" directive to import the entire namespace into a
+ program or another namespace. This directive eliminates the need to 
+use the "namespace-name" every time. So it is better to use the "using" if you need several functions or classes from the namespace. Otherwise, if you only need to use it once or twice, "namespace-name::" would be a better choice.
 ==>The using directive is positioned at the top of the program and it allows us to access all the namespace members.
 
 
@@ -922,7 +923,8 @@ std::endl
 std::exception
 std::bad_cast
 
-By including the using namespace std; code in our program, we can omit the std:: part for the identifiers defined in the std namespace:
+By including the using namespace std; 
+code in our program, we can omit the std:: part for the identifiers defined in the std namespace:
 
 // using std namespace
 cout
@@ -1063,14 +1065,11 @@ int main()
 Generic Programming 
 
 
-
-
-
-
-
-
-
-  ==>Generic Programming is implemented to increase the efficiency of the code. Generic Programming enables the programmer to write a general algorithm which will work with all data types. It eliminates the need to create different algorithms if the data type is an integer, string or a character. 
+==>Generic Programming is implemented to increase the efficiency of the code. 
+Generic Programming enables the programmer to write a general algorithm which 
+will work with all data types. 
+It eliminates the need to create different algorithms if the data type is an integer, 
+string or a character. 
 The advantages of Generic Programming are
 Code Reusability
 Avoid Function Overloading
@@ -1079,9 +1078,16 @@ Once written it can be used for multiple times with different parameters list
 Generics can be implemented in C++ using Templates.
 
 Templates
-==>A template is a simple yet very powerful tool in C++. The simple idea is to pass the data type as a parameter so that we don’t need to write the same code for different data types. For example, a software company may need to sort() for different data types. Rather than writing and maintaining multiple codes, we can write one sort() and pass the datatype as a parameter. 
+==>A template is a simple yet very powerful tool in C++. 
+The simple idea is to pass the data type as a parameter so that we don’t need to 
+write the same code for different data types. For example, a software company may 
+need to sort() for different data types. Rather than writing and 
+maintaining multiple codes, we can write one sort() and pass the datatype as a parameter. 
 
-==>  It allows you to define the generic classes and generic functions and thus provides support for generic programming. Generic programming is a technique where generic types are used as parameters in algorithms so that they can work for a variety of data types.
+==>  It allows you to define the generic classes and generic 
+functions and thus provides support for generic programming. 
+Generic programming is a technique where generic types are used as 
+parameters in algorithms so that they can work for a variety of data types.
 
 ==>How Do Templates Work?
 Templates are expanded at compiler time. This is like macros. The difference is, that the compiler does type-checking before template expansion. The idea is simple, source code contains only function/class, but compiled code may contain multiple copies of the same function/class. 
