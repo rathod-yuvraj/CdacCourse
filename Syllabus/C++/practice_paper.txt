@@ -1,6 +1,7 @@
 Problem Statement 1: "Smart Billing System for a Tech Store"
 🎯 Objective:
-Design a C++ program to manage customer purchases in a tech store, including item management, billing, and persistent record-keeping.
+Design a C++ program to manage customer purchases in a tech store, including item management, 
+billing, and persistent record-keeping.
 
 📌 Requirements:
 1. OOP Design

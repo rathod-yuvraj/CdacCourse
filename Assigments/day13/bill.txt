@@ -1,0 +1,32 @@
+Bill ID: 101
+Customer Name: Alice
+Purchased Items:
+Item ID: 1, Name: Pen, Price: 1.5
+Item ID: 2, Name: Notebook, Price: 3.75
+Item ID: 3, Name: Pencil, Price: 0.99
+Total Amount: 6.24
+--------------------------
+Bill ID: 101
+Customer Name: Alice
+Purchased Items:
+Item ID: 1, Name: Pen, Price: 1.5
+Item ID: 2, Name: Notebook, Price: 3.75
+Item ID: 3, Name: Pencil, Price: 0.99
+Total Amount: 6.24
+--------------------------
+Bill ID: 101
+Customer Name: Yuvraj
+Purchased Items:
+Item ID: 1, Name: Pen, Price: 1.5
+Item ID: 2, Name: Notebook, Price: 3.75
+Item ID: 3, Name: Pencil, Price: 0.99
+Total Amount: 6.24
+--------------------------
+Bill ID: 101
+Customer Name: Yuvraj
+Purchased Items:
+Item ID: 1, Name: Pen, Price: 1.5
+Item ID: 2, Name: Notebook, Price: 3.75
+Item ID: 3, Name: Pencil, Price: 0.99
+Total Amount: 6.24
+--------------------------
