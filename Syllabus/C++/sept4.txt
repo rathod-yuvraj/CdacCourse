@@ -367,14 +367,12 @@ Output
 The value of Private Variable = 10
 The value of Protected Variable = 99
 
-Note: We can declare friend class or function anywhere in the base class body whether its private, 
-protected or public block. It works all the same.
+Note: We can declare friend class or function anywhere in the base class body whether its private, protected or public block. It works all the same.
 =====================================================================================
 
 Friend Function
 
-==>Like a friend class, a friend function can be granted special access to private and protected 
-members of a class in C++. They are the non-member functions that can access and manipulate the private and protected members of the class in which they are declared as friends.
+==>Like a friend class, a friend function can be granted special access to private and protected members of a class in C++. They are the non-member functions that can access and manipulate the private and protected members of the class in which they are declared as friends.
 ==>If a function is defined as a friend function in C++, then the protected and private data of a class can be accessed using the function.
 
 ==>A friend function can be:

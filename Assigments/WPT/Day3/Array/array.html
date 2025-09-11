@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #demo {
+            display: flex;
+            align-content: center;
+            align-items: center;
+            margin: 100px 20px 10px;
+            padding: auto;
+        }
+
+        #btn1 {
+            display: flex;
+            align-content: center;
+            align-items: center;
+            margin: 100px 20px 10px;
+            padding: 10px 20px;
+            border-radius: 10px;
+            background: #4599ba;
+            background: linear-gradient(90deg, rgba(69, 153, 186, 1) 0%, rgba(87, 199, 133, 1) 50%, rgba(237, 221, 83, 1) 100%);
+
+
+        }
+
+        .btn button {
+            color: rgb(241, 6, 6);
+
+
+        }
+
+        .btn button:hover {
+            color: aqua;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div id="demo">i like Fruits</div>
+    <div class="btn">
+        <button onclick="onclickfruits()">Fruit</button>
+    </div>
+    <button onclick="onclickfruits()" id="btn1">Fruits</button>
+
+    <script>
+        function onclickfruits() {
+            const fruits = ["Banana", "Orange", "Apple", "Mango"];
+            document.getElementById("demo").innerHTML = fruits.join(" * ");
+        }
+
+        document.getElementById("demo1").innerHTML = fruits;
+    </script>
+</body>
+
+</html>

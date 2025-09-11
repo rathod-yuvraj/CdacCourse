@@ -27,8 +27,7 @@ int main()
 
 If we pass a negative value in the argument domain error occurs and the output will be the Square root of -a, which is -nan.
 =============================================================================================
-int abs(int)	This function takes an integer number as an argument and returns its absolute value. 
-It means the output will always be positive regardless of the sign of the input.
+int abs(int)	This function takes an integer number as an argument and returns its absolute value. It means the output will always be positive regardless of the sign of the input.
 
 #include <math.h>
 #include <iostream>
@@ -168,11 +167,11 @@ Adv:
 6)function is handled by compiler and thats why it is type safe.
 
 limitations:
-1)time req is more function should be used for larger program
+1)time req is more
+
+function should be used for larger program
 ===========================================
-Macro : It is also called preprocessors directive. The macros are defined by the 
-#define keyword. Before the program compilation, the preprocessor examines the program whenever 
-the preprocessor detects the macros then preprocessor replaces the macro by the macro definition. 
+Macro : It is also called preprocessors directive. The macros are defined by the #define keyword. Before the program compilation, the preprocessor examines the program whenever the preprocessor detects the macros then preprocessor replaces the macro by the macro definition. 
 Syntax of Macro:
 #define MACRO_NAME Macro_definition 
 
@@ -205,18 +204,11 @@ memory req is more
 macros are not typesafe since it is handled by preprocessor
 ================================================
 
-==>
-to overcome the limitations of function and macro,inline function is used.
+==>to overcome the limitations of function and macro,inline function is used.
 
 Inline Function
 
-==>
-C++ provides inline functions to reduce the function call overhead. 
-An inline function is a function that is expanded in line when it is called. 
-When the inline function is called whole code of the inline function gets inserted or substituted 
-at the point of the inline function call. 
-This substitution is performed by the C++ compiler at compile time. 
-An inline function may increase efficiency if it is small.
+==>C++ provides inline functions to reduce the function call overhead. An inline function is a function that is expanded in line when it is called. When the inline function is called whole code of the inline function gets inserted or substituted at the point of the inline function call. This substitution is performed by the C++ compiler at compile time. An inline function may increase efficiency if it is small.
 
 Syntax:
 inline return-type function-name(parameters)
@@ -224,9 +216,7 @@ inline return-type function-name(parameters)
     // function code
 }  
 
-==>
-Remember, inlining is only a request to the compiler, not a command. 
-The compiler can ignore the request for inlining. 
+==>Remember, inlining is only a request to the compiler, not a command. The compiler can ignore the request for inlining. 
 
 ==>The compiler may not perform inlining in such circumstances as: 
 If a function contains a loop. (for, while and do-while) 
@@ -235,30 +225,21 @@ If a function contains a switch or nested loop
 If a function contains static variables.
 
 Why Inline Functions are Used?
-When the program executes the function call instruction the CPU stores the memory address
-of the instruction following the function call, copies the arguments of the function on the stack, 
-and finally transfers control to the specified function. The CPU then executes the function code, stores the function 
-return value in a predefined memory location/register, and returns control to the calling function. This can become 
-overhead if the execution time of the function is less than the switching 
-time from the caller function to called function (callee). 
-However, for small, commonly-used functions, the time needed to make the function call is often a 
-lot more than the time needed to actually execute the function’s code. 
-This overhead occurs for small functions because the execution time of a small function is less than the switching time.
-========================================================================>
-When a function is invoked, it expands in line and is known as an inline function. When an inline function is invoked, its entire body of code is added or replaced at the inline function call location. At compile time, the C++ compiler makes this substitution.
+When the program executes the function call instruction the CPU stores the memory address of the instruction following the function call, copies the arguments of the function on the stack, and finally transfers control to the specified function. The CPU then executes the function code, stores the function return value in a predefined memory location/register, and returns control to the calling function. This can become overhead if the execution time of the function is less than the switching time from the caller function to called function (callee). 
+ However, for small, commonly-used functions, the time needed to make the function call is often a lot more than the time needed to actually execute the function’s code. This overhead occurs for small functions because the execution time of a small function is less than the switching time.
+======================================================================
+==>When a function is invoked, it expands in line and is known as an inline function. When an inline function is invoked, its entire body of code is added or replaced at the inline function call location. At compile time, the C++ compiler makes this substitution.
 
 
 Inline functions Advantages: 
     Function call overhead doesn’t occur. 
     It also saves the overhead of push/pop variables on the stack when a function is called. 
     It also saves the overhead of a return call from a function. 
-    enhance the execution time and speed of your program.The compilation speed of the program gets increased since 
-    the inline functions prevent function call overhead. 
+    enhance the execution time and speed of your program.The compilation speed of the program gets increased since the inline functions prevent function call overhead. 
 
 
 Inline function Disadvantages: 
-1)If you use too many inline functions then the size of the binary executable file will be large, 
-because of the duplication of the same code. 
+1)If you use too many inline functions then the size of the binary executable file will be large, because of the duplication of the same code. 
 2)The inline function may increase compile time overhead if someone changes the code inside the inline function then all the calling location has to be recompiled because the compiler would be required to replace all the code once again to reflect the changes, otherwise it will continue with old functionality. 
 
 #include <iostream>
@@ -280,14 +261,9 @@ The cube of 3 is: 27
 ==========================================================
 Multiple Inheritance in C++:
 
-Multiple Inheritance is a feature of C++ where a class can inherit from more than one classes.  
-The constructors of inherited classes are called in the same order in which they are inherited.
-==>The list of base classes memtioned in the derived class declaration must be seperated by commas 
-and each of the base classes should use its own specifier . 
-If the class specifier is not specified,default is private.
-==>The order in which base class constructors are invoked is the same as the  order in 
-which they appear in the derived class constructor's member initialization list.
-
+Multiple Inheritance is a feature of C++ where a class can inherit from more than one classes.  The constructors of inherited classes are called in the same order in which they are inherited.
+==>The list of base classes memtioned in the derived class declaration must be seperated by commas and each of the base classes should use its own specifier . If the class specifier is not specified,default is private.
+==>The order in which base class constructors are invoked is the same as the  order in which they appear in the derived class constructor's member initialization list.
 Syntax:
 
 class A
@@ -507,8 +483,7 @@ int main()
 ================================================================
 Diamond Problem No 2:
 
- The diamond problem occurs when two superclasses of a class have a common base class. For example, in the 
-following diagram, the TA class gets two copies of all attributes of Person class, this causes ambiguities.
+ The diamond problem occurs when two superclasses of a class have a common base class. For example, in the following diagram, the TA class gets two copies of all attributes of Person class, this causes ambiguities.
 
 #include<iostream>
 using namespace std;
@@ -549,10 +524,7 @@ Faculty::Faculty(int ) called
 Person::Person(int ) called
 Student::Student(int ) called
 TA::TA(int ) called
-In the above program, constructor of ‘Person’ is called two times. Destructor of 
-‘Person’ will also be called two times when object ‘ta1’ is destructed. So object ‘ta1’ has two 
-copies of all members of ‘Person’, this causes ambiguities.
- ========================================================================================
+In the above program, constructor of ‘Person’ is called two times. Destructor of ‘Person’ will also be called two times when object ‘ta1’ is destructed. So object ‘ta1’ has two copies of all members of ‘Person’, this causes ambiguities. ========================================================================================
 #include<iostream>
 using namespace std;
  class A
@@ -697,9 +669,7 @@ In general, it is not allowed to call the grandparent’s constructor directly, 
 Virtual base class in C++
 
 problem 1:
-If the base class contain a function with same name then while calling 
-this function in the derived class or through an object of derived class, 
-the compiler flashes an error of ambiguous call.
+If the base class contain a function with same name then while calling this function in the derived class or through an object of derived class, the compiler flashes an error of ambiguous call.
 
 problem 2:
 data duplication occurs when the derived class has multiple copies of the same base class.
@@ -807,34 +777,32 @@ int main()
     
 }
 
+
+
+
+
+
+
+
+
+
+
 ========================================================================
 Namespace:
 
-==>Namespace provide the space where we can define or declare 
-identifier i.e. variable, function, classes. Namespace are necessary
-if you want more than one function with the same name. 
-You can declare two different namespaces for these functions and call 
-them by referencing their corresponding namespace. 
-==>A namespace is designed to overcome this difficulty and is used as 
-additional information to differentiate similar functions, classes, variables etc. 
-with the same name available in different libraries. 
-==> namespace helps in avoiding the ambiguity that may occur when 
-two identifiers have the same name.
-For example, suppose you have two functions named calculate(), 
-and both are performing different tasks. One calculate() function is doing 
-the multiplication, and another is doing the addition. 
-So in this case, to avoid ambiguity, you will declare both the functions in two 
-different namespaces. These namespaces will differentiate both the functions and also 
-provide information regarding both the functions.
+==>Namespace provide the space where we can define or declare identifier i.e. variable, function, classes. Namespace are necessary if you want more than one function with the same name. You can declare two different namespaces for these functions and call them by referencing their corresponding namespace. 
 
-==>The best example of namespace scope is the C++ standard library (std) 
-where all the classes, methods and templates are declared. 
-Hence while writing a C++ program we usually include the directive 
+==>A namespace is designed to overcome this difficulty and is used as additional information to differentiate similar functions, classes, variables etc. with the same name available in different libraries. 
+
+==> namespace helps in avoiding the ambiguity that may occur when two identifiers have the same name.
+
+For example, suppose you have two functions named calculate(), and both are performing different tasks. One calculate() function is doing the multiplication, and another is doing the addition. So in this case, to avoid ambiguity, you will declare both the functions in two different namespaces. These namespaces will differentiate both the functions and also provide information regarding both the functions.
+
+==>The best example of namespace scope is the C++ standard library (std) where all the classes, methods and templates are declared. Hence while writing a C++ program we usually include the directive 
 using namespace std;
 ==============================================
 Defining a Namespace:
-A namespace definition begins with the keyword 
-namespace followed by the namespace name as follows:
+A namespace definition begins with the keyword namespace followed by the namespace name as follows:
 namespace  namespace_name 
 {
     // code declarations i.e. variable  (int a;)
@@ -898,13 +866,8 @@ Inside second_space
 
 =======================================================================
 2)By using  "using" directive 
-==>You use the "using" directive to import the entire namespace into a
-program or another namespace. This directive eliminates the need to 
-use the "namespace-name" every time. 
-So it is better to use the "using" if you need several functions or classes from the namespace. 
-Otherwise, if you only need to use it once or twice, "namespace-name::" would be a better choice.
-==>
-The using directive is positioned at the top of the program and it allows us to access all the namespace members.
+==>You use the "using" directive to import the entire namespace into a program or another namespace. This directive eliminates the need to use the "namespace-name" every time. So it is better to use the "using" if you need several functions or classes from the namespace. Otherwise, if you only need to use it once or twice, "namespace-name::" would be a better choice.
+==>The using directive is positioned at the top of the program and it allows us to access all the namespace members.
 
 
 Example:
@@ -949,8 +912,7 @@ std::endl
 std::exception
 std::bad_cast
 
-By including the using namespace std; 
-code in our program, we can omit the std:: part for the identifiers defined in the std namespace:
+By including the using namespace std; code in our program, we can omit the std:: part for the identifiers defined in the std namespace:
 
 // using std namespace
 cout
@@ -1067,16 +1029,16 @@ Array of Integer pointers
 using namespace std;  
 int main()  
 { 
-    int arr1[5]; // integer array declaration  
+    int ptr1[5]; // integer array declaration  
     int *ptr2[5]; // integer array of pointer declaration  
     cout << "Enter five numbers :" <<endl;  
     for(int i=0;i<5;i++)  
     {  
-        cin >> arr1[i];  
+        cin >> ptr1[i];  
     }  
     for(int i=0;i<5;i++)  
     {  
-        ptr2[i]=&arr1[i];   
+        ptr2[i]=&ptr1[i];   
     }    
   cout << "The values are" << endl; 
     for(int i=0;i<5;i++)  
@@ -1091,11 +1053,14 @@ int main()
 Generic Programming 
 
 
-==>Generic Programming is implemented to increase the efficiency of the code. 
-Generic Programming enables the programmer to write a general algorithm which 
-will work with all data types. 
-It eliminates the need to create different algorithms if the data type is an integer, 
-string or a character. 
+
+
+
+
+
+
+
+  ==>Generic Programming is implemented to increase the efficiency of the code. Generic Programming enables the programmer to write a general algorithm which will work with all data types. It eliminates the need to create different algorithms if the data type is an integer, string or a character. 
 The advantages of Generic Programming are
 Code Reusability
 Avoid Function Overloading
@@ -1104,21 +1069,12 @@ Once written it can be used for multiple times with different parameters list
 Generics can be implemented in C++ using Templates.
 
 Templates
-==>A template is a simple yet very powerful tool in C++. 
-The simple idea is to pass the data type as a parameter so that we don’t need to 
-write the same code for different data types. For example, a software company may 
-need to sort() for different data types. Rather than writing and 
-maintaining multiple codes, we can write one sort() and pass the datatype as a parameter. 
+==>A template is a simple yet very powerful tool in C++. The simple idea is to pass the data type as a parameter so that we don’t need to write the same code for different data types. For example, a software company may need to sort() for different data types. Rather than writing and maintaining multiple codes, we can write one sort() and pass the datatype as a parameter. 
 
-==>  It allows you to define the generic classes and generic 
-functions and thus provides support for generic programming. 
-Generic programming is a technique where generic types are used as 
-parameters in algorithms so that they can work for a variety of data types.
+==>  It allows you to define the generic classes and generic functions and thus provides support for generic programming. Generic programming is a technique where generic types are used as parameters in algorithms so that they can work for a variety of data types.
 
 ==>How Do Templates Work?
-Templates are expanded at compiler time. This is like macros. 
-The difference is, that the compiler does type-checking before template expansion. 
-The idea is simple, source code contains only function/class, but compiled code may contain multiple copies of the same function/class. 
+Templates are expanded at compiler time. This is like macros. The difference is, that the compiler does type-checking before template expansion. The idea is simple, source code contains only function/class, but compiled code may contain multiple copies of the same function/class. 
 
 =========================================================================
 Templates can be represented in two ways:
@@ -1138,10 +1094,7 @@ ret_type func_name(T argumentname)
 {  
     // body of function.  
 }  
-Where T is a placeholder name for a data type used by the function and 
-this list is called as template parameter list and it cannot be empty. 
-It is used within the function definition. It is only a placeholder that 
-the compiler will automatically replace this placeholder with the actual data type.
+Where T is a placeholder name for a data type used by the function and this list is called as template parameter list and it cannot be empty. It is used within the function definition. It is only a placeholder that the compiler will automatically replace this placeholder with the actual data type.
 
 #include <iostream>  
 using namespace std;  
@@ -1165,9 +1118,7 @@ int main()
 }
   Addition of i and j is :5
 Addition of m and n is :3.5
-In the above example, we create the function template which 
-can perform the addition operation on any type either it can be 
-integer, float or double.
+In the above example, we create the function template which can perform the addition operation on any type either it can be integer, float or double.
 ===================================================================
 
 #include<iostream>
@@ -1312,8 +1263,7 @@ int main()
 =========================================================================
 CLASS TEMPLATE
 
-Class Template can also be defined similarly to the Function Template.
- When a class uses the concept of Template, then the class is known as generic class.
+Class Template can also be defined similarly to the Function Template. When a class uses the concept of Template, then the class is known as generic class.
 
 Syntax
 template<class Ttype>  
@@ -1322,9 +1272,7 @@ class class_name
   .  
   .  
 }  
-Ttype is a placeholder name which will be determined when the class is instantiated.
- We can define more than one generic data type using a comma-separated list.
- The Ttype can be used inside the class body.
+Ttype is a placeholder name which will be determined when the class is instantiated. We can define more than one generic data type using a comma-separated list. The Ttype can be used inside the class body.
 
 Now, we create an instance of a class
 class_name<type> ob;  
@@ -1361,8 +1309,7 @@ int main()
     d.add();  
     return 0;  
 } 
-In the above example, we create a template for class A. Inside 
-the main() method, we create the instance of class A named as, 'd'.
+In the above example, we create a template for class A. Inside the main() method, we create the instance of class A named as, 'd'.
 =====================================================================================
 #include <iostream>  
 using namespace std;  
@@ -1419,8 +1366,7 @@ int main()
 =============================================================
 
 CLASS TEMPLATE WITH MULTIPLE PARAMETERS
-We can use more than one generic data type in a class template, and each 
-generic data type is separated by the comma.
+We can use more than one generic data type in a class template, and each generic data type is separated by the comma.
 
 Syntax
 template<class T1, class T2, ......>   
@@ -1482,8 +1428,7 @@ int main()
 } 
 
 ========================================================================
-The template can contain multiple arguments, and we can also use 
-the non-type arguments In addition to the type T argument.
+The template can contain multiple arguments, and we can also use the non-type arguments In addition to the type T argument.
 Let' s see the following example:
 
 template<class T, int size>  
@@ -1535,26 +1480,18 @@ int main()
 Output:
 
 1 2 3 4 5 6 7 8 9 10
-In the above example, the class template is created which contains 
-the nontype template argument, i.e., size. It is specified when the object 
-of class 'A' is created.
+In the above example, the class template is created which contains the nontype template argument, i.e., size. It is specified when the object of class 'A' is created.
 
 =========================================
 
 ======================================================
 Friend Class and Function in C++
 
-==>Data hiding is a fundamental concept of object-oriented programming.
- It restricts the access of private members from outside of the class.
-Similarly, protected members can only be accessed by derived classes and are 
-inaccessible from outside.
-However, there is a feature in C++ called friend functions that break this 
-rule and allow us to access private/protected member functions from outside the class.
+==>Data hiding is a fundamental concept of object-oriented programming. It restricts the access of private members from outside of the class.Similarly, protected members can only be accessed by derived classes and are inaccessible from outside.
+However, there is a feature in C++ called friend functions that break this rule and allow us to access private/protected member functions from outside the class.
 
-==>A friend class can access private and protected members of other classes in 
-which it is declared as a friend. 
-It is sometimes useful to allow a particular class to access private and 
-protected members of other classes. 
+==>A friend class can access private and protected members of other classes in which it is declared as a friend. 
+It is sometimes useful to allow a particular class to access private and protected members of other classes. 
 
 We can declare a friend class in C++ by using the friend keyword.
 
@@ -1592,8 +1529,7 @@ private:
     friend class F;
 };
  // Here, class F is declared as a friend inside class Demo. Therefore,
-// F is a friend of class Demo. Class F can access the private/PROTECTED 
-members of class Demo.
+// F is a friend of class Demo. Class F can access the private/PROTECTED members of class Demo.
 class F {
 public:
     void display(Demo& t)
@@ -1619,13 +1555,8 @@ Note: We can declare friend class or function anywhere in the base class body wh
 
 Friend Function
 
-==>Like a friend class, a friend function can be granted 
-special access to private and protected members of a class in C++.
- They are the non-member functions that can access and 
-manipulate the private and protected members of the class in which they are 
-declared as friends.
-==>If a function is defined as a friend function in C++, then the protected and 
-private data of a class can be accessed using the function.
+==>Like a friend class, a friend function can be granted special access to private and protected members of a class in C++. They are the non-member functions that can access and manipulate the private and protected members of the class in which they are declared as friends.
+==>If a function is defined as a friend function in C++, then the protected and private data of a class can be accessed using the function.
 
 ==>A friend function can be:
 friend return_type function_name (arguments);    // for a global function
@@ -1755,17 +1686,10 @@ Protected Variable: 99
 In the above example, we have used a global function as a friend function.==============================================================================================
 
 Features of Friend Functions
- ==>A friend function is a special function in C++ that in spite of not being a 
-member function of a class has the privilege to access the private and protected data 
-of a class.
-==>A friend function is a non-member function or ordinary function of a class, 
-which is declared as a friend using the keyword “friend” inside the class. 
-By declaring a function as a friend, all the access permissions are given to the function.
-==>The keyword “friend” is placed only in the function declaration of the friend
- function and not in the function definition or call.
-==>A friend function is called like an ordinary function. 
-It cannot be called using the object name and dot operator. However, 
-it may accept the object as an argument whose value it wants to access.
+ ==>A friend function is a special function in C++ that in spite of not being a member function of a class has the privilege to access the private and protected data of a class.
+==>A friend function is a non-member function or ordinary function of a class, which is declared as a friend using the keyword “friend” inside the class. By declaring a function as a friend, all the access permissions are given to the function.
+==>The keyword “friend” is placed only in the function declaration of the friend function and not in the function definition or call.
+==>A friend function is called like an ordinary function. It cannot be called using the object name and dot operator. However, it may accept the object as an argument whose value it wants to access.
 ==>A friend function can be declared in any section of the class i.e. public or private or protected.
 =======================================================
 Advantages of Friend Functions
@@ -1944,13 +1868,7 @@ int main()
 
 What Is C++ Enum?
 
-==>Enum, which is also known as enumeration, is a user-defined data type that 
-enables you to create a new data type that has a fixed range of possible values, 
-and the variable can select one value from the set of values. For example, 
-suppose you are the owner of an ice cream shop, and you sell a limited range 
-of ice cream flavors. So you want the customers to select only from that collection 
-of ice creams in your shop. This becomes an enumeration with ice cream as the name 
-of enumeration and different flavors of ice creams as its elements.
+==>Enum, which is also known as enumeration, is a user-defined data type that enables you to create a new data type that has a fixed range of possible values, and the variable can select one value from the set of values. For example, suppose you are the owner of an ice cream shop, and you sell a limited range of ice cream flavors. So you want the customers to select only from that collection of ice creams in your shop. This becomes an enumeration with ice cream as the name of enumeration and different flavors of ice creams as its elements.
 
 ==>Enumeration (Enumerated type) is a user-defined data type that can be assigned some limited values. These values are defined by the programmer at the time of declaring the enumerated type.
 
@@ -1967,8 +1885,7 @@ enum Iceccream
 };
 Each of these elements has values starting from 0, like vanilla is 0, stawberry is 1, etc. The default values mentioned can be altered during the declaration of the enum in C++.
 ====================================================================
-To declare an enum variable, write the name of the enumeration along with 
-the enum variable.
+To declare an enum variable, write the name of the enumeration along with the enum variable.
 enum Iceccream
 {
 	vanilla,stawberry,mango
@@ -1995,12 +1912,7 @@ Output:
 
 ============================================================================
 Why use an enum in a program?
-One can utilise the enums in a program when they want the variables in 
-the program to have just the set of values. For instance, let us consider 
-the creation of a direction variable. Now, there are a total of four 
-directions (N, S, W, E). Thus, a total of four values are possible with the 
-direction variable. But here, the variable would be able to hold just a single 
-value at any given time. Now, if a user provides any different value to the variable here, then we should get a compilation error.
+One can utilise the enums in a program when they want the variables in the program to have just the set of values. For instance, let us consider the creation of a direction variable. Now, there are a total of four directions (N, S, W, E). Thus, a total of four values are possible with the direction variable. But here, the variable would be able to hold just a single value at any given time. Now, if a user provides any different value to the variable here, then we should get a compilation error.
 For vsuch scenario enum can be used.
 
 ==>enum is a userdefined datatype that consists of paired named-integer constants. 
@@ -2130,9 +2042,7 @@ int main(){
 
 Typedef:
 
-typedef keyword in C++ is used for aliasing existing data types, user-defined 
-data types, and pointers to a more meaningful name. Typedefs allow you to give 
-descriptive names to standard data types, which can also help you self-document your code. Mostly typedefs are used for aliasing, only if the predefined name is too long or complex to write again and again.  The unnecessary use of typedef is generally not a good practice.
+typedef keyword in C++ is used for aliasing existing data types, user-defined data types, and pointers to a more meaningful name. Typedefs allow you to give descriptive names to standard data types, which can also help you self-document your code. Mostly typedefs are used for aliasing, only if the predefined name is too long or complex to write again and again.  The unnecessary use of typedef is generally not a good practice.
 
 Syntax:
 typedef <current_name> <new_name>
