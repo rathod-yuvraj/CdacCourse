@@ -1,0 +1,48 @@
+<!-- Perform the form validations as shown in Lecture
+  for name and age and display error message if it not valid  -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validations</title>
+</head>
+<style>
+    .error{
+
+        visibility: hidden;
+    }
+</style>
+<body>
+    <div>
+        <form action="submit" name="validform">
+ <label for="user">Enter the user</label>
+        <input type="text" name="user">
+        <div class="error">Enter the name </div> <br>
+        <label for="age">enter the age</label>
+        <input type="text" name="ages"> <br>
+         <div class="error">Enter the age </div>
+         <button type="submit">Submit</button>
+        </form>
+       
+
+    </div>
+    
+<script>
+    function validate(){
+
+        let s=document.forms["validform"]["user"].value;
+        let ag=document.form["validform"["ages"]].value;
+        if(trim.s==""){
+            document.getElementsByClassName("error")[0].style.visibility=visible;
+        }
+        else{
+            document.getElementsByClassName("error")[0].style.visibility=hidden;
+        }
+
+    }
+</script>
+
+</body>
+</html>
