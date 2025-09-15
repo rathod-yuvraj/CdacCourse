@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Show table</title>
+    <style>
+        *{
+            margin: 0;
+        padding: 0;
+        }
+        .container{
+            display: flex;
+            align-items: center;    /*vertical */
+            justify-content: center;
+            border: 3px solid black;
+            /* margin: auto; */
+            margin-left: 300px;
+            margin-right: 300px;
+           
+        }
+        #inputuser{
+            padding: 10px;
+            margin: 20px;
+          
+
+        }
+         #inputuser input {
+            padding: 10px;
+            margin: 10px;
+            border-radius: 10px;
+
+        }
+        #inputuser button {
+    padding: 10px 20px;
+    margin: 10px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    background: linear-gradient(135deg, #6a11cb, #2575fc); /* nice blue-purple gradient */
+    color: white;
+    font-weight: bold;
+    
+    display: inline-flex;
+    align-items: center; /* center content vertically */
+    justify-content: center;
+    box-shadow: 0 4px 15px rgba(101, 41, 255, 0.2);
+   
+}
+
+#inputuser button:hover {
+    background: linear-gradient(135deg, #b1320c, #e60fe6); /* reverse gradient on hover */
+    box-shadow: 0 6px 20px rgba(101, 41, 255, 0.4);
+}
+
+#inputuser button:active {
+    background: linear-gradient(135deg, #4a0dbb, #1a4bbd); /* darker gradient on click */
+    transform: scale(0.95);
+    box-shadow: 0 2px 10px rgba(101, 41, 255, 0.2);
+}
+
+        
+        #btn{
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+        }
+         table {
+            border-collapse: collapse;
+            margin-bottom: 10px;
+            width: 100%;
+        }
+
+        th,
+        td {
+            border: 1px solid #ddd;
+            padding: 5px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #4b407e;
+            color: #fff;
+        }
+        #editDatabtn2{
+            padding: 10px 20px;
+    margin: 10px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    background: linear-gradient(135deg, #6a11cb, #2575fc); /* nice blue-purple gradient */
+    color: white;
+    font-weight: bold;
+    
+    display: inline-flex;
+    align-items: center; /* center content vertically */
+    justify-content: center;
+    box-shadow: 0 4px 15px rgba(101, 41, 255, 0.2);
+   
+}
+
+#inputuser button:hover {
+    background: linear-gradient(135deg, #089e1c, #29e023); /* reverse gradient on hover */
+    box-shadow: 0 6px 20px rgba(101, 41, 255, 0.4);
+}
+
+#inputuser button:active {
+    background: linear-gradient(135deg, #27dbdb, #376eee); /* darker gradient on click */
+    transform: scale(0.95);
+    box-shadow: 0 2px 10px rgba(101, 41, 255, 0.2);
+}
+
+#deleteDatabtn3{
+
+padding: 10px 20px;
+    margin: 10px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    background: linear-gradient(135deg, #6a11cb, #2575fc); /* nice blue-purple gradient */
+    color: white;
+    font-weight: bold;
+    
+    display: inline-flex;
+    align-items: center; /* center content vertically */
+    justify-content: center;
+    box-shadow: 0 4px 15px rgba(101, 41, 255, 0.2);
+   
+}
+
+#inputuser button:hover {
+    background: linear-gradient(135deg, #ff3c00, #fa2307); /* reverse gradient on hover */
+    box-shadow: 0 6px 20px rgba(101, 41, 255, 0.4);
+}
+
+#inputuser button:active {
+    background: linear-gradient(135deg, #ccc92c, #e2df31); /* darker gradient on click */
+    transform: scale(0.95);
+    box-shadow: 0 2px 10px rgba(101, 41, 255, 0.2);
+}
+
+
+        
+
+
+
+
+       
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div id="inputuser">
+            <label for="nameInput">Enter the Frist Name :</label>
+            <input type="text" id="nameInput">  <br>
+            <label for="user" for="LastInput" >Enter the Last Name :</label>
+            <input type="text" id="LastInput">  <br>
+            <label for="mail" name>Enter the  Email : </label>
+            <input type="email" id="Emailinput"> <br>
+            <label for="user">Enter the Date of Birth :</label>
+            <input type="date" id="Dobinput" placeholder="Enter the date of birth">  <br>
+     
+            <div id="btn">
+ <button onclick="addData()">Add</button>
+            </div>
+           
+           
+        </div>
+
+
+    </div>
+      
+    <table id="T1">
+       <tr>
+         <th>Firstname</th>
+         <th>Lastname</th>
+         <th>Email</th>
+         <th>Dob</th>
+         <th>Actions</th>
+
+       </tr>  
+    </table>
+        
+      
+       
+  
+</body>
+<script>
+// input values in javascript
+function addData (){
+let name = document.getElementById("nameInput").value;
+let Lastname =document.getElementById("LastInput").value;
+let Email =document.getElementById("Emailinput").value;
+let Dob =document.getElementById("Dobinput").value;
+
+// now adding rows in table 
+let table =document.getElementById("T1");
+let newRow = table.insertRow();
+
+//let newRow =document.insertRow(table.row.length);
+
+// now insertion of data from input cells to new rows
+// newRow.insertCell(0).innerHTML=name;
+newRow.insertCell(0).innerHTML = name;
+
+newRow.insertCell(1).innerHTML=Lastname;
+newRow.insertCell(2).innerHTML=Email;
+newRow.insertCell(3).innerHTML=Dob;
+newRow.insertCell(4).innerHTML=
+
+'<button id=editDatabtn2 onclick="editData(this)">Edit </button>' +
+'<button id=deleteDatabtn3 onclick="DeleteData(this)">Delete </button>';
+
+// clear input fields 
+// clearinputs();
+
+}
+//edit
+
+function editData(button){
+      
+    let row =button.parentNode.parentNode;
+
+    //let rows in cell
+
+      let nameCell =row.cells[0];
+      let lastnameCell =row.cells[1];
+      let EmailCell =row.cells[2];
+      let DobCell =row.cells[3];
+      
+      let inputName = prompt("Enter The First Name:", nameCell.innerHTML);
+let lastName = prompt("Enter the Last Name:", lastnameCell.innerHTML);
+let emailInput = prompt("Enter the Email:", EmailCell.innerHTML);
+let dobInput = prompt("Enter the Dob:", DobCell.innerHTML);
+
+nameCell.innerHTML = inputName;
+lastnameCell.innerHTML = lastName;
+EmailCell.innerHTML = emailInput;
+DobCell.innerHTML = dobInput;
+
+
+}
+
+
+//now delete the row
+
+function DeleteData(button){
+     let row =button.parentNode.parentNode;
+
+     row.parentNode.removeChild(row);
+
+
+
+
+
+}
+
+
+
+
+</script>
+</html>
