@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Multiplication Table</title>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<style>
+  table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    padding: 6px 12px;
+    text-align: center;
+  }
+  table {
+    margin-top: 15px;
+  }
+</style>
+</head>
+<body>
+
+Number: <input type="number" id="num" value="5" />
+From: <input type="number" id="from" value="1" />
+To: <input type="number" id="to" value="10" />
+<button id="showTable">Show Table</button>
+
+<div id="tableContainer">
+
+    <table>
+        <thead>
+            <tr>
+                <th>Expression</th>
+                <th>Result</th>
+            </tr>
+        </thead>
+        <tbody id="mytable">
+
+        </tbody>
+    </table>
+</div>
+
+<script>
+  $(document).ready(function() {
+    $('#showTable').click(function() {
+      const num = parseInt($('#num').val());
+      const from = parseInt($('#from').val());
+      const to = parseInt($('#to').val());
+
+       $('#mytable').empty();
+
+    
+    const t = document.getElementById('mytable');
+
+    for (let i = from; i <= to; i++) {
+      const newRow = t.insertRow();
+      let first = newRow.insertCell(0);
+      let second = newRow.insertCell(1);
+      first.textContent =num + " * " + i;
+      second.textContent = num * i;
+    }
+    });
+  });
+</script>
+
+</body>
+</html>
