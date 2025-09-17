@@ -50,7 +50,7 @@
         <input type="text" id="LastName" required><br>
         <label for="age">Enter The Age:</label>
         <input type="text" id="age"><br>
-        <button>Add</button>
+        <button onclick="addData()">Add</button>
       </div>
       <div class="tablecontainer">
         <table id="data">
@@ -61,7 +61,7 @@
             <th>Age</th>
         </tr>
     </thead>
-    <tbody>
+    <tbody id="myTableData">
 
     </tbody>
 
@@ -71,18 +71,34 @@
  
 <script>
     function addData(){
-        let firstname=document.getElementById("fristName");
-        let lastName=document.getElementById("lastName");
-        let getAge=document.getElementById("age");
+        let firstName=document.getElementById("FirstName").value;
+        let lastName=document.getElementById("LastName").value;
+        let getAge=document.getElementById("age").value;
 
         const getuserdata={
-            firstname:firstname,
-            lastName:lastName,
-            aget:age
+            Firstname:firstName,
+            Lastname:lastName,
+            Age:getAge
 
 
         }
-        const JSONuser=JSON.stringify(getuserdata)
+        console.log(getuserdata);
+        const JSONuser=JSON.stringify(getuserdata);
+        console.log(JSONuser);
+
+        const myTable=document.getElementById("myTableData");
+
+        // let Frist=document.getElementById('myTableData').innerHTML=myTable;
+        
+
+        let newData=myTable.insertRow();
+        let ifirstname=newData.insertCell(0);
+        let ilastname=newData.insertCell(1);
+        let iage=newData.insertCell(2);
+
+        ifirstname.textContent=firstName;
+        ilastname.textContent=lastName;
+        iage.textContent=getAge;
 
     }
 </script>
