@@ -1,0 +1,144 @@
+Web Programming Technologies (WPT)
+1. Application Development Flow
+
+Application → A set of programs that solve a problem.
+Example: Bank Application → Account, Customer (Human).
+
+Desktop Application
+
+Installed on a single machine.
+
+Used by one user at a time.
+
+Example: Standalone software.
+
+Web Application
+
+Runs on server.
+
+Accessed through internet/intranet using browser.
+
+Multiple users can access simultaneously.
+
+2. Application Structure (3 Layers)
+
+Presentation Logic
+
+Display Information
+
+Accept Input
+
+Example: HTML, CSS (Frontend)
+
+Business Logic
+
+Process Data
+
+Validation
+
+Example: Java, C#, Python, PHP
+
+Persistence Logic
+
+Store/Retrieve Data
+
+Example: Database (MySQL, Oracle, MongoDB)
+
+3. Application Development
+
+Write Program → Compile → Run → Accept Input → Output.
+
+Developer: builds once.
+
+End User: executes and interacts.
+
+4. Multi-Tier Architecture
+
+1-Tier → Desktop Application (Single User).
+
+2-Tier → Client ↔ Server.
+
+3-Tier / N-Tier (Distributed Application)
+
+Client (Browser/Mobile)
+
+Web Server (Apache Tomcat, IIS)
+
+Application Server (Business Logic)
+
+Database Server (Persistence Layer)
+
+5. Connection & Communication
+
+Connection: Intranet / Internet
+
+Communication Language: Protocols (set of rules)
+
+TCP/IP – Text/Data over intranet
+
+FTP – File Transfer
+
+SMTP – Mail Transfer
+
+HTTP/HTTPS – Web Communication
+
+6. Client-Server Communication
+
+Client → HTTP Request (HTML) → Web Server
+
+Server → HTTP Response (HTML) → Client (Browser)
+
+Example Flow:
+👉 User enters www.gmail.com → Browser sends HTTP Request → Server processes → returns Response (HTML, CSS, JS) → Browser displays.
+
+7. Web Server Examples
+
+Apache Tomcat
+
+IIS (Internet Information Services)
+
+JBoss
+
+GlassFish
+
+8. HTTP Protocol
+
+HTTP Methods
+
+GET → Request data
+
+POST → Send data
+
+PUT → Update data
+
+DELETE → Remove data
+
+Request Format
+
+Hostname
+
+Protocol (HTTP/HTTPS)
+
+Browser Type (User-Agent)
+
+Content Type
+
+Response Format
+
+Status Code:
+
+200 → OK
+
+100 → Informational
+
+300 → Redirection
+
+400 → Client Error
+
+500 → Server Error
+
+9. Markup Languages
+
+HTML – Structure of web page (Text, Images, Audio, Video).
+
+XML – Represents & transfers data.
