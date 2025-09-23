@@ -8,12 +8,20 @@
 </head>
 <style>
    table{
+<<<<<<< HEAD
     border: 2px solid black;
+=======
+    border: 2px solid balck;
+>>>>>>> ba584d70e23d9f6944e87aaadfc44d20127048f1
    }
 </style>
 <body>
     <h1>Assigment no2</h1>
+<<<<<<< HEAD
     <button onclick="display()">display</button>
+=======
+    <button onclick="display()">dispaly</button>
+>>>>>>> ba584d70e23d9f6944e87aaadfc44d20127048f1
 
     <table border="1">
         <thead>
@@ -45,6 +53,7 @@ function display(){
         let table=document.getElementById("mytable");
         
         for(let i=0; i<obj.length-1;i++){
+<<<<<<< HEAD
          let newRow=table.insertRow();
         let userid=newRow.insertCell(0);
         let id=newRow.insertCell(1);
@@ -55,6 +64,24 @@ function display(){
         id.innerText=obj[i].id
         title.innerText=obj[i].title;
         body.innerText=obj[i].body;
+=======
+        //  let newRow=table.insertRow();
+        // let userid=newRow.insertCell(0);
+        // let id=newRow.insertCell(1);
+        // let title=newRow.insertCell(2);
+        // let body=newRow.insertCell(3);
+
+        // userid.innerText=obj[i].userId
+        // id.innerText=obj[i].id
+        // title.innerText=obj[i].title;
+        // body.innerText=obj[i].body;
+        const row = document.createElement('tr');
+                            row.innerHTML = '<td>' + obj.id + '</td>' +
+                                            '<td>' + obj.title + '</td>' +
+                                            '<td>' + obj.body + '</td>';
+                            postDetailTable.appendChild(row);
+                            
+>>>>>>> ba584d70e23d9f6944e87aaadfc44d20127048f1
 
         }
        

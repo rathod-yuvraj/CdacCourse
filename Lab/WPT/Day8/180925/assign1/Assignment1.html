@@ -10,12 +10,48 @@
 <body>
     <h1>Assignment No 1</h1>
     <p id="it">data</p>
+<<<<<<< HEAD
     <button id="btn" onclick="displaydata()">Display</button> <br>
+=======
+    
+>>>>>>> ba584d70e23d9f6944e87aaadfc44d20127048f1
     <p>display the file data</p>
 <button onclick="display()">Display </button>
 </body>
 
+<<<<<<< HEAD
 <script src="Ajax.js">
     
 </script>
 </html>
+=======
+<script >
+    function display() {
+   
+    var data = new XMLHttpRequest();
+    
+    
+    data.open("GET", "data.tx", true);
+    
+    
+    data.onload = function() {
+
+        
+        if (this.status === 200) {
+          
+            document.getElementById("it").innerText = data.responseText;
+        } else {
+           
+            document.getElementById("it").innerText = "Error loading file.";
+        }
+    };
+    
+
+    data.send();
+}
+
+</script>
+</html>
+
+
+>>>>>>> ba584d70e23d9f6944e87aaadfc44d20127048f1
