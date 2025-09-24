@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>querySelector method </title>
+</head>
+
+    <p> The querySelector() method returns the first element that matches the specified Selector. It only gives one element from the HTML DOM if found else it returns null. To get all the matching elements, you can use the querySelectorAll() method.</p>
+    
+    <body style="text-align: center">
+    <p>This is paragraph 1.</p>
+    <p>This is paragraph 2.</p>
+
+    <button onclick="myFunction()">Try it</button>
+    <script>
+        function myFunction() {
+
+            // Select the first p element
+            let e = document.querySelector("p");
+
+            // Dynamically apply styling 
+            // to the first p element
+            e.style.backgroundColor = "Green";
+            e.style.color = "white";
+        }
+    </script>
+
+</body>
+</html>

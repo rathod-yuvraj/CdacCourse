@@ -1,1 +1,7 @@
 git config --global http.proxy http://192.168.10.4:808
+curl -x http://proxy.example.com:8080 https://example.com
+
+
+
+curl -x http://proxy:port http://httpbin.org/ip
+--proxy-server=http://proxy.example.com:8080
