@@ -1,0 +1,169 @@
+
+
+
+1️⃣ What is Node.js HTTP module ?
+
+    Node.js has a built -in module called http that allows you to create 
+    a web server.With it, you can handle HTTP requests and send responses.
+    You don’t need to install anything extra.
+
+2️⃣ Basic Example: Hello World Server
+const http = require('http'); // Import the HTTP module
+
+// Create a server
+const server = http.createServer((req, res) => {
+    // Set response header
+    res.writeHead(200, { 'Content-Type': 'text/plain' });
+
+    // Send response body
+    res.end('Hello World from Node.js HTTP server!\n');
+});
+
+// Server listens on port 3000
+server.listen(3000, () => {
+    console.log('Server running at http://localhost:3000/');
+});
+Understanding the Code
+http.createServer() - Creates a new HTTP server instance
+The callback function is executed for each request with two parameters:
+req - The request object (http.IncomingMessage)
+res - The response object (http.ServerResponse)
+res.writeHead() - Sets the response status code and headers
+res.end() - Sends the response and ends the connection
+server.listen() - Starts the server on the specified port
+
+✅ Explanation:
+
+require('http') → Imports the HTTP module.
+
+    http.createServer() → Creates the server.It takes a callback with request(req) and response(res) objects.
+
+        res.writeHead(200, { ...}) → Sets HTTP status code(200 = OK) and headers.
+
+            res.end('...') → Sends the response and ends it.
+
+                server.listen(3000) → Makes the server listen on port 3000.
+
+3️⃣ Accessing the server
+
+Save the file as server.js.
+
+Run it in terminal:
+
+node server.js
+
+
+Open browser → http://localhost:3000 → You’ll see “Hello World from Node.js HTTP server!”
+
+4️⃣ Notes
+
+You can send HTML instead of plain text:
+
+res.writeHead(200, { 'Content-Type': 'text/html' });
+res.end('<h1>Hello HTML World</h1>');
+
+
+You can handle different routes:
+
+const server = http.createServer((req, res) => {
+    if (req.url === '/') {
+        res.end('Home Page');
+    } else if (req.url === '/about') {
+        res.end('About Page');
+    } else {
+        res.statusCode = 404;
+        res.end('Page Not Found');
+    }
+});
+
+
+Working with HTTP Headers
+HTTP headers let you send additional information with your response.
+
+The res.writeHead() method is used to set the status code and response headers.
+
+Common HTTP Status Codes
+Code	Message	Description
+200	OK	Standard response for successful HTTP requests
+201	Created	Request has been fulfilled and new resource created
+301	Moved Permanently	Resource has been moved to a new URL
+400	Bad Request	Server cannot process the request due to client error
+401	Unauthorized	Authentication is required
+403	Forbidden	Server refuses to authorize the request
+404	Not Found	Requested resource could not be found
+500	Internal Server Error	Unexpected condition was encountered
+
+
+Common Response Headers
+Content-Type: Specifies the media type of the content (e.g., text/html, application/json)
+Content-Length: The length of the response body in bytes
+Location: Used in redirects (with 3xx status codes)
+Set-Cookie: Sets HTTP cookies on the client
+Cache-Control: Directives for caching mechanisms
+Access-Control-Allow-Origin: For CORS support
+
+Working with URLs and Query Strings
+Node.js provides built-in modules to work with URLs and query strings, making it easy to handle different parts of a URL and parse query parameters.
+
+Accessing the Request URL
+The req.url property contains the URL string that was requested, including any query parameters.
+
+This is part of the http.IncomingMessage objects
+
+Parsing URLs with the URL Module
+The url module provides utilities for URL resolution and parsing.
+
+It can parse a URL string into a URL object with properties for each part of the URL.
+Common URL Parsing Methods
+url.parse(urlString, [parseQueryString], [slashesDenoteHost]): Parse a URL string into an object
+url.format(urlObject): Format a URL object into a URL string
+url.resolve(from, to): Resolve a target URL relative to a base URL
+new URL(input, [base]): The WHATWG URL API (recommended for new code)
+querystring.parse(str, [sep], [eq], [options]): Parse a query string into an object
+querystring.stringify(obj, [sep], [eq], [options]): Stringify an object into a query string
+Handling Different HTTP Methods
+RESTful APIs commonly use different HTTP methods (GET, POST, PUT, DELETE, etc.) to perform different operations on resources.
+
+--------------------------------------------------------------------------------------------------------------
+Best Practices for HTTP Methods
+GET: Retrieve a resource or collection of resources (should be idempotent)
+POST: Create a new resource (not idempotent)
+PUT: Update an existing resource or create it if it doesn't exist (idempotent)
+PATCH: Partially update a resource
+DELETE: Remove a resource (idempotent)
+HEAD: Same as GET but without the response body
+OPTIONS: Describe the communication options for the target resource
+-------------------------------------------------------------------------------
+Error Handling
+Always include proper error handling and appropriate HTTP status codes:
+
+200 OK - Successful GET/PUT/PATCH
+201 Created - Successful resource creation
+204 No Content - Successful DELETE
+400 Bad Request - Invalid request data
+401 Unauthorized - Authentication required
+403 Forbidden - Not enough permissions
+404 Not Found - Resource doesn't exist
+500 Internal Server Error - Server-side error
+--------------------------------------------------
+Introduction to the HTTPS Module
+The HTTPS module is a core Node.js module that provides an implementation of the HTTPS protocol, which is essentially HTTP over TLS/SSL.
+
+It's a secure version of the HTTP module, providing encrypted communication between clients and servers.
+
+Why Use HTTPS?
+HTTPS is crucial for modern web applications because it:
+
+Encrypts Data: Protects sensitive information like passwords, credit card numbers, and personal data from eavesdropping
+Authenticates Servers: Verifies that clients are communicating with the intended server
+Ensures Data Integrity: Prevents data from being modified or corrupted during transfer
+Builds Trust: Visual indicators (like the padlock icon) increase user confidence
+Improves SEO: Search engines prioritize HTTPS websites in search results
+Enables Modern Features: Many web APIs (like Geolocation, Service Workers) require HTTPS
+How HTTPS Works
+Client initiates a secure connection to the server
+Server presents its SSL/TLS certificate to the client
+Client verifies the certificate with a trusted Certificate Authority (CA)
+Encrypted session is established using asymmetric encryption
+Symmetric encryption is used for the actual data transfer
+-----------------------------------------------------------------------

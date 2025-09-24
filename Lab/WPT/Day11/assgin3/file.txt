@@ -1,0 +1,237 @@
+File Handling in Node.js.
+In Node.js, file handling is done using the fs (File System) module.
+
+Here’s a quick crash course with examples 👇
+
+📌 1. Import the module
+const fs = require("fs");
+
+📌 2. Write to a file
+fs.writeFile("example.txt", "Hello, Node.js!", (err) => {
+  if (err) throw err;
+  console.log("File created and data written!");
+});
+
+📌 3. Append data to a file
+fs.appendFile("example.txt", "\nThis is appended text.", (err) => {
+  if (err) throw err;
+  console.log("Data appended!");
+});
+
+📌 4. Read from a file
+fs.readFile("example.txt", "utf8", (err, data) => {
+  if (err) throw err;
+  console.log("File content:");
+  console.log(data);
+});
+
+📌 5. Rename a file
+fs.rename("example.txt", "newname.txt", (err) => {
+  if (err) throw err;
+  console.log("File renamed!");
+});
+
+📌 6. Delete a file
+fs.unlink("newname.txt", (err) => {
+  if (err) throw err;
+  console.log("File deleted!");
+});
+
+📌 7. Check if file exists
+if (fs.existsSync("example.txt")) {
+  console.log("File exists!");
+} else {
+  console.log("File not found!");
+}
+
+
+👉 With fs, you can also do synchronous operations (e.g., fs.readFileSync) but async (callback-based) is preferred.
+
+Do you want me to show you file handling with Promises/async-await instead of callbacks (more modern style)?
+
+You said:
+yes
+ChatGPT said:
+
+Perfect 👍 Let’s switch to the modern async/await style for file handling in Node.js.
+We’ll use the fs.promises API (built into Node.js, no extra install needed).
+
+📌 Example: File Handling with Async/Await
+const fs = require("fs").promises;
+
+async function fileHandlingDemo() {
+  try {
+    // 1. Write to a file
+    await fs.writeFile("example.txt", "Hello, Async Node.js!");
+    console.log("File created and data written!");
+
+    // 2. Append data
+    await fs.appendFile("example.txt", "\nThis is appended text.");
+    console.log("Data appended!");
+
+    // 3. Read the file
+    const data = await fs.readFile("example.txt", "utf8");
+    console.log("File content:\n", data);
+
+    // 4. Rename the file
+    await fs.rename("example.txt", "newname.txt");
+    console.log("File renamed!");
+
+    // 5. Delete the file
+    await fs.unlink("newname.txt");
+    console.log("File deleted!");
+  } catch (err) {
+    console.error("Error:", err);
+  }
+}
+
+fileHandlingDemo();
+
+📌 Explanation
+
+fs.writeFile → creates/writes data.
+
+fs.appendFile → adds text without overwriting.
+
+fs.readFile → reads contents.
+
+fs.rename → renames the file.
+
+fs.unlink → deletes the file.
+
+All are awaited, so the code looks cleaner than callback hell.
+
+👉 Do you want me to also show you how to create a folder and list files inside it with async/await?
+
+You said:
+yes
+ChatGPT said:
+
+Nice 👍 Let’s extend our async/await file handling example to include folders too.
+
+We’ll cover:
+
+Create a folder
+
+Write files inside it
+
+Read all files from the folder
+
+Delete files and the folder
+
+📌 Example: Folder Handling with Async/Await
+const fs = require("fs").promises;
+
+async function folderDemo() {
+  try {
+    const folderName = "myFolder";
+
+    // 1. Create a folder (if not exists)
+    try {
+      await fs.mkdir(folderName);
+      console.log("Folder created!");
+    } catch (err) {
+      if (err.code === "EEXIST") {
+        console.log("Folder already exists!");
+      } else {
+        throw err;
+      }
+    }
+
+    // 2. Create files inside the folder
+    await fs.writeFile(`${folderName}/file1.txt`, "This is file 1");
+    await fs.writeFile(`${folderName}/file2.txt`, "This is file 2");
+    console.log("Files created inside folder!");
+
+    // 3. Read all files from the folder
+    const files = await fs.readdir(folderName);
+    console.log("Files inside folder:", files);
+
+    // 4. Read content of each file
+    for (const file of files) {
+      const content = await fs.readFile(`${folderName}/${file}`, "utf8");
+      console.log(`${file}: ${content}`);
+    }
+
+    // 5. Delete files
+    for (const file of files) {
+      await fs.unlink(`${folderName}/${file}`);
+      console.log(`${file} deleted`);
+    }
+
+    // 6. Remove the folder
+    await fs.rmdir(folderName);
+    console.log("Folder deleted!");
+  } catch (err) {
+    console.error("Error:", err);
+  }
+}
+
+folderDemo();
+
+📌 Output flow
+Folder created!
+Files created inside folder!
+Files inside folder: [ 'file1.txt', 'file2.txt' ]
+file1.txt: This is file 1
+file2.txt: This is file 2
+file1.txt deleted
+file2.txt deleted
+Folder deleted!
+
+
+👉 Do you also want me to show how to watch a folder for changes (like auto-detect new files)?
+
+You said:
+yes
+ChatGPT said:
+
+Great 👍 Watching a folder for changes is done using fs.watch in Node.js.
+This lets you detect whenever files are added, removed, or modified inside a folder.
+
+📌 Example: Watching a Folder
+const fs = require("fs");
+
+const folderName = "watchedFolder";
+
+// Create folder if not exists
+if (!fs.existsSync(folderName)) {
+  fs.mkdirSync(folderName);
+  console.log("Folder created:", folderName);
+}
+
+// Start watching the folder
+fs.watch(folderName, (eventType, filename) => {
+  if (filename) {
+    console.log(`Change detected: ${eventType} -> ${filename}`);
+  } else {
+    console.log("Change detected, but filename not provided");
+  }
+});
+
+console.log(`Watching for changes in folder: ${folderName}`);
+
+📌 How it works
+
+Run the script:
+
+node watcher.js
+
+
+While it’s running, go to the watchedFolder and:
+
+Add a file → console logs Change detected: rename -> newfile.txt
+
+Modify a file → console logs Change detected: change -> file1.txt
+
+Delete a file → logs Change detected: rename -> file1.txt
+
+⚡ Notes:
+
+eventType can be "rename" (for create/delete/rename) or "change" (for file modifications).
+
+Some OSes (Windows, Linux, macOS) handle events differently, so sometimes multiple events fire.
+
+
+npm config set proxy http://192.168.10.4:808
+npm config set https-proxy http://192.168.10.4:808
