@@ -1,0 +1,472 @@
+Assignment 1
+
+1) Use Different tags of Html and create web pages 
+
+2) using text format , image , table and List tags
+    create your Resume 
+
+3) Use Emojis and Currency Symbols (Refer https://www.w3schools.com/)
+
+4) Create Registration Form using input tags
+	FirstName
+	LastName
+	UserName
+	Email
+	DOB  (Date Controller)
+	Known Languages  (Check Box)
+	Gender (Radio Button)
+	Password 
+	ConfirmPassword 
+	
+	2 buttons  -  Reset Submit 
+*************************************************************************************
+
+Write a html code in NoteBook 
+index.html 
+
+	<h1>Name</h1>
+
+with help of List display 3 Hyperlinks 
+
+	Login                            login.html
+	New user Rgistrion      newuser.html
+	Change Password        cp.html
+
+**********************************************************************************
+Assignments 
+
+1)
+Show links to yesterday's Resume and Registration form
+Show an Iframe that is displaying an image in the beginning
+When the Links are clicked the pages should be displayed in the Iframe
+
+2)
+Write an HTML that has a div tag having an essay copied from net
+add font family , font size, font style , font weight , text decoration overline
+font color background color using INLINE CSS
+
+3) Write an HTML using internal CSS that has 3 Text Input Fields
+All should shown in one line
+Set the left and right margins to appropriate space
+Set the border to solid blue
+Set border size properly
+Below this show an image , show a rounded border in red color to image
+Adjust the top margin of image to have proper distance from texfields
+
+4.
+Add display : block to the LINKS in HW1 using inline CSS
+5.
+Write an external CSS having following selectors
+	a. HTML Selectors for input p and select
+	b.Class Selectors moderate and gaudy
+	c.ID selectors : id1
+In all the selectors provide color , bgcolor, font style and borders in different ways
+Apply the CSS to an HTML
+********************************************************************************************
+Today we need to use VS Code for Javascript Programs 
+
+  1) to run Javascript we need to Install Node JS 
+  2) then set path for node js in Enviornment Variable
+
+Assignments 4 -----
+
+
+1) Write a function getFactorialImpl ( choice="FORLOOP" ) ----it could be FORLOOP or RECUR
+	Function Fact2(n1)
+	Use recursion and print the factorial
+	If the choice is FORLOOP return Fact1
+	If the choice is RECUR then return Fact2
+	Outside --- call let rv = getFactorialImpl("RECUR")
+	rv(3)
+	Rv = getFactorialImpl()
+	rv(5)
+
+2) Write a Program to use Different Array Library Functions using switch case
+
+3) Declare Array with String Data 
+	display every element in uppercase format
+             (use prdefined methods of String)
+4) write a function to add 3 numbers and print the values
+
+5) write a function that multiplies two numbers and returns the value
+
+6) Write a function to divide two numbers and assign function to a variable
+
+7) To Find max number from array write code in 3 ways as shown in lecture 
+
+*******************************************************************************
+TO run html from vs code install live server 
+extension in vs code 
+
+
+
+Assignments 5
+
+1) declare function calculate(...a) 
+	and display addition of data 
+	display only odd numbers from given data 
+
+  call calculate function with multiple parameters 
+
+2) with above concept use Math.max() method to display maximum number
+
+3) Perform the form validations as shown in Lecture
+  for name and age 
+   and display error message if it not valid 
+
+4) create html page -  with 
+	1 textfield and multiple buttons 
+	
+button captions are - 1)Add at End 
+		 2) Add at Start
+		3) delete from end 
+		4) delete from start
+		5) display odd numbers 
+		6) display even numbers
+hint -  use Array predined methods
+
+5) go through object and class syntax in javascript 
+   (shared files)
+
+6) Accrpt Number from user and display table of that number in 
+   table format 
+
+7) Accept Employee data 
+FirstName  | LastName | email | Date of Birth 
+
+from user 
+	a) perform validation -  data is entered or not 
+                    if not entered then display error msg 
+	b) if data is correct then display data on same page
+                     in table format 
+
+
+*****************************************************************
+TO run html from vs code install live server extension in vs code 
+
+
+
+Assignments 6
+
+
+1) Accept Employee data 
+FirstName  | LastName | email | Date of Birth 
+
+from user 
+	a) perform validation -  data is entered or not 
+                    if not entered then display error msg 
+	b) if data is correct then display data on same page
+                     in table format using dom evenets 
+					 
+	c) after adding data clear the textfields 
+	d) add row wise edit and delete functionality 
+	
+2) Display Timer on Browser using callback function setInterval
+
+3) Take 1 Button and when user click on that button display 
+   How many times user click and display that count in <p> tag 
+
+	if user click 10 times then make that button readonly using style 
+
+4) 
+	Write 6 Function in Script 
+	
+	display 
+	addition 
+	subtraction
+	multiply
+	division 
+	calculate
+	
+	Accept data from user 
+		2 numbers and Which Operation they want to perform
+  according to choice call particular function and display result 
+using callback function concept 
+
+    calculate(n1 , n2 , mcallBack)
+		addition (n1 , n2 , display);
+		
+
+
+	
+	
+   
+
+
+**************************************************
+Assignments 7
+
+1) use browser callback functions
+     setInterval
+	 clearInterval
+	 setTimeout
+	 
+2) create 2 div elements 
+    1 at left top corner and 2 nd at right top corner 
+	and add annimation effect with above call back functions
+
+3)  accept data from user using input fields 
+      firstName LastName age 
+	  
+	  store data in Object format in function 
+	  and convert into JSON format 
+	  
+	  and display data in table format from JSON format data 
+	  
+4)	using same elements from assignment 3 
+    create username of User dynamically 
+      take 1st 2 characters from firstName
+	  take last 2 characters from lastName
+	  and age 
+	  
+	  eg Amit Patil 30 === amil30 
+	  
+5) check example of jquery 
+
+***********************************************************
+
+Assignment 8
+check sortex.js  --- sort method 
+
+1.
+Display italics hello in another <p> tag
+Distplay underline hello in third <p> tag
+
+2. Using Jquery accept a number from the user in a textfield -on change show the factorial of that number in a <p> tag
+
+3. Using Jquery accept num: table from and table upto in 3 textfields
+for ex num=5 from= 1to =5
+On click of show button
+Show maths table in html table with a border and 2 columns
+5*1 = 5
+5*2 10
+5*3 15
+5*4 20
+5*5 25
+
+4. Using Jquery animate() API , write a div that has a nice quote in a nice font , color and size . Run the scroller from left to right 4 times , then R to L
+
+On click of the button
+
+5.  printing text on multiple lines on your own. on click on <p>
+
+6. Write an HTML that shows an AD that fadeIn on the screen
+Give a button-disappear = onclick of the button fadeOut the AD from the screen
+
+7. Try the slideDown and slideUP APIs as discussed in class
+
+Check and use other methods in JQuery 
+**************************************************
+Assignment 9
+Links for JSON Data - 
+https://jsonplaceholder.typicode.com/posts
+https://fake-json-api.mock.beeceptor.com/users
+
+1) use ajax concept and display data in html page 
+  on button click from text file 
+
+2) in Ajax Concept get Data From url
+     https://jsonplaceholder.typicode.com/posts
+
+	From Data display 
+	id and Title in Table Format on html page 
+
+3) in 2nd Assignment -  display data depends on parameter
+   Accept id from user 
+
+4) use HTML predefined Validations 
+     required  , minlength , maxlength 
+    and display error message if data is not properly entered
+
+5) use try and catch and finally block in JavaScript 
+
+6) apply the css to html elements with help of methods 
+
+	addClass()
+	removeClass()
+	toggleClass()
+
+7) 
+	Take TextField and Multiple Buttons 
+	Create Calculator using all concepts 
+	from HTML , css , JavaScript , JQuery 
+***************************************************************
+Assignment 10
+1) Demonstrate Ajax with JQuery Syntax 
+	$("").load()
+	$.get()
+
+2) Do Yesterday Data Load code with Promise Concept 
+
+3) use stylesheets mentioned in BootStrap 
+   and create Responsive WebPage 
+
+https://www.w3schools.com/bootstrap5/index.php
+**********************************************************
+Assignment 11
+
+1)  accept 2 numbers from user 
+  and perform multiplication 
+  
+  using promise concept perform multiplication if both number 
+  are positive else reject the promise 
+
+2) Understand the Node JS Architecture and understand 
+event loop execution by adding timer and promise concept 
+
+use below code 
+
+setImmediate(function A() {
+	console.log("1st immediate");
+});
+
+
+
+process.nextTick(function C() {
+	console.log("1st process");
+});
+
+
+
+// First event queue ends here
+console.log("program started");
+----
+3)   accept command line args input from user 
+ between 1 -  5 
+ if input is valid then display * pattern output 
+ 
+ if input is 3 then display
+ * * *
+ * *
+ *
+  if number is not other that 1 to 5 then throw the error 
+  and display error message 
+  
+4)Accept 10 munbers  from Command Line Args and store in array 
+  then display 
+  1) addition of even numbers only 
+  2) addition of even index numbers
+  3) addition of prime numbers 
+  
+5)  USINF REPL concept 
+
+    write function which has for loop to display 
+	current date -  dd-mm-yyyy format 
+	then save that script in myDate.js file 
+**********************************************************
+Assignment 11
+1)Install Node js in your machine 
+
+2) check installation with node -v 
+
+3) Write a recursive function in Node.js to print factorial of number 
+
+number accept by command line Args
+
+4) Write a Node program that prints all the numbers between 1 and 100, each on a separate line.
+A few caveats:
+o if the number is divisible by 3, print "foo"
+o if the number is divisible by 5, print "bar"
+o if the number is divisible by both 3 and 5, print "foobar"
+
+5)use http package and create server in node js 
+
+6)
+**************************************************
+Assignment 12
+1) in http server pass data as query parameter 
+  and use that data to display on HTML Page 
+  fName=ABC&lName=XYZ
+
+	o/p Hello <fName>
+
+2) create array like todo as shown in lecture  say todos
+  
+	display array data depends on path param 
+
+	<url>/todos  --  display data in json format 
+
+	<url>/todos/<id> -- display specific id data on web page 
+
+3)   Try File Handling Write and Read data synchronous method 
+   and try asynchronous method 
+
+4)create add function in calc.js and use in main.js
+
+5) try npm commands 
+
+6) npm install -g express (Install Express)
+*******************************************************
+Assignment 13
+1) use postman and call post method from server 
+
+install postman if not availble on machine 
+
+2) perform setup for express js 
+	create folder project1
+	npm init -y
+	npm install express 
+	
+	change start script in package.json file 
+
+3) with help of express js perform following operations 
+    on api with postman 
+	
+1) get  -  hostname:port/users
+2) get with specific id  - hostname:port/users/:id 
+3)get data with id and email  - hostname:port/users/:id/:email
+4) and delete operation  - hostname:port/users
+
+   generate your own data  from 
+	https://www.mockaroo.com/
+
+4) Delete Code 
+
+//req param    string 
+app.delete('/users/:id', (req, res) => {
+    const id = Number(req.params.id);  // 15
+    // console.log(id);
+    const userIndex = users1.findIndex(
+        user => user.id === id
+    )
+    if (userIndex === -1)
+        return res.status(404).send('Data not found');
+
+    const deletedItem = users1.splice(userIndex, 1);
+    return res.json("Dae ");
+});
+***********************************************************
+Assignment 14
+
+1) add post and put functionality in yesterday Rest API 
+
+2) in above rest api 
+	/users/aboutus ----- display aboutus.html page 
+
+3) using hbs module -  Display Dynamic HTML page 
+
+	calc.hbs   -  accept 2 numbers and display output 
+
+  npm install hbs --- to get hbs module 
+
+4) use middleware app.use and check   
+      set data in request object and  display that data in next method
+
+5)  Do the React  App Setup 
+
+	npx create-react-app  <projectName>
+
+	  go inside project directory 
+
+	then npm install 
+
+	npm start ---  React App started
+
+6) create another react app 
+	by using Function Component 
+	Display Data in your web page 
+
+	
+
+
+

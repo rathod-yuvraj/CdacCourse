@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Accept Employee data 
+FirstName  | LastName | email | Date of Birth 
+
+from user 
+	a) perform validation -  data is entered or not 
+                    if not entered then display error msg 
+	b) if data is correct then display data on same page
+                     in table format  -->
+    <h1>Employee Data Form</h1>
+    <form id="employeeForm">
+        <label for="firstName">First Name:</label>
+        <input type="text" id="firstName" name="firstName" required><br><br>
+        
+        <label for="lastName">Last Name:</label>
+        <input type="text" id="lastName" name="lastName" required><br><br>
+        
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required><br><br>
+        
+        <label for="dob">Date of Birth:</label>
+        <input type="date" id="dob" name="dob" required><br><br>
+        
+        <button type="button" onclick="submitForm()">Submit</button>
+    </form>
+    <div id="errorMsg" style="color: red;"></div>
+    <div id="output"></div>
+    <script>
+        function submitForm() {
+            const firstName = document.getElementById('firstName').value.trim();
+            const lastName = document.getElementById('lastName').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const dob = document.getElementById('dob').value;
+
+            let errorMsg = '';
+
+            if (!firstName) {
+                errorMsg += 'First Name is required.<br>';
+            }
+            if (!lastName) {
+                errorMsg += 'Last Name is required.<br>';
+            }
+            if (!email) {
+                errorMsg += 'Email is required.<br>';
+            }
+            if (!dob) {
+                errorMsg += 'Date of Birth is required.<br>';
+            }
+
+            document.getElementById('errorMsg').innerHTML = errorMsg;
+
+            if (errorMsg === '') {
+                const outputDiv = document.getElementById('output');
+                outputDiv.innerHTML = `
+                    <h2>Employee Data</h2>
+                    <table border="1">
+                        <tr>
+                            <th>First Name</th>
+                            <th>Last Name</th>
+                            <th>Email</th>
+                            <th>Date of Birth</th>
+                        </tr>
+                        <tr>
+                            <td>${firstName}</td>
+                            <td>${lastName}</td>
+                            <td>${email}</td>
+                            <td>${dob}</td>
+                        </tr>
+                    </table>
+                `;
+                document.getElementById('employeeForm').reset();
+            } else {
+                document.getElementById('output').innerHTML = '';
+            }
+        }
+    </script>
+    <hr>
+    <!-- button captions are - 1)Add at End 
+         2) Add at Start
+        3) delete from end
+        4) delete from start
+        5) display odd numbers
+        6) display even numbers
+    hint -  use Array predined methods like push , pop , unshift , shift , forEach , filter etc
+        also use array variable to store numbers entered in textfield
+        also use div to display output -->
+</body>
+</html>
