@@ -1,0 +1,11 @@
+package assign2;
+
+public class TestArrayOprations {
+
+	public static void main(String[] args) {
+		int[] arr=new int[5];
+	System.out.println("prime : "+ ArrayOperationsServices.isPrime(5));
+
+	}
+
+}

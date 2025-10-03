@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Divs Follow Cursor</title>
+  <style>
+    body {
+      margin: 0;
+      overflow: hidden;
+    }
+
+    .wrapper {
+      position: relative;
+      width: 100vw;
+      height: 100vh;
+    }
+
+    .d1, .d2 {
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      position: absolute;
+      transition: all 0.3s ease;
+      pointer-events: none; /* Let the mouse pass through */
+    }
+
+    .d1 {
+      background-color: blue;
+    }
+
+    .d2 {
+      background-color: red;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <div class="d1" style="top: 50px; left: 50px;"></div>
+    <div class="d2" style="top: 150px; left: 150px;"></div>
+    <div class="d1" style="top: 250px; left: 250px;"></div>
+    <div class="d2" style="top: 350px; left: 350px;"></div>
+  </div>
+
+  <script>
+    const elements = document.querySelectorAll('.d1, .d2');
+
+    document.addEventListener('mousemove', (e) => {
+      elements.forEach(elem => {
+        const rect = elem.getBoundingClientRect();
+        const elemCenterX = rect.left + rect.width / 2;
+        const elemCenterY = rect.top + rect.height / 2;
+
+        const dx = e.clientX - elemCenterX;
+        const dy = e.clientY - elemCenterY;
+        const distance = Math.sqrt(dx * dx + dy * dy);
+
+        const threshold = 150; // Only move if cursor is within 150px
+
+        if (distance < threshold) {
+          // Move element a bit toward the cursor
+          const moveX = dx * 0.2;
+          const moveY = dy * 0.2;
+
+          const newLeft = rect.left + moveX;
+          const newTop = rect.top + moveY;
+
+          elem.style.left = newLeft + 'px';
+          elem.style.top = newTop + 'px';
+        }
+      });
+    });
+  </script>
+</body>
+</html>

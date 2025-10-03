@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>toggleClass Example</title>
+    <style>
+        .highlight {
+            background-color: yellow;
+            color: red;
+        }
+
+        .small {
+            font-size: 12px;
+            width: 100px;
+            height: 50px;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+
+    <div id="box">Hello, World!</div>
+
+    <button id="toggleHighlight">Toggle Highlight</button>
+    <button id="toggleSize">Toggle Size</button>
+
+    <script>
+        $(document).ready(function() {
+            // Toggle the "highlight" class when the button is clicked
+            $('#toggleHighlight').click(function() {
+                $('#box').toggleClass('highlight');
+            });
+
+            // Toggle the "small" class when the button is clicked
+            $('#toggleSize').click(function() {
+                $('#box').toggleClass('small');
+            });
+        });
+    </script>
+</body>
+</html>

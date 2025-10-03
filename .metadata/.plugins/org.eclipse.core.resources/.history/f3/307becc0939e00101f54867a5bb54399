@@ -1,0 +1,30 @@
+
+public class ArrayTest {
+
+	public static void main(String[] args) {
+	
+         int[] arr = new int [5];
+         ArrayService.acceptData(arr);
+         ArrayService.displayData(arr);
+         ArrayService.arrayMax(arr);
+         ArrayService.arrayMin(arr);
+         ArrayService.additionArray(arr);
+        System.out.println( ArrayService.SearchByvalue(arr, 3));
+        System.out.println(ArrayService.findMinPos(arr, 2));
+        System.out.println(ArrayService.findNthMin(arr, 3));
+//         int choice;
+//         do
+         
+	}
+//	System.out.println("1.search a number \n2.find max\n3.find min");
+//	System.out.println("4.add all the numbers ");
+//	System.out.println("7.find nth minimum");
+//	choice =sc.nexInt();
+//	switch(choice) {
+//	case 1
+//	System.out.println("enter data to search");
+//	int num =sc.nextln();
+//	int pos= Array
+//	}
+
+}

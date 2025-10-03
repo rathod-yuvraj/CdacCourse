@@ -1,0 +1,39 @@
+import java.util.Scanner;
+
+public class ArrayService {
+	
+	public static void acceptData(int [] arr) {
+		
+		 Scanner obj=new Scanner(System.in);
+		
+		for(int i=0; i<arr.length;i++) {
+			
+			arr[i]=obj.nextInt();
+			
+		}
+		obj.close();
+	}
+	
+	public static void displayData(int arr[]) {
+		for(int i=0; i<arr.length;i++) {
+			
+			System.out.print(arr[i]);
+		}
+		System.out.println();
+	}
+	
+	public static void arrayMax(int[] arr ) {
+		
+		int max=arr[0];
+		
+		for(int i=0;i<arr.length;i++) {
+			
+			if(arr[i]<max) {
+				max=arr[i];
+			}
+			System.out.println("Max Number in Array: "+max);
+		
+		}
+	}
+
+}

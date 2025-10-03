@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>SlideDown & SlideUp Example</title>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<style>
+  #box {
+    width: 300px;
+    height: 150px;
+    background-color: #4CAF50;
+    color: white;
+    font-size: 20px;
+    text-align: center;
+    line-height: 150px;
+    margin: 20px auto;
+    display: none; /* start hidden */
+    border-radius: 8px;
+  }
+
+  button {
+    display: block;
+    margin: 0 auto 20px;
+    padding: 10px 25px;
+    font-size: 16px;
+  }
+</style>
+</head>
+<body>
+
+<button id="showBtn">Slide Down</button>
+<button id="hideBtn">Slide Up</button>
+
+<div id="box">
+  Hello! I slide up and down!
+</div>
+
+<script>
+  $(document).ready(function(){
+    $('#showBtn').click(function(){
+      $('#box').slideDown(800);
+    });
+
+    $('#hideBtn').click(function(){
+      $('#box').slideUp(800);
+    });
+  });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+</head>
+<style>
+/* General Body Styling */
+body {
+    font-family: Arial, sans-serif;
+   
+    background-color: #f4f4f4;
+}
+
+.container{
+    position: absolute;
+    top: 0;
+    right: 50%;
+    border: 2px solid black;
+    border-radius: 10px;
+}
+/* Calculator Container */
+input{
+    padding: 20px;
+    border-radius: 10px;
+}
+
+/* Button Styling */
+button {
+    background-color: #e0e0e0;
+   
+  padding: 15px;
+    font-size: 24px;
+    color: #333;
+ 
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+button:hover {
+    background-color: #ddd;
+    transform: translateY(-3px);
+}
+
+button:active {
+    background-color: #ccc;
+    transform: translateY(1px);
+}
+
+/* Styling for the operator buttons */
+button:nth-child(4), button:nth-child(5), button:nth-child(6),
+button:nth-child(7), button:nth-child(8), button:nth-child(9) {
+    background-color: #feaa00;
+    color: white;
+}
+
+button:nth-child(4):hover, button:nth-child(5):hover, button:nth-child(6):hover,
+button:nth-child(7):hover, button:nth-child(8):hover, button:nth-child(9):hover {
+    background-color: #f87f00;
+}
+
+button:nth-child(3), button:nth-child(6), button:nth-child(9) {
+    background-color: #4CAF50;
+    color: white;
+}
+
+button:nth-child(3):hover, button:nth-child(6):hover, button:nth-child(9):hover {
+    background-color: #45a049;
+}
+
+button:nth-child(10), button:nth-child(11), button:nth-child(12) {
+    background-color: #FF4081;
+    color: white;
+}
+
+button:nth-child(10):hover, button:nth-child(11):hover, button:nth-child(12):hover {
+    background-color: #F50057;
+}
+
+/* Optional: Styling for a more specific button (e.g. the equal sign) */
+button:nth-child(12) {
+  
+    background-color: #008CBA;
+    color: white;
+}
+
+button:nth-child(12):hover {
+    background-color: #005f73;
+}
+
+</style>
+
+
+<body>
+    <div class="container">
+<input type="text">
+    <br>
+    <button>1</button>
+    <button>2</button>
+    <button>3</button>
+    <button>*</button>
+    <br>
+    <button>4</button>
+    <button>5</button>
+    <button>6</button>
+    <button>%</button>
+    <br>
+    <button>7</button>
+    <button>8</button>
+    <button>9</button>
+    <button>del</button>
+    <br>
+    <button>0</button>
+    <button>=</button>
+    <button>-</button>
+    <button>+</button>
+
+    </div>
+    
+
+</body>
+<script>
+    
+</script>
+
+</html>

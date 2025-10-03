@@ -1,0 +1,660 @@
+
+http.createServer() - Creates a new HTTP server instance
+The callback function is executed for each request with two parameters:
+req - The request object (http.IncomingMessage)
+res - The response object (http.ServerResponse)
+res.writeHead() - Sets the response status code and headers
+res.end() - Sends the response and ends the connection
+server.listen() - Starts the server on the specified port
+
+Basic GET Request
+
+
+Using https.get() for Simple Requests
+For simple GET requests, you can use the more concise https.get() method. This is a convenience method that automatically sets the HTTP method to GET and calls req.end() for you.
+
+Making POST Requests
+To send data to a server, you can use a POST request.
+Using Promises with HTTPS Requests
+To make HTTPS requests more manageable, you can wrap them in a Promise:
+
+
+Best Practices for HTTPS Requests:
+
+Always validate and sanitize input data before sending it in a request
+Use environment variables for sensitive information like API keys
+Implement proper error handling and timeouts
+Set appropriate headers (Content-Type, Accept, User-Agent)
+Handle redirects appropriately (3xx status codes)
+Implement retry logic for transient failures
+Consider using a library like axios or node-fetch for more complex scenarios
+
+
+Introduction to Node.js File System
+
+Promise-based API
+Node.js provides promise-based versions of the File System API in the fs/promises namespace, which is recommended for modern applications:
+
+
+File Operations
+Read and write files
+Create and delete files
+Append to files
+Rename and move files
+Change file permissions
+Directory Operations
+Create and remove directories
+List directory contents
+Watch for file changes
+Get file/directory stats
+Check file existence
+Advanced Features
+File streams
+File descriptors
+Symbolic links
+File watching
+Working with file permissions
+
+Reading Files
+Node.js provides several methods to read files, including both callback-based and promise-based approaches.
+
+The most common method is fs.readFile().
+
+
+Reading Files with Callbacks
+Here's how to read a file using the traditional callback pattern:
+
+Reading Files with Promises (Modern Approach)
+Using fs.promises or util.promisify for cleaner async/await syntax:
+
+Reading Files Synchronously
+For simple scripts, you can use synchronous methods, but avoid them in production servers as they block the event loop:
+
+Creating and Writing Files
+Node.js provides several methods for creating and writing to files.
+
+Here are the most common approaches:
+
+1. Using fs.writeFile()
+Creates a new file or overwrites an existing file with the specified content:
+
+Using fs.appendFile()
+Appends content to a file, creating the file if it doesn't exist:
+
+Using File Handles
+For more control over file operations, you can use file handles:
+
+4. Using Streams for Large Files
+For writing large amounts of data, use streams to avoid high memory usage
+
+File Flags: When opening files, you can specify different modes:
+
+'w' - Open for writing (file is created or truncated)
+'wx' - Like 'w' but fails if the path exists
+'w+' - Open for reading and writing (file is created or truncated)
+'a' - Open for appending (file is created if it doesn't exist)
+'ax' - Like 'a' but fails if the path exists
+'r+' - Open for reading and writing (file must exist)
+
+Deleting Files and Directories
+Node.js provides several methods to delete files and directories.
+
+Here's how to handle different deletion scenarios:
+
+1. Deleting a Single File
+Use fs.unlink() to delete a file:
+
+2. Deleting Multiple Files
+To delete multiple files, you can use Promise.all() with fs.unlink():
+
+3. Deleting Directories
+To delete directories, you have several options depending on your needs:
+
+4. Emptying a Directory Without Deleting It
+To remove all files and subdirectories within a directory but keep the directory itself:
+
+Renaming and Moving Files
+The fs.rename() method can be used for both renaming and moving files.
+
+It's a versatile method for file system operations that involve changing file paths.
+
+1. Basic File Renaming
+To rename a file in the same directory:
+
+2. Moving Files Between Directories
+You can use fs.rename() to move files between directories:
+
+3. Batch Renaming Files
+To rename multiple files matching a pattern:
+4. Atomic Rename Operations
+For critical operations, use a temporary file to ensure atomicity:
+---------------------------------------------------------------------
+
+Node.js Path Module
+What is the Path Module?
+The Path module is a built-in Node.js module that provides tools for handling and transforming file paths across different operating systems.
+
+Since Windows uses backslashes (\) and POSIX systems (Linux, macOS) use forward slashes (/), the Path module helps write cross-platform code that works correctly on any system.
+
+Key Benefits:
+
+Cross-platform path handling
+Path manipulation and normalization
+Easy file extension extraction
+Path resolution and joining
+Working with relative and absolute paths
+
+Using the Path Module
+The Path module is a core module in Node.js, so no installation is needed.
+
+You can import it using either CommonJS or ES modules syntax:
+
+Path Module Methods
+path.basename()
+Returns the last portion of a path, similar to the Unix basename command.
+
+__dirname and __filename
+In Node.js, __dirname and __filename are special variables available in CommonJS modules that provide the directory name and file name of the current module.
+
+Best Practices:
+
+Use path.join() or path.resolve() with __dirname to build file paths in CommonJS modules.
+For ES modules, use import.meta.url with fileURLToPath and dirname to get the equivalent functionality.
+When using __dirname with path.join(), you can safely use forward slashes as they'll be normalized to the correct platform separator.
+path.extname()
+Returns the extension of a path, from the last occurrence of the . character to the end of the string.
+path.join()
+Joins all given path segments together using the platform-specific separator as a delimiter, then normalizes the resulting path.
+
+
+Note: path.join() is preferred over string concatenation with + as it handles different path separators across operating systems.
+
+path.resolve()
+Resolves a sequence of paths or path segments into an absolute path, processing from right to left until an absolute path is constructed.
+
+
+ip: path.resolve() is commonly used with __dirname to create absolute paths relative to the current module's location.
+
+path.parse()
+Returns an object whose properties represent significant elements of the path.
+
+Note: The output of path.parse() can be passed to path.format() to reconstruct the path.
+
+path.format()
+Returns a path string from an object, which is the opposite of path.parse().
+
+Note: When using path.format(), if the dir and root properties are provided, root is ignored.
+
+path.normalize()
+Normalizes the given path, resolving .. and . segments and removing redundant separators.
+Security Note: While path.normalize() resolves .. sequences, it doesn't protect against directory traversal attacks. Always validate and sanitize user input when working with file paths.
+
+path.relative()
+Returns the relative path from the first path to the second path, or an empty string if the paths are the same.
+
+Tip: path.relative() is particularly useful when you need to generate relative URLs or create portable paths between different locations in your project.
+
+path.isAbsolute()
+Determines if the given path is an absolute path. An absolute path will always resolve to the same location, regardless of the working directory.
+
+Path Properties
+path.sep
+Provides the platform-specific path segment separator.
+
+This is a read-only property that returns the default path segment separator for the current operating system.
+
+Best Practice: Always use path.sep instead of hardcoding path separators to ensure cross-platform compatibility in your Node.js applications.
+
+path.delimiter
+Provides the platform-specific path delimiter used to separate paths in environment variables like PATH.
+
+
+Note: The path.delimiter is primarily used for working with environment variables like PATH or NODE_PATH that contain multiple paths.
+
+path.win32
+Provides access to Windows-specific path methods, allowing you to work with Windows-style paths regardless of the operating system you're running on.
+
+Common Use Cases and Best Practices
+Working with Module Paths
+Understanding and working with module paths is crucial for building maintainable Node.js applications. Here are some common patterns and best practices for path handling in real-world scenarios.
+
+Key Points:
+
+Use import.meta.url to get the current module's URL
+Convert URL to file path with fileURLToPath() when needed
+For path resolution, use the URL constructor with import.meta.url as the base
+Continue using path.join() and other path methods for cross-platform compatibility
+
+
+Advanced Path Handling Patterns
+Here are some advanced patterns for working with paths in real-world applications.
+
+Security Considerations
+When working with file paths, security should always be a top priority. Here are some important security considerations and best practices:
+
+Security Best Practices:
+
+Always validate and sanitize user-provided paths
+Use path.normalize() to prevent directory traversal
+Implement proper file type validation
+Set appropriate file permissions
+Use the principle of least privilege
+Consider using a security linter like eslint-plugin-security
+
+Cross-Platform Development
+When developing cross-platform applications, it's important to handle path differences between operating systems correctly.
+Cross-Platform Tips:
+
+Always use path.join() instead of string concatenation
+Use path.sep when you need the platform-specific separator
+Handle case sensitivity differences (Windows is case-insensitive)
+Be aware of path length limitations on different platforms
+Test your application on all target platforms
+Summary
+The Node.js Path module is an essential tool for working with file paths in a consistent and platform-independent manner.
+
+It provides a rich set of utilities that help with:
+
+Parsing and formatting file paths
+Normalizing and resolving paths
+Working with relative and absolute paths
+Manipulating path components
+Writing cross-platform code that works on any operating system
+By using the Path module, you can write more robust and portable code that handles file paths correctly across different environments.
+
+
+
+-----------------------------------------------------------------------------
+
+Node.js OS Module
+What is the OS Module?
+The OS module in Node.js provides a powerful set of utilities for interacting with the underlying operating system.
+
+It offers a cross-platform way to access system-related information and perform common operating system tasks.
+Key Features:
+
+Retrieve system information (CPU, memory, platform, etc.)
+Access user and network information
+Work with file paths and directories in a cross-platform way
+Monitor system resources and performance
+Handle operating system signals and errors
+Getting Started with the OS Module
+Importing the Module
+The OS module is a core Node.js module, so no installation is needed.
+
+You can import it using CommonJS or ES modules syntax:
+
+OS Module Reference
+Note: All OS module methods are synchronous and return results immediately.
+
+For performance-critical applications, consider caching the results of methods that might be called frequently, such as os.cpus() or os.networkInterfaces().
+
+System Information
+os.arch()
+Returns the operating system CPU architecture for which the Node.js binary was compiled.
+
+os.platform()
+Returns a string identifying the operating system platform.
+
+os.type()
+Returns the operating system name as returned by uname on POSIX systems, or from the ver command on Windows.
+os.release()
+Returns the operating system release number.
+os.version()
+Returns a string identifying the kernel version. On Windows, this includes build information.
+User and Environment
+os.userInfo()
+Returns information about the currently effective user.
+os.homedir()
+Returns the home directory of the current user.
+os.hostname()
+Returns the hostname of the operating system.
+
+os.tmpdir()
+Returns the operating system's default directory for temporary files.
+System Resources
+os.cpus()
+Returns an array of objects containing information about each logical CPU core.
+
+os.totalmem() and os.freemem()
+Return the total and free system memory in bytes, respectively.
+
+
+os.loadavg()
+Returns an array containing the 1, 5, and 15 minute load averages.
+
+Network Information
+os.networkInterfaces()
+Returns an object containing network interfaces that have been assigned a network address.
+os.uptime()
+Returns the system uptime in seconds.
+
+os.networkInterfaces()
+Returns an object containing information about network interfaces.
+OS Constants and Utilities
+os.constants
+Returns an object containing commonly used operating system specific constants for error codes, process signals, and more.
+
+os.EOL
+Returns the end-of-line marker for the current operating system.
+
+Best Practices
+1. Handle Paths Correctly
+Always use path.join() instead of string concatenation for file paths to ensure cross-platform compatibility.
+Summary
+The Node.js OS module provides a powerful set of tools for interacting with the operating system.
+
+With it, you can:
+
+Retrieve system information such as CPU architecture, platform, and release version
+Monitor memory usage and CPU performance
+Access user information like home directory and username
+Get network interface information
+Determine system uptime
+Use operating system-specific constants and end-of-line markers
+These capabilities are particularly useful for:
+
+Building cross-platform applications that adapt to the host environment
+Monitoring system resources
+Creating diagnostic tools
+Making path and file-related operations that work correctly across different operating systems
+Optimizing application performance based on available system resources
+By using the OS module, you can make your Node.js applications more robust, efficient, and adaptable to different operating environments.
+
+----------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+Node.js URL Module
+
+The Built-in URL Module
+The URL module provides utilities for URL resolution and parsing.
+
+It can be used to split up a web address into readable parts, construct URLs, and handle different URL components.
+
+Getting Started
+To include the URL module, use the require() method.
+
+In modern Node.js (v10.0.0+), you can use either the legacy API or the newer URL class (WHATWG URL API):
+URL Parsing and Formatting
+URL Object Properties
+When you parse a URL, you get a URL object with the following properties:
+
+href: The full URL that was parsed
+protocol: The protocol scheme (e.g., 'http:')
+host: The full host portion (e.g., 'example.com:8080')
+hostname: The hostname portion (e.g., 'example.com')
+port: The port number if specified
+pathname: The path section of the URL
+search: The query string including the leading ?
+query: Either the query string without the ?, or a parsed query object
+hash: The fragment identifier including the #
+Legacy API vs WHATWG URL API
+
+URLSearchParams API
+The URLSearchParams API provides utility methods to work with the query string of a URL:
+Node.js File Server
+Now we know how to parse the query string, and in a previous chapter we learned how to make Node.js behave as a file server.
+
+Let us combine the two, and serve the file requested by the client.
+
+Create two html files and save them in the same folder as your node.js files.
+
+1. Always Validate and Sanitize URLs
+2. Constructing URLs Safely
+3. Handling Query Parameters
+------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------
+Node.js Events
+
+Core Concepts of Events in Node.js
+Every action on a computer is an event, like when a connection is made or a file is opened.
+
+Objects in Node.js can fire events, like the readStream object fires events when opening and closing a file:
+Getting Started with Events in Node.js
+Node.js uses an event-driven architecture where objects called "emitters" emit named events that cause function objects ("listeners") to be called.
+
+EventEmitter Class
+The EventEmitter class is fundamental to Node.js's event-driven architecture.
+
+It provides the ability to create and handle custom events.
+
+Creating an Event Emitter
+To use the EventEmitter, you need to create an instance of it:
+
+The EventEmitter Object
+You can assign event handlers to your own events with the EventEmitter object.
+
+In the example below we have created a function that will be executed when a "scream" event is fired.
+
+To fire an event, use the emit() method.
+Common EventEmitter Patterns
+1. Passing Arguments to Event Handlers
+2. Handling Events Only Once
+3. Error Handling
+
+--------------------------------------------------------------------
+---------------------------------------------------------------------
+Node.js Streams
+What are Streams?
+In Node.js, streams are collections of data, which might not be available in full at once and don't have to fit in memory.
+
+Think of them as conveyor belts that move data from one place to another, allowing you to work with each piece as it arrives rather than waiting for the whole dataset.
+
+Streams are one of Node.js's most powerful features and are used extensively in:
+
+File system operations (reading/writing files)
+HTTP requests and responses
+Data compression and decompression
+Database operations
+Real-time data processing
+Getting Started with Streams
+Streams are one of the fundamental concepts in Node.js for handling data efficiently.
+
+They allow you to process data in chunks as it becomes available, rather than loading everything into memory at once.
+
+Why Use Streams?
+There are several advantages to using streams:
+
+Memory Efficiency: Process large files without loading them entirely into memory
+Time Efficiency: Start processing data as soon as you have it, instead of waiting for all the data
+Composability: Build powerful data pipelines by connecting streams
+Better User Experience: Deliver data to users as it becomes available (e.g., video streaming)
+Imagine reading a 1GB file on a server with 512MB of RAM:
+
+Without streams: You'd crash the process attempting to load the entire file into memory
+With streams: You process the file in small chunks (e.g., 64KB at a time)
+Core Stream Types
+Node.js provides four fundamental types of streams, each serving a specific purpose in data handling:
+
+Stream Type	Description	Common Examples
+Readable	Streams from which data can be read (data source)	fs.createReadStream(), HTTP responses, process.stdin
+Writable	Streams to which data can be written (data destination)	fs.createWriteStream(), HTTP requests, process.stdout
+Duplex	Streams that are both Readable and Writable	TCP sockets, Zlib streams
+Transform	Duplex streams that can modify or transform data as it's written and read	Zlib streams, crypto streams
+Note: All streams in Node.js are instances of EventEmitter, which means they emit events that can be listened to and handled.
+
+REMOVE ADS
+
+Readable Streams
+Readable streams let you read data from a source. Examples include:
+
+Reading from a file
+HTTP responses on the client
+HTTP requests on the server
+process.stdin
+Creating a Readable Stream
+Reading Modes
+Readable streams operate in one of two modes:
+
+Flowing Mode: Data is read from the source and provided to your application as quickly as possible using events
+Paused Mode: You must explicitly call stream.read() to get chunks of data from the stream
+
+Writable Streams
+Writable streams let you write data to a destination. Examples include:
+
+Writing to a file
+HTTP requests on the client
+HTTP responses on the server
+process.stdout
+Creating a Writable Stream
+
+Handling Backpressure
+When writing to a stream, if the data is being written faster than it can be processed, backpressure occurs.
+
+The write() method returns a boolean indicating if it's safe to continue writing.
+
+Pipe
+The pipe() method connects a readable stream to a writable stream, automatically managing the flow of data and handling backpressure.
+
+It's the easiest way to consume streams.
+
+Chaining Pipes
+You can chain multiple streams together using pipe().
+
+This is especially useful when working with transform streams.
+
+Duplex and Transform Streams
+Duplex Streams
+Duplex streams are both readable and writable, like a two-way pipe.
+
+A TCP socket is a good example of a duplex stream.
+Transform Streams
+Transform streams are duplex streams that can modify data as it passes through.
+
+They're ideal for processing data in pipelines.
+
+Stream Events
+All streams are instances of EventEmitter and emit several events:
+
+Readable Stream Events
+data: Emitted when the stream has data available to read
+end: Emitted when there's no more data to be consumed
+error: Emitted if an error occurs while reading
+close: Emitted when the stream's underlying resource has been closed
+readable: Emitted when data is available to be read
+Writable Stream Events
+drain: Emitted when the stream is ready to accept more data after a write() method has returned false
+finish: Emitted when all data has been flushed to the underlying system
+error: Emitted if an error occurs while writing
+close: Emitted when the stream's underlying resource has been closed
+pipe: Emitted when the pipe() method is called on a readable stream
+unpipe: Emitted when the unpipe() method is called on a readable stream
+The stream.pipeline() Method
+The pipeline() function (available since Node.js v10.0.0) is a more robust way to pipe streams together, especially for error handling.
+
+Object Mode Streams
+By default, streams work with strings and Buffer objects.
+
+However, streams can be set to 'object mode' to work with JavaScript objects.
+
+Advanced Stream Patterns
+1. Error Handling with pipeline()
+The pipeline() method is the recommended way to handle errors in stream chains:
+
+2. Object Mode Streams
+Streams can work with JavaScript objects instead of just strings and buffers:
+
+
+
+Best Practices
+Error Handling: Always handle error events on streams to prevent application crashes.
+Use pipeline(): Prefer stream.pipeline() over .pipe() for better error handling and cleanup.
+Handle Backpressure: Respect the return value of write() to avoid memory issues.
+End Streams: Always call end() on writable streams when you're done.
+Avoid Synchronous Operations: Don't block the event loop with synchronous operations inside stream handlers.
+Buffer Size: Be mindful of highWaterMark (buffer size) settings.
+
+
+Summary
+Streams are a fundamental concept in Node.js that allow for efficient data handling. They:
+
+Process data piece by piece without loading everything into memory
+Provide better memory efficiency for large datasets
+Allow processing to start before all data is available
+Enable powerful data processing pipelines
+Are used extensively in core Node.js APIs
+
+
+-----------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------
+Node.js Buffer Module
+
+What is the Buffer Module?
+The Buffer module in Node.js is used to handle binary data.
+
+Buffers are similar to arrays of integers but are fixed-length and correspond to raw memory allocations outside the V8 JavaScript engine.
+
+Node.js provides the Buffer class as a global object, so you don't need to require or import it explicitly.
+
+Note: Since Node.js v6.0.0, the Buffer constructor is deprecated in favor of the new Buffer methods.
+
+Using the constructor could lead to security vulnerabilities due to uninitialized memory.
+
+Getting Started with Buffers
+Buffers in Node.js are used to handle binary data directly.
+
+They are similar to arrays of integers but are fixed in size and represent raw memory allocations outside the V8 heap.
+
+Creating Buffers
+There are several ways to create buffers in Node.js, each with different performance and safety characteristics:
+
+There are several ways to create buffers in Node.js:
+
+1. Buffer.alloc()
+Creates a new Buffer of the specified size, initialized with zeros.
+
+This is the safest way to create a new buffer as it ensures no old data is present.
+
+// Create a buffer of 10 bytes filled with zeros
+const buffer1 = Buffer.alloc(10);
+console.log(buffer1);
+2. Buffer.allocUnsafe()
+Creates a new Buffer of the specified size, but doesn't initialize the memory.
+
+This is faster than Buffer.alloc() but may contain old or sensitive data.
+
+Always fill the buffer before use if security is a concern.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

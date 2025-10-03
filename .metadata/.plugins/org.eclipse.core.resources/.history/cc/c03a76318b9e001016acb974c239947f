@@ -1,0 +1,68 @@
+import java.util.Scanner;
+
+public class ArrayService {
+	
+	public static void acceptData(int [] arr) {
+		
+		 Scanner obj=new Scanner(System.in);
+		 System.out.println("Enter the Number: ");
+		
+		for(int i=0; i<arr.length;i++) {
+			
+			arr[i]=obj.nextInt();
+			
+		}
+		obj.close();
+	}
+	
+	public static void displayData(int arr[]) {
+		System.out.print("{");
+		for(int i=0; i<arr.length;i++) {
+			
+			System.out.print("\t"+arr[i]);
+		}
+		System.out.println("}");
+	}
+	
+	public static void arrayMax(int[] arr ) {
+		
+		int max=arr[0];
+		
+		for(int i=0;i<arr.length;i++) {
+			
+			if(arr[i]>max) {
+				max=arr[i];
+			}
+			
+		}
+		System.out.println("Max Number in Array: "+max);
+		
+	}
+
+public static void arrayMin(int[] arr ) {
+		
+		int min=arr[0];
+		
+		for(int i=0;i<arr.length;i++) {
+			
+			if(arr[i]<min) {
+				min=arr[i];
+			}
+		
+		}
+		System.out.println("Min Number in Array: "+min);
+		
+	}
+public static void additionArray(int[] arr) {
+	
+	
+	int sum=0;
+	for(int i=0;i<arr.length;i++) {
+		sum=sum+arr[i];
+	}
+	
+	System.out.println("Additions Of All element in Array:"+sum);
+	
+	
+}
+}

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jquery Tag Manipulation</title>
+</head>
+<script src="../jquery-3.7.1.min.js">
+</script>
+<script>
+     $(document).ready(function(){
+    console.log("Load the Jquery");
+              
+    alert("Jquery is loaded");
+    $('#out').on('click',
+
+    function(){
+        $('#d1').text("this is meassage");
+
+    })
+   });
+</script>
+
+<body>
+
+    <h1>Assigment No:1</h1>
+    
+    <!-- <h3>
+        Problem Statement: Display italics hello in another <p> tag
+Distplay underline hello in third <p> tag
+    </h3> -->
+       <!-- <p id="out"> this meassage</p> -->
+       <input type="submit" id="out" value="click">
+       <p id="d1"></p>
+    <!-- <script>
+   $(document).ready(
+    function(){
+alert("Jquery is loaded");
+    }
+   );
+</script> -->
+</body>
+
+</html>

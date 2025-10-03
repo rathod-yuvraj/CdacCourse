@@ -1,0 +1,119 @@
+GET, POST, and PUT are different HTTP methods used in Node.js to interact with server resources, each serving distinct purposes:
+
+GET
+Used to retrieve data from the server.
+
+Should not modify any server data; it is safe and idempotent.
+
+Parameters are passed in the URL (path or query string).
+
+Responses typically return requested data (JSON, HTML, etc.).
+
+Can be cached and bookmarked.
+
+Example: Fetching user info or a list of items.
+
+POST
+Used to create new resources or submit data to the server.
+
+Can modify server state or data.
+
+Data is sent in the request body (e.g., JSON payload).
+
+Not idempotent: multiple identical POSTs may create multiple resources.
+
+Cannot be cached or bookmarked easily.
+
+Example: Submitting a form, creating a new user.
+
+PUT
+Used to update existing resources or create them if they don't exist.
+
+Requires sending the full resource representation in the request body.
+
+Idempotent: multiple identical PUT requests result in the same state.
+
+Often used for replacing entire records.
+
+Example: Updating a complete user profile or product data.
+
+Summary Comparison
+Feature	GET	POST	PUT
+Purpose	Retrieve data	Create new resource	Update or create resource
+Request Body	No	Yes	Yes
+Idempotent	Yes	No	Yes
+Caching	Can be cached	Not cached	Usually not cached
+Data in URL	Yes (parameters in URL)	No	No
+Safety	Safe (no changes)	Not safe (can change data)	Not safe (modifies data)
+Use Case Examples	Get user info, fetch posts	Submit form, add new entry	Update entire user profile
+In Node.js Express, these methods map as:
+
+app.get() for GET,
+
+app.post() for POST,
+
+app.put() for PUT.
+
+How the GET Method Works
+Express defines GET routes using app.get(path, callback).
+
+Common usage is to fetch all items (e.g., /items) or a specific item by ID (e.g., /items/:id).
+
+The callback receives two parameters: req (request) and res (response).
+
+Example Code
+js
+app.get('/items', (req, res) => {
+    res.json(items); // Returns a list of items
+});
+
+app.get('/items/:id', (req, res) => {
+    const item = items.find(i => i.id === parseInt(req.params.id));
+    if (!item) return res.status(404).send('Item not found');
+    res.json(item);
+});
+These routes handle requests to return all items or a specific item based on the provided ID.
+
+Key Points
+Use GET for retrieving data only, not modifying it.
+
+Parameters, such as IDs, are passed using route variables (e.g., /users/:id).
+
+The response is typically JSON data or a status message.
+
+The GET method in Node.js is mainly used to retrieve data from a server, such as fetching records, serving HTML pages, or providing API responses. This method is foundational in both the Node.js native HTTP module and popular frameworks like Express.
+
+What the GET Method Does in Node.js
+Requests resources: The GET method allows clients (like browsers or front-end apps) to request specific data or resources from a server using a specified URL.
+
+No request body: According to the HTTP standard, GET requests should never include a request body; parameters are sent via the URL (as path variables or query strings).
+
+Safe and idempotent: GET is safe (should not change server data) and idempotent (multiple identical requests produce the same result), so it's used only for data retrieval, not modification.
+
+Returns data in various formats: A GET request can serve HTML, JSON, plain text, images, or other content as needed.
+
+Handles query parameters: GET endpoints often receive filter, sort, or pagination parameters through the query string, allowing for flexible data retrieval.
+
+Cacheable: GET responses can be cached, making data retrieval faster when possible.
+
+Typical GET Examples in Node.js
+With the Built-in HTTP Module:
+
+js
+const http = require('http');
+http.createServer((req, res) => {
+    if (req.method === 'GET' && req.url === '/hello') {
+        res.writeHead(200, {'Content-Type': 'text/plain'});
+        res.end('Hello from Node.js!');
+    }
+}).listen(3000);
+With Express:
+
+js
+const express = require('express');
+const app = express();
+app.get('/users', (req, res) => {
+    res.json([{id: 1, name: 'Alice'}]); // Serve data in JSON
+});
+app.listen(3000);
+In summary, the GET method in Node.js is for safely and reliably accessing resources, making it a core part of APIs, webpages, and data services

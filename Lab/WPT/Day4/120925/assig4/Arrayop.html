@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Operations</title>
+     <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 500px;
+            margin: auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            font-size: 16px;
+        }
+        .buttons button {
+            margin: 5px 5px 15px 0;
+            padding: 10px 15px;
+            font-size: 14px;
+            cursor: pointer;
+        }
+        .output {
+            margin-top: 20px;
+        }
+        .output p {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Array Manipulation</h2>
+    <input type="number" id="numberInput" placeholder="Enter a number">
+
+    <div class="buttons">
+        <button onclick="addAtEnd()">Add at End</button>
+        <button onclick="addAtStart()">Add at Start</button>
+        <button onclick="deleteFromEnd()">Delete from End</button>
+        <button onclick="deleteFromStart()">Delete from Start</button>
+        <button onclick="displayOdd()">Display Odd Numbers</button>
+        <button onclick="displayEven()">Display Even Numbers</button>
+    </div>
+
+    <div class="output">
+        <p>Current Array: <span id="arrayDisplay">[]</span></p>
+        <p>Result: <span id="resultDisplay">None</span></p>
+    </div>
+</div>
+
+<script>
+    let numbers = [];
+
+    const input = document.getElementById('numberInput');
+    const arrayDisplay = document.getElementById('arrayDisplay');
+    const resultDisplay = document.getElementById('resultDisplay');
+
+    function updateDisplay() {
+        arrayDisplay.textContent = JSON.stringify(numbers);
+    }
+
+    function getInputValue() {
+        const value = parseInt(input.value);
+        if (isNaN(value)) {
+            alert("Please enter a valid number.");
+            return null;
+        }
+        return value;
+    }
+
+    function addAtEnd() {
+        const value = getInputValue();
+        if (value !== null) {
+            numbers.push(value);
+            updateDisplay();
+            resultDisplay.textContent = 'Added at end';
+        }
+    }
+
+    function addAtStart() {
+        const value = getInputValue();
+        if (value !== null) {
+            numbers.unshift(value);
+            updateDisplay();
+            resultDisplay.textContent = 'Added at start';
+        }
+    }
+
+    function deleteFromEnd() {
+        if (numbers.length > 0) {
+            const removed = numbers.pop();
+            updateDisplay();
+            resultDisplay.textContent = `Removed from end: ${removed}`;
+        } else {
+            resultDisplay.textContent = 'Array is empty.';
+        }
+    }
+
+    function deleteFromStart() {
+        if (numbers.length > 0) {
+            const removed = numbers.shift();
+            updateDisplay();
+            resultDisplay.textContent = `Removed from start: ${removed}`;
+        } else {
+            resultDisplay.textContent = 'Array is empty.';
+        }
+    }
+
+    function displayOdd() {
+        const odd = numbers.filter(n => n % 2 !== 0);
+        resultDisplay.textContent = `Odd Numbers: ${JSON.stringify(odd)}`;
+    }
+
+    function displayEven() {
+        const even = numbers.filter(n => n % 2 === 0);
+        resultDisplay.textContent = `Even Numbers: ${JSON.stringify(even)}`;
+    }
+</script>
+
+</body>
+</html>

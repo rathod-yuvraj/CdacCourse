@@ -1,0 +1,31 @@
+package Assgin3;
+import java.util.*;
+public class Teast2dArray {
+	
+	public static void main(String[] args) {
+		
+		Scanner obj=new Scanner(System.in);
+		
+		int c=0;
+		System.out.println("Enter the Choice: ");
+		c=obj.nextInt();
+		
+		do {
+			System.out.println("1. Accept data");
+			
+			switch(c) {
+			case 1:
+				System.out.println("Enter the 1 choice");
+				break;
+			}
+		}
+			while(c!=3);
+			
+		
+		
+		
+
+		
+	}
+
+}
