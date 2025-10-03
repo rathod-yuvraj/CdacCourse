@@ -1,4 +1,5 @@
 import React, { useCallback, useEffect, useState } from 'react';
+import './password.css'
 
 function PasswordGenerator() {
 
@@ -41,7 +42,11 @@ function PasswordGenerator() {
   };
 
   return (
+    
     <div className="password-generator">
+      <div className='password'>
+
+      
       <h1>Random Password Generator</h1>
       <div>
         <label>Password Length:</label>
@@ -79,6 +84,7 @@ function PasswordGenerator() {
         <input type="text" value={password} readOnly />
         <button onClick={copyToClipboard}>Copy</button>
       </div>
+    </div>
     </div>
   );
 }
