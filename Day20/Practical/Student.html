@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Data Processor</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f0f2f5;
+        }
+        .container {
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 25px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #333;
+        }
+        input[type="text"], input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        button {
+            background-color: #28a745;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #1e7e34;
+        }
+        #displayArea {
+            margin-top: 25px;
+            padding: 20px;
+            border: 1px solid #007bff;
+            border-radius: 5px;
+            background-color: #e9f7ff;
+        }
+        #displayArea h2 {
+            margin-top: 0;
+            color: #007bff;
+        }
+        #displayArea p {
+            font-size: 1.1em;
+            margin: 5px 0;
+        }
+        .initial-data {
+            color: gray;
+            font-style: italic;
+            font-size: 0.9em;
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Student Information Form 📝</h1>
+
+        <p class="initial-data">
+            **Initial Object:** `stud = { firstName: "John", lastName: "", marks: 48 }`
+        </p>
+
+        <label for="firstName">First Name:</label>
+        <input type="text" id="inputFirstName" required>
+        
+        <label for="lastName">Last Name:</label>
+        <input type="text" id="inputLastName" required>
+        
+        <label for="marks">Marks:</label>
+        <input type="number" id="inputMarks" min="0" max="100" required>
+        
+        <button onclick="updateAndDisplayStudentData()">Update Student Record</button>
+        
+        <div id="displayArea">
+            <h2>Current Student Data:</h2>
+            <p id="dispFirstName">First Name: N/A</p>
+            <p id="dispLastName">Last Name: N/A</p>
+            <p id="dispMarks">Marks: N/A</p>
+        </div>
+    </div>
+
+    <script>
+        // 1. The Student Object
+        const stud = {
+             firstName: "John",
+             lastName: "", // Corrected typo from 'lastname' to 'lastName' for consistency
+             marks : 48
+        };
+
+        // Function to run when the page loads to display the initial data
+        window.onload = function() {
+            displayStudentData();
+        };
+
+        // Function to handle the button click
+        function updateAndDisplayStudentData() {
+            // Get data from input fields
+            const newFirstName = document.getElementById('inputFirstName').value.trim();
+            const newLastName = document.getElementById('inputLastName').value.trim();
+            // Convert marks to a number using parseFloat()
+            const newMarks = parseFloat(document.getElementById('inputMarks').value.trim());
+
+            // Simple validation
+            if (!newFirstName || !newLastName || isNaN(newMarks)) {
+                alert("Please enter valid data in all fields (Marks must be a number).");
+                return;
+            }
+
+            // 2. Add/Update data in the Student Object
+            stud.firstName = newFirstName;
+            stud.lastName = newLastName;
+            stud.marks = newMarks;
+
+            // Optional: Console log the updated object
+            console.log("Updated Student Object:", stud);
+
+            // 3. Display the updated data on the page
+            displayStudentData();
+
+            // Clear the input fields for the next entry (optional)
+            document.getElementById('inputFirstName').value = '';
+            document.getElementById('inputLastName').value = '';
+            document.getElementById('inputMarks').value = '';
+        }
+
+        // Function to update the display section from the 'stud' object
+        function displayStudentData() {
+            document.getElementById('dispFirstName').innerText = `First Name: ${stud.firstName}`;
+            document.getElementById('dispLastName').innerText = `Last Name: ${stud.lastName}`;
+            document.getElementById('dispMarks').innerText = `Marks: ${stud.marks}`;
+        }
+    </script>
+</body>
+</html>
