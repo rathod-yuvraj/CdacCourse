@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Employee Data Entry</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    padding: 30px;
+    background: #f7f7f7;
+  }
+  .container {
+    max-width: 600px;
+    margin: auto;
+    background: white;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  }
+  h2 {
+    text-align: center;
+    margin-bottom: 25px;
+  }
+  form > div {
+    margin-bottom: 15px;
+  }
+  label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 6px;
+  }
+  input[type="text"],
+  input[type="email"],
+  input[type="date"] {
+    width: 100%;
+    padding: 8px 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  input[type="submit"] {
+    padding: 10px 18px;
+    font-size: 16px;
+    background: #007bff;
+    border: none;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  input[type="submit"]:hover {
+    background: #0056b3;
+  }
+  .error {
+    color: #d93025;
+    margin-top: 5px;
+    font-size: 14px;
+  }
+  table {
+    width: 100%;
+    margin-top: 30px;
+    border-collapse: collapse;
+  }
+  th, td {
+    border: 1px solid #aaa;
+    padding: 10px;
+    text-align: left;
+  }
+  th {
+    background: #007bff;
+    color: white;
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <h2>Employee Data Entry</h2>
+  
+  <form id="employeeForm" novalidate>
+    <div>
+      <label for="firstName">First Name</label>
+      <input type="text" id="firstName" name="firstName" />
+      <div class="error" id="firstNameError"></div>
+    </div>
+
+    <div>
+      <label for="lastName">Last Name</label>
+      <input type="text" id="lastName" name="lastName" />
+      <div class="error" id="lastNameError"></div>
+    </div>
+
+    <div>
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" />
+      <div class="error" id="emailError"></div>
+    </div>
+
+    <div>
+      <label for="dob">Date of Birth</label>
+      <input type="date" id="dob" name="dob" />
+      <div class="error" id="dobError"></div>
+    </div>
+
+    <input type="submit" value="Submit" />
+  </form>
+
+  <table id="employeeTable" style="display:none;">
+    <thead>
+      <tr>
+        <th>First Name</th><th>Last Name</th><th>Email</th><th>Date of Birth</th>
+      </tr>
+    </thead>
+    <tbody id="tableBody">
+      <!-- rows get added here -->
+    </tbody>
+  </table>
+</div>
+
+<script>
+  const form = document.getElementById('employeeForm');
+
+  // Error elements
+  const errors = {
+    firstName: document.getElementById('firstNameError'),
+    lastName: document.getElementById('lastNameError'),
+    email: document.getElementById('emailError'),
+    dob: document.getElementById('dobError'),
+  };
+
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    // Clear previous errors
+    Object.values(errors).forEach(err => err.textContent = '');
+
+    // Get values
+    const firstName = form.firstName.value.trim();
+    const lastName = form.lastName.value.trim();
+    const email = form.email.value.trim();
+    const dob = form.dob.value;
+
+    let valid = true;
+
+    // Validate fields
+    if (!firstName) {
+      errors.firstName.textContent = "First Name is required.";
+      valid = false;
+    }
+    if (!lastName) {
+      errors.lastName.textContent = "Last Name is required.";
+      valid = false;
+    }
+    if (!email) {
+      errors.email.textContent = "Email is required.";
+      valid = false;
+    } else if (!validateEmail(email)) {
+      errors.email.textContent = "Invalid email format.";
+      valid = false;
+    }
+    if (!dob) {
+      errors.dob.textContent = "Date of Birth is required.";
+      valid = false;
+    }
+
+    if (!valid) return;
+
+    // Add data to table
+    addToTable({firstName, lastName, email, dob});
+
+    // Reset form
+    form.reset();
+  });
+
+  function validateEmail(email) {
+    // Simple email regex
+    return /^\S+@\S+\.\S+$/.test(email);
+  }
+
+  function addToTable(data) {
+    const table = document.getElementById('employeeTable');
+    const tbody = document.getElementById('tableBody');
+
+    // Show table if hidden
+    if (table.style.display === 'none') {
+      table.style.display = 'table';
+    }
+
+    // Create row
+    const tr = document.createElement('tr');
+    tr.innerHTML = `
+      <td>${escapeHtml(data.firstName)}</td>
+      <td>${escapeHtml(data.lastName)}</td>
+      <td>${escapeHtml(data.email)}</td>
+      <td>${escapeHtml(data.dob)}</td>
+    `;
+    tbody.appendChild(tr);
+  }
+
+  // To prevent XSS attacks if user inputs HTML-like strings
+  function escapeHtml(text) {
+    const div = document.createElement('div');
+    div.textContent = text;
+    return div.innerHTML;
+  }
+</script>
+
+</body>
+</html>

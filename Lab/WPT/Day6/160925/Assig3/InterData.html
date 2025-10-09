@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .wrapper{
+            
+            text-align: center;
+            border: 2px solid red;
+
+        }
+        .wrapper label{
+              margin-bottom: 10px;
+            padding: 5px;
+            border-radius: 10px;
+
+        }
+        .wrapper input{
+              margin-bottom: 10px;
+            padding: 5px;
+            border-radius: 10px;
+        }
+        .wrapper button{
+            margin-bottom: 10px;
+            padding: 5px;
+            border-radius: 10px;
+        }
+       
+        
+        
+       
+    </style>
+</head>
+<body>
+    <h1>Assignment 3</h1>
+    <p> accept data from user using input fields 
+      firstName LastName age 
+	  
+	  store data in Object format in function 
+	  and convert into JSON format 
+	  
+	  and display data in table format from JSON format data </p>
+      <div class="wrapper">
+
+        <label for="FirstName">Enter First Name:</label>
+        <input type="text" id="FirstName" required><br>
+        <label for="LastName">Enter the Last Name:</label>
+        <input type="text" id="LastName" required><br>
+        <label for="age">Enter The Age:</label>
+        <input type="text" id="age"><br>
+        <button>Add</button>
+      </div>
+      <div class="tablecontainer">
+        <table id="data">
+    <thead>
+        <tr>
+            <th>Frist Name</th>
+            <th>Last Name</th>
+            <th>Age</th>
+        </tr>
+    </thead>
+    <tbody>
+
+    </tbody>
+
+ </table>
+
+      </div>
+ 
+<script>
+    function addData(){
+        let firstname=document.getElementById("fristName");
+        let lastName=document.getElementById("lastName");
+        let getAge=document.getElementById("age");
+
+        const getuserdata={
+            firstname:firstname,
+            lastName:lastName,
+            aget:age
+
+
+        }
+        const JSONuser=JSON.stringify(getuserdata)
+
+    }
+</script>
+    
+</body>
+</html>

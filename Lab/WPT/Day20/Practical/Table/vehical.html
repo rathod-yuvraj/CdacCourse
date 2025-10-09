@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <form action="">
+            <input type="text" placeholder="Enter the Name" id="fname" required> <br><br>
+            <input type="text" placeholder="Enter the City" id="fcity" required> <br><br>
+            <input type="number" placeholder="Enter the age" id="fage" required> <br><br>
+           <button type="button">submit</button>
+        </form>
+        <table id="tableBody">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>city</th>
+                    <th>age</th>
+                </tr>
+            </thead>
+            <tbody>
+        
+
+            </tbody>
+        </table>
+    </div>
+
+
+    <script>
+       function displayData(event){
+    event.preventDefault(); 
+
+    const fname = document.getElementById("name").value.trim();
+    const lname = document.getElementById("last").value.trim();
+    const m = document.getElementById("mark").value.trim();
+
+    if (fname === "" || lname === "" || m === "") {
+        alert("Please fill all fields.");
+        return;
+    }
+
+    const tableBody = document.getElementById("tabledata");
+
+   
+    const newRow = document.createElement("tr");
+
+  
+    const cell1 = document.createElement("td");
+    cell1.textContent = fname;
+    newRow.appendChild(cell1);
+
+    const cell2 = document.createElement("td");
+    cell2.textContent = lname;
+    newRow.appendChild(cell2);
+
+    const cell3 = document.createElement("td");
+    cell3.textContent = m;
+    newRow.appendChild(cell3);
+
+   
+    const cell4 = document.createElement("td");
+    
+    newRow.appendChild(cell4);
+
+   
+    tableBody.appendChild(newRow);
+       }
+
+       
+    </script>
+
+    </body>
+</html>

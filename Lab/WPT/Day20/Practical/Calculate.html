@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculate</title>
+    <style>
+        /* Optional basic styling for better layout */
+        .container {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <h1>Calculate</h1>
+    <div class="container">
+
+        <div class="inpt">
+            <h1 id="h">Display Number</h1>
+            
+            <label for="num"> Enter the only numbers</label>
+            <input type="number" id="num" required> <br><br>
+            
+            
+            <button onclick="displayAndAddToTable()">Display & Add</button>
+            
+
+        </div>
+
+        <hr>
+
+        <h2>Entered Numbers</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Number</th>
+                </tr>
+            </thead>
+            <tbody id="tablebody">
+                </tbody>
+        </table>
+
+    </div>
+    
+    <script>
+        
+        let enteredNumbers = [];
+        
+        function displayAndAddToTable(){
+           
+            let numb = document.getElementById("num").value;
+
+            
+            if (numb === "") {
+                alert("Please enter a number.");
+                return; 
+            }
+
+            
+            let numberValue = parseFloat(numb);
+            
+          
+            enteredNumbers.push(numberValue);
+
+            
+            document.getElementById("h").innerHTML = "Last Entered: " + numberValue;
+            
+           
+            const tableBody = document.getElementById("tablebody");
+            
+          
+            const newRow = tableBody.insertRow();
+            
+           
+            const newCell = newRow.insertCell();
+            newCell.textContent = numberValue;
+            
+          
+            document.getElementById("num").value = "";
+
+           
+        }
+
+    </script>
+</body>
+</html>

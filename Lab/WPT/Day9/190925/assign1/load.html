@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Load the data</title>
+</head>
+
+<script src="./jquery-3.7.1.min.js"></script>
+<body>
+    <div class="container">
+        <h1>Assignment No 1</h1>
+        <p></p>
+
+        <button id="btn">Submit</button>
+        <div id="areacontain">
+
+        </div>
+    </div>
+    
+</body>
+<script>
+ $(document).ready(() => {
+            $('#btn').click(() => {
+                $.get("https://jsonplaceholder.typicode.com/posts", function(data, status) {
+                    if (status === "success") {
+                        let html = "<ul>";
+                        data.slice(0, 10).forEach(post => {
+                            html += `<li><strong>${post.title}</strong><br>${post.body}</li>`;
+                        });
+                        html += "</ul>";
+                        $("#areacontain").html(html);
+                        console.log("External content loaded successfully!!");
+                    } else {
+                        $("#areacontain").html("<p>Failed to load data.</p>");
+                        console.log("Data not loaded.");
+                    }
+                });
+            });
+        });
+</script>
+</html>

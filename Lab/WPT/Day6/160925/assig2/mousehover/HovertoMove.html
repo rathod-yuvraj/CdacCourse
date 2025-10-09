@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Hover to Move Divs</title>
+  <style>
+    .d1, .d2 {
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      position: absolute;
+      top: 0;
+      transition: all 0.5s ease;
+      cursor: pointer;
+    }
+
+    .d1 {
+      background-color: blue;
+      left: 0;
+    }
+
+    .d2 {
+      background-color: red;
+      right: 0;
+    }
+
+    .wrapper {
+      position: relative;
+      width: 100%;
+      height: 800px;
+      overflow: hidden;
+    }
+
+    .d1:hover {
+      background-color: green;
+    }
+
+    .d2:hover {
+      background-color: yellow;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <div class="d1"></div>
+    <div class="d2"></div>
+    <div class="d1"></div>
+    <div class="d2"></div>
+  </div>
+
+  <script>
+    function moveToRandomPosition(elem, isRightToLeft = false) {
+      const maxX = window.innerWidth - 60; // Account for div size
+      const maxY = window.innerHeight - 60;
+
+      const randomX = Math.floor(Math.random() * maxX);
+      const randomY = Math.floor(Math.random() * maxY);
+
+      elem.style.top = randomY + "px";
+
+      if (isRightToLeft) {
+        elem.style.right = (window.innerWidth - randomX - 50) + "px";
+        elem.style.left = 'auto'; // Reset left if previously set
+      } else {
+        elem.style.left = randomX + "px";
+        elem.style.right = 'auto'; // Reset right if previously set
+      }
+    }
+
+    document.querySelectorAll(".d1").forEach(elem => {
+      elem.addEventListener("mouseenter", () => moveToRandomPosition(elem, false));
+    });
+
+    document.querySelectorAll(".d2").forEach(elem => {
+      elem.addEventListener("mouseenter", () => moveToRandomPosition(elem, true));
+    });
+  </script>
+</body>
+</html>

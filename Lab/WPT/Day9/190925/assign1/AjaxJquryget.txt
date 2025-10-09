@@ -1,0 +1,54 @@
+What is $.get()?
+
+$.get() is a jQuery AJAX method for making HTTP GET requests to fetch data from the server.
+
+It’s more flexible than .load() because you get the raw data in a callback function and can process it however you want.
+
+You usually use it when you want to get data (like JSON, XML, or plain text) and then handle it manually in JavaScript.
+
+Syntax of $.get()
+$.get(url, data, successCallback, dataType);
+
+
+url — The URL to request.
+
+data — (Optional) Data to send as query parameters.
+
+successCallback — Function executed if the request succeeds.
+
+dataType — (Optional) Expected format of the response (e.g., "json", "html", "text").
+
+Example: Using $.get() to fetch data and display it
+<button id="getDataBtn">Get Data</button>
+<div id="result"></div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+  $("#getDataBtn").click(function() {
+    $.get("data.txt", function(response) {
+      // Insert the received data into the #result div
+      $("#result").text(response);
+    });
+  });
+</script>
+
+
+If data.txt contains:
+
+Hello, this data was loaded via $.get()
+
+
+When you click the button, the content will be loaded and displayed inside the <div>.
+
+How is $.get() different from .load()?
+Feature	.load()	$.get()
+What it does	Loads HTML from a URL and inserts it into selected element	Fetches data from a URL and runs a callback function
+Usage simplicity	Very simple for loading HTML fragments	More flexible, you handle the response yourself
+Typical use case	Quickly replace part of the page with HTML content	Fetch JSON, text, or other data formats and process manually
+Inserts content	Yes, automatically inserts fetched HTML into element	No, you must manually insert or use the data in the callback
+Can specify data sent	No direct option for sending data	Yes, can send query parameters
+Summary
+
+Use .load() if you want to quickly fetch HTML content and insert it directly into the page.
+
+Use $.get() if you want to fetch data (HTML, JSON, text, etc.) and handle it yourself in JavaScript.

@@ -1,0 +1,121 @@
+1. Basic Conceptual Questions
+
+Understand the core idea behind AJAX.
+
+What exactly is AJAX and why do we use it?
+
+How does AJAX improve user experience on a website?
+
+How is AJAX different from a regular HTTP request?
+
+What are the main components involved in an AJAX call?
+
+2. Technical Details & Syntax
+
+Clarify how to write AJAX code.
+
+What are the common ways to make an AJAX request in JavaScript? (e.g., XMLHttpRequest, fetch(), jQuery AJAX)
+
+What are the key parameters/settings in an AJAX request? (URL, method, data, headers, etc.)
+
+How do I send data to the server using AJAX?
+
+How do I handle the response from the server?
+
+3. Asynchronous Nature & Callbacks
+
+Get comfortable with async programming.
+
+What does "asynchronous" mean in AJAX calls?
+
+How do callbacks work in AJAX?
+
+What problems can occur with nested callbacks (callback hell), and how can they be avoided?
+
+How can Promises or async/await be used with AJAX?
+
+4. HTTP Methods and Status Codes
+
+Understand how AJAX interacts with server.
+
+What HTTP methods are commonly used with AJAX (GET, POST, PUT, DELETE)?
+
+When should I use each method in AJAX requests?
+
+How can I handle different HTTP status codes in AJAX (like 200, 404, 500)?
+
+How do I check if an AJAX request was successful or failed?
+
+5. Data Formats & Parsing
+
+Know about data exchange formats.
+
+What data formats are commonly used with AJAX? (JSON, XML, HTML, plain text)
+
+How do I parse JSON or XML responses in JavaScript?
+
+How can I send JSON data from client to server via AJAX?
+
+6. Cross-Origin Requests & Security
+
+Cover advanced but crucial topics.
+
+What is the Same-Origin Policy and how does it affect AJAX?
+
+What is CORS (Cross-Origin Resource Sharing) and how do I handle it?
+
+How can I secure AJAX requests and protect against common vulnerabilities?
+
+Are there any performance implications of AJAX I should be aware of?
+
+7. Error Handling & Debugging
+
+Learn to write robust code.
+
+How do I detect and handle errors in AJAX calls?
+
+What’s the best way to provide user feedback when AJAX requests fail or take time?
+
+How do I debug AJAX calls using browser developer tools?
+
+8. Practical Use Cases & Integration
+
+See AJAX in real projects.
+
+Can you show me examples of AJAX used with different server-side languages? (e.g., PHP, Node.js)
+
+How do I update parts of a webpage dynamically with AJAX without reloading?
+
+How is AJAX used in REST APIs?
+
+How can I combine AJAX with frameworks like jQuery or React?
+
+9. Modern Alternatives & Trends
+
+Keep learning current best practices.
+
+Is AJAX still widely used, or are there better alternatives today?
+
+How does the fetch() API compare to traditional AJAX methods?
+
+How does AJAX fit into single-page applications (SPA)?
+
+Can you explain how AJAX relates to technologies like WebSockets or GraphQL?
+
+10. Best Practices & Optimization
+
+Improve code quality and performance.
+
+What are some common mistakes to avoid when working with AJAX?
+
+How do I optimize AJAX requests to reduce server load and latency?
+
+How can I cache AJAX responses effectively?
+
+How do I manage multiple simultaneous AJAX requests?
+
+Bonus: Personalized Learning
+
+Could you recommend resources, tutorials, or projects to practice AJAX?
+
+Can we go over a project where I build a small app using AJAX step-by-step?

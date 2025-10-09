@@ -1,0 +1,91 @@
+"What types of questions should a student ask a teacher while learning .get() and .load() in jQuery?"
+
+That's a great approach — asking good questions is key to learning deeply.
+
+✅ 1. Conceptual Questions (To Understand the Idea)
+
+Ask your teacher:
+
+What is the difference between $.get() and .load()?
+
+When should I use .load() instead of $.get()?
+
+Is .load() only for HTML? Can it load JSON too?
+
+Does $.get() work with APIs that return JSON?
+
+Are these methods still used in modern development, or is fetch() better?
+
+✅ 2. Syntax & Usage Questions (To Learn How to Use It)
+
+Ask your teacher:
+
+Can you explain the syntax of $.get() and how the parameters work?
+
+How do I pass data (like id=5) using $.get()?
+
+How can I load only part of an HTML file using .load()?
+
+How do I write a callback function inside .load() or $.get()?
+
+✅ 3. Debugging & Error Handling Questions (To Handle Problems)
+
+Ask your teacher:
+
+What should I do if .load() doesn’t show anything?
+
+How can I know if $.get() failed?
+
+How do I debug when data is not loading with $.get()?
+
+What is the best way to show an error message if loading fails?
+
+✅ 4. Real-World Application Questions (To Understand Use Cases)
+
+Ask your teacher:
+
+Can you give an example where .load() is used in a real project?
+
+How is $.get() used to connect with a real API?
+
+Can we use these methods in a login form or a search box?
+
+Is it okay to use .load() for dynamic tabs or modals?
+
+✅ 5. Comparison and Modern Alternatives (To Learn Best Practices)
+
+Ask your teacher:
+
+How does $.get() compare to fetch() or axios?
+
+Is .load() similar to innerHTML in JavaScript?
+
+Are there security risks with .load() like XSS (Cross-Site Scripting)?
+
+✅ 6. Hands-On Learning Questions (To Practice Better)
+
+Ask your teacher:
+
+Can we do a mini-project using .get() and .load()?
+
+Can I get a small exercise where I use $.get() to display user data?
+
+Can we build a simple tabbed UI using .load()?
+
+How can I test these methods on my local computer without a server?
+
+🧠 Bonus: What to Say If You’re Confused
+
+If you're stuck, don't be afraid to ask things like:
+
+“I’m confused about the callback function in .load(). Can you explain it again?”
+
+“I tried using $.get() but nothing shows up. Can we check what I did wrong?”
+
+“Can you slow down and explain how the data is passed in $.get()?”
+
+💡 Final Tip:
+
+Your teacher wants to help you — asking specific questions shows you are engaged and eager to learn.
+
+Would you like a sample question sheet you can bring to your next class?
