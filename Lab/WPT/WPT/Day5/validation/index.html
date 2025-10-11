@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validations </title>
+</head>
+<body>
+    <!-- Perform the form validations as shown in Lecture
+  for name and age 
+   and display error message if it not valid  -->
+    <form action="#" onsubmit="return validateForm()">
+     Name: <input type="text" id="name" name="name"><br><br>
+     Age: <input type="text" id="age" name="age"><br><br>
+     <input type="submit" value="Submit">
+    </form>
+    <p id="error-message" style="color:red;"></p>
+    <script>
+        function validateForm() {
+            const name = document.getElementById('name').value;
+            const age = document.getElementById('age').value;
+            let errorMessage = '';
+
+            // Validate name (only letters and spaces)
+            const namePattern = /^[A-Za-z\s]+$/;
+            if (!namePattern.test(name)) {
+                errorMessage += 'Name must contain only letters and spaces.<br>';
+            }
+
+            // Validate age (number between 1 and 120)
+            const ageNumber = parseInt(age, 10);
+            if (isNaN(ageNumber) || ageNumber < 1 || ageNumber > 120) {
+                errorMessage += 'Age must be a number between 1 and 120.<br>';
+            }
+
+            // Display error message or submit form
+            const errorElement = document.getElementById('error-message');
+            if (errorMessage) {
+                errorElement.innerHTML = errorMessage;
+                return false; // Prevent form submission
+            } else {
+                errorElement.innerHTML = '';
+                alert('Form submitted successfully!');
+                return true; // Allow form submission
+            }
+        }
+    </script>
+    
+</body>
+</html>
