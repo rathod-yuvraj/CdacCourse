@@ -116,7 +116,11 @@
                 '<button onclick="deleteData(this)">Delete</button>';
 
             // Clear input fields
+<<<<<<< HEAD
+            clearInputs();
+=======
             // clearInputs();
+>>>>>>> ba584d70e23d9f6944e87aaadfc44d20127048f1
         }
 
         function editData(button) {
@@ -157,6 +161,17 @@
 
             // Get the parent row of the clicked button
             let row = button.parentNode.parentNode;
+<<<<<<< HEAD
+//current row 
+            // Remove the row from the table
+            row.parentNode.removeChild(row);
+        }
+		
+		
+		
+		
+		
+=======
             //current row 
             // Remove the row from the table
             row.parentNode.removeChild(row);
@@ -166,6 +181,7 @@
 
 
 
+>>>>>>> ba584d70e23d9f6944e87aaadfc44d20127048f1
 
         function clearInputs() {
 

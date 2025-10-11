@@ -2,6 +2,7 @@ function display() {
    
     var data = new XMLHttpRequest();
     
+
     
     data.open("GET", "data.txt", true);
     
@@ -12,6 +13,7 @@ function display() {
             document.getElementById("it").innerText = data.responseText;
         } else {
            
+
             document.getElementById("it").innerText = "Error loading file.";
         }
     };
