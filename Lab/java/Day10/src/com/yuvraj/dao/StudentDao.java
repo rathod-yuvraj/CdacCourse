@@ -1,5 +1,6 @@
 package com.yuvraj.dao;
 
+import java.util.List;
 import java.util.Set;
 
 import com.yuvraj.beans.Student;
@@ -16,8 +17,13 @@ public interface StudentDao {
 
 	Set<Student> findByName(String nm);
 
-	boolean removeByMark(int mark);
+	Set<Student> findByMark(int mk);
 
-	boolean removeById(int id);
+	List<Student> sortByName();
+
+
+//	boolean removeByMark(int mark);
+//
+//	boolean removeById(int id);
 
 }

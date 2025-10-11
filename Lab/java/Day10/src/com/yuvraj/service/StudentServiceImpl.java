@@ -1,5 +1,6 @@
 package com.yuvraj.service;
 
+import java.util.List;
 import java.util.Scanner;
 import java.util.Set;
 
@@ -40,5 +41,35 @@ public class StudentServiceImpl implements StudentService {
 	  	
 	  	return edao.findAll();
 	  }
+
+
+	@Override
+	public Student searchById(int id) {
+		
+		return edao.findById(id);
+	}
+
+
+	@Override
+	public Set <Student> searchByName(String nm) {
+		
+		return  edao.findByName(nm);
+	}
+
+
+	@Override
+	public Set<Student> searchByMark(int mk) {
+		
+		return edao.findByMark(mk);
+	}
+
+
+	@Override
+	public List<Student> sortByName() {
+		
+		return edao.sortByName();
+	}
+
+
 
 }

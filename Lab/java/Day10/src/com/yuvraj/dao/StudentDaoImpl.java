@@ -18,10 +18,10 @@ public class StudentDaoImpl implements StudentDao{
 		eset=new HashSet<>();
 		
 		eset.add(new Student(101,"yuvraj",99));
-		eset.add(new Student(102,"yuvraj",99));
-		eset.add(new Student(103,"yuvraj",99));
-		eset.add(new Student(104,"yuvraj",99));
-		eset.add(new Student(105,"yuvraj",99));
+		eset.add(new Student(102,"raju",94));
+		eset.add(new Student(103,"raj",49));
+		eset.add(new Student(104,"sairaj",20));
+		eset.add(new Student(105,"sai",56));
 	}
 	
 	
@@ -37,35 +37,52 @@ public class StudentDaoImpl implements StudentDao{
 			
 			return eset;
 		}
-//		@Override
-//		public Student findById(int id) {
-//			for(Student e : eset) {
-//				if(e.getEmpid()==id) {
-//					return e;
-//				}
-//			}
+		@Override
+		public Student findById(int id) {
+			for(Student e : eset) {
+				if(e.getSid()==id) {
+					return e;
+				}
+			}
 			
-//		Optional<Student> ob= eset.stream().filter(e->e.getid()==id).findFirst();
-//		 if(ob.isPresent()) {
-//			 return ob.get();
-//			 }
-//		return null;
-//		}
-//		@Override
-//		public Set<Student> findByName(String nm) {
-////		   Set<Student> es = new HashSet<>();
-////		   for(Student e : eset) {
-////			   if(e.getEname().equals(nm)) {
-////				   es.add(e);
-////			   }
-////		   }
-//			Set<Student> es = eset.stream().filter(e->e.getname().equals(nm)).collect(Collectors.toSet());
-//		    
-//			if(es.size()>0) {
-//			   return es;
-//		   }
-//			return null;
-//		}
+		Optional<Student> ob= eset.stream().filter(e->e.getSid()==id).findFirst();
+		 if(ob.isPresent()) {
+		 return ob.get();
+			 }
+		return null;
+		}
+		@Override
+		public Set<Student> findByName(String nm) {
+		   Set<Student> es = new HashSet<>();
+		   for(Student e : eset) {
+			   if(e.getSname().equals(nm)) {
+				   es.add(e);
+			   }
+		   }
+//			Set<Student> es = eset.stream().filter(e->e.getSname().equals(nm)).collect(Collectors.toSet());
+		    
+			if(es.size()>0) {
+			   return es;
+		   }
+			return null;
+		}
+		@Override
+		public Set<Student> findByMark(int mk) {
+		    Set<Student> es = new HashSet<>();
+		    for (Student s : eset) {
+		        if (s.getM1() < mk) {
+		            es.add(s);
+		        }
+		    }
+		    return es.isEmpty() ? null : es;
+		}
+
+
+		
+		
+		
+		
+		
 //		@Override
 //		public boolean removeBySal(double sal) {
 //		// TODO Auto-generated method stub
@@ -89,8 +106,9 @@ public class StudentDaoImpl implements StudentDao{
 //			return false;
 //		}
 //		
+	
 //		@Override
-//		public Set<Student> sortById() {
+//		public Set<Student> sortByRoll() {
 //			Set<Student> tset=new TreeSet<>();
 //			for(Student e:eset) {
 //				tset.add(e);
@@ -98,21 +116,21 @@ public class StudentDaoImpl implements StudentDao{
 //			return tset;
 //			
 //		}
-//		@Override
-//		public List<Student> sortByName() {
-//			Comparator<Student> c=(o1,o2)->{
-//				System.out.println("in name comparator "+o1.getEname()+"-----"+o2.getEname());
-//				return o1.getEname().compareTo(o2.getEname());
-//			};
-//			//duplicate names will not be considered
-//			//Set<Student> tset=new TreeSet<>(c);
-//			List<Student> elist=new ArrayList<>();
-//			for(Student e:eset) {
-//				elist.add(e);
-//			}
-//			elist.sort(c);
-//			return elist;
-//		}
+		@Override
+		public List<Student> sortByName() {
+			Comparator<Student> c=(o1,o2)->{
+				System.out.println("in name comparator "+o1.getSname()+"-----"+o2.getSname());
+				return o1.getSname().compareTo(o2.getSname());
+			};
+			//duplicate names will not be considered
+			//Set<Student> tset=new TreeSet<>(c);
+			List<Student> elist=new ArrayList<>();
+			for(Student e:eset) {
+				elist.add(e);
+			}
+			elist.sort(c);
+			return elist;
+		}
 //		@Override
 //		public List<Student> sortBySal() {
 //			Comparator<Student> csal=(o1,o2)->{
@@ -127,29 +145,13 @@ public class StudentDaoImpl implements StudentDao{
 //			return elist;
 //			
 //		}
-//	
-//	    
-//	    
+//		@Override
+//		public boolean removeByMark(int mark) {
+//			// TODO Auto-generated method stub
+//			return false;
+//		}
+
+    
 	    
-//	}
-		@Override
-		public Set<Student> findByName(String nm) {
-			// TODO Auto-generated method stub
-			return null;
-		}
-		@Override
-		public boolean removeByMark(int mark) {
-			// TODO Auto-generated method stub
-			return false;
-		}
-		@Override
-		public boolean removeById(int id) {
-			// TODO Auto-generated method stub
-			return false;
-		}
-		@Override
-		public Student findById(int id) {
-			// TODO Auto-generated method stub
-			return null;
-		}
+	
 }
