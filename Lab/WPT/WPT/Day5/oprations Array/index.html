@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- create html page -  with 
+	1 textfield and multiple buttons 
+	
+button captions are - 1)Add at End 
+		 2) Add at Start
+		3) delete from end 
+		4) delete from start
+		5) display odd numbers 
+		6) display even numbers
+hint -  use Array predined methods like push , pop , unshift , shift , forEach , filter etc
+    also use array variable to store numbers entered in textfield
+    also use div to display output -->
+    <h1>Operations on Array</h1>
+    <input type="number" id="numInput" placeholder="Enter a number">
+    <button onclick="addAtEnd()">Add at End</button>
+    <button onclick="addAtStart()">Add at Start</button>
+    <button onclick="deleteFromEnd()">Delete from End</button>
+    <button onclick="deleteFromStart()">Delete from Start</button>          
+    <button onclick="displayOdd()">Display Odd Numbers</button>
+    <button onclick="displayEven()">Display Even Numbers</button>
+    <div id="output"></div>
+    <script>
+        let numbers = [];
+
+        function addAtEnd() {
+            const num = parseInt(document.getElementById('numInput').value);
+            if (!isNaN(num)) {
+                numbers.push(num);
+                displayArray();
+            }
+        }
+
+        function addAtStart() {
+            const num = parseInt(document.getElementById('numInput').value);
+            if (!isNaN(num)) {
+                numbers.unshift(num);
+                displayArray();
+            }
+        }
+
+        function deleteFromEnd() {
+            numbers.pop();
+            displayArray();
+        }
+
+        function deleteFromStart() {
+            numbers.shift();
+            displayArray();
+        }
+
+        function displayOdd() {
+            const oddNumbers = numbers.filter(num => num % 2 !== 0);
+            document.getElementById('output').innerText = 'Odd Numbers: ' + oddNumbers.join(', ');
+        }
+
+        function displayEven() {
+            const evenNumbers = numbers.filter(num => num % 2 === 0);
+            document.getElementById('output').innerText = 'Even Numbers: ' + evenNumbers.join(', ');
+        }
+
+        function displayArray() {
+            document.getElementById('output').innerText = 'Current Array: ' + numbers.join(', ');
+        }
+    </script>
+    
+
+</body>
+</html>

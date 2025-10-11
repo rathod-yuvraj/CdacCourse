@@ -1,0 +1,76 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.headermain{
+    display: flex;
+ 
+    margin: auto;
+    /* position: relative; Needed for absolute positioning of .address */
+     /* justify-content: center; center child elements */
+    /* align-items: center;     vertically center */
+   
+   
+}
+.header{
+   
+    margin: 0 auto;
+}
+.headermain .header ol li{
+    list-style: none;
+    display: inline;
+    margin: 10px;
+}
+.headermain .address h5{
+    font-size: 20px;
+    font-weight: bold;
+    background-color: silver;
+    /* border-radius: 5px; */
+}
+.headermain .address p{
+    background-color: silver;
+    
+}
+.address{
+     margin-left: auto;
+    /* position: absolute;
+    right: 10px;
+    top: 0; */
+    
+}
+.headermain .address {
+  display: inline-block; /* behaves like text but keeps box model */
+  margin: 10px auto;
+  padding: 8px 8px;
+  background-color: rgb(47, 0, 122);
+  color: rgb(28, 25, 25); /* text visible */
+  border-radius: 5px;
+  text-align: center;
+ 
+}
+hr{
+    border: 2px solid black;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+
+.containt {
+    display: flex;
+  background-color: #f7f3f3;
+  margin: 15px auto;
+  padding: 20px;
+  border-radius: 6px;
+  width: 80%;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+.containt h3{
+    
+  padding: 10px;
+  margin: 0;
+}
+
+.main .containt ol li {
+  margin: 8px 10px;
+  /* line-height: 1.6; */
+}
