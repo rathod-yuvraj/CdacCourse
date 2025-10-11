@@ -8,6 +8,9 @@ const Calculator = () => {
   const handleNum2 = (e) => setNum2(e.target.value);
 
   const sum = Number(num1) + Number(num2);
+  const sub = Number(num1) - Number(num2);
+  const mul = Number(num1) * Number(num2);
+  const div = Number(num1) / Number(num2);
 
   return (
     <div>
@@ -25,6 +28,10 @@ const Calculator = () => {
         placeholder="Enter second number"
       />
       <p>Sum: {sum}</p>
+      <p>Sub: {sub}</p>
+      <p>Mul: {mul}</p>
+      <p>Div: {div}</p>
+      
     </div>
   );
 };

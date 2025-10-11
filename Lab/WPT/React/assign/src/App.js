@@ -1,13 +1,13 @@
-// import logo from './logo.svg';
-// import './App.css';
-// import Home from './Home';
-// import 
-// function App() {
-//   return (
-//     <div>
-// <Home></Home>
-//     </div>
-//   );
-// }
 
-// export default App;
+import Home from './Home';
+import Calculator from './Calculator';
+import CaseConverter from './Caseconcls' 
+function App() {
+  return (
+    <div>
+ <Calculator/>
+    </div>
+  );
+}
+
+export default App;

@@ -17,4 +17,4 @@ class CaseConverter extends React.Component {
     const lowerCaseText = this.state.text.toLowerCase();
     console.log('lowercase:', lowerCaseText);
   };
-} 
+} npx
