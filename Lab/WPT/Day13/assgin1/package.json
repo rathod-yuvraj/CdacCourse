@@ -1,0 +1,23 @@
+{
+  "dependencies": {
+    "express": "^5.1.0",
+    "nodemon": "^3.1.10"
+  },
+  "name": "postmethod",
+  "version": "1.0.0",
+  "description": "this method in perform the post operations",
+  "main": "server.js",
+  "scripts": {
+    "test": "start",
+    "start": "node server.js",
+    "yuvraj": "nodemon demoput.js"
+  },
+  "keywords": [
+    "post",
+    "get",
+    "put",
+    "delect"
+  ],
+  "author": "yuvraj rathod",
+  "license": "ISC"
+}

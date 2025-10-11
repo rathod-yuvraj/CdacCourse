@@ -1,0 +1,173 @@
+Web Programming Technologies (WPT) — Summary
+1. What is Web Programming?
+
+Web Application = A distributed application using HTTP for request & response
+
+WPT 1
+
+.
+
+Distributed Application = One application divided into processes communicating with each other (Client & Server).
+
+Roles:
+
+Client Process
+
+Interacts with end user.
+
+Sends request to server.
+
+Receives response and shows result.
+
+Server Process
+
+Runs continuously (fixed IP:PORT).
+
+Waits for requests.
+
+Processes and sends responses
+
+WPT 1
+
+wpt 2
+
+.
+
+2. Protocols
+
+Protocol = Set of rules for communication.
+
+Application-level protocols: HTTP, FTP, SMTP, POP, Telnet, SSH.
+
+Transport-level: TCP, UDP.
+
+Internet-level: IP.
+
+👉 Client & Server must use the same protocol.
+
+Common Web Protocols
+
+HTTP – Web browsing (stateless).
+
+FTP – File transfer.
+
+SMTP – Email.
+
+TCP/IP – Base networking.
+
+3. Application Architectures
+
+2-tier: Client ↔ Server
+
+3-tier: Client ↔ Web Server ↔ Database Server
+
+N-tier: Client ↔ Web Server ↔ App Server ↔ Mail/DB Servers
+
+WPT 1
+
+4. Three Logical Layers
+
+Presentation Logic
+
+Display info, accept input.
+
+HTML, CSS, JavaScript.
+
+Business Logic
+
+Data validation, processing.
+
+Runs on server (Java, Node, etc.).
+
+Persistence Logic
+
+Storing and retrieving data.
+
+Database servers (MySQL, Oracle, MongoDB).
+
+5. HTTP Protocol
+Request Format
+
+Header
+
+Method (GET, POST, PUT, DELETE)
+
+URL, HTTP version
+
+User-Agent (browser info)
+
+Accept: MIME type
+
+Content-Type
+
+Cookies
+
+Body – Form data, JSON, etc.
+
+wpt 2
+
+Response Format
+
+Header
+
+Status Code (200 = OK, 400 = Client Error, 500 = Server Error, etc.)
+
+Content-Type, Content-Length, Date, Cookies
+
+Body – HTML file or resource
+
+wpt 2
+
+6. Web Server vs Client
+
+Web Server
+
+Runs continuously, listens for requests.
+
+Examples: Apache Tomcat, IIS, Express, JBoss, GlassFish.
+
+Web Client
+
+Browser or Postman.
+
+Creates HTTP request, receives response, renders output
+
+wpt 2
+
+.
+
+7. Frontend (UI)
+
+Built with HTML + CSS + JavaScript.
+
+Browser has a built-in HTML interpreter to convert markup → UI.
+
+HTML Basics
+
+Tags are predefined.
+
+Structure:
+
+<html>
+  <head>
+    <title>Page Title</title>
+  </head>
+  <body>
+    <!-- Content -->
+  </body>
+</html>
+
+
+Common Tags: <h1>…<h6>, <b>, <i>, <u>, <br>, <p>, <div>, <span>, <ul>, <ol>, <li>, <table>, <img>, <audio>, <video>, <input>.
+
+Attributes = key-value pairs in opening tag (e.g., <table border="1">).
+
+Empty tags = No closing tag (<br/>, <img>).
+
+8. Extra Technologies
+
+CSS – Styling.
+
+JavaScript – Behavior (interactivity).
+
+Libraries/Frameworks: jQuery, AJAX, React, Node.js, Express
