@@ -50,7 +50,11 @@
         <input type="text" id="LastName" required><br>
         <label for="age">Enter The Age:</label>
         <input type="text" id="age"><br>
+<<<<<<< HEAD
         <button onclick="addData()">Add</button>
+=======
+        <button>Add</button>
+>>>>>>> 782671352c7f183f3f0f66acc85eaf10bd53752a
       </div>
       <div class="tablecontainer">
         <table id="data">
@@ -61,7 +65,11 @@
             <th>Age</th>
         </tr>
     </thead>
+<<<<<<< HEAD
     <tbody id="myTableData">
+=======
+    <tbody>
+>>>>>>> 782671352c7f183f3f0f66acc85eaf10bd53752a
 
     </tbody>
 
@@ -71,6 +79,7 @@
  
 <script>
     function addData(){
+<<<<<<< HEAD
         let firstName=document.getElementById("FirstName").value;
         let lastName=document.getElementById("LastName").value;
         let getAge=document.getElementById("age").value;
@@ -99,6 +108,20 @@
         ifirstname.textContent=firstName;
         ilastname.textContent=lastName;
         iage.textContent=getAge;
+=======
+        let firstname=document.getElementById("fristName");
+        let lastName=document.getElementById("lastName");
+        let getAge=document.getElementById("age");
+
+        const getuserdata={
+            firstname:firstname,
+            lastName:lastName,
+            aget:age
+
+
+        }
+        const JSONuser=JSON.stringify(getuserdata)
+>>>>>>> 782671352c7f183f3f0f66acc85eaf10bd53752a
 
     }
 </script>

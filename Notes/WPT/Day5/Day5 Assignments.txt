@@ -1,9 +1,13 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 TO run html from vs code install live server extension in vs code 
 =======
 TO run html from vs code install live server 
 extension in vs code 
 >>>>>>> ba584d70e23d9f6944e87aaadfc44d20127048f1
+=======
+TO run html from vs code install live server extension in vs code 
+>>>>>>> 782671352c7f183f3f0f66acc85eaf10bd53752a
 
 
 
@@ -18,11 +22,15 @@ Assignments
 2) with above concept use Math.max() method to display maximum number
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 782671352c7f183f3f0f66acc85eaf10bd53752a
 2) Perform the form validations as shown in Lecture
   for name and age 
    and display error message if it not valid 
 
 3) create html page -  with 
+<<<<<<< HEAD
 =======
 3) Perform the form validations as shown in Lecture
   for name and age 
@@ -30,6 +38,8 @@ Assignments
 
 4) create html page -  with 
 >>>>>>> ba584d70e23d9f6944e87aaadfc44d20127048f1
+=======
+>>>>>>> 782671352c7f183f3f0f66acc85eaf10bd53752a
 	1 textfield and multiple buttons 
 	
 button captions are - 1)Add at End 
@@ -41,6 +51,9 @@ button captions are - 1)Add at End
 hint -  use Array predined methods
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 782671352c7f183f3f0f66acc85eaf10bd53752a
 4) go through object and class syntax in javascript 
    (shared files)
 
@@ -48,6 +61,7 @@ hint -  use Array predined methods
    table format 
 
 6) Accept Employee data 
+<<<<<<< HEAD
 =======
 5) go through object and class syntax in javascript 
    (shared files)
@@ -57,6 +71,8 @@ hint -  use Array predined methods
 
 7) Accept Employee data 
 >>>>>>> ba584d70e23d9f6944e87aaadfc44d20127048f1
+=======
+>>>>>>> 782671352c7f183f3f0f66acc85eaf10bd53752a
 FirstName  | LastName | email | Date of Birth 
 
 from user 

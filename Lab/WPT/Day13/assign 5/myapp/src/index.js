@@ -3,11 +3,23 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+<<<<<<< HEAD
+=======
+import Factorial from './comp';
+import Conversion from './test';
+
+>>>>>>> 782671352c7f183f3f0f66acc85eaf10bd53752a
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
+<<<<<<< HEAD
     <App />
+=======
+    
+    <Conversion></Conversion>
+  
+>>>>>>> 782671352c7f183f3f0f66acc85eaf10bd53752a
   </React.StrictMode>
 );
 
