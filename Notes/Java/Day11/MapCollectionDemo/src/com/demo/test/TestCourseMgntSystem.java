@@ -9,7 +9,7 @@ import com.demo.service.CourseService;
 import com.demo.service.CourseServiceImpl;
 
 public class TestCourseMgntSystem {
-
+ 
 	public static void main(String[] args) {
 		Scanner sc=new Scanner(System.in);
 		CourseService cservice=new CourseServiceImpl();
