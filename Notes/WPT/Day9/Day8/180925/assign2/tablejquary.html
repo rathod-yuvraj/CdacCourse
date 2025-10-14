@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment no2</title>
+    <link rel="stylesheet" href="">
+</head>
+<style>
+   table {
+        border: 2px solid black;
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    th, td {
+        padding: 10px;
+        text-align: left;
+    }
+</style>
+<body>
+    <h1>Assignment no2</h1>
+    <button onclick="display()">Display</button>
+
+    <table border="1">
+        <thead>
+            <tr>
+                <th>UserId</th>
+                <th>Id</th>
+                <th>Title</th>
+                <th>Body</th>
+            </tr>   
+        </thead>
+        <tbody id="mytable">
+            <!-- Data will be added here dynamically -->
+        </tbody>
+    </table>
+
+    <script>
+        function display() {
+            let data = new XMLHttpRequest(); // Create new XMLHttpRequest
+
+            data.open("GET", "https://jsonplaceholder.typicode.com/posts"); // Open the GET request
+            data.send(); // Send the request
+
+            data.onload = function() {
+                let jsonData = this.responseText; // Get the response text
+                let obj = JSON.parse(jsonData); // Parse the response into a JavaScript object
+                console.log(obj); // Log the response to the console
+
+                let table = document.getElementById("mytable"); // Get the table body by id
+
+                // Loop through the object and add rows to the table
+                for (let i = 0; i < obj.length; i++) {
+                    // Create a new row for each post
+                    const row = document.createElement('tr');
+                    
+                    // Create table data cells for each post property and append to the row
+                    row.innerHTML = 
+                        '<td>' + obj[i].userId + '</td>' +  // UserId
+                        '<td>' + obj[i].id + '</td>' +      // Id
+                        '<td>' + obj[i].title + '</td>' +   // Title
+                        '<td>' + obj[i].body + '</td>';     // Body
+
+                    table.appendChild(row); // Append the row to the table body
+                }
+            }
+        }
+    </script>
+
+</body>
+</html>
