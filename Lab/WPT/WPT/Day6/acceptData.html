@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Accept Employee data 
+FirstName  | LastName | email | Date of Birth 
+
+from user 
+	a) perform validation -  data is entered or not 
+                    if not entered then display error msg 
+	b) if data is correct then display data on same page
+                     in table format using dom evenets 
+					 
+	c) after adding data clear the textfields 
+	d) add row wise edit and delete functionality  -->
+    <form id="employeeForm">
+        <label for="firstName">First Name:</label>
+        <input type="text" id="firstName" name="firstName" required>
+        <br>
+        <label for="lastName">Last Name:</label>
+        <input type="text" id="lastName" name="lastName" required>
+        <br>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        <br>
+        <label for="dob">Date of Birth:</label>
+        <input type="date" id="dob" name="dob" required>
+        <br>
+        <button type="submit">Add Employee</button>
+    </form>
+
+    <table id="employeeTable" border="1">
+        <thead>
+            <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Email</th>
+                <th>Date of Birth</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Employee rows will be added here -->
+        </tbody>
+    </table>
+
+    <script>
+        document.getElementById('employeeForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            // Get form values
+            const firstName = document.getElementById('firstName').value.trim();
+            const lastName = document.getElementById('lastName').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const dob = document.getElementById('dob').value;
+
+            // Validate input
+            if (!firstName || !lastName || !email || !dob) {
+                alert('All fields are required!');
+                return;
+            }
+
+            // Create a new row in the table
+            const tableBody = document.getElementById('employeeTable').getElementsByTagName('tbody')[0];
+            const newRow = tableBody.insertRow();
+
+            newRow.innerHTML = `
+                <td>${firstName}</td>
+                <td>${lastName}</td>
+                <td>${email}</td>
+                <td>${dob}</td>
+                <td>
+                    <button class="editBtn">Edit</button>
+                    <button class="deleteBtn">Delete</button>
+                </td>
+            `;
+            // Clear form fields
+            document.getElementById('employeeForm').reset();
+            // Add event listeners for edit and delete buttons
+            newRow.querySelector('.editBtn').addEventListener('click', function() {
+                editRow(newRow);
+            });
+            newRow.querySelector('.deleteBtn').addEventListener('click', function() {
+                tableBody.removeChild(newRow);
+            });
+        });
+        function editRow(row) {
+            const cells = row.getElementsByTagName('td');
+            const firstName = cells[0].innerText;
+            const lastName = cells[1].innerText;
+            const email = cells[2].innerText;
+            const dob = cells[3].innerText;
+
+            // Populate form with existing data
+            document.getElementById('firstName').value = firstName;
+            document.getElementById('lastName').value = lastName;
+            document.getElementById('email').value = email;
+            document.getElementById('dob').value = dob;
+
+            // Remove the row from the table
+            row.parentNode.removeChild(row);
+        }
+    </script>
+</body>
+</html>

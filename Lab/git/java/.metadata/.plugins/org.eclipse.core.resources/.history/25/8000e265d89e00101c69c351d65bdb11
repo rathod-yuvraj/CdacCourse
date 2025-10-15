@@ -1,0 +1,25 @@
+package Assgin3;
+
+public class array2dService {
+
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		
+		
+		do {
+			System.out.println("1. Accept Data \n2. Display\n Addtions of 2d matrix \n3.additions of RowWise.");
+		
+			System.out.println("5. mul 2d Matrix \n 6.transpose of matrix")
+	        
+			System.out.println("7. 2d Array of colmns \n.8.2d Array of rows\n3 9.3D matrix\n5")
+		
+		
+		
+		
+		
+		}
+		
+
+	}
+
+}

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Accept Number from user and display table of that number in 
+   table format -->
+    <h1>Multiplication Table</h1>
+    <input type="number" id="numInput" placeholder="Enter a number">
+    <button onclick="generateTable()">Generate Table</button>
+    <div id="tableOutput"></div>
+    <script>
+        function generateTable() {
+            const num = parseInt(document.getElementById('numInput').value);
+            if (isNaN(num)) {
+                alert("Please enter a valid number");
+                return;
+            }
+
+            let tableHTML = '<table border="1"><tr><th>Multiplier</th><th>Result</th></tr>';
+            for (let i = 1; i <= 10; i++) {
+                tableHTML += `<tr><td>${i}</td><td>${num * i}</td></tr>`;
+            }
+            tableHTML += '</table>';
+
+            document.getElementById('tableOutput').innerHTML = tableHTML;
+        }
+            document.getElementById('output').innerText = 'Odd Numbers: ' + oddNumbers.join(', ');
+        }   
+
+        function displayEven() {
+            const evenNumbers = numbers.filter(num => num % 2 === 0);
+            document.getElementById('output').innerText = 'Even Numbers: ' + evenNumbers.join(', ');
+        }
+
+        function displayArray() {
+            document.getElementById('output').innerText = 'Array: ' + numbers.join(', ');
+        }
+    </script>
+</body>
+</html>
