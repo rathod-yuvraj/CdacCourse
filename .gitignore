@@ -6,6 +6,7 @@ node_modules/
 /.pnp
 .pnp.js
 **/jquery-*.min.js
+*.class
 # Ignore all node_modules folders
 **/node_modules/
 # testing
