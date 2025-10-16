@@ -7,11 +7,14 @@
 # dependencies
 /node_modules
 node_modules/
+
+# Ignore all node_modules folders my file
+**/node_modules
 /.pnp
 .pnp.js
 **/jquery-*.min.js
 *.class
-# Ignore all node_modules folders
+
 **/node_modules/
 # testing
 /coverage

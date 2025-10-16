@@ -1,10 +1,37 @@
 package com.yuvraj.test;
 import java.util.*;
-
+import com.yuvraj.beans.*;
+import java.io.*;
 public class TestReadCSV {
 
 	public static void main(String[] args) {
 		List <Employee> lst=new ArrayList<>();
+		
+
+		try(BufferedReader br=new BufferedReader(new FileReader("sairaj.csv")) ){
+			
+			String line=br.readLine();
+			while(line!=null) {
+				
+				Employee e=new Employee();
+				String[] arr=line.split(",");
+				e.setEid(Integer.parseInt(arr[0]));
+				e.setEname(arr[1]);
+				e.setEdesg(arr[2]);
+				e.setSal(Double.parseDouble(arr[3]));
+			
+			
+			
+		}
+			
+		} catch (FileNotFoundException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		} catch (IOException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+		
 		
 	}
 
