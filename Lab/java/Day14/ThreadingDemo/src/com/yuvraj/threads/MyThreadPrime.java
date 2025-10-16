@@ -14,7 +14,12 @@ public class MyThreadPrime extends Thread {
 	public void run() {
 		
 		
-		op.isPrime(n);
+		boolean ans=op.isPrime(n);
+		if(ans) {
+			System.out.println(n+" Is Prime Number");
+		}else {
+			System.out.println(n+ " Is Not Prime Number");
+		}
 	}
 
 }
