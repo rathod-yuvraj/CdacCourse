@@ -1,12 +1,18 @@
+<<<<<<< HEAD
 
+=======
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+ 
+>>>>>>> 32558f955f463af33c75ee82b0c9ba8fe2153e5a
 # dependencies
 /node_modules
 node_modules/
 /.pnp
 .pnp.js
-# Ignore jQuery downloaded file
-js/jquery-*.js
-
+**/jquery-*.min.js
+*.class
+# Ignore all node_modules folders
+**/node_modules/
 # testing
 /coverage
 
