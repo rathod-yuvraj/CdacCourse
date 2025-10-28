@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Information</title>
+</head>
+<body>
+    <h1>Enter Student Information</h1>
+    
+    <!-- Form with input fields -->
+    <form id="studentForm">
+        <label for="firstName">First Name:</label>
+        <input type="text" id="firstName" name="firstName" placeholder=""><br><br>
+        
+        <label for="lastName">Last Name:</label>
+        <input type="text" id="lastName" name="lastName" placeholder=""><br><br>
+        
+        <label for="marks">Marks:</label>
+        <input type="text" id="marks" name="marks" placeholder=""><br><br>
+        
+        <button type="button" id="updateButton">Update and Display</button>
+    </form>
+    
+    <!-- Div to display results -->
+    <div id="studentResult"></div>
+
+    <script>
+       
+        
+        document.getElementById('updateButton').addEventListener('click', function() {
+            const firstNameInput = document.getElementById('firstName').value.trim();
+            const lastNameInput = document.getElementById('lastName').value.trim();
+            const marksInput = document.getElementById('marks').value.trim();
+            const resultDiv = document.getElementById('studentResult');
+            
+            if (firstNameInput === '' || lastNameInput === '' || marksInput === '') {
+                resultDiv.innerHTML = '<p>Error: Please fill in all fields.</p>';
+                return;
+            }
+            
+            if (isNaN(marksInput)) {
+                resultDiv.innerHTML = '<p>Error: Marks must be a valid number (e.g., 48).</p>';
+                return;
+            }
+            
+            stud.firstName = firstNameInput;
+            stud.lastname = lastNameInput;
+            stud.marks = parseFloat(marksInput);
+            
+            resultDiv.innerHTML = `
+                <h2>Updated Student Object:</h2>
+                <p>First Name: ${stud.firstName}</p>
+                <p>Last Name: ${stud.lastname}</p>
+                <p>Marks: ${stud.marks}</p>
+            `;
+        });
+    </script>
+</body>
+</html>

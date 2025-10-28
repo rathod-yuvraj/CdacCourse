@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Generate Username</h1>
+    
+    <form id="userform">
+
+        <label for="firstname"   >firstname</label>
+        <input type="text" id="" name="" placeholder="">
+        <br> <br>
+        <label for="lastname"   >lasttname</label>
+        <input type="text" id="" name="" placeholder="">
+          <br> <br>
+              <label for="age"   >Age</label>
+        <input type="text" id="" name="" placeholder="">
+
+        <button type="submit">Generate</button>
+
+    </form>
+    <div id="Username result"></div>
+
+    <script>
+            const firstName = document.getElementById('firstName').value.trim();  
+            const lastName = document.getElementById('lastName').value.trim();    
+            const age = document.getElementById('age').value.trim();             
+            const resultDiv = document.getElementById('usernameResult'); 
+            
+             if (firstName === '' || lastName === '' || age === '') {
+                resultDiv.innerHTML = '<p>Error: Please fill in all fields.</p>';
+                return;  
+            }
+            
+             if (isNaN(age)) {
+                resultDiv.innerHTML = '<p>Error: Age must be a valid number (e.g., 30).</p>';
+                return;  
+            }
+
+            
+        
+            let firstPart = '';  
+            if (firstName.length >= 2) {
+                firstPart = firstName.substring(0, 2).toLowerCase();  
+            } else if (firstName.length > 0) {
+                firstPart = firstName.toLowerCase();  
+            }
+            
+            let lastPart = '';  
+            if (lastName.length >= 2) {
+                lastPart = lastName.substring(lastName.length - 2).toLowerCase();  
+            }
+
+
+
+
+
+
+
+        </script>
+</body>
+</html>

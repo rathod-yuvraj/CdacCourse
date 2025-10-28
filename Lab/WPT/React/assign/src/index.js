@@ -2,21 +2,13 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
-<<<<<<< HEAD
 import Factorial from './Factorial';
-=======
-
->>>>>>> 32558f955f463af33c75ee82b0c9ba8fe2153e5a
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-<<<<<<< HEAD
     <Factorial></Factorial>
-=======
-  <App/>
->>>>>>> 32558f955f463af33c75ee82b0c9ba8fe2153e5a
   </React.StrictMode>
 );
 
