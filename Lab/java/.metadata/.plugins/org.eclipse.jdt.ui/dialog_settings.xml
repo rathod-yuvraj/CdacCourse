@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
+<<<<<<< HEAD
 	<item key="org.eclipse.jdt.ui.last.selected.jre.kind2" value="2"/>
 	<item key="org.eclipse.jdt.ui.last.selected.execution.enviroment" value="JavaSE-17"/>
+=======
+>>>>>>> ra
 	<section name="org.eclipse.jdt.internal.ui.packageview.PackageExplorerPart">
 		<item key="group_libraries" value="true"/>
 		<item key="layout" value="2"/>
@@ -28,6 +31,7 @@
 	<section name="BuildPathsPropertyPage">
 		<item key="pageIndex" value="3"/>
 	</section>
+<<<<<<< HEAD
 	<section name="NewRecordWizardPage">
 		<item key="create_unimplemented" value="false"/>
 	</section>
@@ -102,4 +106,6 @@
 		<item key="INCLUDE_MASK" value="11"/>
 		<item key="HISTORY_SIZE" value="0"/>
 	</section>
+=======
+>>>>>>> ra
 </section>

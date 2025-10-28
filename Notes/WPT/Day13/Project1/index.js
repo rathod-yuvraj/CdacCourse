@@ -39,9 +39,12 @@ app.delete('/users/:id', (req, res) => {
 });
 // POST 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
 >>>>>>> 782671352c7f183f3f0f66acc85eaf10bd53752a
+=======
+>>>>>>> ra
 app.post('/users', (req, res) => {
     //req.params.firstName
     //lastName

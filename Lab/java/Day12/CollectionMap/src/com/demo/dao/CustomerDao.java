@@ -1,0 +1,15 @@
+package com.demo.dao;
+
+import java.util.Map;
+
+public interface CustomerDao {
+
+	boolean save(String cn, int cp);
+
+	Map<String, Integer> displaydata();
+
+	boolean removeByName(String cname);
+
+	boolean removeByValue(int p);
+
+}

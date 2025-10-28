@@ -1,0 +1,13 @@
+package com.demo.service;
+
+public interface CustomerService {
+
+	boolean addNewCustomer();
+
+	java.util.Map<String, Integer> displayAll();
+
+	boolean deleteByName(String cname);
+
+	boolean deletedByValue(int p);
+
+}

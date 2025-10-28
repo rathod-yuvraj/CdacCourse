@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 INDEX VERSION 1.132+C:\Users\IET\Desktop\250845920064\Lab\java\.metadata\.plugins\org.eclipse.jdt.core
 683955095.index
 2277357373.index
@@ -24,3 +25,9 @@ INDEX VERSION 1.132+C:\Users\IET\Desktop\250845920064\Lab\java\.metadata\.plugin
 2715043561.index
 3805211755.index
 2569453153.index
+=======
+INDEX VERSION 1.132+C:\Users\IET\Desktop\250845920064\.metadata\.plugins\org.eclipse.jdt.core
+2136431115.index
+3805211755.index
+1865797976.index
+>>>>>>> ra

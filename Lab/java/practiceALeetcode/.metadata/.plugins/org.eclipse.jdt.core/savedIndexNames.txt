@@ -1,0 +1,4 @@
+INDEX VERSION 1.134+D:\CdacCourse\Lab\java\practiceALeetcode\.metadata\.plugins\org.eclipse.jdt.core
+3924205659.index
+1865797976.index
+433608942.index
