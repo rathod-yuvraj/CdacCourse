@@ -1,0 +1,101 @@
+package com.yuvraj.test;
+
+package com.yuvraj.test;
+
+public class CalculatorTest {
+    
+    public static void main(String[] args) {
+        // Test cases with valid operators
+        testValidOperations();
+        
+        System.out.println("\n" + "=".repeat(50) + "\n");
+        
+        // Test cases with invalid operators
+        testInvalidOperations();
+        
+        System.out.println("\n" + "=".repeat(50) + "\n");
+        
+        // Test edge cases
+        testEdgeCases();
+    }
+    
+    private static void testValidOperations() {
+        System.out.println("Testing Valid Operations:");
+        
+        try {
+            // Addition
+            int result1 = Calculator.calculate(10, 5, "+");
+            System.out.println("10 + 5 = " + result1);
+            
+            // Subtraction
+            int result2 = Calculator.calculate(10, 5, "-");
+            System.out.println("10 - 5 = " + result2);
+            
+            // Multiplication
+            int result3 = Calculator.calculate(10, 5, "*");
+            System.out.println("10 * 5 = " + result3);
+            
+            // Division
+            int result4 = Calculator.calculate(10, 5, "/");
+            System.out.println("10 / 5 = " + result4);
+            
+            // Modulo
+            int result5 = Calculator.calculate(10, 3, "%");
+            System.out.println("10 % 3 = " + result5);
+            
+        } catch (WrongOperatorException e) {
+            System.out.println("Unexpected error: " + e.getMessage());
+        } catch (ArithmeticException e) {
+            System.out.println("Arithmetic error: " + e.getMessage());
+        }
+    }
+    
+    private static void testInvalidOperations() {
+        System.out.println("Testing Invalid Operations:");
+        
+        String[] invalidOperators = {"&", "++", "=", "**", "//"};
+        
+        for (String operator : invalidOperators) {
+            try {
+                int result = Calculator.calculate(10, 5, operator);
+                System.out.println("10 " + operator + " 5 = " + result);
+            } catch (WrongOperatorException e) {
+                System.out.println("Error with operator '" + operator + "': " + e.getMessage());
+            } catch (ArithmeticException e) {
+                System.out.println("Arithmetic error: " + e.getMessage());
+            }
+        }
+    }
+    
+    private static void testEdgeCases() {
+        System.out.println("Testing Edge Cases:");
+        
+        // Test division by zero
+        try {
+            int result = Calculator.calculate(10, 0, "/");
+            System.out.println("10 / 0 = " + result);
+        } catch (WrongOperatorException e) {
+            System.out.println("Wrong operator error: " + e.getMessage());
+        } catch (ArithmeticException e) {
+            System.out.println("Division by zero handled: " + e.getMessage());
+        }
+        
+        // Test modulo by zero
+        try {
+            int result = Calculator.calculate(10, 0, "%");
+            System.out.println("10 % 0 = " + result);
+        } catch (WrongOperatorException e) {
+            System.out.println("Wrong operator error: " + e.getMessage());
+        } catch (ArithmeticException e) {
+            System.out.println("Modulo by zero handled: " + e.getMessage());
+        }
+        
+        // Test with negative numbers
+        try {
+            int result = Calculator.calculate(-10, 3, "*");
+            System.out.println("-10 * 3 = " + result);
+        } catch (WrongOperatorException | ArithmeticException e) {
+            System.out.println("Error: " + e.getMessage());
+        }
+    }
+}

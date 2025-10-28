@@ -1,0 +1,19 @@
+Daypublic class ReverseNumber {
+    public static void main(String[] args) {
+        int n = 123400;  // Example number
+        int reversed = reverseNumber(n);
+        System.out.println("Reversed number: " + reversed);
+    }
+
+    public static int reverseNumber(int n) {
+        int reversed = 0;
+
+        while (n != 0) {
+            int digit = n % 10;          // Get the last digit
+            reversed = reversed * 10 + digit; // Append digit
+            n /= 10;                     // Remove last digit
+        }
+
+        return reversed;  // Leading zeros are automatically ignored
+    }
+}
