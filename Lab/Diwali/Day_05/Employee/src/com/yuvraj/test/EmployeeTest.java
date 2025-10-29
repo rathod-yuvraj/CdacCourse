@@ -50,17 +50,46 @@ public class EmployeeTest {
 			 }
 			 case 4->{
 				 System.out.println("Show all Employee in sorted order");
+				  System.out.println("\n Employees Sorted by ID:");
+                    employees.stream()
+                             .sorted(Comparator.comparingInt(Employee::getEmpID))
+                             .forEach(System.out::println);
+                   
 			 }
 			 case 5->{
 				 System.out.println("Find Employee with empName");
+				  System.out.print("Enter Employee Name to search: ");
+                    String searchName = sc.nextLine();
+                    boolean found = false;
+                    for (Employee emp : employees) {
+                        if (emp.getEmpName().equalsIgnoreCase(searchName)) {
+                            System.out.println("Found: " + emp);
+                            found = true;
+                        }
+                    }
+                    if (!found)
+                        System.out.println("❌ No employee found with that name!");
+                   
 			 }
 			 case 6->{
 				 System.out.println("Save all Employees into file");
+				  try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("employees.dat"))) {
+                        oos.writeObject(employees);
+                        System.out.println("Employee list saved to employees.dat");
+                    } catch (IOException ex) {
+                        System.out.println("Error saving file: " + ex.getMessage());
+                    }
 			 }
 			 case 7->{
 				 System.out.println("Think you For Visiting.......");
 				 sc.close();
 			 }
+			 default->{
+				System.out.println("Invalid choice! Try again.");
+
+			 }
+                    
+            }
 			 
 			 }
 		}while(choice!=7);
