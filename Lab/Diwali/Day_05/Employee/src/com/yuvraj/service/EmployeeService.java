@@ -11,5 +11,10 @@ public interface EmployeeService{
 	List<Employee> DisplayAll();
 
 	boolean RemoveById(int id);
+	  List<Employee> DisplaySortedEmployees();   // For sorted employee list
+
+    Employee FindByName(String name);          // For searching employee by name
+
+    boolean SaveAllToFile(String filename); 
 
 }

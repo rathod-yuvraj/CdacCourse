@@ -1,15 +1,25 @@
 package com.yuvraj.dao;
 
 import java.util.List;
-
 import com.yuvraj.beans.Employee;
 
 public interface EmployeeDao {
 
-	boolean save(Employee e);
+    //  Add new employee
+    boolean save(Employee e);
 
-	List<Employee> FindAll();
+    //  Fetch all employees
+    List<Employee> FindAll();
 
-	boolean DeleteById(int id);
+    //  Delete employee by ID
+    boolean DeleteById(int id);
 
+    //  Find employee by name
+    Employee FindByName(String name);
+
+    //  Return employees in sorted order (by ID or Name)
+    List<Employee> FindAllSorted();
+
+    //  Save all employees to file
+    boolean SaveAllToFile(String filename);
 }

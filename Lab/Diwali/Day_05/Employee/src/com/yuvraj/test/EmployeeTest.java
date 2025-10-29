@@ -6,6 +6,10 @@ import java.util.Scanner;
 import com.yuvraj.beans.Employee;
 import com.yuvraj.service.EmployeeService;
 import com.yuvraj.service.EmployeeServiceImpl;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectOutputStream;
+import java.util.Comparator;
 
 
 
@@ -49,17 +53,19 @@ public class EmployeeTest {
 				 elist.forEach(System.out::println);
 			 }
 			 case 4->{
-				 System.out.println("Show all Employee in sorted order");
-				  System.out.println("\n Employees Sorted by ID:");
+				 System.out.println("\nEmployees Sorted by ID:");
+                    List<Employee> employees = eservice.DisplayAll();
                     employees.stream()
-                             .sorted(Comparator.comparingInt(Employee::getEmpID))
-                             .forEach(System.out::println);
+                            .sorted(Comparator.comparingInt(Employee::getEmpID))
+                            .forEach(System.out::println);
                    
 			 }
 			 case 5->{
-				 System.out.println("Find Employee with empName");
-				  System.out.print("Enter Employee Name to search: ");
+				 System.out.print("Enter Employee Name to search: ");
+                    sc.nextLine(); 
                     String searchName = sc.nextLine();
+
+                    List<Employee> employees = eservice.DisplayAll();
                     boolean found = false;
                     for (Employee emp : employees) {
                         if (emp.getEmpName().equalsIgnoreCase(searchName)) {
@@ -68,17 +74,16 @@ public class EmployeeTest {
                         }
                     }
                     if (!found)
-                        System.out.println("❌ No employee found with that name!");
-                   
+                        System.out.println(" No employee found with that name!")
 			 }
 			 case 6->{
-				 System.out.println("Save all Employees into file");
-				  try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("employees.dat"))) {
+				  System.out.println(" Saving Employees to file...");
+                    List<Employee> employees = eservice.DisplayAll();
+                    try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("employees.txt"))) {
                         oos.writeObject(employees);
-                        System.out.println("Employee list saved to employees.dat");
+                        System.out.println(" Employees saved to employees.txt");
                     } catch (IOException ex) {
                         System.out.println("Error saving file: " + ex.getMessage());
-                    }
 			 }
 			 case 7->{
 				 System.out.println("Think you For Visiting.......");
@@ -89,7 +94,7 @@ public class EmployeeTest {
 
 			 }
                     
-            }
+            
 			 
 			 }
 		}while(choice!=7);
