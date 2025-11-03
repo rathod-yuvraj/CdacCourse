@@ -57,3 +57,8 @@ user global configuration and to define the default location to store repositori
 not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
 EGit might behave differently since they see different configuration options.
 This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.eclipse.core.resources 2 2 2025-11-03 14:52:18.257
+!MESSAGE Save operation warnings.
+!SUBENTRY 1 org.eclipse.core.resources 2 234 2025-11-03 14:52:18.257
+!MESSAGE The project description file (.project) for 'Sorting' was missing.  This file contains important information about the project.  A new project description file has been created, but some information about the project may have been lost.

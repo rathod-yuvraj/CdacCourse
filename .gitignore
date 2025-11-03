@@ -34,3 +34,12 @@ js/jquery-*.js
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+###
+# Java
+.metadata/
+.metadata/*
+.metadata/**
+.metadata/
+
+
