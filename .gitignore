@@ -41,5 +41,9 @@ yarn-error.log*
 .metadata/*
 .metadata/**
 .metadata/
+/.project
+/.project/
+/.project/*
+.project/**
 
 
