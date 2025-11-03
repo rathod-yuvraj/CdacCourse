@@ -9,11 +9,7 @@ import com.demo.service.CourseService;
 import com.demo.service.CourseServiceImpl;
 
 public class TestCourseMgntSystem {
-<<<<<<< HEAD
 
-=======
- 
->>>>>>> 32558f955f463af33c75ee82b0c9ba8fe2153e5a
 	public static void main(String[] args) {
 		Scanner sc=new Scanner(System.in);
 		CourseService cservice=new CourseServiceImpl();
