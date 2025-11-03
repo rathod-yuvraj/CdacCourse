@@ -1,4 +1,5 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+<<<<<<< HEAD
 
 # dependencies
 /node_modules
@@ -18,6 +19,18 @@ node_modules/**
 # Ignore jQuery downloaded file
 js/jquery-*.js
 
+=======
+ 
+# dependencies
+/node_modules
+node_modules/
+/.pnp
+.pnp.js
+**/jquery-*.min.js
+*.class
+# Ignore all node_modules folders
+**/node_modules/
+>>>>>>> 2aa3f7db35b5f35acd5da642d45d3c2667195b66
 # testing
 /coverage
 
@@ -34,6 +47,7 @@ js/jquery-*.js
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+<<<<<<< HEAD
 
 ###
 # Java
@@ -47,3 +61,5 @@ yarn-error.log*
 .project/**
 
 
+=======
+>>>>>>> 2aa3f7db35b5f35acd5da642d45d3c2667195b66
