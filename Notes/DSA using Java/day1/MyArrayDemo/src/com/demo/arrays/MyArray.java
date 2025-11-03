@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 package com.demo.arrays;
+=======
+ package com.demo.arrays;
+>>>>>>> dc2fdf40dfa037e0c2f8ab7ae65bf773aaea0d47
 
 import java.util.Arrays;
 

@@ -2,6 +2,7 @@ package com.demo.test;
 
 import com.demo.arrays.MyArray;
 
+<<<<<<< HEAD
 public class TestArray{
 	
 	public static void main(String[] args ) {
@@ -23,4 +24,21 @@ public class TestArray{
 		
 				
 	}
+=======
+public class TestArray {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+         MyArray mb = new MyArray();
+         
+         mb.add(70);
+         mb.add(98);
+         mb.add(56);
+         mb.add(607);
+         mb.searchByValue(10);
+         System.out.println(mb);
+       
+	}
+
+>>>>>>> dc2fdf40dfa037e0c2f8ab7ae65bf773aaea0d47
 }
