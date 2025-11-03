@@ -1,0 +1,182 @@
+GROUP BY, HAVING, and ORDER BY
+
+What Are SQL Clauses?
+SQL clauses are keywords or components used in SQL statements to define how data is selected, filtered, grouped, and ordered. They work with commands like SELECT, UPDATE, DELETE, and INSERT to refine query behavior.
+
+🔧 Common SQL Clauses and Their Usage
+Clause	Purpose	Example Usage
+SELECT	Choose columns to display	SELECT name, age FROM Students
+FROM	Specify the table to query	FROM Students
+WHERE	Filter rows based on conditions	WHERE age > 18
+GROUP BY	Group rows by column values	GROUP BY department
+HAVING	Filter grouped results	HAVING AVG(score) > 80
+ORDER BY	Sort results in ascending/descending order	ORDER BY name ASC
+LIMIT	Restrict number of rows returned	LIMIT 10
+JOIN	Combine rows from multiple tables	JOIN Courses ON Students.course_id = Courses.id
+IN	Match values from a list	WHERE department IN ('HR', 'IT')
+BETWEEN	Match values within a range	WHERE age BETWEEN 18 AND 25
+LIKE	Match patterns in strings	WHERE name LIKE 'A%'
+Sources: GeeksforGeeks, upGrad
+
+📌 When to Use SQL Clauses
+SELECT/FROM: Always used to define what data to retrieve and from where.
+
+WHERE: When filtering rows based on conditions.
+
+GROUP BY/HAVING: When summarizing data and applying filters to grouped results.
+
+ORDER BY: When sorting results.
+
+LIMIT: When you need only a subset of rows.
+
+JOIN: When combining data across tables.
+
+🧩 Sample Problem Statements
+🏫 Scenario: Student Database
+Table: Students
+
+StudentID	Name	Age	Department	Score
+1	Aditi Sharma	20	CS	85
+2	Ravi Kumar	22	IT	78
+3	Neha Singh	19	CS	92
+4	Aman Verma	21	HR	88
+5	Priya Desai	23	IT	75
+🔹 Problem 1: Filter Students by Age
+sql
+SELECT * FROM Students
+WHERE Age > 20;
+🔹 Problem 2: Group by Department and Average Score
+sql
+SELECT Department, AVG(Score) AS AvgScore
+FROM Students
+GROUP BY Department;
+🔹 Problem 3: Filter Groups with High Average Score
+sql
+SELECT Department, AVG(Score) AS AvgScore
+FROM Students
+GROUP BY Department
+HAVING AVG(Score) > 80;
+🔹 Problem 4: Sort Students by Score
+sql
+SELECT * FROM Students
+ORDER BY Score DESC;
+🔹 Problem 5: Limit Results to Top 3
+sql
+SELECT * FROM Students
+ORDER BY Score DESC
+LIMIT 3;
+📋 Concept Checklist: SQL Clauses
+Concept	Covered
+Basic SELECT and FROM clauses	✅
+Filtering with WHERE	✅
+Grouping with GROUP BY	✅
+Filtering groups with HAVING	✅
+Sorting with ORDER BY	✅
+Limiting results with LIMIT	✅
+Joining tables with JOIN	✅
+Using IN, BETWEEN, and LIKE	✅
+Real-world use cases	✅
+_______________________________________________________
+*******************************************************##
+###########################################################
+The SQL OVER clause enables powerful row-wise calculations like running totals, rankings, and moving averages—without collapsing data into groups. It's essential for advanced reporting and analytics.
+
+Here’s a comprehensive breakdown of the SQL OVER clause, including its concept, usage scenarios, and sample problem statements to help you master it.
+
+🧠 Concept of the OVER Clause
+The OVER clause is used with window functions to perform calculations across a set of rows related to the current row. Unlike aggregate functions (e.g., SUM, AVG) that group rows, window functions retain individual rows while computing values over a "window" of rows.
+
+Syntax:
+
+sql
+SELECT column1,
+       window_function(column2) OVER (
+           PARTITION BY column3
+           ORDER BY column4
+           ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW
+       ) AS result_column
+FROM table_name;
+Key Components:
+
+PARTITION BY: Divides the result set into partitions.
+
+ORDER BY: Orders rows within each partition.
+
+ROWS or RANGE: Defines the frame of rows for calculation.
+
+🔧 Common Usage Scenarios
+Here are practical applications where the OVER clause shines:
+
+Running totals: Cumulative sales or expenses per category.
+
+Row numbering: Assigning sequential numbers to rows.
+
+Ranking: RANK(), DENSE_RANK(), NTILE() for leaderboard-style outputs.
+
+Moving averages: Smoothing time-series data.
+
+Lead/Lag analysis: Comparing current row with previous or next rows.
+
+Percentile calculations: Distribution-based insights.
+
+📝 Sample Problem Statements
+Use these to practice or design SQL challenges:
+
+Problem Statement	Window Function	Purpose
+Calculate cumulative salary per department	SUM(salary) OVER (PARTITION BY department ORDER BY hire_date)	Running total
+Assign row numbers to employees by department	ROW_NUMBER() OVER (PARTITION BY department ORDER BY hire_date)	Row numbering
+Rank students by score within each class	RANK() OVER (PARTITION BY class ORDER BY score DESC)	Ranking
+Compare each month's sales to the previous month	LAG(sales) OVER (PARTITION BY region ORDER BY month)	Lag analysis
+Compute 3-month moving average of revenue	AVG(revenue) OVER (ORDER BY month ROWS BETWEEN 2 PRECEDING AND CURRENT ROW)	Moving average
+Identify top 3 earners per team	Use ROW_NUMBER() and filter WHERE row_num <= 3	Top-N filtering
+📚 Further Reading
+For deeper examples and syntax variations across SQL Server, MySQL, and PostgreSQL, check out:
+
+GeeksforGeeks SQL OVER Clause
+
+Baeldung SQL OVER Clause Guide
+
+LearnSQL.com OVER Clause Examples
+______________________________________________________________________
+Sample Problem Statements Using SQL OVER Clause
+🎯 Ranking and Row Numbering
+Assign a unique row number to each employee within their department based on hire date.
+
+Rank students by their test scores within each class.
+
+Identify the top 3 selling products per region using ROW_NUMBER().
+
+📈 Running Totals and Aggregates
+Calculate cumulative monthly sales for each store.
+
+Show total salary paid to each department over time.
+
+Compute a running total of donations received by each charity.
+
+📊 Moving Averages and Rolling Metrics
+Calculate a 3-day moving average of temperature readings.
+
+Find the 7-day rolling sum of website visits per user.
+
+Compute a trailing average of stock prices for each company.
+
+🔁 Lead and Lag Analysis
+Compare each month’s revenue to the previous month’s using LAG().
+
+Show the difference in customer ratings between consecutive visits.
+
+Display the next scheduled appointment for each patient using LEAD().
+
+📉 Percentile and Distribution Insights
+Determine the percentile rank of each student’s score within their class.
+
+Identify customers in the top 10% of lifetime purchases.
+
+Flag employees whose salary is above the median in their department.
+
+🧮 Advanced Filtering with Window Functions
+Select the highest-paid employee in each team using RANK() and a WHERE clause.
+
+Filter rows where the cumulative sales exceed a certain threshold.
+
+Show only the first purchase made by each customer.

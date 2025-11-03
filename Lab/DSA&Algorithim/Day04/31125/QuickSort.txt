@@ -1,0 +1,81 @@
+QuickSort is a fast, divide-and-conquer sorting algorithm that works by partitioning arrays around a pivot. It's best used when performance matters and memory usage should be minimal.
+
+Here’s a complete breakdown of the QuickSort algorithm:
+
+🧠 What Is QuickSort?
+QuickSort is a comparison-based sorting algorithm that uses the divide and conquer strategy:
+
+It selects a pivot element.
+
+Partitions the array so that elements less than the pivot go to the left, and greater ones to the right.
+
+Recursively applies the same logic to the subarrays.
+
+🕒 When to Use QuickSort
+Use QuickSort when:
+
+You need fast sorting (average time complexity is O(n log n)).
+
+Memory usage should be low (QuickSort is in-place, meaning it doesn’t require extra space).
+
+You’re sorting large datasets or arrays.
+
+Avoid QuickSort when:
+
+Worst-case performance matters (e.g., real-time systems).
+
+The data is nearly sorted (MergeSort or Insertion Sort might be better).
+
+⚙️ How QuickSort Works
+Choose a Pivot: Can be the first, last, middle, or a random element.
+
+Partitioning: Rearrange elements so that:
+
+Left side < pivot
+
+Right side > pivot
+
+Recursion: Apply the same steps to the left and right subarrays.
+
+Base Case: When the subarray has 0 or 1 element, it’s already sorted.
+
+✅ Advantages of QuickSort
+Fast average performance: O(n log n)
+
+In-place sorting: No extra memory needed
+
+Efficient for large datasets
+
+Tail recursion optimization possible
+
+❌ Disadvantages of QuickSort
+Worst-case time complexity: O(n²) (if pivot is poorly chosen)
+
+Not stable: Equal elements may not retain their original order
+
+Recursive calls can lead to stack overflow for large arrays
+
+Sources:
+
+🧪 Small Task: QuickSort Concept Practice
+Task: Sort the array [8, 3, 1, 7, 0, 10, 2] using QuickSort.
+
+Steps:
+
+Choose pivot (e.g., last element → 2)
+
+Partition:
+
+Left: [0, 1]
+
+Pivot: 2
+
+Right: [8, 3, 7, 10]
+
+Recursively sort left and right:
+
+Left becomes [0, 1]
+
+Right becomes [3, 7, 8, 10]
+
+Final sorted array: [0, 1, 2, 3, 7, 8, 10]

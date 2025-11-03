@@ -1,0 +1,82 @@
+What Are SQL Aggregation Functions?
+SQL aggregation functions perform calculations on a set of values and return a single summary result. They're commonly used with GROUP BY, HAVING, and ORDER BY clauses to analyze grouped data.
+
+🔧 Common Aggregation Functions
+Function	Description	Example Usage
+COUNT()	Counts rows or non-null values	COUNT(*), COUNT(column)
+SUM()	Adds up numeric values	SUM(sales)
+AVG()	Calculates average of numeric values	AVG(score)
+MIN()	Finds the smallest value	MIN(price)
+MAX()	Finds the largest value	MAX(salary)
+Sources:
+
+📌 When to Use Aggregation Functions
+Summarizing data: totals, averages, counts
+
+Analyzing performance: highest/lowest scores, sales, etc.
+
+Filtering grouped results: using HAVING
+
+Generating reports: monthly revenue, user activity, etc.
+
+🎯 Why Use Aggregation Functions
+Simplifies complex analysis across large datasets
+
+Improves readability and performance of queries
+
+Enables business intelligence and reporting
+
+Works with grouping and filtering for deeper insights
+
+🧩 Sample Problem Statements
+🛒 Scenario: Sales Database
+Table: Sales
+
+SaleID	Region	SalesAmount	SaleDate
+1	North	5000	2023-01-10
+2	South	7000	2023-01-12
+3	North	3000	2023-01-15
+4	East	4000	2023-01-18
+5	South	6000	2023-01-20
+🔹 Problem 1: Total Sales
+Task: Calculate total sales across all regions.
+
+sql
+SELECT SUM(SalesAmount) AS TotalSales
+FROM Sales;
+🔹 Problem 2: Average Sales per Region
+Task: Find average sales amount for each region.
+
+sql
+SELECT Region, AVG(SalesAmount) AS AvgSales
+FROM Sales
+GROUP BY Region;
+🔹 Problem 3: Count of Sales Transactions
+Task: Count how many sales transactions occurred.
+
+sql
+SELECT COUNT(*) AS TotalTransactions
+FROM Sales;
+🔹 Problem 4: Highest Sale Amount
+Task: Find the highest sale amount.
+
+sql
+SELECT MAX(SalesAmount) AS HighestSale
+FROM Sales;
+🔹 Problem 5: Filter Regions with Total Sales > ₹10,000
+Task: Show regions where total sales exceed ₹10,000.
+
+sql
+SELECT Region, SUM(SalesAmount) AS TotalSales
+FROM Sales
+GROUP BY Region
+HAVING SUM(SalesAmount) > 10000;
+📋 Concept Checklist: Aggregation Functions
+Concept	Covered
+Basic syntax of aggregation functions	✅
+Use with GROUP BY	✅
+Filtering with HAVING	✅
+Combining multiple functions	✅
+Handling NULL values	✅
+Real-world use cases	✅
+Performance considerations	✅

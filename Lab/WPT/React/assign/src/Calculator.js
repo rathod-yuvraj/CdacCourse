@@ -7,13 +7,11 @@ const Calculator = () => {
   const handleNum1 = (e) => setNum1(e.target.value);
   const handleNum2 = (e) => setNum2(e.target.value);
 
+  // Calculations:
   const sum = Number(num1) + Number(num2);
-<<<<<<< HEAD
-=======
   const sub = Number(num1) - Number(num2);
   const mul = Number(num1) * Number(num2);
-  const div = Number(num1) / Number(num2);
->>>>>>> 32558f955f463af33c75ee82b0c9ba8fe2153e5a
+  const div = Number(num1) / Number(num2); // Note: handles division by zero by resulting in Infinity
 
   return (
     <div>
@@ -31,15 +29,12 @@ const Calculator = () => {
         placeholder="Enter second number"
       />
       <p>Sum: {sum}</p>
-<<<<<<< HEAD
-=======
-      <p>Sub: {sub}</p>
-      <p>Mul: {mul}</p>
-      <p>Div: {div}</p>
-      
->>>>>>> 32558f955f463af33c75ee82b0c9ba8fe2153e5a
+      <p>Subtraction: {sub}</p>
+      <p>Multiplication: {mul}</p>
+      <p>Division: {div}</p>
     </div>
   );
 };
 
 export default Calculator;
+
