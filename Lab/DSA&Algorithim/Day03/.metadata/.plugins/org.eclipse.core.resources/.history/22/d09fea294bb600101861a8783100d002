@@ -1,0 +1,31 @@
+package com.yuvraj.arrays;
+
+public class MyStringArray {
+	private String[] arr;
+	private int count;
+	public MyStringArray(String[] arr, int count) {
+		
+		this.arr = arr;
+		this.count = count;
+	}
+	public MyStringArray() {
+		arr=new String[10];
+		count=0;
+	}
+	
+	public MyStringArray(int size) {
+		arr=new String[size];
+	}
+	
+	public void add(String str) {
+		arr[count]=str;
+		count++;
+	}
+	public void add (String str, int pos) {
+		arr[pos]=str;
+		count++;
+	}
+	
+	
+
+}

@@ -1,0 +1,56 @@
+package bean;
+
+import java.util.Date;
+
+public class SalariedEmp  {
+	private String sName;
+	private String desg;
+	private String dept;
+
+	public SalariedEmp(String sName, String desg, String dept) {
+		super();
+		this.sName = sName;
+		this.desg = desg;
+		this.dept = dept;
+	}
+
+	public SalariedEmp() {
+		super();
+	}
+
+	public String getsName() {
+		return sName;
+	}
+
+	public void setsName(String sName) {
+		this.sName = sName;
+	}
+
+	public String getDesg() {
+		return desg;
+	}
+
+	public void setDesg(String desg) {
+		this.desg = desg;
+	}
+
+	public String getDept() {
+		return dept;
+	}
+
+	@Override
+	public String toString() {
+		return "SalariedEmp [sName=" + sName + ", desg=" + desg + ", dept=" + dept + "]";
+	}
+
+	public void setDept(String dept) {
+		this.dept = dept;
+	}
+
+	
+	public String calculateSal() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

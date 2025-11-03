@@ -1,0 +1,29 @@
+package com.yuvraj.dao;
+
+
+import java.util.Set;
+
+import com.yuvraj.beans.Student;
+
+public class StudentDaoImpl implements StudentDao{
+	static Set <Student> eset;
+	
+	static {
+		eset=new HashSet<>();
+		
+		eset.add(new Student(101,"yuvraj",99));
+		eset.add(new Student(102,"yuvraj",99));
+		eset.add(new Student(103,"yuvraj",99));
+		eset.add(new Student(104,"yuvraj",99));
+		eset.add(new Student(105,"yuvraj",99));
+	}
+	
+	
+
+	@Override
+	public boolean addNewStundent() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+}

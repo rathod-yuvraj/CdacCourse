@@ -1,0 +1,10 @@
+package com.yuvraj.beans;
+
+public class Item {
+	private int iid;
+	private String iName;
+	private double price;
+	private int qyt;
+	
+
+}

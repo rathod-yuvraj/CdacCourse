@@ -1,0 +1,53 @@
+package com.yuvraj.test;
+import java.io.*;
+import java.util.*;
+import com.yuvraj.beans.*;
+public class TestSerialization {
+	public static void main(String [] args) {
+		System.out.println("Serializations");
+		List <Employee> elist=new ArrayList<>();
+		elist.add(new Employee(101,"Yuvraj","admin",890323));
+		elist.add(new Employee(102,"raj","front",890323));
+		elist.add(new Employee(103,"Sairaj","CEO",9090321));
+		elist.add(new Employee(104,"Saket","full",893203));
+		elist.add(new Employee(105,"Sohan","HR",8903230));
+		
+		try(ObjectOutputStream oof=new ObjectOutputStream(new FileOutputStream("example.txt"))){
+			
+			for(Employee e: elist) {
+				oof.writeObject(e);
+				
+			}
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		try(ObjectInputStream oif=new ObjectInputStream(new FileInputStream("example.txt"))){
+			
+		      while(true) {
+		    	  Employee em=null;
+		  
+				
+				try {
+					em = (Employee) oif.readObject();
+				}catch(EOFException e) {
+					System.out.println("Reached to end of file...."); 
+				catch (ClassNotFoundException e) {
+					
+					e.printStackTrace();
+				}
+					System.out.println(em);
+		    	  
+		      } 
+		}
+			
+		
+			
+		
+	
+
+}

@@ -1,0 +1,10 @@
+package nestedClasses;
+
+public class Book {
+	private int bid;
+	private String lname;
+	public Book() {
+		super();
+	}
+
+}

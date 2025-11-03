@@ -1,3 +1,36 @@
-./Lab/WPT/Day11/yuvraj/node_modules
-./Notes/WPT/Day13/Project1/node_modules
-./Notes/WPT/Day8/lecture/jquery-3.7.1.min.js
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/node_modules
+node_modules/
+**/node_modules
+node_modules/**
+# Ignore all .class files
+*.class
+
+# Optionally ignore build directories
+/bin/
+/out/
+
+ *.class
+/.pnp
+.pnp.js
+# Ignore jQuery downloaded file
+js/jquery-*.js
+
+# testing
+/coverage
+
+# production
+/build
+
+# misc
+.DS_Store
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*

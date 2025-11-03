@@ -1,0 +1,54 @@
+package demo.com.Beans;
+
+import java.time.LocalDate;
+import java.util.Date;
+
+public class Employee {
+
+	public Employee() {
+		super();
+	}
+	private int id ;
+	private String name;
+	private double salary;
+	private LocalDate jdt;
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public double getSalary() {
+		return salary;
+	}
+	public void setSalary(double salary) {
+		this.salary = salary;
+	}
+	
+	
+	public LocalDate getJdt() {
+		return jdt;
+	}
+	public void setJdt(LocalDate jdt) {
+		this.jdt = jdt;
+	}
+	public Employee(int id, String name, double salary, LocalDate jdt) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.salary = salary;
+		this.jdt = jdt;
+	}
+	@Override
+	public String toString() {
+		return "Employee [id=" + id + ", name=" + name + ", salary=" + salary + ", joindt=" + joindt + "]";
+	}
+	
+	
+}

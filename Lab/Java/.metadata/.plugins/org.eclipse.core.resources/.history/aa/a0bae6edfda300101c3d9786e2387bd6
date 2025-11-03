@@ -1,0 +1,46 @@
+package bean;
+
+import java.util.Date;
+
+public class ContractEmp {
+
+	private String cName;
+	private Date  cDate;
+	private float hrs;
+	public ContractEmp(String cName, Date cDate, float hrs, double charges) {
+		super();
+		this.cName = cName;
+		this.cDate = cDate;
+		this.hrs = hrs;
+		this.charges = charges;
+	}
+	public String getcName() {
+		return cName;
+	}
+	public void setcName(String cName) {
+		this.cName = cName;
+	}
+	public Date getcDate() {
+		return cDate;
+	}
+	public void setcDate(Date cDate) {
+		this.cDate = cDate;
+	}
+	public float getHrs() {
+		return hrs;
+	}
+	public void setHrs(float hrs) {
+		this.hrs = hrs;
+	}
+	public double getCharges() {
+		return charges;
+	}
+	public void setCharges(double charges) {
+		this.charges = charges;
+	}
+	private double charges;
+	public ContractEmp(String string, Date date, String string2, String string3, int i, int j) {
+		// TODO Auto-generated constructor stub
+	}
+
+}

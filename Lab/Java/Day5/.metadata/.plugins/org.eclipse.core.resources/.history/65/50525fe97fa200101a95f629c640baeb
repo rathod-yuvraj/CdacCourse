@@ -1,0 +1,18 @@
+package hasARelation;
+
+public class Team {
+  private int tid;
+  private String tname;
+ private String captain;
+ private int size;
+ private Player [] plist;
+public Team(int tid, String tname, String captain, int size, Player[] plist) {
+	super();
+	this.tid = tid;
+	this.tname = tname;
+	this.captain = captain;
+	this.size = size;
+	this.plist = plist;
+}
+
+}

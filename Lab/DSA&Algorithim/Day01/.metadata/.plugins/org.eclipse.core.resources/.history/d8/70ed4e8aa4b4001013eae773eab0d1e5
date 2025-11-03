@@ -1,0 +1,9 @@
+package com.demo.arrays;
+
+public class MyArray {
+	private int[] arr;
+	
+
+	
+
+}

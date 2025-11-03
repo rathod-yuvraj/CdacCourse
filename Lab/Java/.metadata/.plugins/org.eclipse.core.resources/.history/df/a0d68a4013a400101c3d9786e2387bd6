@@ -1,0 +1,16 @@
+package javaPractise;
+
+public class StrBuildinFun {
+
+	public static void main(String[] args) {
+		String str="Yuvraj Rathod,a,b,c,d,e";
+		
+		System.out.println(str.indexOf("rathod"));
+		System.out.println(str.toLowerCase());
+		System.out.println(str.toUpperCase());
+		System.out.println(str.split(","));
+		
+
+	}
+
+}

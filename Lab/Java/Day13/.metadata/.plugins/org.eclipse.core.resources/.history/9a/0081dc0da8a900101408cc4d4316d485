@@ -1,0 +1,28 @@
+package com.demo.test;
+
+import java.io.*;
+
+public class TestFileStream {
+	
+	public static void main(String[] args) {
+		
+		String data="This code Are only file handling ";
+		
+		try( FileOutputStream fs=new FileOutputStream("myfile.txt")){
+			System.out.println("File  ");
+			fs.write(data.getBytes());
+			System.out.println("File inwrite data successfully!");
+		
+			
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			System.out.println("File"+e.getMessage());
+//			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			System.out.println("File"+e.getMessage());
+//			e.printStackTrace();
+		}
+	}
+
+}

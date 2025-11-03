@@ -1,0 +1,11 @@
+package com.demo.beans;
+
+public class Employee {
+
+	private int empid;
+	private String name;
+	private double sal;
+	private LocalDate jdt;
+	
+
+}

@@ -1,0 +1,4 @@
+package com.yuvraj.dao;
+public class StudentDaoImpl implements StudentDao{
+
+}

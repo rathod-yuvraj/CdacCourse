@@ -1,0 +1,11 @@
+package com.yuvraj.beans;
+
+public class Employee {
+	private int eid;
+	private String ename;
+    private String edesg;
+    private double sal;
+    
+    
+
+}

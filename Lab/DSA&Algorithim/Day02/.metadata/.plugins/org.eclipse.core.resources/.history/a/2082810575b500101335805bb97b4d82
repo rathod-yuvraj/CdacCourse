@@ -1,0 +1,14 @@
+package com.yuvraj.test;
+
+import com.yuvraj.search.BinarySearch;
+
+public class TestBinaryNoRec {
+
+	public static void main(String[] args) {
+		BinarySearch bo=new BinarySearch();
+		
+		
+
+	}
+
+}

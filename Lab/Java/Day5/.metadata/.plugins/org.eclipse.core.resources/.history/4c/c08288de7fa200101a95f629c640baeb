@@ -1,0 +1,10 @@
+package hasARelation;
+
+public class Team {
+  private int tid;
+  private String tname;
+ private String captain;
+ private int size;
+ private Player [] plist;
+
+}

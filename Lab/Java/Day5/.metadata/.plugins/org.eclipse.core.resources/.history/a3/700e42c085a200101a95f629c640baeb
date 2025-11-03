@@ -1,0 +1,27 @@
+package nestedClasses;
+
+public class Book {
+	private int bid;
+	private String lname;
+	public Book() {
+		super();
+	}
+	public Book(int bid, String lname) {
+		super();
+		this.bid = bid;
+		this.lname = lname;
+	}
+	public int getBid() {
+		return bid;
+	}
+	public void setBid(int bid) {
+		this.bid = bid;
+	}
+	public String getLname() {
+		return lname;
+	}
+	public void setLname(String lname) {
+		this.lname = lname;
+	}
+
+}
