@@ -1,0 +1,12 @@
+import java.util.Date;
+
+public class Person {
+	
+	private String pName;
+	private Date pDate;
+	
+	private String pid;
+	
+	
+
+}

@@ -1,0 +1,8 @@
+package com.yuvraj.arrays;
+
+public class MyArray {
+	
+	private int [] arr;
+	
+
+}

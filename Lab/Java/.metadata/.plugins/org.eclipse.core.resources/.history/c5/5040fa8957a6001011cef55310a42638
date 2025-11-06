@@ -1,0 +1,11 @@
+package com.yuvraj.service;
+
+public class StudentServiceImpl implements StudentService {
+
+	@Override
+	public boolean addNewStudent() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+}

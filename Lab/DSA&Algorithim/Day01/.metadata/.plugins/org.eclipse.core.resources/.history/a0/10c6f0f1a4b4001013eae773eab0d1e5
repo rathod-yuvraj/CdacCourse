@@ -1,0 +1,16 @@
+package com.demo.test;
+
+import java.util.Scanner;
+
+import com.demo.arrays.MyArray;
+
+public class TestArray {
+
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		MyArray m=new MyArray(10);
+		
+
+	}
+
+}

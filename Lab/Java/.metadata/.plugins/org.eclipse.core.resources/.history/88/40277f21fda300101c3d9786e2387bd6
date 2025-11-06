@@ -1,0 +1,14 @@
+package bean;
+
+import java.util.Date;
+
+public class SalariedEmp {
+	private String sName;
+	private String desg;
+	private String dept;
+
+	public SalariedEmp(String string, Date date, String string2, String string3, int i) {
+		// TODO Auto-generated constructor stub
+	}
+
+}

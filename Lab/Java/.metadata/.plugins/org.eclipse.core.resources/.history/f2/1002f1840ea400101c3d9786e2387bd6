@@ -1,0 +1,23 @@
+package javaPractise;
+
+public class StringFunctions {
+	
+	public static void main (String [] args)
+	{ String s1 = "Test 1";
+	  String s2 = "Test 2";
+	  String s3 =s2;
+	  
+	  String  s4 = new String ("Test");
+	  System.out.println("s1==s3"+ (s1 == s2));
+	  System.out.println("s2==s3"+ (s2 == s3));
+	  System.out.println("s2==s4"+ (s2==s4));
+	  System.out.println("s2.equals(s4)"+(s2.equals(s4)) );
+	  s1 = "Welcome";
+	  System.out.println("s2==s1"+(s2==s1));
+	  
+	
+	  
+	  
+	}
+
+}

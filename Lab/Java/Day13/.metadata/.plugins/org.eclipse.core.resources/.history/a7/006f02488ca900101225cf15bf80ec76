@@ -1,0 +1,74 @@
+package com.yuvraj.test;
+
+
+
+import java.util.InputMismatchException;
+import java.util.Scanner;
+
+public class TestException {
+	private static int divide(int x, int y) {
+		return x/y;
+	}
+	private static double mul(double x,int a) {
+		return x*a;
+	}
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		int choice=0;
+		do {
+			
+			System.out.println("Enter choice");
+			choice=sc.nextInt();
+			
+			switch(choice) {
+			case 1->{
+				System.out.println("Enter num");
+				double d=sc.nextDouble();
+				System.out.println("Enter num2");
+				int s=sc.nextInt();
+				mul(d,s);
+				
+			}
+			case 2->{
+				System.out.println("Enter num");
+				int d=sc.nextInt();
+				System.out.println("Enter num2");
+				int s=sc.nextInt();
+				divide(d,s);
+				
+			}
+			
+			}
+			
+		}while(choice!=3);
+		try {
+			System.out.println("Enter a number");
+			int num=sc.nextInt();
+			System.out.println("Enter a number");
+			int num1=sc.nextInt();
+			//try {
+				int ans=divide(num,num1);
+				System.out.println("Division : "+ans);
+			//}catch(ArithmeticException e) {
+			//	System.out.println(e.getMessage());
+			//}
+			System.out.println("At the end of outer try block");
+		}catch(InputMismatchException e) {
+			System.out.println("Pls enter number");
+			//e.printStackTrace();
+			//sSystem.out.println(e.getMessage());
+		}catch(ArithmeticException|ArrayIndexOutOfBoundsException e){
+			System.out.println(e.getMessage());
+		}catch(Exception e) {
+			System.out.println("Error occured");
+			System.out.println(e.getMessage());
+		} 
+		finally{
+			System.out.println("in finally block");
+		}
+
+	}
+
+	
+
+}

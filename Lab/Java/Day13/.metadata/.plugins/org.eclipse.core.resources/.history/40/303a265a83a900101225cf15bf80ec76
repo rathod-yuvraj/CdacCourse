@@ -1,0 +1,14 @@
+package com.demo.Service;
+
+import com.demo.beans.Employee;
+
+public interface EmployeeService {
+
+	boolean addnewEmployee();
+
+	
+
+
+
+	
+}

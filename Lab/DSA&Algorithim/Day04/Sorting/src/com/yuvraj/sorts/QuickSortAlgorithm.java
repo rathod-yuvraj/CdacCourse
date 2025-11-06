@@ -1,5 +1,6 @@
 package com.yuvraj.sorts;
 
+<<<<<<< HEAD
 package com.demo.sorting;
 
 import java.util.Arrays;
@@ -47,4 +48,13 @@ public class QuickSortAlgorithm {
 
 	
 
+=======
+public class QuickSortAlgorithm {
+	
+	public static void partition(int[] arrr, int n) {
+		int piovt;
+		int
+	}
+
+>>>>>>> yuvraj
 }

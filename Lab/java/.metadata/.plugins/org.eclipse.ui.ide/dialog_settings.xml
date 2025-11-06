@@ -1,13 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="ChooseWorkspaceDialogSettings">
+<<<<<<< HEAD
 		<item key="DIALOG_X_ORIGIN" value="8"/>
+=======
+<<<<<<< HEAD
+		<item key="DIALOG_X_ORIGIN" value="8"/>
+=======
+		<item key="DIALOG_X_ORIGIN" value="204"/>
+>>>>>>> ra
+>>>>>>> yuvraj
 		<item key="DIALOG_Y_ORIGIN" value="185"/>
 	</section>
 	<section name="WORKBENCH_SETTINGS">
 		<list key="ENABLED_TRANSFERS">
 		</list>
 	</section>
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> yuvraj
 	<section name="NewWizardAction">
 		<item key="NewWizardSelectionPage.STORE_SELECTED_ID" value="org.eclipse.jdt.ui.wizards.JavaProjectWizard"/>
 		<list key="NewWizardSelectionPage.STORE_EXPANDED_CATEGORIES_ID">
@@ -24,4 +36,9 @@
 			<item value="C:\Users\IET\Desktop\250845920064\Lab\java"/>
 		</list>
 	</section>
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> ra
+>>>>>>> yuvraj
 </section>

@@ -1,0 +1,16 @@
+package com.demo.service;
+
+import com.demo.dao.CustomerDao;
+
+public class CustomerServiceImpl implements CustomerService {
+	
+	private CustomerDao cdao ;
+	
+
+	@Override
+	public boolean addNewCustomer() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+}

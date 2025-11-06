@@ -1,0 +1,48 @@
+package com.demo.beans;
+
+import java.time.LocalDate;
+
+public class Employee {
+
+	public Employee(int empid, String name, double sal, LocalDate jdt) {
+		super();
+		this.empid = empid;
+		this.name = name;
+		this.sal = sal;
+		this.jdt = jdt;
+	}
+	private int empid;
+	private String name;
+	private double sal;
+	private LocalDate jdt;
+	public int getEmpid() {
+		return empid;
+	}
+	public void setEmpid(int empid) {
+		this.empid = empid;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public double getSal() {
+		return sal;
+	}
+	public void setSal(double sal) {
+		this.sal = sal;
+	}
+	public LocalDate getJdt() {
+		return jdt;
+	}
+	public void setJdt(LocalDate jdt) {
+		this.jdt = jdt;
+	}
+	@Override
+	public String toString() {
+		return "Employee [empid=" + empid + ", name=" + name + ", sal=" + sal + ", jdt=" + jdt + "]";
+	}
+	
+
+}

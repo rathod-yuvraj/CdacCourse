@@ -1,0 +1,10 @@
+package com.demo.beansArray;
+
+public class My2dArrays {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

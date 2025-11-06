@@ -1,0 +1,10 @@
+package com.yuvraj.test;
+
+public class TestFileHandling {
+
+	public static void main(String[] args) {
+		FileInputStream fs=new FileInputStream("yuvrajfile.txt");
+
+	}
+
+}

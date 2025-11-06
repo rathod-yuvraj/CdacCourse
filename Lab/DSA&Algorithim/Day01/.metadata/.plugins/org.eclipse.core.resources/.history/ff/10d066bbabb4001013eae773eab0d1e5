@@ -1,0 +1,25 @@
+package com.demo.arrays;
+
+public class MyArray {
+    private int[] arr;
+    private int count; // made non-static
+
+    public MyArray(int[] arr) {
+      
+        this.count = arr.length;
+    }
+
+     public MyArray(int size ) {
+    	 
+    	 arr = new int [size];
+    	 count = 0;
+    	 
+     }
+     
+     public MyArray (int[] arr, count ) {
+
+    	 
+    	 
+     }
+}
+

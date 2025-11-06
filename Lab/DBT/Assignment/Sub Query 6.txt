@@ -1,0 +1,10 @@
+SELECT 
+  PRODID,
+  PRODNAME,
+  AMOUNT AS original_price,
+  ROUND(AMOUNT * 1.005, 2) AS new_price,
+  ROUND((AMOUNT * 1.005) - AMOUNT, 2) AS price_difference
+FROM sales;
+
+
+SELECT * FROM emp WHERE HIREDATE = ( SELECT HIREDATE FROM emp WHERE ENAME = 'KING' );

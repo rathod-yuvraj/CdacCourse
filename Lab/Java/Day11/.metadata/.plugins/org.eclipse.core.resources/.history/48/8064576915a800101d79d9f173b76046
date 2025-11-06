@@ -1,0 +1,5 @@
+package demo.com.dao;
+
+public interface EmployeeDao {
+
+}

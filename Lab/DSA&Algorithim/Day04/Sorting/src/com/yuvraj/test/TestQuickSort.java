@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 package com.yuvraj.test;
+=======
+package src.com.yuvraj.test;
+>>>>>>> yuvraj
 
 public class TestQuickSort {
 

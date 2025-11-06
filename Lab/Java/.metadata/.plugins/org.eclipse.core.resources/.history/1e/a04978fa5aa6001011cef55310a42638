@@ -1,0 +1,15 @@
+package com.yuvraj.service;
+
+import com.yuvraj.dao.StudentDao;
+
+public class StudentServiceImpl implements StudentService {
+	
+	private StudentDao edao;
+
+	@Override
+	public boolean addNewStudent() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+}

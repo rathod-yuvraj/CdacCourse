@@ -1,0 +1,33 @@
+package Demo.com.beans;
+
+public class Employee {
+
+	private int eid;
+	private String name;
+	private double sal;
+	public int getEid() {
+		return eid;
+	}
+	public void setEid(int eid) {
+		this.eid = eid;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public double getSal() {
+		return sal;
+	}
+	public void setSal(double sal) {
+		this.sal = sal;
+	}
+	public Employee(int eid, String name, double sal) {
+		super();
+		this.eid = eid;
+		this.name = name;
+		this.sal = sal;
+	}
+	
+}

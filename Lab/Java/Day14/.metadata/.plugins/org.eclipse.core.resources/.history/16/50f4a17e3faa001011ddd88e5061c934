@@ -1,0 +1,11 @@
+package com.yuvraj.test;
+
+public class TestThread {
+
+	public static void main(String[] args) {
+		FactorialAtable ob=new FactorialAtable();
+		
+
+	}
+
+}

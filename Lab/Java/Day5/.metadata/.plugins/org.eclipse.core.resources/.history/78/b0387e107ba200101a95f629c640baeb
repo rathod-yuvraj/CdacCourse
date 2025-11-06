@@ -1,0 +1,14 @@
+
+import java.util.Date;
+
+public class TestVehicle {
+	
+	 int vid;
+	 String vownName;
+	 String typOfVehicle;
+	 Date dateOdPurchase;
+	 
+
+	
+
+}

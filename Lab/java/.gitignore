@@ -1,6 +1,9 @@
 /.metadata/
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> yuvraj
 # Compiled class files
 *.class
 
@@ -33,4 +36,7 @@ replay_pid*
 bin/
 target/
 
+<<<<<<< HEAD
 >>>>>>> 32558f955f463af33c75ee82b0c9ba8fe2153e5a
+=======
+>>>>>>> yuvraj

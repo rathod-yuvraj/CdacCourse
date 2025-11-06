@@ -1,0 +1,13 @@
+import java.util.*;
+public class testPrime {
+
+	public static void main(String[] args) {
+		System.out.println("Prime Number");
+		Scanner sc=new Scanner(System.in);
+		
+	
+	 boolean pnum=primeService.isPrime(int num);
+	 
+	}
+
+}

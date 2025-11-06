@@ -1,0 +1,22 @@
+package demo.com.service;
+
+import java.util.List;
+
+import demo.com.beans.Employee;
+
+
+import demo.com.daos.EmployeeDaoImpl;
+
+public interface EmployeeService {
+
+	boolean addNewEmployee();
+
+	List<Empolee> displayAll();
+
+	Empolee searchById(int eid);
+
+	boolean deleteById(int eid);
+
+	List<EmployeeDaoImpl> findByName(String nm);
+
+}

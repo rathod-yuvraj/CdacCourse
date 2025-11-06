@@ -1,0 +1,5 @@
+import com.yuvraj.dao.StudentDao;
+
+public class StudentDaoImpl implements StudentDao{
+
+}

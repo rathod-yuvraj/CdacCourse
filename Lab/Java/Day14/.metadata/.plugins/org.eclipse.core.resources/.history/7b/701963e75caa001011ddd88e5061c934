@@ -1,0 +1,50 @@
+package com.yuvraj.beans;
+
+import java.time.LocalDate;
+
+public class Employee {
+	private int eind;
+	private String name;
+	private double sal;
+	private LocalDate jdt;
+	public Employee(int eind, String name, double sal, LocalDate jdt) {
+		super();
+		this.eind = eind;
+		this.name = name;
+		this.sal = sal;
+		this.jdt = jdt;
+	}
+	public Employee() {
+		super();
+	}
+	public int getEind() {
+		return eind;
+	}
+	public void setEind(int eind) {
+		this.eind = eind;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public double getSal() {
+		return sal;
+	}
+	public void setSal(double sal) {
+		this.sal = sal;
+	}
+	public LocalDate getJdt() {
+		return jdt;
+	}
+	public void setJdt(LocalDate jdt) {
+		this.jdt = jdt;
+	}
+	@Override
+	public String toString() {
+		return "Employee [eind=" + eind + ", name=" + name + ", sal=" + sal + ", jdt=" + jdt + "]";
+	}
+	
+
+}

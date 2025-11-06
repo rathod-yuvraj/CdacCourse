@@ -1,0 +1,9 @@
+package com.yuvraj.service;
+
+public interface StudentService {
+
+	boolean addNewStudent();
+
+	
+
+}

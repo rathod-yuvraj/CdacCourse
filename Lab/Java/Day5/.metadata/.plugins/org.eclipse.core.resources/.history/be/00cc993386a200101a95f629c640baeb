@@ -1,0 +1,11 @@
+package nestedClasses;
+
+public class TestBook {
+
+	public static void main(String[] args) {
+		Book b=new Book(101,"Yuvraj");
+		
+
+	}
+
+}

@@ -1,0 +1,28 @@
+package com.yuvraj.arrays;
+
+public class MyArray {
+	
+	private int [] arr;
+	private int count;
+
+
+	public MyArray() {
+		arr=new int[10];
+		count=0;
+	}
+
+	public MyArray(int size) {
+		
+	       arr=new int[size];
+	       count=0;
+	       
+	}
+
+	public MyArray(int[] arr, int count) {
+		this.arr = arr;
+		this.count = count;
+	}
+	
+	
+
+}

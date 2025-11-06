@@ -1,0 +1,7 @@
+package com.demo.dao;
+
+public interface CustomerDao {
+
+	boolean save(String cn, int cp);
+
+}
