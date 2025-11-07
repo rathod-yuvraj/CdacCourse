@@ -2,13 +2,21 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
+<<<<<<< HEAD
+import Factorial from './Factorial';
+=======
 
+>>>>>>> yuvraj
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
+<<<<<<< HEAD
+    <Factorial></Factorial>
+=======
   <App/>
+>>>>>>> yuvraj
   </React.StrictMode>
 );
 

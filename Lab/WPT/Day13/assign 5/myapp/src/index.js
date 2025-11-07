@@ -6,32 +6,44 @@ import reportWebVitals from './reportWebVitals';
 <<<<<<< HEAD
 <<<<<<< HEAD
 =======
+<<<<<<< HEAD
+>>>>>>> yuvraj
+=======
 import Factorial from './comp';
 import Conversion from './test';
 
 >>>>>>> 782671352c7f183f3f0f66acc85eaf10bd53752a
+<<<<<<< HEAD
+=======
 =======
 import Factorial from './comp';
 import Conversion from './test';
 
 >>>>>>> ra
+>>>>>>> yuvraj
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
 <<<<<<< HEAD
 <<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> yuvraj
     <App />
 =======
     
     <Conversion></Conversion>
   
 >>>>>>> 782671352c7f183f3f0f66acc85eaf10bd53752a
+<<<<<<< HEAD
+=======
 =======
     
     <Conversion></Conversion>
   
 >>>>>>> ra
+>>>>>>> yuvraj
   </React.StrictMode>
 );
 

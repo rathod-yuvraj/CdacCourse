@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> yuvraj
 <qualifiedTypeNameHistroy>
     <fullyQualifiedTypeName name="com.yuvraj.service.StudentService"/>
     <fullyQualifiedTypeName name="com.yuvraj.service.StudentServiceImpl"/>
@@ -13,6 +16,9 @@
     <fullyQualifiedTypeName name="java.util.Set"/>
     <fullyQualifiedTypeName name="java.util.List"/>
 </qualifiedTypeNameHistroy>
+<<<<<<< HEAD
+=======
 =======
 <qualifiedTypeNameHistroy/>
 >>>>>>> ra
+>>>>>>> yuvraj

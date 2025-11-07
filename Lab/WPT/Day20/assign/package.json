@@ -2,6 +2,9 @@
   "name": "assign",
   "version": "0.1.0",
 <<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> yuvraj
   "private": true,
   "dependencies": {
     "@testing-library/dom": "^10.4.1",
@@ -38,7 +41,10 @@
       "last 1 safari version"
     ]
   }
+<<<<<<< HEAD
+=======
 =======
   "private": true
 >>>>>>> ra
+>>>>>>> yuvraj
 }

@@ -1,6 +1,7 @@
-TO run html from vs code install live server extension in vs code 
+TO run html from vs code install live server 
+extension in vs code 
 
-
+mandatory
 
 Assignments 
 
@@ -12,11 +13,11 @@ Assignments
 
 2) with above concept use Math.max() method to display maximum number
 
-2) Perform the form validations as shown in Lecture
+3) Perform the form validations as shown in Lecture
   for name and age 
    and display error message if it not valid 
 
-3) create html page -  with 
+4) create html page -  with 
 	1 textfield and multiple buttons 
 	
 button captions are - 1)Add at End 
@@ -27,13 +28,13 @@ button captions are - 1)Add at End
 		6) display even numbers
 hint -  use Array predined methods
 
-4) go through object and class syntax in javascript 
+5) go through object and class syntax in javascript 
    (shared files)
 
-5) Accrpt Number from user and display table of that number in 
+6) Accept Number from user and display table of that number in 
    table format 
 
-6) Accept Employee data 
+7) Accept Employee data 
 FirstName  | LastName | email | Date of Birth 
 
 from user 

@@ -1,3 +1,13 @@
+<<<<<<< HEAD
+// import logo from './logo.svg';
+import './App.css';
+import Home from './Home';
+import 
+function App() {
+  return (
+    <div>
+<Home></Home>
+=======
 
 import Home from './component/Home';
 import AboutUs from './component/AboutUs';
@@ -40,6 +50,7 @@ function App() {
         </Routes>
          </BrowserRouter>
 
+>>>>>>> yuvraj
     </div>
   );
 }

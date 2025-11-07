@@ -1,0 +1,627 @@
+Microsoft Windows [Version 10.0.19045.6456]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Users\IET>mysqlmysql --host=192.168.10.117 --port=3306 --user=dac64 --password=welcome
+'mysqlmysql' is not recognized as an internal or external command,
+operable program or batch file.
+
+C:\Users\IET>mysql --host=192.168.10.117 --port=3306 --user=dac64  --password=welcome
+mysql: [Warning] Using a password on the command line interface can be insecure.
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 187
+Server version: 8.0.44 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2025, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| dac64              |
+| information_schema |
+| performance_schema |
++--------------------+
+3 rows in set (0.00 sec)
+
+mysql> use dac63
+ERROR 1044 (42000): Access denied for user 'dac64'@'%' to database 'dac63'
+mysql> use dac64
+Database changed
+mysql> select * from student;
++-----------+----------+------+------------------------+------------------------+
+| studentID | name     | rnk  | emailID                | userName               |
++-----------+----------+------+------------------------+------------------------+
+|      1001 | Saleel   |    1 | saleel.songs@gmail.com | saleel.songs@gmail.com |
+|      1002 | Sharmin  |    1 | sharmin@gmail.com      | sharmin@gmail.com      |
+|      1003 | Vrushali |    2 | vrusha@hotmail.com     | vrushali@hotmail.com   |
+|      1005 | Ruhan    |    3 | ru@live.com            | ruhan.live.com         |
+|      1006 | Neel     |    2 | nil@gmail.com          | neel@gmail.com         |
+|      1007 | Deep     |    1 | deep@gmail.com         | deep@gmail.com         |
+|      1008 | Nitish   |    4 | nity@live.com          | nitish@live.com        |
+|      1009 | Gau      |    5 | gaurav@gmail.com       | gau@gmail.com          |
+|      1010 | Mai      |    4 | mai@gmail.com          | mai@gmail.com          |
+|      1011 | Bipin    |    5 | bipin@gmail.com        | bipinpatil@gmail.com   |
+|      1012 | Natasha  |    3 | NULL                   | NULL                   |
+|      1013 | Bandish  |    2 | NULL                   | NULL                   |
++-----------+----------+------+------------------------+------------------------+
+12 rows in set (0.05 sec)
+
+mysql> insert student(studentID,name,rnk,emailID,username) values(1111,yuvraj,1,yuvraj@gmail.com,yuvraj@gmail.com);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '@gmail.com,yuvraj@gmail.com)' at line 1
+mysql> insert student(studentID,name,rnk,emailID,username) values(1111,'yuvraj',1,'yuvraj@gmail.com','yuvraj@gmail.com');
+Query OK, 1 row affected (0.05 sec)
+
+mysql> insert student(studentID,name,rnk,emailID,username) values(1111,'yuvraj',1,'yuvraj@gmail.com','yuvraj@gmail.com') (22222,'soham',2,'soham12@gamil.com','soham12@gmail.com' );
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '(22222,'soham',2,'soham12@gamil.com','soham12@gmail.com' )' at line 1
+mysql> insert student(studentID,name,rnk,emailID,username) values(1111,'yuvraj',1,'yuvraj@gmail.com','yuvraj@gmail.com'), (22222,'soham',2,'soham12@gamil.com','soham12@gmail.com' );
+ERROR 1062 (23000): Duplicate entry '1111' for key 'student.PRIMARY'
+mysql> desc student
+    -> ;
++-----------+-------------+------+-----+---------+-------+
+| Field     | Type        | Null | Key | Default | Extra |
++-----------+-------------+------+-----+---------+-------+
+| studentID | int         | NO   | PRI | NULL    |       |
+| name      | varchar(45) | YES  |     | NULL    |       |
+| rnk       | int         | YES  |     | NULL    |       |
+| emailID   | varchar(40) | YES  |     | NULL    |       |
+| userName  | varchar(40) | YES  |     | NULL    |       |
++-----------+-------------+------+-----+---------+-------+
+5 rows in set (0.00 sec)
+
+mysql> insert student(studentID,name,rnk,emailID,username) values(112345,'raj',1,'raj@gmail.com','raj@gmail.com'), (22222,'soham',2,'soham12@gamil.com','soham12@gmail.com' );
+Query OK, 2 rows affected (0.08 sec)
+Records: 2  Duplicates: 0  Warnings: 0
+
+mysql> select * from student;
++-----------+----------+------+------------------------+------------------------+
+| studentID | name     | rnk  | emailID                | userName               |
++-----------+----------+------+------------------------+------------------------+
+|      1001 | Saleel   |    1 | saleel.songs@gmail.com | saleel.songs@gmail.com |
+|      1002 | Sharmin  |    1 | sharmin@gmail.com      | sharmin@gmail.com      |
+|      1003 | Vrushali |    2 | vrusha@hotmail.com     | vrushali@hotmail.com   |
+|      1005 | Ruhan    |    3 | ru@live.com            | ruhan.live.com         |
+|      1006 | Neel     |    2 | nil@gmail.com          | neel@gmail.com         |
+|      1007 | Deep     |    1 | deep@gmail.com         | deep@gmail.com         |
+|      1008 | Nitish   |    4 | nity@live.com          | nitish@live.com        |
+|      1009 | Gau      |    5 | gaurav@gmail.com       | gau@gmail.com          |
+|      1010 | Mai      |    4 | mai@gmail.com          | mai@gmail.com          |
+|      1011 | Bipin    |    5 | bipin@gmail.com        | bipinpatil@gmail.com   |
+|      1012 | Natasha  |    3 | NULL                   | NULL                   |
+|      1013 | Bandish  |    2 | NULL                   | NULL                   |
+|      1111 | yuvraj   |    1 | yuvraj@gmail.com       | yuvraj@gmail.com       |
+|     22222 | soham    |    2 | soham12@gamil.com      | soham12@gmail.com      |
+|    112345 | raj      |    1 | raj@gmail.com          | raj@gmail.com          |
++-----------+----------+------+------------------------+------------------------+
+15 rows in set (0.00 sec)
+
+mysql> update student set name='sai' limit=2;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '=2' at line 1
+mysql> update student set name='sai' limit 2;
+Query OK, 2 rows affected (0.04 sec)
+Rows matched: 2  Changed: 2  Warnings: 0
+
+mysql> select * from student;
++-----------+----------+------+------------------------+------------------------+
+| studentID | name     | rnk  | emailID                | userName               |
++-----------+----------+------+------------------------+------------------------+
+|      1001 | sai      |    1 | saleel.songs@gmail.com | saleel.songs@gmail.com |
+|      1002 | sai      |    1 | sharmin@gmail.com      | sharmin@gmail.com      |
+|      1003 | Vrushali |    2 | vrusha@hotmail.com     | vrushali@hotmail.com   |
+|      1005 | Ruhan    |    3 | ru@live.com            | ruhan.live.com         |
+|      1006 | Neel     |    2 | nil@gmail.com          | neel@gmail.com         |
+|      1007 | Deep     |    1 | deep@gmail.com         | deep@gmail.com         |
+|      1008 | Nitish   |    4 | nity@live.com          | nitish@live.com        |
+|      1009 | Gau      |    5 | gaurav@gmail.com       | gau@gmail.com          |
+|      1010 | Mai      |    4 | mai@gmail.com          | mai@gmail.com          |
+|      1011 | Bipin    |    5 | bipin@gmail.com        | bipinpatil@gmail.com   |
+|      1012 | Natasha  |    3 | NULL                   | NULL                   |
+|      1013 | Bandish  |    2 | NULL                   | NULL                   |
+|      1111 | yuvraj   |    1 | yuvraj@gmail.com       | yuvraj@gmail.com       |
+|     22222 | soham    |    2 | soham12@gamil.com      | soham12@gmail.com      |
+|    112345 | raj      |    1 | raj@gmail.com          | raj@gmail.com          |
++-----------+----------+------+------------------------+------------------------+
+15 rows in set (0.00 sec)
+
+mysql> insert student(studentid,name,rank,emailid,username) values(10022,'saleel',1,'saleel.songs@gmail.com',saleel.somgs@gmail.com),(10002, 'sharmin',1,'sharmin@gmail.com','sharmin@gmail.com ';
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'rank,emailid,username) values(10022,'saleel',1,'saleel.songs@gmail.com',saleel.s' at line 1
+mysql> insert student(studentID,name,rank,emailID,userName) values(10022,'saleel',1,'saleel.songs@gmail.com',saleel.somgs@gmail.com),(10002, 'sharmin',1,'sharmin@gmail.com','sharmin@gmail.com ';
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'rank,emailID,userName) values(10022,'saleel',1,'saleel.songs@gmail.com',saleel.s' at line 1
+mysql> insert student(studentID,name,rank,emailID,userName) values(10022,'saleel',1,'saleel.songs@gmail.com','saleel.somgs@gmail.com'),(10002, 'sharmin',1,'sharmin@gmail.com','sharmin@gmail.com ';
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'rank,emailID,userName) values(10022,'saleel',1,'saleel.songs@gmail.com','saleel.' at line 1
+mysql> insert student(studentID,name,rnk,emailID,username) values(112345,'raj',1,'raj@gmail.com','raj@gmail.com'), (22222,'soham',2,'soham12@gamil.com','soham12@gmail.com' );^C
+mysql> insert student(studentID,name,rnk,emailID,username) values(112345,'raj',1,'raj@gmail.com','raj@gmail.com'), (22222,'soham',2,'soham12@gamil.com','soham12@gmail.com' );
+ERROR 1062 (23000): Duplicate entry '112345' for key 'student.PRIMARY'
+mysql> insert student(studentID,name,rank,emailID,userName) values(10022,'saleel',1,'saleel.songs@gmail.com','saleel.somgs@gmail.com'),(10002, 'sharmin',1,'sharmin@gmail.com','sharmin@gmail.com ';
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'rank,emailID,userName) values(10022,'saleel',1,'saleel.songs@gmail.com','saleel.' at line 1
+mysql>
+mysql>
+mysql>
+mysql>
+mysql>
+mysql> insert student(studentID,name,rank,emailID,userName) values(10022,'saleel',1,'saleel.songs@gmail.com','saleel.somgs@gmail.com'),(10002, 'sharmin',1,'sharmin@gmail.com','sharmin@gmail.com ';
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'rank,emailID,userName) values(10022,'saleel',1,'saleel.songs@gmail.com','saleel.' at line 1
+mysql> insert student(studentID,name,rnk,emailID,userName) values(10022,'saleel',1,'saleel.songs@gmail.com','saleel.somgs@gmail.com'),(10002, 'sharmin',1,'sharmin@gmail.com','sharmin@gmail.com ';
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+mysql> insert student(studentID,name,rnk,emailID,userName) values(10022,'saleel',1,'saleel.songs@gmail.com','saleel.somgs@gmail.com'),(10002, 'sharmin',1,'sharmin@gmail.com','sharmin@gmail.com ';
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+mysql> insert student values(10022,'saleel',1,'saleel.songs@gmail.com','saleel.somgs@gmail.com'),(10002, 'sharmin',1,'sharmin@gmail.com','sharmin@gmail.com ';
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+mysql> ^C
+mysql> create table autoincreament (id int auto_increment primary key,name varchar(10),salary int auto_increment,datetime default now();
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'default now()' at line 1
+mysql> create table autoincreament (id int auto_increment primary key,name varchar(10),salary int auto_increment,datetime default now());
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'default now())' at line 1
+mysql> create table autoincreament (id int auto_increment primary key,name varchar(10),salary int auto_increment,datetime default now() ,commit varchar) ;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'default now() ,commit varchar)' at line 1
+mysql> create table autoincreament (id int auto_increment primary key,name varchar(10),salary int auto_increment,datetime  now() ,commit varchar) ;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'now() ,commit varchar)' at line 1
+mysql> select now();
++---------------------+
+| now()               |
++---------------------+
+| 2025-11-02 09:42:32 |
++---------------------+
+1 row in set (0.00 sec)
+
+mysql> create table autoincreament (id int auto_increment primary key,name varchar(10),salary int auto_increment,datetime  now() ,commit varchar(10)) ;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'now() ,commit varchar(10))' at line 1
+mysql> create table sumitauto (id int auto_increment primary key,name varchar(10),salary int auto_increment,datetime  now() ,commit varchar(10)) ;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'now() ,commit varchar(10))' at line 1
+mysql> create table sumitauto (id int auto_increment primary key,name varchar(10),salary int auto_increment);
+ERROR 1075 (42000): Incorrect table definition; there can be only one auto column and it must be defined as a key
+mysql> create table sumitauto (id int auto_increment primary key,name varchar(10),salary int);
+Query OK, 0 rows affected (1.12 sec)
+
+mysql> create table sumitauto (id int auto_increment primary key,name varchar(10),salary int, datimes now());
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'now())' at line 1
+mysql> create table sumitauto (id int auto_increment primary key,name varchar(10),salary int, datimes default  now());
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'default  now())' at line 1
+mysql> create table sumitauto (id int auto_increment primary key,name varchar(10),salary int ,jdt  datetime default  now());
+ERROR 1050 (42S01): Table 'sumitauto' already exists
+mysql> create table yuvrajauto (id int auto_increment primary key,name varchar(10),salary int ,jdt  datetime default  now());
+Query OK, 0 rows affected (0.75 sec)
+
+mysql> decs yuvrajauto
+    -> ;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'decs yuvrajauto' at line 1
+mysql> select * from yuvrajauto;
+Empty set (0.00 sec)
+
+mysql> desc yuvrajauto;
++--------+-------------+------+-----+-------------------+-------------------+
+| Field  | Type        | Null | Key | Default           | Extra             |
++--------+-------------+------+-----+-------------------+-------------------+
+| id     | int         | NO   | PRI | NULL              | auto_increment    |
+| name   | varchar(10) | YES  |     | NULL              |                   |
+| salary | int         | YES  |     | NULL              |                   |
+| jdt    | datetime    | YES  |     | CURRENT_TIMESTAMP | DEFAULT_GENERATED |
++--------+-------------+------+-----+-------------------+-------------------+
+4 rows in set (0.00 sec)
+
+mysql> show coulmns from yuvrajauto
+    -> ;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'coulmns from yuvrajauto' at line 1
+mysql> show columns from yuvrajauto
+    -> ;
++--------+-------------+------+-----+-------------------+-------------------+
+| Field  | Type        | Null | Key | Default           | Extra             |
++--------+-------------+------+-----+-------------------+-------------------+
+| id     | int         | NO   | PRI | NULL              | auto_increment    |
+| name   | varchar(10) | YES  |     | NULL              |                   |
+| salary | int         | YES  |     | NULL              |                   |
+| jdt    | datetime    | YES  |     | CURRENT_TIMESTAMP | DEFAULT_GENERATED |
++--------+-------------+------+-----+-------------------+-------------------+
+4 rows in set (0.00 sec)
+
+mysql> insert yuvrajauto (default,sumit,12321,default);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'default,sumit,12321,default)' at line 1
+mysql> insert yuvrajauto (default,'sumit',12321,default);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'default,'sumit',12321,default)' at line 1
+mysql> insert yuvrajauto (id,name,salary,jdt) values(default,'yuvraj',12343,default) ;
+Query OK, 1 row affected (0.04 sec)
+
+mysql> select * from yuvrajauto;
++----+--------+--------+---------------------+
+| id | name   | salary | jdt                 |
++----+--------+--------+---------------------+
+|  1 | yuvraj |  12343 | 2025-11-02 09:57:30 |
++----+--------+--------+---------------------+
+1 row in set (0.00 sec)
+
+mysql> insert yuvrajauto(id,name,salary,jdt ) value(default,sumit,99999999,default);
+ERROR 1054 (42S22): Unknown column 'sumit' in 'field list'
+mysql> insert yuvrajauto(id,name,salary,jdt ) value(default,'sumit',99999999,default);
+Query OK, 1 row affected (0.07 sec)
+
+mysql> select * from yuvrajauto;
++----+--------+----------+---------------------+
+| id | name   | salary   | jdt                 |
++----+--------+----------+---------------------+
+|  1 | yuvraj |    12343 | 2025-11-02 09:57:30 |
+|  2 | sumit  | 99999999 | 2025-11-02 09:59:31 |
++----+--------+----------+---------------------+
+2 rows in set (0.00 sec)
+
+mysql> insert yuvrajauto(id,name, salary,jdt) values(default , 'sashank',98943,default),(default,'shoham',2131241,default);
+Query OK, 2 rows affected (0.07 sec)
+Records: 2  Duplicates: 0  Warnings: 0
+
+mysql> select * from city;
++------+----------+
+| id   | CityName |
++------+----------+
+|    1 | Baroda   |
+|    2 | Surat    |
+|    3 | Bharuch  |
+|    4 | Rajkot   |
+|    5 | Jamnagar |
++------+----------+
+5 rows in set (0.04 sec)
+
+mysql> CAST(CHAR(FLOOR(65 + RAND() * 26)) AS CHAR)
+    -> ;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'CAST(CHAR(FLOOR(65 + RAND() * 26)) AS CHAR)' at line 1
+mysql> create table yutemp(id int primary key, yname varchar,c int,c1 int, c2 int default(c+c2),c4 default(c*c2) )
+    -> ;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ',c int,c1 int, c2 int default(c+c2),c4 default(c*c2) )' at line 1
+mysql> create table yutemp(id int primary key, yname varchar,c int,c1 int, c2 int default(c+c1),c4 default(c*c1) );
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ',c int,c1 int, c2 int default(c+c1),c4 default(c*c1) )' at line 1
+mysql>
+mysql>
+mysql>
+mysql>  CREATE TABLE temp(
+    ->  c1 INT,
+    ->  c2 INT,
+    ->  c3 INT DEFAULT(c1 + c2),
+    ->  c4 INT DEFAULT(c1 * c2)
+    ->  );
+Query OK, 0 rows affected (0.81 sec)
+
+mysql> create table ytemp(c1 int,c2 int,c3 int default(c1+c2),c4 int default(c1*c2)  );
+Query OK, 0 rows affected (0.31 sec)
+
+mysql> desc ytemp;
++-------+------+------+-----+---------------+-------------------+
+| Field | Type | Null | Key | Default       | Extra             |
++-------+------+------+-----+---------------+-------------------+
+| c1    | int  | YES  |     | NULL          |                   |
+| c2    | int  | YES  |     | NULL          |                   |
+| c3    | int  | YES  |     | (`c1` + `c2`) | DEFAULT_GENERATED |
+| c4    | int  | YES  |     | (`c1` * `c2`) | DEFAULT_GENERATED |
++-------+------+------+-----+---------------+-------------------+
+4 rows in set (0.00 sec)
+
+mysql> show columns from ytemp;
++-------+------+------+-----+---------------+-------------------+
+| Field | Type | Null | Key | Default       | Extra             |
++-------+------+------+-----+---------------+-------------------+
+| c1    | int  | YES  |     | NULL          |                   |
+| c2    | int  | YES  |     | NULL          |                   |
+| c3    | int  | YES  |     | (`c1` + `c2`) | DEFAULT_GENERATED |
+| c4    | int  | YES  |     | (`c1` * `c2`) | DEFAULT_GENERATED |
++-------+------+------+-----+---------------+-------------------+
+4 rows in set (0.00 sec)
+
+mysql> insert into ytemp(c1,c2,c3,c4) value(12,15,default ,default);
+Query OK, 1 row affected (0.04 sec)
+
+mysql> select * from ytemp;
++------+------+------+------+
+| c1   | c2   | c3   | c4   |
++------+------+------+------+
+|   12 |   15 |   27 |  180 |
++------+------+------+------+
+1 row in set (0.00 sec)
+
+mysql> show tables;
++---------------------+
+| Tables_in_dac64     |
++---------------------+
+| a                   |
+| activity            |
+| agent               |
+| airline_seats       |
+| andor               |
+| atm                 |
+| b                   |
+| bankloan            |
+| batch_schedule      |
+| betweensalary       |
+| bitwise             |
+| blanktablea         |
+| blanktableb         |
+| blog                |
+| bonus               |
+| books               |
+| brands              |
+| bus_stops           |
+| cafe                |
+| candidate           |
+| cardpayments        |
+| cashpayments        |
+| categories          |
+| category            |
+| city                |
+| classandsubjects    |
+| client              |
+| cnumbers            |
+| coalesce            |
+| comments            |
+| company             |
+| countnulls          |
+| countnumbers        |
+| cricketwinnerteam   |
+| customer            |
+| customers           |
+| demodept1           |
+| demodept2           |
+| dept                |
+| dept1               |
+| dhl                 |
+| docs                |
+| doctor              |
+| doctorvisits        |
+| dummy               |
+| duplicate           |
+| emp                 |
+| emp1                |
+| emp2                |
+| emp_attendance      |
+| emp_cards           |
+| emp_phone           |
+| empj                |
+| envelope            |
+| facebook            |
+| fedex               |
+| food                |
+| food_category_tags  |
+| food_items          |
+| fromstoreorders     |
+| fruits              |
+| fullname            |
+| hall_ticket         |
+| hobby               |
+| ipl                 |
+| item                |
+| job_list            |
+| key_parts           |
+| labtestlist         |
+| leading_zeroes      |
+| leadtable           |
+| licence             |
+| linkedin            |
+| location            |
+| managers            |
+| mass_table          |
+| medicinelist        |
+| menucard            |
+| missingnumbers      |
+| nearest             |
+| new                 |
+| newbooks            |
+| null1               |
+| null2               |
+| nullif              |
+| numberstring        |
+| onlineorders        |
+| ord                 |
+| order1              |
+| order_items         |
+| orderdetails        |
+| orders              |
+| overlapping_dates   |
+| overtime            |
+| patient             |
+| phonecall           |
+| pivot_table         |
+| plumber             |
+| plumber_service_map |
+| points              |
+| population          |
+| price               |
+| product             |
+| product_sales       |
+| products            |
+| pune_metro_stations |
+| quarterly_revenue   |
+| r                   |
+| r1                  |
+| r2                  |
+| races               |
+| regexpr             |
+| repeatingnumbers    |
+| replacedept         |
+| reservations        |
+| revenue             |
+| rockets             |
+| room_assigned       |
+| room_staff          |
+| rooms               |
+| runners             |
+| runningserver       |
+| sales               |
+| sales1              |
+| sales_channel       |
+| salespeople         |
+| salesperson         |
+| salgrade            |
+| server              |
+| service             |
+| seta                |
+| setb                |
+| shop                |
+| softdrink           |
+| sort                |
+| sourcecity          |
+| sourcenames         |
+| stadium             |
+| stages              |
+| states              |
+| station             |
+| status              |
+| stocks              |
+| stringnumber        |
+| student             |
+| sumitauto           |
+| swapcity            |
+| tablea              |
+| tableaa             |
+| tableb              |
+| tablebb             |
+| targetcity          |
+| targetnames         |
+| tasks               |
+| teams               |
+| temp                |
+| temp1               |
+| trainers            |
+| trains              |
+| traintimetable      |
+| transactions        |
+| unpivot_table       |
+| ups                 |
+| vote_response       |
+| votes               |
+| warehouse           |
+| x                   |
+| year_of_service     |
+| yearly_revenue      |
+| years               |
+| ytemp               |
+| yuvrajauto          |
+| z                   |
++---------------------+
+173 rows in set (0.01 sec)
+
+mysql> create table rohitauto(id int auto_increment primary key,name varchar(10);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+mysql> create table rohitauto(id int auto_increment primary key,name varchar(10), sal int ,jdt Datetime default now());
+Query OK, 0 rows affected (0.34 sec)
+
+mysql> desc rohitauto;
++-------+-------------+------+-----+-------------------+-------------------+
+| Field | Type        | Null | Key | Default           | Extra             |
++-------+-------------+------+-----+-------------------+-------------------+
+| id    | int         | NO   | PRI | NULL              | auto_increment    |
+| name  | varchar(10) | YES  |     | NULL              |                   |
+| sal   | int         | YES  |     | NULL              |                   |
+| jdt   | datetime    | YES  |     | CURRENT_TIMESTAMP | DEFAULT_GENERATED |
++-------+-------------+------+-----+-------------------+-------------------+
+4 rows in set (0.00 sec)
+
+mysql> insert into rohitauto values(default,'Rohit',12000,default);
+Query OK, 1 row affected (0.05 sec)
+
+mysql> select * from rohitauto;
++----+-------+-------+---------------------+
+| id | name  | sal   | jdt                 |
++----+-------+-------+---------------------+
+|  1 | Rohit | 12000 | 2025-11-02 10:48:04 |
++----+-------+-------+---------------------+
+1 row in set (0.00 sec)
+
+mysql> create table yuvrajcurdate(id int auto_increment primary key,name varchar(10),sal int ,jdt datetime default curdate());
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'curdate())' at line 1
+mysql> create table yuvrajcurdate(id int auto_increment primary key,name varchar(10),sal int ,jdt datetime default curdate());
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'curdate())' at line 1
+mysql> create table yuvrajcurdate(id int auto_increment primary key,name varchar(10),sal int ,jdt datetime  curdate());
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'curdate())' at line 1
+mysql> create table yuvrajcurdate(id int auto_increment primary key,name varchar(10),sal int ,jdt datetime default now());
+Query OK, 0 rows affected (0.32 sec)
+
+mysql> desc yuvrajcurdate;
++-------+-------------+------+-----+-------------------+-------------------+
+| Field | Type        | Null | Key | Default           | Extra             |
++-------+-------------+------+-----+-------------------+-------------------+
+| id    | int         | NO   | PRI | NULL              | auto_increment    |
+| name  | varchar(10) | YES  |     | NULL              |                   |
+| sal   | int         | YES  |     | NULL              |                   |
+| jdt   | datetime    | YES  |     | CURRENT_TIMESTAMP | DEFAULT_GENERATED |
++-------+-------------+------+-----+-------------------+-------------------+
+4 rows in set (0.00 sec)
+
+mysql> insert into yuvrajcurdate values(default,'yuvraj',350000,default);
+Query OK, 1 row affected (0.06 sec)
+
+mysql> select * from yuvrajcurdate;
++----+--------+--------+---------------------+
+| id | name   | sal    | jdt                 |
++----+--------+--------+---------------------+
+|  1 | yuvraj | 350000 | 2025-11-02 10:53:09 |
++----+--------+--------+---------------------+
+1 row in set (0.00 sec)
+
+mysql> insert into yuvrajcurdate values(default,'yuvraj',350000,default),(default,'rohit',12000,default);
+Query OK, 2 rows affected (0.07 sec)
+Records: 2  Duplicates: 0  Warnings: 0
+
+mysql> select * from yuvrajcurdate;
++----+--------+--------+---------------------+
+| id | name   | sal    | jdt                 |
++----+--------+--------+---------------------+
+|  1 | yuvraj | 350000 | 2025-11-02 10:53:09 |
+|  2 | yuvraj | 350000 | 2025-11-02 10:53:53 |
+|  3 | rohit  |  12000 | 2025-11-02 10:53:53 |
++----+--------+--------+---------------------+
+3 rows in set (0.00 sec)
+
+mysql> update yuvrajcurdate set name='soham' limit 1;
+Query OK, 1 row affected (0.06 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> select * from yuvrajcurdate;
++----+--------+--------+---------------------+
+| id | name   | sal    | jdt                 |
++----+--------+--------+---------------------+
+|  1 | soham  | 350000 | 2025-11-02 10:53:09 |
+|  2 | yuvraj | 350000 | 2025-11-02 10:53:53 |
+|  3 | rohit  |  12000 | 2025-11-02 10:53:53 |
++----+--------+--------+---------------------+
+3 rows in set (0.00 sec)
+
+mysql> update yuvrajcurdate set name='tushar' where name='rohit' limit 1;
+Query OK, 1 row affected (0.06 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> select * from yuvrajcurdate;
++----+--------+--------+---------------------+
+| id | name   | sal    | jdt                 |
++----+--------+--------+---------------------+
+|  1 | soham  | 350000 | 2025-11-02 10:53:09 |
+|  2 | yuvraj | 350000 | 2025-11-02 10:53:53 |
+|  3 | tushar |  12000 | 2025-11-02 10:53:53 |
++----+--------+--------+---------------------+
+3 rows in set (0.00 sec)
+
+mysql> insert yuvrajcurdate (name,sal) values('shashank',123000);
+Query OK, 1 row affected (0.07 sec)
+
+mysql> select * from yuvrajcurdate;\
++----+----------+--------+---------------------+
+| id | name     | sal    | jdt                 |
++----+----------+--------+---------------------+
+|  1 | soham    | 350000 | 2025-11-02 10:53:09 |
+|  2 | yuvraj   | 350000 | 2025-11-02 10:53:53 |
+|  3 | tushar   |  12000 | 2025-11-02 10:53:53 |
+|  4 | shashank | 123000 | 2025-11-02 10:58:58 |
++----+----------+--------+---------------------+
+4 rows in set (0.00 sec)
+
+mysql> select id,id%2=1 R1 from yuvrajcurdate;
++----+------+
+| id | R1   |
++----+------+
+|  1 |    1 |
+|  2 |    0 |
+|  3 |    1 |
+|  4 |    0 |
++----+------+
+4 rows in set (0.00 sec)
+
+mysql>

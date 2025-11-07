@@ -18,7 +18,14 @@ class CaseConverter extends React.Component {
     console.log('lowercase:', lowerCaseText);
   };
 <<<<<<< HEAD
+<<<<<<< HEAD
+} 
+=======
+} npx
+>>>>>>> 32558f955f463af33c75ee82b0c9ba8fe2153e5a
+=======
 } npx
 =======
 } 
 >>>>>>> ra
+>>>>>>> yuvraj

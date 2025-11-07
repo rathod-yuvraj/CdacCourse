@@ -1,0 +1,25 @@
+package com.yuvraj.test;
+
+
+import java.io.*;
+public class TestFileCreated {
+
+	public static void main(String[] args) {
+		
+		File fs=new File("abc1.txt");
+		
+		try {
+			if(fs.createNewFile()) {
+				System.out.println("File was created succesfully   "+fs.getName());
+				
+			} else if(fs.exists()) {
+				System.out.println("File Was already exits "+fs.);
+			}
+		} catch (IOException e) {
+		
+			e.printStackTrace();
+		}
+
+	}
+
+}

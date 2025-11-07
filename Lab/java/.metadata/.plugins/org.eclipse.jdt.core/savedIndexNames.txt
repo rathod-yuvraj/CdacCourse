@@ -1,4 +1,7 @@
 <<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> yuvraj
 INDEX VERSION 1.132+C:\Users\IET\Desktop\250845920064\Lab\java\.metadata\.plugins\org.eclipse.jdt.core
 683955095.index
 2277357373.index
@@ -13,6 +16,20 @@ INDEX VERSION 1.132+C:\Users\IET\Desktop\250845920064\Lab\java\.metadata\.plugin
 268289141.index
 2958934411.index
 2315095782.index
+<<<<<<< HEAD
+1865797976.index
+551738394.index
+3973940056.index
+433660574.index
+1901201092.index
+3209482125.index
+3854966654.index
+2186899505.index
+1606640385.index
+2715043561.index
+3805211755.index
+2569453153.index
+=======
 1865797976.index
 551738394.index
 3973940056.index
@@ -31,3 +48,4 @@ INDEX VERSION 1.132+C:\Users\IET\Desktop\250845920064\.metadata\.plugins\org.ecl
 3805211755.index
 1865797976.index
 >>>>>>> ra
+>>>>>>> yuvraj

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 // build in math library functions
 export const mathLib = {
   abs: Math.abs,
@@ -19,3 +20,26 @@ export const mathLib = {
     sqrt: Math.sqrt,
     tan: Math.tan,
 };
+=======
+// build in math library functions
+export const mathLib = {
+  abs: Math.abs,
+  acos: Math.acos,
+    asin: Math.asin,
+    atan: Math.atan,
+    atan2: Math.atan2,
+    ceil: Math.ceil,
+    cos: Math.cos,
+    exp: Math.exp,
+    floor: Math.floor,
+    log: Math.log,  
+    max: Math.max,
+    min: Math.min,
+    pow: Math.pow,
+    random: Math.random,
+    round: Math.round,
+    sin: Math.sin,
+    sqrt: Math.sqrt,
+    tan: Math.tan,
+};
+>>>>>>> yuvraj

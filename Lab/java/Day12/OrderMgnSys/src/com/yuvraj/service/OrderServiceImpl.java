@@ -24,6 +24,19 @@ public class OrderServiceImpl implements OrderService {
 		String mb=sc.next();
 		
 		Customer c=new Customer(id,nm,mb);
+<<<<<<< HEAD
+		List<Item>lst=new ArrayList<>();
+		do {
+			System.out.println("Enter Item id");
+			int iid=sc.nextInt();
+			System.out.println("Enter Item Name");
+			String inm=sc.next();
+			System.out.println("Enter Item Qyt");
+			int qyt=sc.nextInt();
+			System.out.println("Enter ");
+		}
+=======
+>>>>>>> yuvraj
 		
 		return odao.save(c);
 	}
