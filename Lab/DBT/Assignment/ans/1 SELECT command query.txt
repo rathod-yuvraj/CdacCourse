@@ -1,1 +1,23 @@
 1 SELECT command queary
+
+
+
+
+
+11
+select concat_ws( ' ', empno,ename, mgr) as "Employee info" from emp;
+select   CONCAT_WS(', ', EMPNO, ENAME,job, MGR,hiredate,sal) AS "Employee Info" from emp;
+12
+alter table emp add new_sal int;
+update emp set new_sal =sal+comm;
+update emp set new_sal=ifnull(new_sal,0);
+
+13
+SELECT CONCAT_WS(', ', EMPNO, ENAME, JOB, MGR, HIREDATE, SAL, COMM, DEPTNO, BONUSID, "USER NAME") AS "Employee Info",sal -  NEW_SAL  AS "Salary Difference"  FROM EMP;
+
+14
+ALTER TABLE EMP ADD Dream_Sal INT;
+update emp set Dream_sal=sal*3;
+select ename,sal, Dream_sal from emp;
+15 ans
+select * from sales;

@@ -1,0 +1,1606 @@
+Microsoft Windows [Version 10.0.19045.6456]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Users\IET>mysql --host=192.168.10.117 --port=3306 --user=dac64 --password=welcome dac64
+mysql: [Warning] Using a password on the command line interface can be insecure.
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 713
+Server version: 8.0.44 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2025, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> use 65
+ERROR 1044 (42000): Access denied for user 'dac64'@'%' to database '65'
+mysql> ;
+ERROR:
+No query specified
+
+mysql> show tabls;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'tabls' at line 1
+mysql> show tables;
++---------------------+
+| Tables_in_dac64     |
++---------------------+
+| a                   |
+| activity            |
+| agent               |
+| airline_seats       |
+| andor               |
+| atm                 |
+| b                   |
+| bankloan            |
+| batch_schedule      |
+| betweensalary       |
+| bitwise             |
+| blanktablea         |
+| blanktableb         |
+| blog                |
+| bonus               |
+| books               |
+| brands              |
+| bus_stops           |
+| cafe                |
+| candidate           |
+| cardpayments        |
+| cashpayments        |
+| categories          |
+| category            |
+| city                |
+| classandsubjects    |
+| client              |
+| cnumbers            |
+| coalesce            |
+| comments            |
+| company             |
+| countnulls          |
+| countnumbers        |
+| cricketwinnerteam   |
+| customer            |
+| customers           |
+| demodept1           |
+| demodept2           |
+| dept                |
+| dept1               |
+| dhl                 |
+| docs                |
+| doctor              |
+| doctorvisits        |
+| dummy               |
+| duplicate           |
+| emp                 |
+| emp1                |
+| emp2                |
+| emp_attendance      |
+| emp_cards           |
+| emp_phone           |
+| empj                |
+| envelope            |
+| facebook            |
+| fedex               |
+| food                |
+| food_category_tags  |
+| food_items          |
+| fromstoreorders     |
+| fruits              |
+| fullname            |
+| hall_ticket         |
+| hobby               |
+| ipl                 |
+| item                |
+| job_list            |
+| key_parts           |
+| labtestlist         |
+| leading_zeroes      |
+| leadtable           |
+| licence             |
+| linkedin            |
+| location            |
+| managers            |
+| mass_table          |
+| medicinelist        |
+| menucard            |
+| missingnumbers      |
+| nearest             |
+| new                 |
+| newbooks            |
+| null1               |
+| null2               |
+| nullif              |
+| numberstring        |
+| onlineorders        |
+| ord                 |
+| order1              |
+| order_items         |
+| orderdetails        |
+| orders              |
+| orders1             |
+| overlapping_dates   |
+| overtime            |
+| patient             |
+| phonecall           |
+| pivot_table         |
+| plumber             |
+| plumber_service_map |
+| points              |
+| population          |
+| price               |
+| product             |
+| product_sales       |
+| products            |
+| pune_metro_stations |
+| quarterly_revenue   |
+| r                   |
+| r1                  |
+| r2                  |
+| races               |
+| regexpr             |
+| repeatingnumbers    |
+| replacedept         |
+| reservations        |
+| revenue             |
+| rockets             |
+| rohitauto           |
+| room_assigned       |
+| room_staff          |
+| rooms               |
+| runners             |
+| runningserver       |
+| sales               |
+| sales1              |
+| sales_channel       |
+| salespeople         |
+| salesperson         |
+| salgrade            |
+| server              |
+| service             |
+| seta                |
+| setb                |
+| shop                |
+| softdrink           |
+| sort                |
+| sourcecity          |
+| sourcenames         |
+| stadium             |
+| stages              |
+| states              |
+| station             |
+| status              |
+| stocks              |
+| stringnumber        |
+| student             |
+| sumitauto           |
+| swapcity            |
+| t                   |
+| t1                  |
+| t2                  |
+| tablea              |
+| tableaa             |
+| tableb              |
+| tablebb             |
+| targetcity          |
+| targetnames         |
+| tasks               |
+| teams               |
+| temp                |
+| temp1               |
+| trainers            |
+| trains              |
+| traintimetable      |
+| transactions        |
+| unpivot_table       |
+| ups                 |
+| vote_response       |
+| votes               |
+| warehouse           |
+| x                   |
+| year_of_service     |
+| yearly_revenue      |
+| years               |
+| ytemp               |
+| yuvrajauto          |
+| yuvrajcurdate       |
+| yuvraje1            |
+| yuvraje2            |
+| z                   |
++---------------------+
+181 rows in set (0.01 sec)
+
+mysql> select * from emp;
++-------+----------+--------+---------------------+------+------------+------+------+--------+---------+--------------+------------+------------+----------+---------+-----------+
+| EMPNO | ENAME    | GENDER | JOB                 | MGR  | HIREDATE   | SAL  | COMM | DEPTNO | BONUSID | USER NAME    | PWD        | PHONE      | isActive | new_sal | Dream_Sal |
++-------+----------+--------+---------------------+------+------------+------+------+--------+---------+--------------+------------+------------+----------+---------+-----------+
+|  6001 | GITA     | F      | Compliance officers | 7920 | 1981-07-19 | 1750 | NULL |     30 |       1 | GITA         | sales@2017 | NULL       |        1 |       0 |      5250 |
+|  6129 | VRUSHALI | F      | Compliance officers | 7920 | 1981-07-19 | 1750 | NULL |     50 |       1 | VRUSHALI     | PUN@8877   | NULL       |        1 |       0 |      5250 |
+|  6473 | SHARMIN  | F      | Public Relation     | 7920 | 1981-07-19 | 1750 | NULL |     20 |       1 | SHARMIN      | a12recmpm  | NULL       |        1 |       0 |      5250 |
+|  6781 | BANDISH  | F      | Public Relation     | 7920 | 1981-07-19 | 1750 | NULL |     20 |       1 | BANDISH      | a12recmpm  | NULL       |        1 |       0 |      5250 |
+|  7369 | SMITH    | M      | CLERK               | 7902 | 1980-12-17 |  800 | NULL |     20 |       2 | TRITONE      | a12recmpm  | 7032300023 |        0 |       0 |      2400 |
+|  7415 | AARAV    | M      | CLERK               | 7902 | 1981-12-31 | 3350 | NULL |     10 |    NULL | AARAV        | NULL       | 7032300084 |        0 |       0 |     10050 |
+|  7421 | THOMAS   | M      | CLERK               | 7920 | 1981-07-19 | 1750 | NULL |     10 |       1 | THOMAS       | r50mpm     | 7032300011 |        0 |       0 |      5250 |
+|  7499 | ALLEN    | M      | SALESMAN            | 7698 | 1981-02-20 | 1600 |  300 |     30 |       4 | ALWAYS TESTE | sales@2017 | 7032300096 |        1 |    1900 |      4800 |
+|  7521 | WARD     | M      | SALESMAN            | 7698 | 1981-02-22 | 1250 |  500 |     30 |       1 | WARD         | sales@2017 | 7132300034 |        1 |    1750 |      3750 |
+|  7566 | JONES    | M      | MANAGER             | 7839 | 1981-04-02 | 2975 | NULL |     20 |       4 | HONEYCOMB    | a12recmpm  | 7132300039 |        1 |       0 |      8925 |
+|  7654 | MARTIN   | M      | SALESMAN            | 7698 | 1981-09-28 | 1250 | 1400 |     30 |       6 | LIFE RACER   | sales@2017 | 7132300050 |        1 |    2650 |      3750 |
+|  7698 | BLAKE    | M      | MANAGER             | 7839 | 1981-05-01 | 2850 | NULL |     30 |       1 | BIG BEN      | sales@2017 | 7132300027 |        1 |       0 |      8550 |
+|  7782 | CLARK    | M      | MANAGER             | 7839 | 1981-06-09 | 2450 | NULL |     10 |       3 | CLARK        | r50mpm     | 7032300001 |        1 |       0 |      7350 |
+|  7788 | SCOTT    | M      | ANALYST             | 7566 | 1982-12-09 | 3000 | NULL |     20 |       3 | WHITE SAND   | a12recmpm  | NULL       |        1 |       0 |      9000 |
+|  7839 | KING     | M      | PRESIDENT           | NULL | 1981-11-17 | 5000 | NULL |     10 |       1 | KING         | r50mpm     | 7132300081 |        1 |       0 |     15000 |
+|  7840 | FRED     | M      | vice PRESIDENT      | 7839 | 1983-08-09 | 5000 | NULL |     20 |       1 | SAND STONE   | a12recmpm  | NULL       |        1 |       0 |     15000 |
+|  7844 | TURNER   | M      | SALESMAN            | 7698 | 1981-09-08 | 1500 |    0 |     30 |       5 | SAND DUST    | sales@2017 | NULL       |        1 |    1500 |      4500 |
+|  7876 | ADAMS    | M      | CLERK               | 7788 | 1983-01-12 | 1100 | NULL |     20 |       1 | CRAZY ANYONE | a12recmpm  | 7132300086 |        1 |       0 |      3300 |
+|  7888 | Ruhan    | M      | Network             | 7888 | 1983-08-09 | 2000 | NULL |     60 |       1 | Ruhan        | BRD@1122   | NULL       |        1 |       0 |      6000 |
+|  7889 | Neel     | M      | vice PRESIDENT      | 7839 | 1983-08-09 | 1000 | NULL |     60 |       0 | Neel         | BRD@1122   | NULL       |        1 |       0 |      3000 |
+|  7900 | JAMES    | M      | CLERK               | 7698 | 1981-12-03 |  950 | NULL |     30 |       2 | CRAZY LEADER | sales@2017 | 7132300042 |        1 |       0 |      2850 |
+|  7902 | FORD     | M      | ANALYST             | 7566 | 1981-12-03 | 3000 | NULL |     20 |       4 | CONBRIO      | a12recmpm  | NULL       |        0 |       0 |      9000 |
+|  7919 | HOFFMAN  | M      | MANAGER             | 7566 | 1982-03-24 | 4150 | NULL |     30 |       3 | INTERVAL     | sales@2017 | NULL       |        1 |       0 |     12450 |
+|  7920 | GRASS    | M      | SALESMAN            | 7919 | 1980-02-14 | 2575 | 2700 |     30 |       5 | GRASS        | sales@2017 | NULL       |        1 |    5275 |      7725 |
+|  7934 | MILLER   | M      | CLERK               | 7782 | 1982-01-23 | 1300 | 1300 |     10 |       2 | QUARTERNOTE  | r50mpm     | 7132300055 |        0 |    2600 |      3900 |
+|  7945 | AARUSH   | M      | SALESMAN            | 7902 | 1980-02-14 | 1350 | 2700 |     30 |    NULL | AARUSH       | ABCDEF     | NULL       |        0 |    4050 |      4050 |
+|  7949 | ALEX     | M      | MANAGER             | 7698 | 1982-01-24 | 1250 |  500 |     30 |       5 | QUARTERREST  | sales@2017 | 7156567183 |        1 |    1750 |      3750 |
+|  8433 | NATASHA  | F      | CLERK               | 7920 | 1981-07-19 | 1750 | NULL |     30 |       1 | NATASHA      | sales@2017 | NULL       |        1 |       0 |      5250 |
+|  9400 | SANGITA  | F      | Compliance officers | 7920 | 1981-07-19 | 1750 | NULL |     50 |       1 | SANGITA      | NULL       | NULL       |        1 |       0 |      5250 |
+|  9473 | SUPRIYA  | F      | ANALYST             | 7920 | 1981-07-19 | 1750 | NULL |     50 |       1 | SUPRIYA      | XYZ@1234   | NULL       |        1 |       0 |      5250 |
++-------+----------+--------+---------------------+------+------------+------+------+--------+---------+--------------+------------+------------+----------+---------+-----------+
+30 rows in set (0.22 sec)
+
+mysql> select ename,job,hiredate from emp where HIREDATE between 1981-02-01 and 1981-05-01;
+Empty set, 2 warnings (0.00 sec)
+
+mysql> select ename,job,hiredate from emp where HIREDATE between 1981-02-01 or 1981-05-01;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'or 1981-05-01' at line 1
+mysql> select ename,job,hiredate from emp where HIREDATE between '1981-02-01' or '1981-05-01';
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'or '1981-05-01'' at line 1
+mysql> select ename,job,hiredate from emp where HIREDATE between '1981-02-01' and '1981-05-01';
++-------+----------+------------+
+| ename | job      | hiredate   |
++-------+----------+------------+
+| ALLEN | SALESMAN | 1981-02-20 |
+| WARD  | SALESMAN | 1981-02-22 |
+| JONES | MANAGER  | 1981-04-02 |
+| BLAKE | MANAGER  | 1981-05-01 |
++-------+----------+------------+
+4 rows in set (0.69 sec)
+
+mysql> select ename , job, hiredate from emp  where deptno between 30 and 60;
++----------+---------------------+------------+
+| ename    | job                 | hiredate   |
++----------+---------------------+------------+
+| GITA     | Compliance officers | 1981-07-19 |
+| VRUSHALI | Compliance officers | 1981-07-19 |
+| ALLEN    | SALESMAN            | 1981-02-20 |
+| WARD     | SALESMAN            | 1981-02-22 |
+| MARTIN   | SALESMAN            | 1981-09-28 |
+| BLAKE    | MANAGER             | 1981-05-01 |
+| TURNER   | SALESMAN            | 1981-09-08 |
+| Ruhan    | Network             | 1983-08-09 |
+| Neel     | vice PRESIDENT      | 1983-08-09 |
+| JAMES    | CLERK               | 1981-12-03 |
+| HOFFMAN  | MANAGER             | 1982-03-24 |
+| GRASS    | SALESMAN            | 1980-02-14 |
+| AARUSH   | SALESMAN            | 1980-02-14 |
+| ALEX     | MANAGER             | 1982-01-24 |
+| NATASHA  | CLERK               | 1981-07-19 |
+| SANGITA  | Compliance officers | 1981-07-19 |
+| SUPRIYA  | ANALYST             | 1981-07-19 |
++----------+---------------------+------------+
+17 rows in set (0.00 sec)
+
+mysql> select ename , job, hiredate, deptno from emp  where deptno between 30 and 60;
++----------+---------------------+------------+--------+
+| ename    | job                 | hiredate   | deptno |
++----------+---------------------+------------+--------+
+| GITA     | Compliance officers | 1981-07-19 |     30 |
+| VRUSHALI | Compliance officers | 1981-07-19 |     50 |
+| ALLEN    | SALESMAN            | 1981-02-20 |     30 |
+| WARD     | SALESMAN            | 1981-02-22 |     30 |
+| MARTIN   | SALESMAN            | 1981-09-28 |     30 |
+| BLAKE    | MANAGER             | 1981-05-01 |     30 |
+| TURNER   | SALESMAN            | 1981-09-08 |     30 |
+| Ruhan    | Network             | 1983-08-09 |     60 |
+| Neel     | vice PRESIDENT      | 1983-08-09 |     60 |
+| JAMES    | CLERK               | 1981-12-03 |     30 |
+| HOFFMAN  | MANAGER             | 1982-03-24 |     30 |
+| GRASS    | SALESMAN            | 1980-02-14 |     30 |
+| AARUSH   | SALESMAN            | 1980-02-14 |     30 |
+| ALEX     | MANAGER             | 1982-01-24 |     30 |
+| NATASHA  | CLERK               | 1981-07-19 |     30 |
+| SANGITA  | Compliance officers | 1981-07-19 |     50 |
+| SUPRIYA  | ANALYST             | 1981-07-19 |     50 |
++----------+---------------------+------------+--------+
+17 rows in set (0.00 sec)
+
+mysql> select ename , job, hiredate, deptno from emp  where deptno between 30 and 60 order by deptno ;
++----------+---------------------+------------+--------+
+| ename    | job                 | hiredate   | deptno |
++----------+---------------------+------------+--------+
+| GITA     | Compliance officers | 1981-07-19 |     30 |
+| ALLEN    | SALESMAN            | 1981-02-20 |     30 |
+| WARD     | SALESMAN            | 1981-02-22 |     30 |
+| MARTIN   | SALESMAN            | 1981-09-28 |     30 |
+| BLAKE    | MANAGER             | 1981-05-01 |     30 |
+| TURNER   | SALESMAN            | 1981-09-08 |     30 |
+| JAMES    | CLERK               | 1981-12-03 |     30 |
+| HOFFMAN  | MANAGER             | 1982-03-24 |     30 |
+| GRASS    | SALESMAN            | 1980-02-14 |     30 |
+| AARUSH   | SALESMAN            | 1980-02-14 |     30 |
+| ALEX     | MANAGER             | 1982-01-24 |     30 |
+| NATASHA  | CLERK               | 1981-07-19 |     30 |
+| VRUSHALI | Compliance officers | 1981-07-19 |     50 |
+| SANGITA  | Compliance officers | 1981-07-19 |     50 |
+| SUPRIYA  | ANALYST             | 1981-07-19 |     50 |
+| Ruhan    | Network             | 1983-08-09 |     60 |
+| Neel     | vice PRESIDENT      | 1983-08-09 |     60 |
++----------+---------------------+------------+--------+
+17 rows in set (0.00 sec)
+
+mysql> select ename , job, hiredate, deptno from emp  where deptno between 30 and 60 order by deptno,ename ;
++----------+---------------------+------------+--------+
+| ename    | job                 | hiredate   | deptno |
++----------+---------------------+------------+--------+
+| AARUSH   | SALESMAN            | 1980-02-14 |     30 |
+| ALEX     | MANAGER             | 1982-01-24 |     30 |
+| ALLEN    | SALESMAN            | 1981-02-20 |     30 |
+| BLAKE    | MANAGER             | 1981-05-01 |     30 |
+| GITA     | Compliance officers | 1981-07-19 |     30 |
+| GRASS    | SALESMAN            | 1980-02-14 |     30 |
+| HOFFMAN  | MANAGER             | 1982-03-24 |     30 |
+| JAMES    | CLERK               | 1981-12-03 |     30 |
+| MARTIN   | SALESMAN            | 1981-09-28 |     30 |
+| NATASHA  | CLERK               | 1981-07-19 |     30 |
+| TURNER   | SALESMAN            | 1981-09-08 |     30 |
+| WARD     | SALESMAN            | 1981-02-22 |     30 |
+| SANGITA  | Compliance officers | 1981-07-19 |     50 |
+| SUPRIYA  | ANALYST             | 1981-07-19 |     50 |
+| VRUSHALI | Compliance officers | 1981-07-19 |     50 |
+| Neel     | vice PRESIDENT      | 1983-08-09 |     60 |
+| Ruhan    | Network             | 1983-08-09 |     60 |
++----------+---------------------+------------+--------+
+17 rows in set (0.00 sec)
+
+mysql> select ename , job, hiredate, deptno from emp  where deptno between 30 and 60 order by deptno,ename,salesman ;
+ERROR 1054 (42S22): Unknown column 'salesman' in 'order clause'
+mysql> select ename , job, hiredate, deptno from emp  where deptno between 30 and 60 order by deptno,ename,job ;
++----------+---------------------+------------+--------+
+| ename    | job                 | hiredate   | deptno |
++----------+---------------------+------------+--------+
+| AARUSH   | SALESMAN            | 1980-02-14 |     30 |
+| ALEX     | MANAGER             | 1982-01-24 |     30 |
+| ALLEN    | SALESMAN            | 1981-02-20 |     30 |
+| BLAKE    | MANAGER             | 1981-05-01 |     30 |
+| GITA     | Compliance officers | 1981-07-19 |     30 |
+| GRASS    | SALESMAN            | 1980-02-14 |     30 |
+| HOFFMAN  | MANAGER             | 1982-03-24 |     30 |
+| JAMES    | CLERK               | 1981-12-03 |     30 |
+| MARTIN   | SALESMAN            | 1981-09-28 |     30 |
+| NATASHA  | CLERK               | 1981-07-19 |     30 |
+| TURNER   | SALESMAN            | 1981-09-08 |     30 |
+| WARD     | SALESMAN            | 1981-02-22 |     30 |
+| SANGITA  | Compliance officers | 1981-07-19 |     50 |
+| SUPRIYA  | ANALYST             | 1981-07-19 |     50 |
+| VRUSHALI | Compliance officers | 1981-07-19 |     50 |
+| Neel     | vice PRESIDENT      | 1983-08-09 |     60 |
+| Ruhan    | Network             | 1983-08-09 |     60 |
++----------+---------------------+------------+--------+
+17 rows in set (0.04 sec)
+
+mysql> select ename , job, hiredate, deptno from emp  where deptno between 30 and 60 order by deptno,ename,hiredate ;
++----------+---------------------+------------+--------+
+| ename    | job                 | hiredate   | deptno |
++----------+---------------------+------------+--------+
+| AARUSH   | SALESMAN            | 1980-02-14 |     30 |
+| ALEX     | MANAGER             | 1982-01-24 |     30 |
+| ALLEN    | SALESMAN            | 1981-02-20 |     30 |
+| BLAKE    | MANAGER             | 1981-05-01 |     30 |
+| GITA     | Compliance officers | 1981-07-19 |     30 |
+| GRASS    | SALESMAN            | 1980-02-14 |     30 |
+| HOFFMAN  | MANAGER             | 1982-03-24 |     30 |
+| JAMES    | CLERK               | 1981-12-03 |     30 |
+| MARTIN   | SALESMAN            | 1981-09-28 |     30 |
+| NATASHA  | CLERK               | 1981-07-19 |     30 |
+| TURNER   | SALESMAN            | 1981-09-08 |     30 |
+| WARD     | SALESMAN            | 1981-02-22 |     30 |
+| SANGITA  | Compliance officers | 1981-07-19 |     50 |
+| SUPRIYA  | ANALYST             | 1981-07-19 |     50 |
+| VRUSHALI | Compliance officers | 1981-07-19 |     50 |
+| Neel     | vice PRESIDENT      | 1983-08-09 |     60 |
+| Ruhan    | Network             | 1983-08-09 |     60 |
++----------+---------------------+------------+--------+
+17 rows in set (0.00 sec)
+
+mysql> ^C
+mysql> ^C
+mysql> select ename,hiredate from emp where hiredate = '1982-01-01';
+Empty set (0.00 sec)
+
+mysql> select ename,hiredate from emp where hiredate between  '1982-01-01' and '1982-12-31' ;
++---------+------------+
+| ename   | hiredate   |
++---------+------------+
+| SCOTT   | 1982-12-09 |
+| HOFFMAN | 1982-03-24 |
+| MILLER  | 1982-01-23 |
+| ALEX    | 1982-01-24 |
++---------+------------+
+4 rows in set (0.00 sec)
+
+mysql> ^C
+mysql> ^C
+mysql> curdate;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'curdate' at line 1
+mysql> select  curdate ();
+ERROR 1630 (42000): FUNCTION dac64.curdate does not exist. Check the 'Function Name Parsing and Resolution' section in the Reference Manual
+mysql>  curdate ();
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'curdate ()' at line 1
+mysql> select  date();
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+mysql> select  date();
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+mysql> CURDATE();
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'CURDATE()' at line 1
+mysql> select  now();
++---------------------+
+| now()               |
++---------------------+
+| 2025-11-12 08:25:54 |
++---------------------+
+1 row in set (0.00 sec)
+
+mysql> SELECT UTC_DATE(), UTC_TIMESTAMP();
++------------+---------------------+
+| UTC_DATE() | UTC_TIMESTAMP()     |
++------------+---------------------+
+| 2025-11-12 | 2025-11-12 02:56:12 |
++------------+---------------------+
+1 row in set (0.00 sec)
+
+mysql> SELECT  UTC_TIMESTAMP();
++---------------------+
+| UTC_TIMESTAMP()     |
++---------------------+
+| 2025-11-12 02:56:30 |
++---------------------+
+1 row in set (0.00 sec)
+
+mysql> select  now();
++---------------------+
+| now()               |
++---------------------+
+| 2025-11-12 08:26:34 |
++---------------------+
+1 row in set (0.00 sec)
+
+mysql> utc_date();
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'utc_date()' at line 1
+mysql> select  utc_date(;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+mysql> )
+    -> select  utc_date();
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')
+select  utc_date()' at line 1
+mysql> SELECT UTC_DATE();
++------------+
+| UTC_DATE() |
++------------+
+| 2025-11-12 |
++------------+
+1 row in set (0.00 sec)
+
+mysql>
+mysql>
+mysql> SELECT utc_date();
++------------+
+| utc_date() |
++------------+
+| 2025-11-12 |
++------------+
+1 row in set (0.00 sec)
+
+mysql> select utc_date();
++------------+
+| utc_date() |
++------------+
+| 2025-11-12 |
++------------+
+1 row in set (0.00 sec)
+
+mysql> select now() date;
++---------------------+
+| date                |
++---------------------+
+| 2025-11-12 08:29:06 |
++---------------------+
+1 row in set (0.00 sec)
+
+mysql> select now() date,time;
+ERROR 1054 (42S22): Unknown column 'time' in 'field list'
+mysql> SELECT CURDATE() AS Current_Date, CURTIME() AS Current_Time;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'Current_Date, CURTIME() AS Current_Time' at line 1
+mysql>
+mysql>
+mysql>
+mysql>
+mysql>
+mysql>
+mysql>
+mysql>
+mysql> SELECT CURDATE()  Current_Date, CURTIME()  Current_Time;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'Current_Date, CURTIME()  Current_Time' at line 1
+mysql>
+mysql>
+mysql>
+mysql>
+mysql> desc emp;
++-----------+-------------+------+-----+---------+-------+
+| Field     | Type        | Null | Key | Default | Extra |
++-----------+-------------+------+-----+---------+-------+
+| EMPNO     | int         | NO   | PRI | NULL    |       |
+| ENAME     | varchar(12) | YES  |     | NULL    |       |
+| GENDER    | char(1)     | YES  |     | NULL    |       |
+| JOB       | varchar(20) | YES  |     | NULL    |       |
+| MGR       | int         | YES  | MUL | NULL    |       |
+| HIREDATE  | date        | YES  |     | NULL    |       |
+| SAL       | int         | YES  |     | NULL    |       |
+| COMM      | int         | YES  |     | NULL    |       |
+| DEPTNO    | int         | NO   | MUL | NULL    |       |
+| BONUSID   | int         | YES  |     | NULL    |       |
+| USER NAME | varchar(20) | YES  |     | NULL    |       |
+| PWD       | varchar(20) | YES  |     | NULL    |       |
+| PHONE     | varchar(45) | YES  |     | NULL    |       |
+| isActive  | tinyint(1)  | YES  |     | NULL    |       |
+| new_sal   | int         | YES  |     | NULL    |       |
+| Dream_Sal | int         | YES  |     | NULL    |       |
++-----------+-------------+------+-----+---------+-------+
+16 rows in set (0.01 sec)
+
+mysql> select * from emp;
++-------+----------+--------+---------------------+------+------------+------+------+--------+---------+--------------+------------+------------+----------+---------+-----------+
+| EMPNO | ENAME    | GENDER | JOB                 | MGR  | HIREDATE   | SAL  | COMM | DEPTNO | BONUSID | USER NAME    | PWD        | PHONE      | isActive | new_sal | Dream_Sal |
++-------+----------+--------+---------------------+------+------------+------+------+--------+---------+--------------+------------+------------+----------+---------+-----------+
+|  6001 | GITA     | F      | Compliance officers | 7920 | 1981-07-19 | 1750 | NULL |     30 |       1 | GITA         | sales@2017 | NULL       |        1 |       0 |      5250 |
+|  6129 | VRUSHALI | F      | Compliance officers | 7920 | 1981-07-19 | 1750 | NULL |     50 |       1 | VRUSHALI     | PUN@8877   | NULL       |        1 |       0 |      5250 |
+|  6473 | SHARMIN  | F      | Public Relation     | 7920 | 1981-07-19 | 1750 | NULL |     20 |       1 | SHARMIN      | a12recmpm  | NULL       |        1 |       0 |      5250 |
+|  6781 | BANDISH  | F      | Public Relation     | 7920 | 1981-07-19 | 1750 | NULL |     20 |       1 | BANDISH      | a12recmpm  | NULL       |        1 |       0 |      5250 |
+|  7369 | SMITH    | M      | CLERK               | 7902 | 1980-12-17 |  800 | NULL |     20 |       2 | TRITONE      | a12recmpm  | 7032300023 |        0 |       0 |      2400 |
+|  7415 | AARAV    | M      | CLERK               | 7902 | 1981-12-31 | 3350 | NULL |     10 |    NULL | AARAV        | NULL       | 7032300084 |        0 |       0 |     10050 |
+|  7421 | THOMAS   | M      | CLERK               | 7920 | 1981-07-19 | 1750 | NULL |     10 |       1 | THOMAS       | r50mpm     | 7032300011 |        0 |       0 |      5250 |
+|  7499 | ALLEN    | M      | SALESMAN            | 7698 | 1981-02-20 | 1600 |  300 |     30 |       4 | ALWAYS TESTE | sales@2017 | 7032300096 |        1 |    1900 |      4800 |
+|  7521 | WARD     | M      | SALESMAN            | 7698 | 1981-02-22 | 1250 |  500 |     30 |       1 | WARD         | sales@2017 | 7132300034 |        1 |    1750 |      3750 |
+|  7566 | JONES    | M      | MANAGER             | 7839 | 1981-04-02 | 2975 | NULL |     20 |       4 | HONEYCOMB    | a12recmpm  | 7132300039 |        1 |       0 |      8925 |
+|  7654 | MARTIN   | M      | SALESMAN            | 7698 | 1981-09-28 | 1250 | 1400 |     30 |       6 | LIFE RACER   | sales@2017 | 7132300050 |        1 |    2650 |      3750 |
+|  7698 | BLAKE    | M      | MANAGER             | 7839 | 1981-05-01 | 2850 | NULL |     30 |       1 | BIG BEN      | sales@2017 | 7132300027 |        1 |       0 |      8550 |
+|  7782 | CLARK    | M      | MANAGER             | 7839 | 1981-06-09 | 2450 | NULL |     10 |       3 | CLARK        | r50mpm     | 7032300001 |        1 |       0 |      7350 |
+|  7788 | SCOTT    | M      | ANALYST             | 7566 | 1982-12-09 | 3000 | NULL |     20 |       3 | WHITE SAND   | a12recmpm  | NULL       |        1 |       0 |      9000 |
+|  7839 | KING     | M      | PRESIDENT           | NULL | 1981-11-17 | 5000 | NULL |     10 |       1 | KING         | r50mpm     | 7132300081 |        1 |       0 |     15000 |
+|  7840 | FRED     | M      | vice PRESIDENT      | 7839 | 1983-08-09 | 5000 | NULL |     20 |       1 | SAND STONE   | a12recmpm  | NULL       |        1 |       0 |     15000 |
+|  7844 | TURNER   | M      | SALESMAN            | 7698 | 1981-09-08 | 1500 |    0 |     30 |       5 | SAND DUST    | sales@2017 | NULL       |        1 |    1500 |      4500 |
+|  7876 | ADAMS    | M      | CLERK               | 7788 | 1983-01-12 | 1100 | NULL |     20 |       1 | CRAZY ANYONE | a12recmpm  | 7132300086 |        1 |       0 |      3300 |
+|  7888 | Ruhan    | M      | Network             | 7888 | 1983-08-09 | 2000 | NULL |     60 |       1 | Ruhan        | BRD@1122   | NULL       |        1 |       0 |      6000 |
+|  7889 | Neel     | M      | vice PRESIDENT      | 7839 | 1983-08-09 | 1000 | NULL |     60 |       0 | Neel         | BRD@1122   | NULL       |        1 |       0 |      3000 |
+|  7900 | JAMES    | M      | CLERK               | 7698 | 1981-12-03 |  950 | NULL |     30 |       2 | CRAZY LEADER | sales@2017 | 7132300042 |        1 |       0 |      2850 |
+|  7902 | FORD     | M      | ANALYST             | 7566 | 1981-12-03 | 3000 | NULL |     20 |       4 | CONBRIO      | a12recmpm  | NULL       |        0 |       0 |      9000 |
+|  7919 | HOFFMAN  | M      | MANAGER             | 7566 | 1982-03-24 | 4150 | NULL |     30 |       3 | INTERVAL     | sales@2017 | NULL       |        1 |       0 |     12450 |
+|  7920 | GRASS    | M      | SALESMAN            | 7919 | 1980-02-14 | 2575 | 2700 |     30 |       5 | GRASS        | sales@2017 | NULL       |        1 |    5275 |      7725 |
+|  7934 | MILLER   | M      | CLERK               | 7782 | 1982-01-23 | 1300 | 1300 |     10 |       2 | QUARTERNOTE  | r50mpm     | 7132300055 |        0 |    2600 |      3900 |
+|  7945 | AARUSH   | M      | SALESMAN            | 7902 | 1980-02-14 | 1350 | 2700 |     30 |    NULL | AARUSH       | ABCDEF     | NULL       |        0 |    4050 |      4050 |
+|  7949 | ALEX     | M      | MANAGER             | 7698 | 1982-01-24 | 1250 |  500 |     30 |       5 | QUARTERREST  | sales@2017 | 7156567183 |        1 |    1750 |      3750 |
+|  8433 | NATASHA  | F      | CLERK               | 7920 | 1981-07-19 | 1750 | NULL |     30 |       1 | NATASHA      | sales@2017 | NULL       |        1 |       0 |      5250 |
+|  9400 | SANGITA  | F      | Compliance officers | 7920 | 1981-07-19 | 1750 | NULL |     50 |       1 | SANGITA      | NULL       | NULL       |        1 |       0 |      5250 |
+|  9473 | SUPRIYA  | F      | ANALYST             | 7920 | 1981-07-19 | 1750 | NULL |     50 |       1 | SUPRIYA      | XYZ@1234   | NULL       |        1 |       0 |      5250 |
++-------+----------+--------+---------------------+------+------------+------+------+--------+---------+--------------+------------+------------+----------+---------+-----------+
+30 rows in set (0.00 sec)
+
+mysql> show tables;
++---------------------+
+| Tables_in_dac64     |
++---------------------+
+| a                   |
+| activity            |
+| agent               |
+| airline_seats       |
+| andor               |
+| atm                 |
+| b                   |
+| bankloan            |
+| batch_schedule      |
+| betweensalary       |
+| bitwise             |
+| blanktablea         |
+| blanktableb         |
+| blog                |
+| bonus               |
+| books               |
+| brands              |
+| bus_stops           |
+| cafe                |
+| candidate           |
+| cardpayments        |
+| cashpayments        |
+| categories          |
+| category            |
+| city                |
+| classandsubjects    |
+| client              |
+| cnumbers            |
+| coalesce            |
+| comments            |
+| company             |
+| countnulls          |
+| countnumbers        |
+| cricketwinnerteam   |
+| customer            |
+| customers           |
+| demodept1           |
+| demodept2           |
+| dept                |
+| dept1               |
+| dhl                 |
+| docs                |
+| doctor              |
+| doctorvisits        |
+| dummy               |
+| duplicate           |
+| emp                 |
+| emp1                |
+| emp2                |
+| emp_attendance      |
+| emp_cards           |
+| emp_phone           |
+| empj                |
+| envelope            |
+| facebook            |
+| fedex               |
+| food                |
+| food_category_tags  |
+| food_items          |
+| fromstoreorders     |
+| fruits              |
+| fullname            |
+| hall_ticket         |
+| hobby               |
+| ipl                 |
+| item                |
+| job_list            |
+| key_parts           |
+| labtestlist         |
+| leading_zeroes      |
+| leadtable           |
+| licence             |
+| linkedin            |
+| location            |
+| managers            |
+| mass_table          |
+| medicinelist        |
+| menucard            |
+| missingnumbers      |
+| nearest             |
+| new                 |
+| newbooks            |
+| null1               |
+| null2               |
+| nullif              |
+| numberstring        |
+| onlineorders        |
+| ord                 |
+| order1              |
+| order_items         |
+| orderdetails        |
+| orders              |
+| orders1             |
+| overlapping_dates   |
+| overtime            |
+| patient             |
+| phonecall           |
+| pivot_table         |
+| plumber             |
+| plumber_service_map |
+| points              |
+| population          |
+| price               |
+| product             |
+| product_sales       |
+| products            |
+| pune_metro_stations |
+| quarterly_revenue   |
+| r                   |
+| r1                  |
+| r2                  |
+| races               |
+| regexpr             |
+| repeatingnumbers    |
+| replacedept         |
+| reservations        |
+| revenue             |
+| rockets             |
+| rohitauto           |
+| room_assigned       |
+| room_staff          |
+| rooms               |
+| runners             |
+| runningserver       |
+| sales               |
+| sales1              |
+| sales_channel       |
+| salespeople         |
+| salesperson         |
+| salgrade            |
+| server              |
+| service             |
+| seta                |
+| setb                |
+| shop                |
+| softdrink           |
+| sort                |
+| sourcecity          |
+| sourcenames         |
+| stadium             |
+| stages              |
+| states              |
+| station             |
+| status              |
+| stocks              |
+| stringnumber        |
+| student             |
+| sumitauto           |
+| swapcity            |
+| t                   |
+| t1                  |
+| t2                  |
+| tablea              |
+| tableaa             |
+| tableb              |
+| tablebb             |
+| targetcity          |
+| targetnames         |
+| tasks               |
+| teams               |
+| temp                |
+| temp1               |
+| trainers            |
+| trains              |
+| traintimetable      |
+| transactions        |
+| unpivot_table       |
+| ups                 |
+| vote_response       |
+| votes               |
+| warehouse           |
+| x                   |
+| year_of_service     |
+| yearly_revenue      |
+| years               |
+| ytemp               |
+| yuvrajauto          |
+| yuvrajcurdate       |
+| yuvraje1            |
+| yuvraje2            |
+| z                   |
++---------------------+
+181 rows in set (0.01 sec)
+
+mysql> show tables like 'emp%';
++------------------------+
+| Tables_in_dac64 (emp%) |
++------------------------+
+| emp                    |
+| emp1                   |
+| emp2                   |
+| emp_attendance         |
+| emp_cards              |
+| emp_phone              |
+| empj                   |
++------------------------+
+7 rows in set (0.00 sec)
+
+mysql> select ename,sal, review_date( hiredate, interval 6 month) as date from emp ;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') as date from emp' at line 1
+mysql> select ename,sal, date_add( hiredate, interval 6 month) as date from emp ;
++----------+------+------------+
+| ename    | sal  | date       |
++----------+------+------------+
+| GITA     | 1750 | 1982-01-19 |
+| VRUSHALI | 1750 | 1982-01-19 |
+| SHARMIN  | 1750 | 1982-01-19 |
+| BANDISH  | 1750 | 1982-01-19 |
+| SMITH    |  800 | 1981-06-17 |
+| AARAV    | 3350 | 1982-06-30 |
+| THOMAS   | 1750 | 1982-01-19 |
+| ALLEN    | 1600 | 1981-08-20 |
+| WARD     | 1250 | 1981-08-22 |
+| JONES    | 2975 | 1981-10-02 |
+| MARTIN   | 1250 | 1982-03-28 |
+| BLAKE    | 2850 | 1981-11-01 |
+| CLARK    | 2450 | 1981-12-09 |
+| SCOTT    | 3000 | 1983-06-09 |
+| KING     | 5000 | 1982-05-17 |
+| FRED     | 5000 | 1984-02-09 |
+| TURNER   | 1500 | 1982-03-08 |
+| ADAMS    | 1100 | 1983-07-12 |
+| Ruhan    | 2000 | 1984-02-09 |
+| Neel     | 1000 | 1984-02-09 |
+| JAMES    |  950 | 1982-06-03 |
+| FORD     | 3000 | 1982-06-03 |
+| HOFFMAN  | 4150 | 1982-09-24 |
+| GRASS    | 2575 | 1980-08-14 |
+| MILLER   | 1300 | 1982-07-23 |
+| AARUSH   | 1350 | 1980-08-14 |
+| ALEX     | 1250 | 1982-07-24 |
+| NATASHA  | 1750 | 1982-01-19 |
+| SANGITA  | 1750 | 1982-01-19 |
+| SUPRIYA  | 1750 | 1982-01-19 |
++----------+------+------------+
+30 rows in set (0.00 sec)
+
+mysql> select ename,sal, date_add( hiredate, interval 6 month) as "hire date after 6 month",date_add(date_add(hiredate,interval 6 month),interval (9- dayofweek(date_add(hiredate,interval 6 month)))%7 day) from emp ;
++----------+------+-------------------------+------------------------------------------------------------------------------------------------------------------+
+| ename    | sal  | hire date after 6 month | date_add(date_add(hiredate,interval 6 month),interval (9- dayofweek(date_add(hiredate,interval 6 month)))%7 day) |
++----------+------+-------------------------+------------------------------------------------------------------------------------------------------------------+
+| GITA     | 1750 | 1982-01-19              | 1982-01-25                                                                                                       |
+| VRUSHALI | 1750 | 1982-01-19              | 1982-01-25                                                                                                       |
+| SHARMIN  | 1750 | 1982-01-19              | 1982-01-25                                                                                                       |
+| BANDISH  | 1750 | 1982-01-19              | 1982-01-25                                                                                                       |
+| SMITH    |  800 | 1981-06-17              | 1981-06-22                                                                                                       |
+| AARAV    | 3350 | 1982-06-30              | 1982-07-05                                                                                                       |
+| THOMAS   | 1750 | 1982-01-19              | 1982-01-25                                                                                                       |
+| ALLEN    | 1600 | 1981-08-20              | 1981-08-24                                                                                                       |
+| WARD     | 1250 | 1981-08-22              | 1981-08-24                                                                                                       |
+| JONES    | 2975 | 1981-10-02              | 1981-10-05                                                                                                       |
+| MARTIN   | 1250 | 1982-03-28              | 1982-03-29                                                                                                       |
+| BLAKE    | 2850 | 1981-11-01              | 1981-11-02                                                                                                       |
+| CLARK    | 2450 | 1981-12-09              | 1981-12-14                                                                                                       |
+| SCOTT    | 3000 | 1983-06-09              | 1983-06-13                                                                                                       |
+| KING     | 5000 | 1982-05-17              | 1982-05-17                                                                                                       |
+| FRED     | 5000 | 1984-02-09              | 1984-02-13                                                                                                       |
+| TURNER   | 1500 | 1982-03-08              | 1982-03-08                                                                                                       |
+| ADAMS    | 1100 | 1983-07-12              | 1983-07-18                                                                                                       |
+| Ruhan    | 2000 | 1984-02-09              | 1984-02-13                                                                                                       |
+| Neel     | 1000 | 1984-02-09              | 1984-02-13                                                                                                       |
+| JAMES    |  950 | 1982-06-03              | 1982-06-07                                                                                                       |
+| FORD     | 3000 | 1982-06-03              | 1982-06-07                                                                                                       |
+| HOFFMAN  | 4150 | 1982-09-24              | 1982-09-27                                                                                                       |
+| GRASS    | 2575 | 1980-08-14              | 1980-08-18                                                                                                       |
+| MILLER   | 1300 | 1982-07-23              | 1982-07-26                                                                                                       |
+| AARUSH   | 1350 | 1980-08-14              | 1980-08-18                                                                                                       |
+| ALEX     | 1250 | 1982-07-24              | 1982-07-26                                                                                                       |
+| NATASHA  | 1750 | 1982-01-19              | 1982-01-25                                                                                                       |
+| SANGITA  | 1750 | 1982-01-19              | 1982-01-25                                                                                                       |
+| SUPRIYA  | 1750 | 1982-01-19              | 1982-01-25                                                                                                       |
++----------+------+-------------------------+------------------------------------------------------------------------------------------------------------------+
+30 rows in set (0.00 sec)
+
+mysql> select ename,sal,hiredate, date_add( hiredate, interval 6 month) as "hire date after 6 month",date_add(date_add(hiredate,interval 6 month),interval (9- dayofweek(date_add(hiredate,interval 6 month)))%7 day) as "review date" from emp ;
++----------+------+------------+-------------------------+-------------+
+| ename    | sal  | hiredate   | hire date after 6 month | review date |
++----------+------+------------+-------------------------+-------------+
+| GITA     | 1750 | 1981-07-19 | 1982-01-19              | 1982-01-25  |
+| VRUSHALI | 1750 | 1981-07-19 | 1982-01-19              | 1982-01-25  |
+| SHARMIN  | 1750 | 1981-07-19 | 1982-01-19              | 1982-01-25  |
+| BANDISH  | 1750 | 1981-07-19 | 1982-01-19              | 1982-01-25  |
+| SMITH    |  800 | 1980-12-17 | 1981-06-17              | 1981-06-22  |
+| AARAV    | 3350 | 1981-12-31 | 1982-06-30              | 1982-07-05  |
+| THOMAS   | 1750 | 1981-07-19 | 1982-01-19              | 1982-01-25  |
+| ALLEN    | 1600 | 1981-02-20 | 1981-08-20              | 1981-08-24  |
+| WARD     | 1250 | 1981-02-22 | 1981-08-22              | 1981-08-24  |
+| JONES    | 2975 | 1981-04-02 | 1981-10-02              | 1981-10-05  |
+| MARTIN   | 1250 | 1981-09-28 | 1982-03-28              | 1982-03-29  |
+| BLAKE    | 2850 | 1981-05-01 | 1981-11-01              | 1981-11-02  |
+| CLARK    | 2450 | 1981-06-09 | 1981-12-09              | 1981-12-14  |
+| SCOTT    | 3000 | 1982-12-09 | 1983-06-09              | 1983-06-13  |
+| KING     | 5000 | 1981-11-17 | 1982-05-17              | 1982-05-17  |
+| FRED     | 5000 | 1983-08-09 | 1984-02-09              | 1984-02-13  |
+| TURNER   | 1500 | 1981-09-08 | 1982-03-08              | 1982-03-08  |
+| ADAMS    | 1100 | 1983-01-12 | 1983-07-12              | 1983-07-18  |
+| Ruhan    | 2000 | 1983-08-09 | 1984-02-09              | 1984-02-13  |
+| Neel     | 1000 | 1983-08-09 | 1984-02-09              | 1984-02-13  |
+| JAMES    |  950 | 1981-12-03 | 1982-06-03              | 1982-06-07  |
+| FORD     | 3000 | 1981-12-03 | 1982-06-03              | 1982-06-07  |
+| HOFFMAN  | 4150 | 1982-03-24 | 1982-09-24              | 1982-09-27  |
+| GRASS    | 2575 | 1980-02-14 | 1980-08-14              | 1980-08-18  |
+| MILLER   | 1300 | 1982-01-23 | 1982-07-23              | 1982-07-26  |
+| AARUSH   | 1350 | 1980-02-14 | 1980-08-14              | 1980-08-18  |
+| ALEX     | 1250 | 1982-01-24 | 1982-07-24              | 1982-07-26  |
+| NATASHA  | 1750 | 1981-07-19 | 1982-01-19              | 1982-01-25  |
+| SANGITA  | 1750 | 1981-07-19 | 1982-01-19              | 1982-01-25  |
+| SUPRIYA  | 1750 | 1981-07-19 | 1982-01-19              | 1982-01-25  |
++----------+------+------------+-------------------------+-------------+
+30 rows in set (0.00 sec)
+
+mysql> select day(now());
++------------+
+| day(now()) |
++------------+
+|         12 |
++------------+
+1 row in set (0.00 sec)
+
+mysql> select date_formate();
+ERROR 1305 (42000): FUNCTION dac64.date_formate does not exist
+mysql> select date_formate(now(),%W);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '%W)' at line 1
+mysql> SELECT
+    ->     DATE_FORMAT(NOW(), '%W') AS Full_Day_Name,
+    ->     DATE_FORMAT(NOW(), '%a') AS Abbreviated_Day,
+    ->     DATE_FORMAT(NOW(), '%d') AS Day_of_Month_Number;
++---------------+-----------------+---------------------+
+| Full_Day_Name | Abbreviated_Day | Day_of_Month_Number |
++---------------+-----------------+---------------------+
+| Wednesday     | Wed             | 12                  |
++---------------+-----------------+---------------------+
+1 row in set (0.00 sec)
+
+mysql> select ename,sal,hiredate,
+    ->  date_add( hiredate, interval 6 month)
+    -> as "hire date after 6 month",
+    -> date_add(date_add(hiredate,interval 6 month),interval (9- dayofweek(date_add(hiredate,interval 6 month)))%7 day) as "review date"
+    -> date_format(date_add(date_add(hiredate,interval 6 month),interval (9- dayofweek(date_add(hiredate,interval 6 month)))%7 day),'%W' as DAy
+    -> from emp ;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'date_format(date_add(date_add(hiredate,interval 6 month),interval (9- dayofweek(' at line 5
+mysql> select curdate
+    -> ();
+ERROR 1630 (42000): FUNCTION dac64.curdate does not exist. Check the 'Function Name Parsing and Resolution' section in the Reference Manual
+mysql> select curdate();
++------------+
+| curdate()  |
++------------+
+| 2025-11-12 |
++------------+
+1 row in set (0.00 sec)
+
+mysql> select ename,sal,hiredate,date_add( hiredate, interval 6 month) as "hire date after 6 month",date_add(date_add(hiredate,interval 6 month),interval (9- dayofweek(date_add(hiredate,interval 6 month)))%7 day) as "review date" date format(date_add(date_add(hiredate,interval 6 month),interval (9- dayofweek(date_add(hiredate,interval 6 month)))%7 day),'%W' as DAy from emp;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'date format(date_add(date_add(hiredate,interval 6 month),interval (9- dayofweek(' at line 1
+mysql> SELECT
+    ->     ENAME AS "Employee Name",
+    ->     LPAD(SAL, 15, '$') AS "Padded Salary"
+    -> FROM
+    ->     EMP;
++---------------+-----------------+
+| Employee Name | Padded Salary   |
++---------------+-----------------+
+| GITA          | $$$$$$$$$$$1750 |
+| VRUSHALI      | $$$$$$$$$$$1750 |
+| SHARMIN       | $$$$$$$$$$$1750 |
+| BANDISH       | $$$$$$$$$$$1750 |
+| SMITH         | $$$$$$$$$$$$800 |
+| AARAV         | $$$$$$$$$$$3350 |
+| THOMAS        | $$$$$$$$$$$1750 |
+| ALLEN         | $$$$$$$$$$$1600 |
+| WARD          | $$$$$$$$$$$1250 |
+| JONES         | $$$$$$$$$$$2975 |
+| MARTIN        | $$$$$$$$$$$1250 |
+| BLAKE         | $$$$$$$$$$$2850 |
+| CLARK         | $$$$$$$$$$$2450 |
+| SCOTT         | $$$$$$$$$$$3000 |
+| KING          | $$$$$$$$$$$5000 |
+| FRED          | $$$$$$$$$$$5000 |
+| TURNER        | $$$$$$$$$$$1500 |
+| ADAMS         | $$$$$$$$$$$1100 |
+| Ruhan         | $$$$$$$$$$$2000 |
+| Neel          | $$$$$$$$$$$1000 |
+| JAMES         | $$$$$$$$$$$$950 |
+| FORD          | $$$$$$$$$$$3000 |
+| HOFFMAN       | $$$$$$$$$$$4150 |
+| GRASS         | $$$$$$$$$$$2575 |
+| MILLER        | $$$$$$$$$$$1300 |
+| AARUSH        | $$$$$$$$$$$1350 |
+| ALEX          | $$$$$$$$$$$1250 |
+| NATASHA       | $$$$$$$$$$$1750 |
+| SANGITA       | $$$$$$$$$$$1750 |
+| SUPRIYA       | $$$$$$$$$$$1750 |
++---------------+-----------------+
+30 rows in set (0.00 sec)
+
+mysql> SELECT sal from emp;
++------+
+| sal  |
++------+
+| 1750 |
+| 1750 |
+| 1750 |
+| 1750 |
+|  800 |
+| 3350 |
+| 1750 |
+| 1600 |
+| 1250 |
+| 2975 |
+| 1250 |
+| 2850 |
+| 2450 |
+| 3000 |
+| 5000 |
+| 5000 |
+| 1500 |
+| 1100 |
+| 2000 |
+| 1000 |
+|  950 |
+| 3000 |
+| 4150 |
+| 2575 |
+| 1300 |
+| 1350 |
+| 1250 |
+| 1750 |
+| 1750 |
+| 1750 |
++------+
+30 rows in set (0.00 sec)
+
+mysql> select hiredate from emp;
++------------+
+| hiredate   |
++------------+
+| 1981-07-19 |
+| 1981-07-19 |
+| 1981-07-19 |
+| 1981-07-19 |
+| 1980-12-17 |
+| 1981-12-31 |
+| 1981-07-19 |
+| 1981-02-20 |
+| 1981-02-22 |
+| 1981-04-02 |
+| 1981-09-28 |
+| 1981-05-01 |
+| 1981-06-09 |
+| 1982-12-09 |
+| 1981-11-17 |
+| 1983-08-09 |
+| 1981-09-08 |
+| 1983-01-12 |
+| 1983-08-09 |
+| 1983-08-09 |
+| 1981-12-03 |
+| 1981-12-03 |
+| 1982-03-24 |
+| 1980-02-14 |
+| 1982-01-23 |
+| 1980-02-14 |
+| 1982-01-24 |
+| 1981-07-19 |
+| 1981-07-19 |
+| 1981-07-19 |
++------------+
+30 rows in set (0.00 sec)
+
+mysql> select hiredate,date_formate(hiredate,'%W')Day from emp;
+ERROR 1305 (42000): FUNCTION dac64.date_formate does not exist
+mysql> select hiredate,date_format(hiredate,'%W')Day from emp;
++------------+-----------+
+| hiredate   | Day       |
++------------+-----------+
+| 1981-07-19 | Sunday    |
+| 1981-07-19 | Sunday    |
+| 1981-07-19 | Sunday    |
+| 1981-07-19 | Sunday    |
+| 1980-12-17 | Wednesday |
+| 1981-12-31 | Thursday  |
+| 1981-07-19 | Sunday    |
+| 1981-02-20 | Friday    |
+| 1981-02-22 | Sunday    |
+| 1981-04-02 | Thursday  |
+| 1981-09-28 | Monday    |
+| 1981-05-01 | Friday    |
+| 1981-06-09 | Tuesday   |
+| 1982-12-09 | Thursday  |
+| 1981-11-17 | Tuesday   |
+| 1983-08-09 | Tuesday   |
+| 1981-09-08 | Tuesday   |
+| 1983-01-12 | Wednesday |
+| 1983-08-09 | Tuesday   |
+| 1983-08-09 | Tuesday   |
+| 1981-12-03 | Thursday  |
+| 1981-12-03 | Thursday  |
+| 1982-03-24 | Wednesday |
+| 1980-02-14 | Thursday  |
+| 1982-01-23 | Saturday  |
+| 1980-02-14 | Thursday  |
+| 1982-01-24 | Sunday    |
+| 1981-07-19 | Sunday    |
+| 1981-07-19 | Sunday    |
+| 1981-07-19 | Sunday    |
++------------+-----------+
+30 rows in set (0.00 sec)
+
+mysql> select hiredate,date_format(hiredate,'%w')Day from emp;
++------------+------+
+| hiredate   | Day  |
++------------+------+
+| 1981-07-19 | 0    |
+| 1981-07-19 | 0    |
+| 1981-07-19 | 0    |
+| 1981-07-19 | 0    |
+| 1980-12-17 | 3    |
+| 1981-12-31 | 4    |
+| 1981-07-19 | 0    |
+| 1981-02-20 | 5    |
+| 1981-02-22 | 0    |
+| 1981-04-02 | 4    |
+| 1981-09-28 | 1    |
+| 1981-05-01 | 5    |
+| 1981-06-09 | 2    |
+| 1982-12-09 | 4    |
+| 1981-11-17 | 2    |
+| 1983-08-09 | 2    |
+| 1981-09-08 | 2    |
+| 1983-01-12 | 3    |
+| 1983-08-09 | 2    |
+| 1983-08-09 | 2    |
+| 1981-12-03 | 4    |
+| 1981-12-03 | 4    |
+| 1982-03-24 | 3    |
+| 1980-02-14 | 4    |
+| 1982-01-23 | 6    |
+| 1980-02-14 | 4    |
+| 1982-01-24 | 0    |
+| 1981-07-19 | 0    |
+| 1981-07-19 | 0    |
+| 1981-07-19 | 0    |
++------------+------+
+30 rows in set (0.00 sec)
+
+mysql> select hiredate,date_format(hiredate,'%d')Day from emp;
++------------+------+
+| hiredate   | Day  |
++------------+------+
+| 1981-07-19 | 19   |
+| 1981-07-19 | 19   |
+| 1981-07-19 | 19   |
+| 1981-07-19 | 19   |
+| 1980-12-17 | 17   |
+| 1981-12-31 | 31   |
+| 1981-07-19 | 19   |
+| 1981-02-20 | 20   |
+| 1981-02-22 | 22   |
+| 1981-04-02 | 02   |
+| 1981-09-28 | 28   |
+| 1981-05-01 | 01   |
+| 1981-06-09 | 09   |
+| 1982-12-09 | 09   |
+| 1981-11-17 | 17   |
+| 1983-08-09 | 09   |
+| 1981-09-08 | 08   |
+| 1983-01-12 | 12   |
+| 1983-08-09 | 09   |
+| 1983-08-09 | 09   |
+| 1981-12-03 | 03   |
+| 1981-12-03 | 03   |
+| 1982-03-24 | 24   |
+| 1980-02-14 | 14   |
+| 1982-01-23 | 23   |
+| 1980-02-14 | 14   |
+| 1982-01-24 | 24   |
+| 1981-07-19 | 19   |
+| 1981-07-19 | 19   |
+| 1981-07-19 | 19   |
++------------+------+
+30 rows in set (0.00 sec)
+
+mysql> select hiredate,date_format(hiredate,'%m')Day from emp;
++------------+------+
+| hiredate   | Day  |
++------------+------+
+| 1981-07-19 | 07   |
+| 1981-07-19 | 07   |
+| 1981-07-19 | 07   |
+| 1981-07-19 | 07   |
+| 1980-12-17 | 12   |
+| 1981-12-31 | 12   |
+| 1981-07-19 | 07   |
+| 1981-02-20 | 02   |
+| 1981-02-22 | 02   |
+| 1981-04-02 | 04   |
+| 1981-09-28 | 09   |
+| 1981-05-01 | 05   |
+| 1981-06-09 | 06   |
+| 1982-12-09 | 12   |
+| 1981-11-17 | 11   |
+| 1983-08-09 | 08   |
+| 1981-09-08 | 09   |
+| 1983-01-12 | 01   |
+| 1983-08-09 | 08   |
+| 1983-08-09 | 08   |
+| 1981-12-03 | 12   |
+| 1981-12-03 | 12   |
+| 1982-03-24 | 03   |
+| 1980-02-14 | 02   |
+| 1982-01-23 | 01   |
+| 1980-02-14 | 02   |
+| 1982-01-24 | 01   |
+| 1981-07-19 | 07   |
+| 1981-07-19 | 07   |
+| 1981-07-19 | 07   |
++------------+------+
+30 rows in set (0.00 sec)
+
+mysql> select hiredate,date_format(hiredate,'%y')Day from emp;
++------------+------+
+| hiredate   | Day  |
++------------+------+
+| 1981-07-19 | 81   |
+| 1981-07-19 | 81   |
+| 1981-07-19 | 81   |
+| 1981-07-19 | 81   |
+| 1980-12-17 | 80   |
+| 1981-12-31 | 81   |
+| 1981-07-19 | 81   |
+| 1981-02-20 | 81   |
+| 1981-02-22 | 81   |
+| 1981-04-02 | 81   |
+| 1981-09-28 | 81   |
+| 1981-05-01 | 81   |
+| 1981-06-09 | 81   |
+| 1982-12-09 | 82   |
+| 1981-11-17 | 81   |
+| 1983-08-09 | 83   |
+| 1981-09-08 | 81   |
+| 1983-01-12 | 83   |
+| 1983-08-09 | 83   |
+| 1983-08-09 | 83   |
+| 1981-12-03 | 81   |
+| 1981-12-03 | 81   |
+| 1982-03-24 | 82   |
+| 1980-02-14 | 80   |
+| 1982-01-23 | 82   |
+| 1980-02-14 | 80   |
+| 1982-01-24 | 82   |
+| 1981-07-19 | 81   |
+| 1981-07-19 | 81   |
+| 1981-07-19 | 81   |
++------------+------+
+30 rows in set (0.00 sec)
+
+mysql> select hiredate,date_format(hiredate,'%yy')Day from emp;
++------------+------+
+| hiredate   | Day  |
++------------+------+
+| 1981-07-19 | 81y  |
+| 1981-07-19 | 81y  |
+| 1981-07-19 | 81y  |
+| 1981-07-19 | 81y  |
+| 1980-12-17 | 80y  |
+| 1981-12-31 | 81y  |
+| 1981-07-19 | 81y  |
+| 1981-02-20 | 81y  |
+| 1981-02-22 | 81y  |
+| 1981-04-02 | 81y  |
+| 1981-09-28 | 81y  |
+| 1981-05-01 | 81y  |
+| 1981-06-09 | 81y  |
+| 1982-12-09 | 82y  |
+| 1981-11-17 | 81y  |
+| 1983-08-09 | 83y  |
+| 1981-09-08 | 81y  |
+| 1983-01-12 | 83y  |
+| 1983-08-09 | 83y  |
+| 1983-08-09 | 83y  |
+| 1981-12-03 | 81y  |
+| 1981-12-03 | 81y  |
+| 1982-03-24 | 82y  |
+| 1980-02-14 | 80y  |
+| 1982-01-23 | 82y  |
+| 1980-02-14 | 80y  |
+| 1982-01-24 | 82y  |
+| 1981-07-19 | 81y  |
+| 1981-07-19 | 81y  |
+| 1981-07-19 | 81y  |
++------------+------+
+30 rows in set (0.00 sec)
+
+mysql> select hiredate,date_format(hiredate,'%W')Day from emp;
++------------+-----------+
+| hiredate   | Day       |
++------------+-----------+
+| 1981-07-19 | Sunday    |
+| 1981-07-19 | Sunday    |
+| 1981-07-19 | Sunday    |
+| 1981-07-19 | Sunday    |
+| 1980-12-17 | Wednesday |
+| 1981-12-31 | Thursday  |
+| 1981-07-19 | Sunday    |
+| 1981-02-20 | Friday    |
+| 1981-02-22 | Sunday    |
+| 1981-04-02 | Thursday  |
+| 1981-09-28 | Monday    |
+| 1981-05-01 | Friday    |
+| 1981-06-09 | Tuesday   |
+| 1982-12-09 | Thursday  |
+| 1981-11-17 | Tuesday   |
+| 1983-08-09 | Tuesday   |
+| 1981-09-08 | Tuesday   |
+| 1983-01-12 | Wednesday |
+| 1983-08-09 | Tuesday   |
+| 1983-08-09 | Tuesday   |
+| 1981-12-03 | Thursday  |
+| 1981-12-03 | Thursday  |
+| 1982-03-24 | Wednesday |
+| 1980-02-14 | Thursday  |
+| 1982-01-23 | Saturday  |
+| 1980-02-14 | Thursday  |
+| 1982-01-24 | Sunday    |
+| 1981-07-19 | Sunday    |
+| 1981-07-19 | Sunday    |
+| 1981-07-19 | Sunday    |
++------------+-----------+
+30 rows in set (0.00 sec)
+
+mysql> select hiredate from emp where hiredate in '1981-09-07' 'sunday' ;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''1981-09-07' 'sunday'' at line 1
+mysql> select hiredate from emp where dayname(hiredate)=sunday ;
+ERROR 1054 (42S22): Unknown column 'sunday' in 'where clause'
+mysql> select hiredate from emp where dayname(hiredate)='sunday' ;
++------------+
+| hiredate   |
++------------+
+| 1981-07-19 |
+| 1981-07-19 |
+| 1981-07-19 |
+| 1981-07-19 |
+| 1981-07-19 |
+| 1981-02-22 |
+| 1982-01-24 |
+| 1981-07-19 |
+| 1981-07-19 |
+| 1981-07-19 |
++------------+
+10 rows in set (0.00 sec)
+
+mysql> select ename,  hiredate from emp where dayname(hiredate)='sunday' ;
++----------+------------+
+| ename    | hiredate   |
++----------+------------+
+| GITA     | 1981-07-19 |
+| VRUSHALI | 1981-07-19 |
+| SHARMIN  | 1981-07-19 |
+| BANDISH  | 1981-07-19 |
+| THOMAS   | 1981-07-19 |
+| WARD     | 1981-02-22 |
+| ALEX     | 1982-01-24 |
+| NATASHA  | 1981-07-19 |
+| SANGITA  | 1981-07-19 |
+| SUPRIYA  | 1981-07-19 |
++----------+------------+
+10 rows in set (0.00 sec)
+
+mysql> select ename,  hiredate from emp where dayname(hiredate)='monday' ;
++--------+------------+
+| ename  | hiredate   |
++--------+------------+
+| MARTIN | 1981-09-28 |
++--------+------------+
+1 row in set (0.00 sec)
+
+mysql> select ename, hiredate ,to_char(hiredate,'day') as weeks from emp;
+ERROR 1305 (42000): FUNCTION dac64.to_char does not exist
+mysql> select ename, hiredate ,dayname(hiredate) as weeks from emp;
++----------+------------+-----------+
+| ename    | hiredate   | weeks     |
++----------+------------+-----------+
+| GITA     | 1981-07-19 | Sunday    |
+| VRUSHALI | 1981-07-19 | Sunday    |
+| SHARMIN  | 1981-07-19 | Sunday    |
+| BANDISH  | 1981-07-19 | Sunday    |
+| SMITH    | 1980-12-17 | Wednesday |
+| AARAV    | 1981-12-31 | Thursday  |
+| THOMAS   | 1981-07-19 | Sunday    |
+| ALLEN    | 1981-02-20 | Friday    |
+| WARD     | 1981-02-22 | Sunday    |
+| JONES    | 1981-04-02 | Thursday  |
+| MARTIN   | 1981-09-28 | Monday    |
+| BLAKE    | 1981-05-01 | Friday    |
+| CLARK    | 1981-06-09 | Tuesday   |
+| SCOTT    | 1982-12-09 | Thursday  |
+| KING     | 1981-11-17 | Tuesday   |
+| FRED     | 1983-08-09 | Tuesday   |
+| TURNER   | 1981-09-08 | Tuesday   |
+| ADAMS    | 1983-01-12 | Wednesday |
+| Ruhan    | 1983-08-09 | Tuesday   |
+| Neel     | 1983-08-09 | Tuesday   |
+| JAMES    | 1981-12-03 | Thursday  |
+| FORD     | 1981-12-03 | Thursday  |
+| HOFFMAN  | 1982-03-24 | Wednesday |
+| GRASS    | 1980-02-14 | Thursday  |
+| MILLER   | 1982-01-23 | Saturday  |
+| AARUSH   | 1980-02-14 | Thursday  |
+| ALEX     | 1982-01-24 | Sunday    |
+| NATASHA  | 1981-07-19 | Sunday    |
+| SANGITA  | 1981-07-19 | Sunday    |
+| SUPRIYA  | 1981-07-19 | Sunday    |
++----------+------------+-----------+
+30 rows in set (0.00 sec)
+
+mysql> desc emp;
++-----------+-------------+------+-----+---------+-------+
+| Field     | Type        | Null | Key | Default | Extra |
++-----------+-------------+------+-----+---------+-------+
+| EMPNO     | int         | NO   | PRI | NULL    |       |
+| ENAME     | varchar(12) | YES  |     | NULL    |       |
+| GENDER    | char(1)     | YES  |     | NULL    |       |
+| JOB       | varchar(20) | YES  |     | NULL    |       |
+| MGR       | int         | YES  | MUL | NULL    |       |
+| HIREDATE  | date        | YES  |     | NULL    |       |
+| SAL       | int         | YES  |     | NULL    |       |
+| COMM      | int         | YES  |     | NULL    |       |
+| DEPTNO    | int         | NO   | MUL | NULL    |       |
+| BONUSID   | int         | YES  |     | NULL    |       |
+| USER NAME | varchar(20) | YES  |     | NULL    |       |
+| PWD       | varchar(20) | YES  |     | NULL    |       |
+| PHONE     | varchar(45) | YES  |     | NULL    |       |
+| isActive  | tinyint(1)  | YES  |     | NULL    |       |
+| new_sal   | int         | YES  |     | NULL    |       |
+| Dream_Sal | int         | YES  |     | NULL    |       |
++-----------+-------------+------+-----+---------+-------+
+16 rows in set (0.00 sec)
+
+mysql> desc sales;
++----------+--------------+------+-----+---------+-------+
+| Field    | Type         | Null | Key | Default | Extra |
++----------+--------------+------+-----+---------+-------+
+| REPID    | int          | NO   |     | NULL    |       |
+| CUSTID   | int          | YES  |     | NULL    |       |
+| CUSTNAME | varchar(45)  | YES  |     | NULL    |       |
+| PRODID   | int          | NO   |     | NULL    |       |
+| PRODNAME | varchar(30)  | YES  |     | NULL    |       |
+| AMOUNT   | double(19,2) | YES  |     | NULL    |       |
++----------+--------------+------+-----+---------+-------+
+6 rows in set (0.00 sec)
+
+mysql> select tables 'ordar%';
+ERROR 1054 (42S22): Unknown column 'tables' in 'field list'
+mysql> show tables 'ordar%';
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''ordar%'' at line 1
+mysql> show tables like 'order%';
++--------------------------+
+| Tables_in_dac64 (order%) |
++--------------------------+
+| order1                   |
+| order_items              |
+| orderdetails             |
+| orders                   |
+| orders1                  |
++--------------------------+
+5 rows in set (0.00 sec)
+
+mysql> desc order;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'order' at line 1
+mysql> desc orders;
++------------------+-------------+------+-----+---------+-------+
+| Field            | Type        | Null | Key | Default | Extra |
++------------------+-------------+------+-----+---------+-------+
+| ONUM             | int         | NO   | PRI | NULL    |       |
+| AMT              | float       | YES  |     | NULL    |       |
+| ODATE            | datetime    | YES  |     | NULL    |       |
+| CNUM             | int         | YES  | MUL | NULL    |       |
+| SNUM             | int         | YES  | MUL | NULL    |       |
+| type             | varchar(10) | YES  |     | NULL    |       |
+| paymentType      | varchar(20) | YES  |     | NULL    |       |
+| registered       | tinyint(1)  | YES  |     | NULL    |       |
+| delivery_partner | varchar(12) | YES  |     | NULL    |       |
++------------------+-------------+------+-----+---------+-------+
+9 rows in set (0.00 sec)
+
+mysql> desc orders;select ename, hiredate ,dayname(hiredate),day_formate(hiredate,'%w') as weeks from emp;
++------------------+-------------+------+-----+---------+-------+
+| Field            | Type        | Null | Key | Default | Extra |
++------------------+-------------+------+-----+---------+-------+
+| ONUM             | int         | NO   | PRI | NULL    |       |
+| AMT              | float       | YES  |     | NULL    |       |
+| ODATE            | datetime    | YES  |     | NULL    |       |
+| CNUM             | int         | YES  | MUL | NULL    |       |
+| SNUM             | int         | YES  | MUL | NULL    |       |
+| type             | varchar(10) | YES  |     | NULL    |       |
+| paymentType      | varchar(20) | YES  |     | NULL    |       |
+| registered       | tinyint(1)  | YES  |     | NULL    |       |
+| delivery_partner | varchar(12) | YES  |     | NULL    |       |
++------------------+-------------+------+-----+---------+-------+
+9 rows in set (0.00 sec)
+
+ERROR 1305 (42000): FUNCTION dac64.day_formate does not exist
+mysql>
+mysql>
+mysql>
+mysql>
+mysql>
+mysql>
+mysql>
+mysql>
+mysql> desc orders;select ename, hiredate ,dayname(hiredate),day_format(hiredate,'%w') as weeks from emp;
++------------------+-------------+------+-----+---------+-------+
+| Field            | Type        | Null | Key | Default | Extra |
++------------------+-------------+------+-----+---------+-------+
+| ONUM             | int         | NO   | PRI | NULL    |       |
+| AMT              | float       | YES  |     | NULL    |       |
+| ODATE            | datetime    | YES  |     | NULL    |       |
+| CNUM             | int         | YES  | MUL | NULL    |       |
+| SNUM             | int         | YES  | MUL | NULL    |       |
+| type             | varchar(10) | YES  |     | NULL    |       |
+| paymentType      | varchar(20) | YES  |     | NULL    |       |
+| registered       | tinyint(1)  | YES  |     | NULL    |       |
+| delivery_partner | varchar(12) | YES  |     | NULL    |       |
++------------------+-------------+------+-----+---------+-------+
+9 rows in set (0.00 sec)
+
+ERROR 1305 (42000): FUNCTION dac64.day_format does not exist
+mysql> select ename, hiredate ,dayname(hiredate),day_format(hiredate,'%w') as weeks from emp;
+ERROR 1305 (42000): FUNCTION dac64.day_format does not exist
+mysql> select ename, hiredate ,dayname(hiredate),date_format(hiredate,'%w') as weeks from emp;
++----------+------------+-------------------+-------+
+| ename    | hiredate   | dayname(hiredate) | weeks |
++----------+------------+-------------------+-------+
+| GITA     | 1981-07-19 | Sunday            | 0     |
+| VRUSHALI | 1981-07-19 | Sunday            | 0     |
+| SHARMIN  | 1981-07-19 | Sunday            | 0     |
+| BANDISH  | 1981-07-19 | Sunday            | 0     |
+| SMITH    | 1980-12-17 | Wednesday         | 3     |
+| AARAV    | 1981-12-31 | Thursday          | 4     |
+| THOMAS   | 1981-07-19 | Sunday            | 0     |
+| ALLEN    | 1981-02-20 | Friday            | 5     |
+| WARD     | 1981-02-22 | Sunday            | 0     |
+| JONES    | 1981-04-02 | Thursday          | 4     |
+| MARTIN   | 1981-09-28 | Monday            | 1     |
+| BLAKE    | 1981-05-01 | Friday            | 5     |
+| CLARK    | 1981-06-09 | Tuesday           | 2     |
+| SCOTT    | 1982-12-09 | Thursday          | 4     |
+| KING     | 1981-11-17 | Tuesday           | 2     |
+| FRED     | 1983-08-09 | Tuesday           | 2     |
+| TURNER   | 1981-09-08 | Tuesday           | 2     |
+| ADAMS    | 1983-01-12 | Wednesday         | 3     |
+| Ruhan    | 1983-08-09 | Tuesday           | 2     |
+| Neel     | 1983-08-09 | Tuesday           | 2     |
+| JAMES    | 1981-12-03 | Thursday          | 4     |
+| FORD     | 1981-12-03 | Thursday          | 4     |
+| HOFFMAN  | 1982-03-24 | Wednesday         | 3     |
+| GRASS    | 1980-02-14 | Thursday          | 4     |
+| MILLER   | 1982-01-23 | Saturday          | 6     |
+| AARUSH   | 1980-02-14 | Thursday          | 4     |
+| ALEX     | 1982-01-24 | Sunday            | 0     |
+| NATASHA  | 1981-07-19 | Sunday            | 0     |
+| SANGITA  | 1981-07-19 | Sunday            | 0     |
+| SUPRIYA  | 1981-07-19 | Sunday            | 0     |
++----------+------------+-------------------+-------+
+30 rows in set (0.00 sec)
+
+mysql> select ename,hiredate,dayname(hiredate),date_format(hiredate,%W) as weeks from emp;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '%W) as weeks from emp' at line 1
+mysql> select ename,hiredate,dayname(hiredate),date_format(hiredate,'%W') as weeks from emp;
++----------+------------+-------------------+-----------+
+| ename    | hiredate   | dayname(hiredate) | weeks     |
++----------+------------+-------------------+-----------+
+| GITA     | 1981-07-19 | Sunday            | Sunday    |
+| VRUSHALI | 1981-07-19 | Sunday            | Sunday    |
+| SHARMIN  | 1981-07-19 | Sunday            | Sunday    |
+| BANDISH  | 1981-07-19 | Sunday            | Sunday    |
+| SMITH    | 1980-12-17 | Wednesday         | Wednesday |
+| AARAV    | 1981-12-31 | Thursday          | Thursday  |
+| THOMAS   | 1981-07-19 | Sunday            | Sunday    |
+| ALLEN    | 1981-02-20 | Friday            | Friday    |
+| WARD     | 1981-02-22 | Sunday            | Sunday    |
+| JONES    | 1981-04-02 | Thursday          | Thursday  |
+| MARTIN   | 1981-09-28 | Monday            | Monday    |
+| BLAKE    | 1981-05-01 | Friday            | Friday    |
+| CLARK    | 1981-06-09 | Tuesday           | Tuesday   |
+| SCOTT    | 1982-12-09 | Thursday          | Thursday  |
+| KING     | 1981-11-17 | Tuesday           | Tuesday   |
+| FRED     | 1983-08-09 | Tuesday           | Tuesday   |
+| TURNER   | 1981-09-08 | Tuesday           | Tuesday   |
+| ADAMS    | 1983-01-12 | Wednesday         | Wednesday |
+| Ruhan    | 1983-08-09 | Tuesday           | Tuesday   |
+| Neel     | 1983-08-09 | Tuesday           | Tuesday   |
+| JAMES    | 1981-12-03 | Thursday          | Thursday  |
+| FORD     | 1981-12-03 | Thursday          | Thursday  |
+| HOFFMAN  | 1982-03-24 | Wednesday         | Wednesday |
+| GRASS    | 1980-02-14 | Thursday          | Thursday  |
+| MILLER   | 1982-01-23 | Saturday          | Saturday  |
+| AARUSH   | 1980-02-14 | Thursday          | Thursday  |
+| ALEX     | 1982-01-24 | Sunday            | Sunday    |
+| NATASHA  | 1981-07-19 | Sunday            | Sunday    |
+| SANGITA  | 1981-07-19 | Sunday            | Sunday    |
+| SUPRIYA  | 1981-07-19 | Sunday            | Sunday    |
++----------+------------+-------------------+-----------+
+30 rows in set (0.00 sec)
+
+mysql>
