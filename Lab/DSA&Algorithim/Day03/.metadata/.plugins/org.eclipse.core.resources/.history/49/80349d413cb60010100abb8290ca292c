@@ -1,0 +1,48 @@
+package com.yuvraj.arrays;
+
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class MyArray {
+	
+	private int [] arr;
+	private int count;
+
+
+	public MyArray() {
+		arr=new int[10];
+		count=0;
+	}
+
+	public MyArray(int size) {
+		
+	       arr=new int[size];
+	       count=0;
+	       
+	}
+
+	public MyArray(int[] arr, int count) {
+		this.arr = arr;
+		this.count = count;
+	}
+	public void add() {
+		Scanner sc=new Scanner(System.in);
+		for(int i=0;i<arr.length;i++) {
+			arr[i]=sc.nextInt();
+		}
+	}
+	public void add(int value) {
+		arr[count]=value;
+		count++;
+	}
+
+	@Override
+	public String toString() {
+		return "MyArray [arr=" + Arrays.toString(arr) + "]";
+	}
+	
+	
+	
+	
+
+}

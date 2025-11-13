@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Animated Div</title>
+  <style>
+ 
+ #d1
+{
+  background-color: rgb(1, 5, 252);
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  position: fixed;
+
+}
+#d2{
+  background-color: red;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  
+}
+
+  </style>
+</head>
+<body onload="setAnimation()">
+  <div class="wrapper">
+    
+     <div id="d1"></div>
+  <div id="d2"></div>
+
+  </div>
+  <button onclick="setAnimation()">Animations</button>
+
+ 
+
+  <script>
+    function myMove() {
+      const elem = document.getElementById("d1");
+      let pos = 0;
+      const id = setInterval(frame, 100);
+
+      function frame() {
+        if (pos === 700) {
+          clearInterval(id);
+        } else {
+          pos++;
+          elem.style.top = pos + "px";
+          elem.style.left = pos + "px";
+        }
+      }
+    }
+    function RgtToLft() {
+      const cur = document.getElementById("d2");
+      let p = 0;
+      const jd = setInterval(() => {
+        if (p === 700) {
+          clearInterval(jd);
+        } else {
+          p++;
+          cur.style.top = p + "px";
+          cur.style.right = p + "px";
+        }
+      }, 100);
+    
+}
+
+    function setAnimation(){
+      const jd=setInterval(Amin,10);
+      function Amin(){
+         myMove();
+         RgtToLft();
+        
+      }
+
+     
+    }
+   
+  </script>
+
+</body>
+</html>

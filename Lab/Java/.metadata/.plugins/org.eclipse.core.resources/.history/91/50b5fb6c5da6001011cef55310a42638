@@ -1,0 +1,11 @@
+package com.yuvraj.dao;
+
+import com.yuvraj.beans.Student;
+
+public interface StudentDao {
+
+	boolean addNewStundent();
+
+	Object save(Student e);
+
+}

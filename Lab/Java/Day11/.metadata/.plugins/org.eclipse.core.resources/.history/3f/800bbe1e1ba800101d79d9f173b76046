@@ -1,0 +1,9 @@
+package demo.com.dao;
+
+import demo.com.Beans.Employee;
+
+public interface EmployeeDao {
+
+	boolean save(Employee e);
+
+}

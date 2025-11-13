@@ -1,0 +1,10 @@
+package com.demo.tests;
+
+public class TestMy2dArray {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

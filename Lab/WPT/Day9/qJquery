@@ -1,0 +1,107 @@
+Basic Understanding & Purpose
+
+What exactly is jQuery and why was it created?
+
+How does jQuery simplify JavaScript programming?
+
+When should I use jQuery instead of plain JavaScript?
+
+Is jQuery still relevant today with modern JS frameworks?
+
+2. Selectors & DOM Manipulation
+
+How do jQuery selectors work? How are they different from document.querySelector?
+
+Can you explain how to select elements by ID, class, attribute, or hierarchy?
+
+How do I change the content, attributes, or styles of elements using jQuery?
+
+How do I add, remove, or toggle classes on elements?
+
+3. Event Handling
+
+How do I attach event handlers in jQuery?
+
+What’s the difference between .on(), .click(), and other event methods?
+
+How does event delegation work and when should I use it?
+
+How can I handle multiple events for the same element?
+
+4. Effects & Animations
+
+What built-in animation methods does jQuery provide? (e.g., .hide(), .fadeIn())
+
+How can I create custom animations with .animate()?
+
+How do I control the duration, easing, and callback of animations?
+
+Can I chain animations and events in jQuery?
+
+5. AJAX with jQuery
+
+How do I make AJAX requests using jQuery?
+
+What is the difference between .ajax(), .get(), and .post() methods?
+
+How do I handle success, error, and complete callbacks in jQuery AJAX?
+
+Can you show an example of updating the webpage dynamically using jQuery AJAX?
+
+6. Utilities & Plugins
+
+What utility functions does jQuery offer? (e.g., $.each(), $.extend())
+
+How do I include and use jQuery plugins?
+
+How do plugins extend jQuery’s functionality?
+
+Can I write my own jQuery plugin? How?
+
+7. Performance & Best Practices
+
+What are some common performance pitfalls when using jQuery?
+
+How can I write efficient jQuery selectors and code?
+
+Is it better to cache jQuery objects? How and why?
+
+How do I handle compatibility issues with different browsers?
+
+8. Versioning & Integration
+
+What are the differences between major jQuery versions (1.x, 2.x, 3.x)?
+
+How do I include jQuery in my project (CDN, local file)?
+
+How does jQuery integrate with other frameworks like React or Angular?
+
+Can I use jQuery together with vanilla JS without conflicts?
+
+9. Troubleshooting & Debugging
+
+Why might my jQuery code not work as expected?
+
+How can I debug jQuery code using browser tools?
+
+How do I check if the DOM is fully loaded before running jQuery code?
+
+How do I handle errors in jQuery AJAX calls?
+
+10. Advanced Concepts
+
+How does chaining work in jQuery and why is it useful?
+
+What is event bubbling and how does jQuery handle it?
+
+How do Deferred objects and Promises work in jQuery?
+
+Can you explain jQuery’s handling of form validation or serialization?
+
+Bonus: Practice and Resources
+
+Can you recommend good projects or exercises to practice jQuery?
+
+Are there any must-know jQuery plugins for common tasks?
+
+What resources (books, websites, tutorials) do you suggest for learning jQuery deeply?

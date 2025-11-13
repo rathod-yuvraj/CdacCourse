@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Multiplication Table</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    padding: 30px;
+    background: #eef2f7;
+  }
+  .container {
+    max-width: 400px;
+    margin: auto;
+    background: white;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    text-align: center;
+  }
+  input[type="number"] {
+    width: 80%;
+    padding: 10px;
+    font-size: 18px;
+    margin-bottom: 15px;
+    border: 1px solid #aaa;
+    border-radius: 5px;
+  }
+  button {
+    padding: 10px 18px;
+    font-size: 16px;
+    background: #007bff;
+    border: none;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  button:hover {
+    background: #0056b3;
+  }
+  table {
+    width: 100%;
+    margin-top: 25px;
+    border-collapse: collapse;
+  }
+  th, td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+  }
+  th {
+    background-color: #007bff;
+    color: white;
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <h2>Multiplication Table Generator</h2>
+  <input type="number" id="numberInput" placeholder="Enter a number" />
+  <br />
+  <button onclick="generateTable()">Generate Table</button>
+
+  <table id="table" style="display:none;">
+    <thead>
+      <tr>
+        <th>Multiplier</th>
+        <th>Result</th>
+      </tr>
+    </thead>
+    <tbody id="tableBody">
+    </tbody>
+  </table>
+</div>
+
+<script>
+  function generateTable() {
+    const num = parseInt(document.getElementById('numberInput').value);
+    const tbody = document.getElementById('tableBody');
+    const table = document.getElementById('table');
+
+    // Clear previous table rows
+    tbody.innerHTML = '';
+
+    if (isNaN(num)) {
+      alert('Please enter a valid number.');
+      table.style.display = 'none';
+      return;
+    }
+
+    // Generate multiplication table from 1 to 10
+    for (let i = 1; i <= 10; i++) {
+      const tr = document.createElement('tr');
+
+      const tdMultiplier = document.createElement('td');
+      tdMultiplier.textContent = i;
+
+      const tdResult = document.createElement('td');
+      tdResult.textContent = num * i;
+
+      tr.appendChild(tdMultiplier);
+      tr.appendChild(tdResult);
+
+      tbody.appendChild(tr);
+    }
+
+    table.style.display = 'table';
+  }
+</script>
+
+</body>
+</html>

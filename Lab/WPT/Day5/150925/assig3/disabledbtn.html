@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disabled Button how to work</title>
+</head>
+<body>
+    <button id="btnclick"> submit
+
+    </button>
+
+    <script>
+
+        let btn=document.getElementById("btnclick");
+        btn.addEventListener("click",()=>{
+            btn.disabled=true;
+            btn.textContent="Disabled yuvraj";
+            // btn.disabled=false;
+        })
+    </script>
+    
+</body>
+</html>

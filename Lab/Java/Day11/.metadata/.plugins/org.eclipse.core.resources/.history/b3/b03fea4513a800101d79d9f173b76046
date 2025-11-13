@@ -1,0 +1,16 @@
+package demo.com.Service;
+
+public class EmployeeServiceImpl implements EmployeeService {
+	
+	private EmployeeDao edao;
+
+	@Override
+	public boolean addNewEmployee() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+
+	
+
+}

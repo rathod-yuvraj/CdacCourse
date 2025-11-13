@@ -1,0 +1,32 @@
+package com.demo.arrays;
+
+public class MyArray {
+    private int[] arr;
+    static int count;
+
+    public MyArray(int[] arr) {
+        this.arr = arr;
+        count = arr.length;
+    }
+    public MyArray(int size) {
+        arr = new int[size];
+        count = 0;
+    }
+
+
+
+    public void add(int value) {
+        if(count < arr.length) {
+            arr[count++] = value;
+        } else {
+            System.out.println("Array is full");
+        }
+    }
+
+    public void display() {
+        for(int i = 0; i < count; i++) {
+            System.out.print(arr[i] + " ");
+        }
+        System.out.println();
+    }
+}

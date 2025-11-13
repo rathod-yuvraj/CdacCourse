@@ -1,0 +1,47 @@
+package com.yuvraj.beans;
+
+import java.time.LocalDate;
+
+public class Employee {
+	private int eid;
+	private String name;
+	private double sal;
+	private String Desg;
+//	private LocalDate jdt;
+	public Employee(int eind, String name, double sal,String Desg) {
+		super();
+		this.eid = eid;
+		this.name = name;
+		this.sal = sal;
+//		this.jdt = jdt;
+		this.Desg=Desg;
+	}
+	public Employee() {
+		super();
+	}
+	public int getEid() {
+		return eid;
+	}
+	public void setEid(int eid) {
+		this.eid = eid;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public double getSal() {
+		return sal;
+	}
+	public void setSal(double sal) {
+		this.sal = sal;
+	}
+	
+	@Override
+	public String toString() {
+		return "Employee [eind=" + eid + ", name=" + name + ", sal=" + sal  + "]";
+	}
+	
+
+}

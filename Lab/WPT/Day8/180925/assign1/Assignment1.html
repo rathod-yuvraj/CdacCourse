@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> access text file</title>
+    <script src="script.js">
+</script>
+</head>
+<body>
+    <h1>Assignment No 1</h1>
+    <p id="it">data</p>
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> yuvraj
+
+=======
+    
+>>>>>>> 782671352c7f183f3f0f66acc85eaf10bd53752a
+<<<<<<< HEAD
+=======
+=======
+    
+>>>>>>> ra
+>>>>>>> yuvraj
+    <p>display the file data</p>
+<button onclick="display()">Display </button>
+</body>
+
+<<<<<<< HEAD
+<<<<<<< HEAD
+
+=======
+>>>>>>> 782671352c7f183f3f0f66acc85eaf10bd53752a
+=======
+<<<<<<< HEAD
+
+=======
+>>>>>>> 782671352c7f183f3f0f66acc85eaf10bd53752a
+=======
+>>>>>>> ra
+>>>>>>> yuvraj
+<script >
+    function display() {
+   
+    var data = new XMLHttpRequest();
+    
+    
+    data.open("GET", "data.txt", true);
+    
+    
+    data.onload = function() {
+
+        
+        if (this.status === 200) {
+          
+            document.getElementById("it").innerText = data.responseText;
+        } else {
+           
+            document.getElementById("it").innerText = "Error loading file.";
+        }
+    };
+    
+
+    data.send();
+}
+
+</script>
+</html>
+
+

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator with Callback</title>
+</head>
+<body>
+    <h1>CALCULATOR</h1>
+
+    <label for="fno">Enter first Number</label>
+    <input type="number" name="firstNo" id="fno"><br><br>
+
+    <label for="sno">Enter Second Number</label>
+    <input type="number" name="secondNo" id="sno"><br><br>
+
+    <p id="p1"></p>
+
+    <button onclick="choices()">Submit</button>
+
+    <script>
+        function getInputs() {
+            const a = parseFloat(document.getElementById("fno").value);
+            const b = parseFloat(document.getElementById("sno").value);
+            return { a, b };
+        }
+
+        function display(result) {
+            document.getElementById("p1").innerHTML = "Result: " + result;
+        }
+
+        function displayMessage(msg) {
+            document.getElementById("p1").innerHTML = msg;
+        }
+
+        // Callback-based arithmetic functions
+        function addition(a, b, callback) {
+            callback(a + b);
+        }
+
+        function subtraction(a, b, callback) {
+            callback(a - b);
+        }
+
+        function multiplication(a, b, callback) {
+            callback(a * b);
+        }
+
+        function division(a, b, callback) {
+            if (b === 0) {
+                callback("Cannot divide by zero");
+            } else {
+                callback(a / b);
+            }
+        }
+
+        function exponent(a, b, callback) {
+            callback(a ** b);  // `^` is bitwise XOR in JS, use ** for exponent
+        }
+
+        function displayValues(a, b, callback) {
+            callback("Value of a is " + a + " & Value of b is " + b);
+        }
+
+        // Central dispatcher
+        function calculate(a, b, operationCallback) {
+            operationCallback(a, b, display);
+        }
+
+        function choices() {
+            const { a, b } = getInputs();
+
+            if (isNaN(a) || isNaN(b)) {
+                displayMessage("Please enter valid numbers.");
+                return;
+            }
+
+            const choice = prompt(
+                `Enter your choice:
+                1. Display
+                2. Addition
+                3. Subtraction
+                4. Multiplication
+                5. Division
+                6. Exponentiation`
+            );
+
+            switch (parseInt(choice)) {
+                case 1:
+                    displayValues(a, b, displayMessage);
+                    break;
+                case 2:
+                    calculate(a, b, addition);
+                    break;
+                case 3:
+                    calculate(a, b, subtraction);
+                    break;
+                case 4:
+                    calculate(a, b, multiplication);
+                    break;
+                case 5:
+                    calculate(a, b, division);
+                    break;
+                case 6:
+                    calculate(a, b, exponent);
+                    break;
+                default:
+                    displayMessage("Invalid choice.");
+            }
+        }
+    </script>
+</body>
+</html>

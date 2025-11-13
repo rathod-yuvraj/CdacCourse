@@ -1,0 +1,20 @@
+package com.yuvraj.beans;
+
+public class PrimeNo {
+	
+ public	boolean isPrime(int n) {
+	 
+	 
+	 for (int i=1;i<n;i++) {
+		 if(n%i==0) {
+			 System.out.println("Is Prime Number");
+			 return true;
+		 } else {
+			 System.out.println("Not Prime Number");
+		 }
+	 }
+		
+	 return false;
+	}
+
+}

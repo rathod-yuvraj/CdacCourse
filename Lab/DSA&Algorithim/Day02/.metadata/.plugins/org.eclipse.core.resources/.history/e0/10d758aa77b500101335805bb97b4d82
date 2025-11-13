@@ -1,0 +1,48 @@
+package com.yuvraj.test;
+
+import java.util.Scanner;
+
+import com.yuvraj.search.BinarySearch;
+
+public class TestBinaryNoRec {
+
+	public static void main(String[] args) {
+		//BinarySearch bo=new BinarySearch();
+		
+		Scanner sc=new Scanner(System.in);
+		int choice=0;
+		
+		
+		
+		
+		do {
+			System.out.println("1. Binary Search \n2. Binary Search Using Recursive Funtions");
+			System.out.println("Enter choice");
+			choice=sc.nextInt();
+			switch(choice) {
+			case 1->{
+				System.out.println("Binary Search");
+				
+			}
+			case 2->{
+				System.out.println("Using Recursive approach");
+			}
+			}
+			
+		}
+		while(choice!=4);
+		
+		 int[] arr = {2, 4, 6, 8, 10, 12, 14};
+	        int x = 10;
+	        int result = BinarySearch.binarySearch(arr, x);
+
+	        if (result == -1) {
+	            System.out.println("Element not found!");
+	        } else {
+	            System.out.println("Element found at index: " + result);
+	        }
+	    
+
+	}
+
+}

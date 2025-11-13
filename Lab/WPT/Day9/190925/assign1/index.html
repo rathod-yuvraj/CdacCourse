@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>jQuery load() Example</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+<body>
+
+<div id="content-area">
+  <h2>Original Content</h2>
+  <p>This content will be replaced by AJAX.</p>
+</div>
+
+<button id="loadButton">Load External Content</button>
+
+<script>
+$(document).ready(function(){
+  $("#loadButton").click(function(){
+    $("#content-area").load("external_content.html", function(responseTxt, statusTxt, xhr){
+      if(statusTxt == "success")
+        console.log("External content loaded successfully!");
+      if(statusTxt == "error")
+        console.error("Error: " + xhr.status + ": " + xhr.statusText);
+    });
+  });
+});
+</script>
+
+</body>
+</html>

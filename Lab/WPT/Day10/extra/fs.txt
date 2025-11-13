@@ -1,0 +1,186 @@
+Introduction to Node.js File System
+The Node.js File System module (fs) provides a comprehensive set of methods for working with the file system on your computer.
+
+It allows you to perform file I/O operations in both synchronous and asynchronous ways.
+
+Note: The File System module is a core Node.js module, so no installation is required.
+
+Importing the File System Module
+You can import the File System module using CommonJS require() or ES modules import syntax:
+
+CommonJS (Default in Node.js)
+const fs = require('fs');
+ES Modules (Node.js 14+ with "type": "module" in package.json)
+import fs from 'fs';
+// Or for specific methods:
+// import { readFile, writeFile } from 'fs/promises';
+Promise-based API
+Node.js provides promise-based versions of the File System API in the fs/promises namespace, which is recommended for modern applications:
+
+// Using promises (Node.js 10.0.0+)
+const fs = require('fs').promises;
+
+// Or with destructuring
+const { readFile, writeFile } = require('fs').promises;
+
+// Or with ES modules
+// import { readFile, writeFile } from 'fs/promises';
+Common Use Cases
+File Operations
+Read and write files
+Create and delete files
+Append to files
+Rename and move files
+Change file permissions
+Directory Operations
+Create and remove directories
+List directory contents
+Watch for file changes
+Get file/directory stats
+Check file existence
+Advanced Features
+File streams
+File descriptors
+Symbolic links
+File watching
+Working with file permissions
+---------------------------------------------------------
+Reading Files
+Node.js provides several methods to read files, including both callback-based and promise-based approaches.
+
+The most common method is fs.readFile().
+
+Note: Always handle errors when working with file operations to prevent your application from crashing.
+
+Reading Files with Callbacks
+Here's how to read a file using the traditional callback pattern:
+
+myfile.txt
+
+This is the content of myfile.txt
+Create a Node.js file that reads the text file, and return the content:
+
+Example: Reading a file with callbacks
+const fs = require('fs');
+
+// Read file asynchronously with callback
+fs.readFile('myfile.txt', 'utf8', (err, data) => {
+  if (err) {
+    console.error('Error reading file:', err);
+    return;
+  }
+  console.log('File content:', data);
+});
+
+// For binary data (like images), omit the encoding
+fs.readFile('image.png', (err, data) => {
+  if (err) throw err;
+  // data is a Buffer containing the file content
+  console.log('Image size:', data.length, 'bytes');
+});
+Reading Files with Promises (Modern Approach)
+Using fs.promises or util.promisify for cleaner async/await syntax:
+
+Example: Reading a file with async/await
+// Using fs.promises (Node.js 10.0.0+)
+const fs = require('fs').promises;
+
+async function readFileExample() {
+  try {
+    const data = await fs.readFile('myfile.txt', 'utf8');
+    console.log('File content:', data);
+  } catch (err) {
+    console.error('Error reading file:', err);
+  }
+}
+
+readFileExample();
+
+// Or with util.promisify (Node.js 8.0.0+)
+const { promisify } = require('util');
+const readFileAsync = promisify(require('fs').readFile);
+
+async function readWithPromisify() {
+  try {
+    const data = await readFileAsync('myfile.txt', 'utf8');
+    console.log(data);
+  } catch (err) {
+    console.error(err);
+  }
+}
+
+readWithPromisify();
+Reading Files Synchronously
+For simple scripts, you can use synchronous methods, but avoid them in production servers as they block the event loop:
+
+Example: Reading a file synchronously
+const fs = require('fs');
+
+try {
+  // Read file synchronously
+  const data = fs.readFileSync('myfile.txt', 'utf8');
+  console.log('File content:', data);
+} catch (err) {
+  console.error('Error reading file:', err);
+}
+Best Practice: Always specify the character encoding (like 'utf8') when reading text files to get a string instead of a Buffer.
+-----------------------------------------------------------------------------------------------
+Creating and Writing Files
+Node.js provides several methods for creating and writing to files.
+
+Here are the most common approaches:
+
+1. Using fs.writeFile()
+Creates a new file or overwrites an existing file with the specified content:
+---------------------------------------
+Using fs.appendFile()
+Appends content to a file, creating the file if it doesn't exist:
+-----------------------------------------------
+Using File Handles
+For more control over file operations, you can use file handles:
+------------------------------------------------
+Using Streams for Large Files
+For writing large amounts of data, use streams to avoid high memory usage:
+-------------------------------------------------------
+File Flags: When opening files, you can specify different modes:
+
+'w' - Open for writing (file is created or truncated)
+'wx' - Like 'w' but fails if the path exists
+'w+' - Open for reading and writing (file is created or truncated)
+'a' - Open for appending (file is created if it doesn't exist)
+'ax' - Like 'a' but fails if the path exists
+'r+' - Open for reading and writing (file must exist)
+----------------------------------------------------
+
+Deleting Files and Directories
+Node.js provides several methods to delete files and directories.
+
+Here's how to handle different deletion scenarios:
+
+1. Deleting a Single File
+Use fs.unlink() to delete a file:
+Deleting Multiple Files
+To delete multiple files, you can use Promise.all() with fs.unlink():
+
+2. Deleting Directories
+To delete directories, you have several options depending on your needs:
+
+4. Emptying a Directory Without Deleting It
+To remove all files and subdirectories within a directory but keep the directory itself:
+
+4. Emptying a Directory Without Deleting It
+To remove all files and subdirectories within a directory but keep the directory itself:
+
+Renaming and Moving Files
+The fs.rename() method can be used for both renaming and moving files.
+
+It's a versatile method for file system operations that involve changing file paths.
+
+1. Basic File Renaming
+To rename a file in the same directory:
+2. Moving Files Between Directories
+You can use fs.rename() to move files between directories:
+3. Batch Renaming Files
+To rename multiple files matching a pattern:
+4. Atomic Rename Operations
+For critical operations, use a temporary file to ensure atomicity:

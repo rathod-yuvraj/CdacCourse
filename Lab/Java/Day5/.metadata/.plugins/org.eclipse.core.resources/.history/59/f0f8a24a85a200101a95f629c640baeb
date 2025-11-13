@@ -1,0 +1,7 @@
+package nestedClasses;
+
+public class Book {
+	private int bid;
+	private String lname;
+
+}

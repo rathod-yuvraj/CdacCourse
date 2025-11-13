@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>jQuery Tag Manipulation</title>
+  <script src="../jquery-3.7.1.min.js"></script>
+</head>
+<body>
+  <h1>Assignment No:1</h1>
+
+  <input type="submit" id="out" value="yuvraj click" />
+
+
+  <p id="d1"></p>  
+  <p id="d2"></p>  
+  <p id="d3"></p>
+
+  <script>
+    $(document).ready(function () {
+      console.log("jQuery loaded");
+      alert("jQuery is loaded");
+
+      $('#out').on('click', function () {
+        $('#d1').text("this is message");
+        $('#d2').html("<i>hello</i>");          
+        $('#d3').html("<u>hello</u>");          
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,12 @@
+package demo.com.Service;
+
+import demo.com.dao.EmployeeDao;
+
+public class EmployeeServiceImpl implements EmployeeService {
+	
+	private EmployeeDao edao;
+	
+
+		
+
+}

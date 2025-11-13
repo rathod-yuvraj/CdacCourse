@@ -1,0 +1,73 @@
+🧠 1. Conceptual Understanding
+
+These questions aim to build foundational knowledge.
+
+What is a Promise in the context of jQuery?
+
+How is jQuery's Deferred object related to Promises?
+
+How does jQuery’s implementation differ from native JavaScript Promises?
+
+Why do we need Promises? What problem do they solve?
+
+🔍 2. Syntax and Usage
+
+These help clarify how to write and use the feature.
+
+How do I create a Deferred object in jQuery?
+
+What is the difference between .done(), .fail(), and .always()?
+
+How do I resolve or reject a Deferred object?
+
+How does .then() work in jQuery compared to native Promises?
+
+🔁 3. Flow Control & Chaining
+
+These focus on how async operations are handled in sequence.
+
+Can I chain multiple .done() or .then() methods?
+
+What happens if I return a new Deferred inside .then()?
+
+How do I wait for multiple Deferreds to finish? (e.g., $.when)
+
+🧪 4. Practical Scenarios & Examples
+
+These bring abstract concepts into real use cases.
+
+Can you show an example of using $.when() with multiple AJAX calls?
+
+How do Promises help avoid "callback hell"?
+
+What are some real-world scenarios where I would use jQuery Promises?
+
+🧯 5. Error Handling
+
+These questions focus on debugging and making the code robust.
+
+What happens if an AJAX call fails — how do I catch the error with .fail()?
+
+Is there an equivalent of .catch() in jQuery?
+
+What’s the best practice for handling errors in chained Deferreds?
+
+⚠️ 6. Legacy vs Modern JavaScript
+
+This helps students understand context and transition.
+
+Should I still use jQuery Promises in modern applications?
+
+How do I convert a jQuery Deferred to a native Promise?
+
+When should I choose native Promises over jQuery Deferred?
+
+🛠️ 7. Debugging and Troubleshooting
+
+For deeper understanding through problem-solving.
+
+Why is my .done() callback not being called?
+
+How can I tell if a Deferred is resolved, rejected, or still pending?
+
+Is there a way to cancel a Deferred?

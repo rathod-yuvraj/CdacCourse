@@ -1,0 +1,441 @@
+alter Table
+
+The SQL ALTER TABLE command is a powerful Data Definition Language (DDL) statement used to modify the structure of an existing table without losing the data inside it. It allows you to add, delete, rename, modify columns, rename the table itself, and add or drop constraints. Below is a complete beginner-friendly guide with problem statements, syntax examples, and important notes.
+
+What is ALTER TABLE?
+ALTER TABLE changes the schema (structure) of a table. For example, you may want to add a new column, remove a column, rename a column, or change the data type of a column.
+
+Basic Syntax
+sql
+ALTER TABLE table_name operation;
+table_name: Name of the table to be modified
+
+operation: The specific change you want to make, such as ADD column, DROP column, MODIFY column, RENAME column, etc.
+
+Common Operations with Examples
+1. Add a Column
+Problem: Add a phone number column to a Customers table.
+
+sql
+ALTER TABLE Customers
+ADD phone VARCHAR(10);
+This adds a new column named phone with a data type of VARCHAR(10) to the table Customers.​
+
+2. Drop (Delete) a Column
+Problem: Remove the column grade from the Students table.
+
+sql
+ALTER TABLE Students
+DROP COLUMN grade;
+Drops the grade column and all its data permanently.​
+
+3. Modify a Column Data Type
+Problem: 
+Change the size of the Address column in the Students table.
+
+sql
+ALTER TABLE Students
+MODIFY COLUMN Address VARCHAR(100);
+Changes the data type or size of the existing column.​
+
+4. Rename a Column
+Problem: 
+Rename the column customer_id to c_id in Customers table.
+
+sql
+ALTER TABLE Customers
+RENAME COLUMN customer_id TO c_id;
+Renames the column without changing its data or type.​
+
+5. Rename the Table
+Problem: Rename Customer table to Clients.
+
+sql
+ALTER TABLE Customer
+RENAME TO Clients;
+Changes the table name to Clients without affecting the data.​
+
+6. Add a Constraint
+Problem: Add a check constraint to ensure salary is positive.
+
+sql
+ALTER TABLE Employees
+ADD CONSTRAINT check_salary CHECK (Salary > 0);
+Adds a data integrity rule to the table.​
+
+Important Notes
+Adding a column will add that column with NULL values to all existing rows.
+
+Dropping a column deletes all its data permanently; no recovery.
+
+Modifying a column may fail if data conversion isn't possible.
+
+Renaming columns or tables preserves data but changes identifiers.
+
+Constraints help enforce rules like NOT NULL, UNIQUE, PRIMARY KEY, CHECK.
+
+Always back up critical data before making structural changes.
+
+Some syntax like MODIFY or RENAME COLUMN may vary slightly by SQL dialect (MySQL, PostgreSQL, SQL Server, etc.).
+
+Summary Table of ALTER TABLE Operations
+Operation	Syntax (Example)	Description
+Add Column	ALTER TABLE table_name ADD column_name datatype;	Adds a new column to the table
+Drop Column	ALTER TABLE table_name DROP COLUMN column_name;	Removes a column permanently
+Modify Column	ALTER TABLE table_name MODIFY COLUMN column_name datatype;	Changes datatype or definition of a column
+Rename Column	ALTER TABLE table_name RENAME COLUMN old_name TO new_name;	Renames a column
+Rename Table	ALTER TABLE old_table_name RENAME TO new_table_name;	Renames the entire table
+Add Constraint	ALTER TABLE table_name ADD CONSTRAINT constraint_name check;	Adds constraints like NOT NULL, CHECK, etc.
+Drop Constraint	ALTER TABLE table_name DROP CONSTRAINT constraint_name;	Removes a constraint
+
+____________________________________________________________
+***********************************************************
+
+Rename the table countries to country_new.
+
+Add a column region_id to the table locations.
+
+Add a column ID as the first column of the table locations.
+
+Add a column region_id after state_province in the table locations.
+
+Change data type of column country_id to integer in the table locations.
+
+Drop the column city from the table locations.
+
+Rename the column state_province to state.
+
+Add a primary key on the column location_id in the table locations.
+
+Add a column email VARCHAR(100) in employees table.
+
+Drop column age from customers table.
+
+Modify phone column to VARCHAR(15) in contacts table.
+
+Rename column fullname to name in users table.
+
+Rename table orders to sales_orders.
+
+Add a PRIMARY KEY on order_id column in orders table.
+
+Drop a FOREIGN KEY constraint named fk_customer in sales table.
+
+Add a UNIQUE constraint on username column in accounts table.
+
+Add NOT NULL constraint to address column in users table.
+
+Drop NOT NULL constraint from middle_name column in employees table.
+
+Beginner SQL Problem Statements
+📋 Table Creation & Data Insertion
+Create a table called Students with columns: StudentID, Name, Age, Gender, and Grade.
+
+Insert 5 records into the Students table with sample data.
+
+Create a table called Courses with columns: CourseID, CourseName, and Instructor.
+
+🔍 Basic SELECT Queries
+Write a query to select all students from the Students table.
+
+Write a query to find students older than 18.
+
+Write a query to list all female students.
+
+Write a query to count the number of students in each grade.
+
+✏️ UPDATE & DELETE
+Update the Grade of a student with StudentID = 3 to 'A'.
+
+Delete the student whose name is 'John'.
+
+🔄 ALTER TABLE
+Add a new column Email to the Students table.
+
+Change the column name Grade to FinalGrade.
+
+Drop the column Age from the Students table.
+
+🔗 JOINs
+Create a table Enrollments with StudentID and CourseID.
+
+Write a query to list all students and the courses they are enrolled in using a JOIN.
+
+🧹 DROP & TRUNCATE
+Drop the Courses table.
+
+Truncate the Enrollments table (remove all data but keep the structure).
+________________________________________________________
+🛠️ ALTER TABLE — All Concepts with Problem Statements
+The ALTER TABLE command lets you modify the structure of an existing table. Here's how you can use it:
+
+1. Add a Column
+🧪 Problem Statement:
+Add a column email to the students table to store student email addresses.
+
+✅ Syntax:
+sql
+ALTER TABLE students
+ADD COLUMN email VARCHAR(100);
+📌 Notes:
+Use VARCHAR, INT, DATE, etc., based on the data type.
+
+You can also specify NOT NULL, DEFAULT, etc.
+
+2. Add Multiple Columns
+🧪 Problem Statement:
+Add phone_number and address columns to the students table.
+
+✅ Syntax:
+sql
+ALTER TABLE students
+ADD (
+  phone_number VARCHAR(15),
+  address TEXT
+);
+3. Add a Primary Key
+🧪 Problem Statement:
+Set student_id as the primary key of the students table.
+
+✅ Syntax:
+sql
+ALTER TABLE students
+ADD CONSTRAINT pk_student PRIMARY KEY (student_id);
+📌 Notes:
+Only one primary key allowed per table.
+
+The column must be unique and not null.
+
+4. Add a Unique Constraint
+🧪 Problem Statement:
+Ensure that email is unique for each student.
+
+✅ Syntax:
+sql
+ALTER TABLE students
+ADD CONSTRAINT unique_email UNIQUE (email);
+5. Add a Foreign Key
+🧪 Problem Statement:
+Link course_id in enrollments table to courses(course_id).
+
+✅ Syntax:
+sql
+ALTER TABLE enrollments
+ADD CONSTRAINT fk_course FOREIGN KEY (course_id)
+REFERENCES courses(course_id);
+📌 Notes:
+Foreign keys enforce referential integrity.
+
+Parent table must have a matching primary/unique key.
+
+6. Change Column Name and Type
+🧪 Problem Statement:
+Rename phone_number to contact_number and change its type to VARCHAR(20).
+
+✅ Syntax:
+sql
+ALTER TABLE students
+CHANGE COLUMN phone_number contact_number VARCHAR(20);
+7. Modify Column Type Only
+🧪 Problem Statement:
+Change age column from INT to SMALLINT.
+
+✅ Syntax:
+sql
+ALTER TABLE students
+MODIFY COLUMN age SMALLINT;
+8. Drop a Column
+🧪 Problem Statement:
+Remove the address column from the students table.
+
+✅ Syntax:
+sql
+ALTER TABLE students
+DROP COLUMN address;
+9. Drop Primary Key
+🧪 Problem Statement:
+Remove the primary key from the students table.
+
+✅ Syntax:
+sql
+ALTER TABLE students
+DROP PRIMARY KEY;
+10. Drop Foreign Key
+🧪 Problem Statement:
+Remove the foreign key fk_course from the enrollments table.
+
+✅ Syntax:
+sql
+ALTER TABLE enrollments
+DROP FOREIGN KEY fk_course;
+11. Rename Table
+🧪 Problem Statement:
+Rename the students table to learners.
+
+✅ Syntax:
+sql
+ALTER TABLE students
+RENAME TO learners;
+12. Rename Column
+🧪 Problem Statement:
+Rename final_grade to grade_level.
+
+✅ Syntax:
+sql
+ALTER TABLE learners
+RENAME COLUMN final_grade TO grade_level;
+13. Set or Drop Default Value
+🧪 Problem Statement:
+Set default value of grade_level to 'C'.
+
+✅ Syntax:
+sql
+ALTER TABLE learners
+ALTER COLUMN grade_level SET DEFAULT 'C';
+🧪 Problem Statement:
+Remove default value from grade_level.
+
+✅ Syntax:
+sql
+ALTER TABLE learners
+ALTER COLUMN grade_level DROP DEFAULT;
+14. Set Column Visibility (MySQL 8+)
+🧪 Problem Statement:
+Make email column invisible.
+
+✅ Syntax:
+sql
+ALTER TABLE learners
+ALTER COLUMN email SET INVISIBLE;
+🧠 Important Notes
+ALTER TABLE is a DDL command — changes are auto-committed and cannot be rolled back.
+
+Always backup your data before altering table structures.
+
+Use DESCRIBE table_name; to view current structure before and after changes.
+
+Some changes (like dropping a column or key) may affect data integrity or application logic.
+
+_________________________________________________________________
+Problem Statement Requirements
+Add a new column named description of type VARCHAR(255) to table t1.​
+
+Drop the column description from table t1, after you have added it.​
+
+Modify the data type of the column topic_name from VARCHAR(100) to VARCHAR(200).​
+
+Rename the column topic_name to subject.​
+
+Add a constraint to make the id column a primary key (if it is not already), and add a UNIQUE constraint on subject.​
+
+Remove the UNIQUE constraint from the column subject.​
+
+Rename the table t1 to topic_list.​
+
+Add a NOT NULL constraint to the column subject.​
+
+Drop the table topic_list entirely.​
+
+Notes
+Provide SQL statements for each operation.
+
+Ensure you do not lose data unless explicitly dropping columns or the table.
+
+Demonstrate use of all major ALTER TABLE functionalities: add, drop, modify columns, rename columns and tables, and add/remove constraints.​
+_____________________________________________________________
+________________________________________________________
+**********************************************************
+*********************************************************
+Comprehensive Problem Statement on ALTER TABLE
+You are given an existing table t1 defined as follows:
+
+sql
+CREATE TABLE t1 (
+  id INT,
+  topic_name VARCHAR(100)
+);
+Your task is to use the ALTER TABLE statement to perform the following modifications on t1. Indicate for each which actions are valid and safe (do), and which are either not advisable or sometimes restricted by SQL implementations (don't):
+
+Add a new column: Add a column description VARCHAR(255) to t1.
+
+Do: Adding columns is standard and safe without data loss.
+
+Drop a column: Drop the column description after adding it.
+
+Do: Supported in most RDBMS but beware this causes irreversible data loss in that column. Some systems restrict or do not allow dropping columns.
+
+Modify data type: Increase the size of topic_name from VARCHAR(100) to VARCHAR(200).
+
+Do: Data type widening is generally allowed without data loss. Narrowing types or incompatible conversions should be avoided.
+
+Rename a column: Rename topic_name to subject.
+
+Do: Most modern RDBMS support renaming columns. Some older versions do not.
+
+Add constraints:
+
+Add PRIMARY KEY constraint to the column id.
+
+Add UNIQUE constraint on subject.
+
+Do: Adding constraints is common, but adding a primary key requires the column to be unique and not null in existing data.
+
+Don't: Adding constraints that existing data violates will fail.
+
+Drop constraints: Remove the UNIQUE constraint from subject.
+
+Do: Supported but syntax varies; some constraints can be unnamed which complicates removal.
+
+Rename table: Rename t1 to topic_list.
+
+Do: Renaming tables is supported but may break dependent objects if not handled.
+
+Add NOT NULL constraint: Add NOT NULL on column subject.
+
+Don't: Adding NOT NULL when nulls exist in the column will fail. You must clean or update data first.
+
+Drop the table: Drop table topic_list.
+
+Do: Permanently deletes table and data, use cautiously.
+
+Summary Notes on ALTER TABLE Operations
+Operation	Recommended Practice (Do)	Caution or Restrictions (Don't)
+Add column	Safe, no existing data loss	Avoid adding columns with defaults that are slow to populate
+Drop column	Allowed in many RDBMS, causes permanent data loss	Some systems disallow dropping or require complex steps
+Modify data type	Widening types usually safe	Narrowing types or incompatible conversions cause errors/data loss
+Rename column	Supported in modern RDBMS	Older SQLs may lack syntax or cause dependency breaks
+Add constraints	Valid when existing data respects constraint	Fails if data violates new constraints
+Drop constraints	Varies by DBMS, usually needs constraint name	Unnamed constraints complicate removal
+Rename table	Supported, but check dependencies	Dependent objects need updates
+Add NOT NULL constraint	Safe only if no NULLs exist	Fails if null values present
+Drop table	Permanent, irreversible delete	Use with caution
+___________________________________________________________________________________________________________________________________
+____________________________________________________________________________________________________________________________________
+*************************************************************
+*********************************************************
+Important Notes:
+DROP and TRUNCATE are DDL (Data Definition Language) commands.
+
+DELETE is a DML (Data Manipulation Language) command.
+
+Rollback:
+
+DELETE can be rolled back (if within a transaction).
+
+DROP and TRUNCATE cannot be rolled back — they are auto-committed.
+
+Cascade Effects:
+
+Dropping a table removes:
+
+All triggers associated with it.
+
+All indexes defined on it.
+
+Dropping a table does not remove:
+
+Any views that reference it (though they may become invalid).
+
+Parent Table Protection:
+
+If a table is referenced by a foreign key in another table (i.e., it's a parent/master table), it cannot be dropped unless the foreign key constraint is removed first.

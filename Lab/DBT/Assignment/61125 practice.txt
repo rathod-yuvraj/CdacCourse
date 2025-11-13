@@ -1,0 +1,872 @@
+Microsoft Windows [Version 10.0.19045.6456]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Users\IET>mysql --host=192.168.10.117 --port=3306 --user=dac64 --password=welcome
+mysql: [Warning] Using a password on the command line interface can be insecure.
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 546
+Server version: 8.0.44 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2025, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> create table yuvraje1 as (select job, ename, hiredate,sal from emp);
+ERROR 1046 (3D000): No database selected
+mysql> use dac64
+Database changed
+mysql> create table yuvraje1 as (select job, ename, hiredate,sal from emp);
+Query OK, 30 rows affected (0.23 sec)
+Records: 30  Duplicates: 0  Warnings: 0
+
+mysql> desc yuvraje1;
++----------+-------------+------+-----+---------+-------+
+| Field    | Type        | Null | Key | Default | Extra |
++----------+-------------+------+-----+---------+-------+
+| job      | varchar(20) | YES  |     | NULL    |       |
+| ename    | varchar(12) | YES  |     | NULL    |       |
+| hiredate | date        | YES  |     | NULL    |       |
+| sal      | int         | YES  |     | NULL    |       |
++----------+-------------+------+-----+---------+-------+
+4 rows in set (0.00 sec)
+
+mysql> select * from yuvraje1;
++---------------------+----------+------------+------+
+| job                 | ename    | hiredate   | sal  |
++---------------------+----------+------------+------+
+| Compliance officers | GITA     | 1981-07-19 | 1750 |
+| Compliance officers | VRUSHALI | 1981-07-19 | 1750 |
+| Public Relation     | SHARMIN  | 1981-07-19 | 1750 |
+| Public Relation     | BANDISH  | 1981-07-19 | 1750 |
+| CLERK               | SMITH    | 1980-12-17 |  800 |
+| CLERK               | AARAV    | 1981-12-31 | 3350 |
+| CLERK               | THOMAS   | 1981-07-19 | 1750 |
+| SALESMAN            | ALLEN    | 1981-02-20 | 1600 |
+| SALESMAN            | WARD     | 1981-02-22 | 1250 |
+| MANAGER             | JONES    | 1981-04-02 | 2975 |
+| SALESMAN            | MARTIN   | 1981-09-28 | 1250 |
+| MANAGER             | BLAKE    | 1981-05-01 | 2850 |
+| MANAGER             | CLARK    | 1981-06-09 | 2450 |
+| ANALYST             | SCOTT    | 1982-12-09 | 3000 |
+| PRESIDENT           | KING     | 1981-11-17 | 5000 |
+| vice PRESIDENT      | FRED     | 1983-08-09 | 5000 |
+| SALESMAN            | TURNER   | 1981-09-08 | 1500 |
+| CLERK               | ADAMS    | 1983-01-12 | 1100 |
+| Network             | Ruhan    | 1983-08-09 | 2000 |
+| vice PRESIDENT      | Neel     | 1983-08-09 | 1000 |
+| CLERK               | JAMES    | 1981-12-03 |  950 |
+| ANALYST             | FORD     | 1981-12-03 | 3000 |
+| MANAGER             | HOFFMAN  | 1982-03-24 | 4150 |
+| SALESMAN            | GRASS    | 1980-02-14 | 2575 |
+| CLERK               | MILLER   | 1982-01-23 | 1300 |
+| SALESMAN            | AARUSH   | 1980-02-14 | 1350 |
+| MANAGER             | ALEX     | 1982-01-24 | 1250 |
+| CLERK               | NATASHA  | 1981-07-19 | 1750 |
+| Compliance officers | SANGITA  | 1981-07-19 | 1750 |
+| ANALYST             | SUPRIYA  | 1981-07-19 | 1750 |
++---------------------+----------+------------+------+
+30 rows in set (0.00 sec)
+
+mysql> create table yuvraje2 as (select ename, job, sal from emp);
+Query OK, 30 rows affected (0.31 sec)
+Records: 30  Duplicates: 0  Warnings: 0
+
+mysql> select * form   yuvraje2 ;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'form   yuvraje2' at line 1
+mysql> select * form  yuvraje2 ;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'form  yuvraje2' at line 1
+mysql> desc yuvraje2;
++-------+-------------+------+-----+---------+-------+
+| Field | Type        | Null | Key | Default | Extra |
++-------+-------------+------+-----+---------+-------+
+| ename | varchar(12) | YES  |     | NULL    |       |
+| job   | varchar(20) | YES  |     | NULL    |       |
+| sal   | int         | YES  |     | NULL    |       |
++-------+-------------+------+-----+---------+-------+
+3 rows in set (0.00 sec)
+
+mysql> select * from yuvraje2;
++----------+---------------------+------+
+| ename    | job                 | sal  |
++----------+---------------------+------+
+| GITA     | Compliance officers | 1750 |
+| VRUSHALI | Compliance officers | 1750 |
+| SHARMIN  | Public Relation     | 1750 |
+| BANDISH  | Public Relation     | 1750 |
+| SMITH    | CLERK               |  800 |
+| AARAV    | CLERK               | 3350 |
+| THOMAS   | CLERK               | 1750 |
+| ALLEN    | SALESMAN            | 1600 |
+| WARD     | SALESMAN            | 1250 |
+| JONES    | MANAGER             | 2975 |
+| MARTIN   | SALESMAN            | 1250 |
+| BLAKE    | MANAGER             | 2850 |
+| CLARK    | MANAGER             | 2450 |
+| SCOTT    | ANALYST             | 3000 |
+| KING     | PRESIDENT           | 5000 |
+| FRED     | vice PRESIDENT      | 5000 |
+| TURNER   | SALESMAN            | 1500 |
+| ADAMS    | CLERK               | 1100 |
+| Ruhan    | Network             | 2000 |
+| Neel     | vice PRESIDENT      | 1000 |
+| JAMES    | CLERK               |  950 |
+| FORD     | ANALYST             | 3000 |
+| HOFFMAN  | MANAGER             | 4150 |
+| GRASS    | SALESMAN            | 2575 |
+| MILLER   | CLERK               | 1300 |
+| AARUSH   | SALESMAN            | 1350 |
+| ALEX     | MANAGER             | 1250 |
+| NATASHA  | CLERK               | 1750 |
+| SANGITA  | Compliance officers | 1750 |
+| SUPRIYA  | ANALYST             | 1750 |
++----------+---------------------+------+
+30 rows in set (0.00 sec)
+
+mysql> select ename,sal+comm from emp;
++----------+----------+
+| ename    | sal+comm |
++----------+----------+
+| GITA     |     NULL |
+| VRUSHALI |     NULL |
+| SHARMIN  |     NULL |
+| BANDISH  |     NULL |
+| SMITH    |     NULL |
+| AARAV    |     NULL |
+| THOMAS   |     NULL |
+| ALLEN    |     1900 |
+| WARD     |     1750 |
+| JONES    |     NULL |
+| MARTIN   |     2650 |
+| BLAKE    |     NULL |
+| CLARK    |     NULL |
+| SCOTT    |     NULL |
+| KING     |     NULL |
+| FRED     |     NULL |
+| TURNER   |     1500 |
+| ADAMS    |     NULL |
+| Ruhan    |     NULL |
+| Neel     |     NULL |
+| JAMES    |     NULL |
+| FORD     |     NULL |
+| HOFFMAN  |     NULL |
+| GRASS    |     5275 |
+| MILLER   |     2600 |
+| AARUSH   |     4050 |
+| ALEX     |     1750 |
+| NATASHA  |     NULL |
+| SANGITA  |     NULL |
+| SUPRIYA  |     NULL |
++----------+----------+
+30 rows in set (0.00 sec)
+
+mysql> select ename,  isnull(sal+comm r1) from emp;
+ERROR 1583 (42000): Incorrect parameters in the call to native function 'isnull'
+mysql> select ename,  isnull(sal+comm,"isnull" ) from emp;
+ERROR 1582 (42000): Incorrect parameter count in the call to native function 'isnull'
+mysql> select ename,  isnull(sal+comm,0 ) as R1 from emp;
+ERROR 1582 (42000): Incorrect parameter count in the call to native function 'isnull'
+mysql> SELECT ename, ISNULL(sal + comm, 0) AS r1
+    -> FROM emp;
+ERROR 1582 (42000): Incorrect parameter count in the call to native function 'ISNULL'
+mysql> SELECT ename, ISNULL(sal,0 )+ isnull (comm, 0) AS r1 from emp;
+ERROR 1582 (42000): Incorrect parameter count in the call to native function 'ISNULL'
+mysql> SELECT ename, IFNULL(sal,0 )+ ifnull (comm, 0) AS r1 from emp;
++----------+------+
+| ename    | r1   |
++----------+------+
+| GITA     | 1750 |
+| VRUSHALI | 1750 |
+| SHARMIN  | 1750 |
+| BANDISH  | 1750 |
+| SMITH    |  800 |
+| AARAV    | 3350 |
+| THOMAS   | 1750 |
+| ALLEN    | 1900 |
+| WARD     | 1750 |
+| JONES    | 2975 |
+| MARTIN   | 2650 |
+| BLAKE    | 2850 |
+| CLARK    | 2450 |
+| SCOTT    | 3000 |
+| KING     | 5000 |
+| FRED     | 5000 |
+| TURNER   | 1500 |
+| ADAMS    | 1100 |
+| Ruhan    | 2000 |
+| Neel     | 1000 |
+| JAMES    |  950 |
+| FORD     | 3000 |
+| HOFFMAN  | 4150 |
+| GRASS    | 5275 |
+| MILLER   | 2600 |
+| AARUSH   | 4050 |
+| ALEX     | 1750 |
+| NATASHA  | 1750 |
+| SANGITA  | 1750 |
+| SUPRIYA  | 1750 |
++----------+------+
+30 rows in set (0.00 sec)
+
+mysql> show tables like 'p%';
++----------------------+
+| Tables_in_dac64 (p%) |
++----------------------+
+| patient              |
+| phonecall            |
+| pivot_table          |
+| plumber              |
+| plumber_service_map  |
+| points               |
+| population           |
+| price                |
+| product              |
+| product_sales        |
+| products             |
+| pune_metro_stations  |
++----------------------+
+12 rows in set (0.00 sec)
+
+mysql> SHOW TABLES LIKE 'd%'
+    -> ;
++----------------------+
+| Tables_in_dac64 (d%) |
++----------------------+
+| demodept1            |
+| demodept2            |
+| dept                 |
+| dept1                |
+| dhl                  |
+| docs                 |
+| doctor               |
+| doctorvisits         |
+| dummy                |
+| duplicate            |
++----------------------+
+10 rows in set (0.00 sec)
+
+mysql> select * from product_sales
+    -> ;
++--------------+----------------+-----------+
+| product_name | store_location | num_sales |
++--------------+----------------+-----------+
+| Chair        | North          |        55 |
+| Desk         | Central        |       120 |
+| Couch        | Central        |        78 |
+| Chair        | South          |        23 |
+| Chair        | South          |        10 |
+| Chair        | North          |        98 |
+| Desk         | West           |        61 |
+| Couch        | North          |       180 |
+| Chair        | South          |        14 |
+| Desk         | North          |        45 |
+| Chair        | North          |        87 |
+| Chair        | Central        |        34 |
+| Desk         | South          |        42 |
+| Couch        | West           |        58 |
+| Couch        | Central        |        27 |
+| Chair        | South          |        91 |
+| Chair        | West           |        82 |
+| Chair        | North          |        37 |
+| Desk         | North          |        68 |
+| Couch        | Central        |        54 |
+| Chair        | South          |        81 |
+| Desk         | North          |        25 |
+| Chair        | North          |        46 |
+| Chair        | Central        |       121 |
+| Desk         | South          |        85 |
+| Couch        | North          |        43 |
+| Desk         | West           |        10 |
+| Chair        | North          |         5 |
+| Chair        | Central        |        16 |
+| Desk         | South          |         9 |
+| Couch        | West           |        22 |
+| Couch        | Central        |        59 |
+| Chair        | South          |        76 |
+| Chair        | West           |        48 |
+| Chair        | North          |        19 |
+| Desk         | North          |         3 |
+| Couch        | West           |        63 |
+| Chair        | South          |        81 |
+| Desk         | North          |        85 |
+| Chair        | North          |        90 |
+| Chair        | Central        |        47 |
+| Desk         | West           |        63 |
+| Couch        | North          |        28 |
++--------------+----------------+-----------+
+43 rows in set (0.05 sec)
+
+mysql> select * from product_sales where  product_name=Chair ;
+ERROR 1054 (42S22): Unknown column 'Chair' in 'where clause'
+mysql> select * from product_sales where  product_name= 'Chair' ;
++--------------+----------------+-----------+
+| product_name | store_location | num_sales |
++--------------+----------------+-----------+
+| Chair        | North          |        55 |
+| Chair        | South          |        23 |
+| Chair        | South          |        10 |
+| Chair        | North          |        98 |
+| Chair        | South          |        14 |
+| Chair        | North          |        87 |
+| Chair        | Central        |        34 |
+| Chair        | South          |        91 |
+| Chair        | West           |        82 |
+| Chair        | North          |        37 |
+| Chair        | South          |        81 |
+| Chair        | North          |        46 |
+| Chair        | Central        |       121 |
+| Chair        | North          |         5 |
+| Chair        | Central        |        16 |
+| Chair        | South          |        76 |
+| Chair        | West           |        48 |
+| Chair        | North          |        19 |
+| Chair        | South          |        81 |
+| Chair        | North          |        90 |
+| Chair        | Central        |        47 |
++--------------+----------------+-----------+
+21 rows in set (0.00 sec)
+
+mysql> select * from product_sales where  product_name= 'Chair'and store_location='North' ;
++--------------+----------------+-----------+
+| product_name | store_location | num_sales |
++--------------+----------------+-----------+
+| Chair        | North          |        55 |
+| Chair        | North          |        98 |
+| Chair        | North          |        87 |
+| Chair        | North          |        37 |
+| Chair        | North          |        46 |
+| Chair        | North          |         5 |
+| Chair        | North          |        19 |
+| Chair        | North          |        90 |
++--------------+----------------+-----------+
+8 rows in set (0.00 sec)
+
+mysql>
+mysql> ;
+ERROR:
+No query specified
+
+mysql> select * from emp;
++-------+----------+--------+---------------------+------+------------+------+------+--------+---------+--------------+------------+------------+----------+
+| EMPNO | ENAME    | GENDER | JOB                 | MGR  | HIREDATE   | SAL  | COMM | DEPTNO | BONUSID | USER NAME    | PWD        | PHONE      | isActive |
++-------+----------+--------+---------------------+------+------------+------+------+--------+---------+--------------+------------+------------+----------+
+|  6001 | GITA     | F      | Compliance officers | 7920 | 1981-07-19 | 1750 | NULL |     30 |       1 | GITA         | sales@2017 | NULL       |        1 |
+|  6129 | VRUSHALI | F      | Compliance officers | 7920 | 1981-07-19 | 1750 | NULL |     50 |       1 | VRUSHALI     | PUN@8877   | NULL       |        1 |
+|  6473 | SHARMIN  | F      | Public Relation     | 7920 | 1981-07-19 | 1750 | NULL |     20 |       1 | SHARMIN      | a12recmpm  | NULL       |        1 |
+|  6781 | BANDISH  | F      | Public Relation     | 7920 | 1981-07-19 | 1750 | NULL |     20 |       1 | BANDISH      | a12recmpm  | NULL       |        1 |
+|  7369 | SMITH    | M      | CLERK               | 7902 | 1980-12-17 |  800 | NULL |     20 |       2 | TRITONE      | a12recmpm  | 7032300023 |        0 |
+|  7415 | AARAV    | M      | CLERK               | 7902 | 1981-12-31 | 3350 | NULL |     10 |    NULL | AARAV        | NULL       | 7032300084 |        0 |
+|  7421 | THOMAS   | M      | CLERK               | 7920 | 1981-07-19 | 1750 | NULL |     10 |       1 | THOMAS       | r50mpm     | 7032300011 |        0 |
+|  7499 | ALLEN    | M      | SALESMAN            | 7698 | 1981-02-20 | 1600 |  300 |     30 |       4 | ALWAYS TESTE | sales@2017 | 7032300096 |        1 |
+|  7521 | WARD     | M      | SALESMAN            | 7698 | 1981-02-22 | 1250 |  500 |     30 |       1 | WARD         | sales@2017 | 7132300034 |        1 |
+|  7566 | JONES    | M      | MANAGER             | 7839 | 1981-04-02 | 2975 | NULL |     20 |       4 | HONEYCOMB    | a12recmpm  | 7132300039 |        1 |
+|  7654 | MARTIN   | M      | SALESMAN            | 7698 | 1981-09-28 | 1250 | 1400 |     30 |       6 | LIFE RACER   | sales@2017 | 7132300050 |        1 |
+|  7698 | BLAKE    | M      | MANAGER             | 7839 | 1981-05-01 | 2850 | NULL |     30 |       1 | BIG BEN      | sales@2017 | 7132300027 |        1 |
+|  7782 | CLARK    | M      | MANAGER             | 7839 | 1981-06-09 | 2450 | NULL |     10 |       3 | CLARK        | r50mpm     | 7032300001 |        1 |
+|  7788 | SCOTT    | M      | ANALYST             | 7566 | 1982-12-09 | 3000 | NULL |     20 |       3 | WHITE SAND   | a12recmpm  | NULL       |        1 |
+|  7839 | KING     | M      | PRESIDENT           | NULL | 1981-11-17 | 5000 | NULL |     10 |       1 | KING         | r50mpm     | 7132300081 |        1 |
+|  7840 | FRED     | M      | vice PRESIDENT      | 7839 | 1983-08-09 | 5000 | NULL |     20 |       1 | SAND STONE   | a12recmpm  | NULL       |        1 |
+|  7844 | TURNER   | M      | SALESMAN            | 7698 | 1981-09-08 | 1500 |    0 |     30 |       5 | SAND DUST    | sales@2017 | NULL       |        1 |
+|  7876 | ADAMS    | M      | CLERK               | 7788 | 1983-01-12 | 1100 | NULL |     20 |       1 | CRAZY ANYONE | a12recmpm  | 7132300086 |        1 |
+|  7888 | Ruhan    | M      | Network             | 7888 | 1983-08-09 | 2000 | NULL |     60 |       1 | Ruhan        | BRD@1122   | NULL       |        1 |
+|  7889 | Neel     | M      | vice PRESIDENT      | 7839 | 1983-08-09 | 1000 | NULL |     60 |       0 | Neel         | BRD@1122   | NULL       |        1 |
+|  7900 | JAMES    | M      | CLERK               | 7698 | 1981-12-03 |  950 | NULL |     30 |       2 | CRAZY LEADER | sales@2017 | 7132300042 |        1 |
+|  7902 | FORD     | M      | ANALYST             | 7566 | 1981-12-03 | 3000 | NULL |     20 |       4 | CONBRIO      | a12recmpm  | NULL       |        0 |
+|  7919 | HOFFMAN  | M      | MANAGER             | 7566 | 1982-03-24 | 4150 | NULL |     30 |       3 | INTERVAL     | sales@2017 | NULL       |        1 |
+|  7920 | GRASS    | M      | SALESMAN            | 7919 | 1980-02-14 | 2575 | 2700 |     30 |       5 | GRASS        | sales@2017 | NULL       |        1 |
+|  7934 | MILLER   | M      | CLERK               | 7782 | 1982-01-23 | 1300 | 1300 |     10 |       2 | QUARTERNOTE  | r50mpm     | 7132300055 |        0 |
+|  7945 | AARUSH   | M      | SALESMAN            | 7902 | 1980-02-14 | 1350 | 2700 |     30 |    NULL | AARUSH       | ABCDEF     | NULL       |        0 |
+|  7949 | ALEX     | M      | MANAGER             | 7698 | 1982-01-24 | 1250 |  500 |     30 |       5 | QUARTERREST  | sales@2017 | 7156567183 |        1 |
+|  8433 | NATASHA  | F      | CLERK               | 7920 | 1981-07-19 | 1750 | NULL |     30 |       1 | NATASHA      | sales@2017 | NULL       |        1 |
+|  9400 | SANGITA  | F      | Compliance officers | 7920 | 1981-07-19 | 1750 | NULL |     50 |       1 | SANGITA      | NULL       | NULL       |        1 |
+|  9473 | SUPRIYA  | F      | ANALYST             | 7920 | 1981-07-19 | 1750 | NULL |     50 |       1 | SUPRIYA      | XYZ@1234   | NULL       |        1 |
++-------+----------+--------+---------------------+------+------------+------+------+--------+---------+--------------+------------+------------+----------+
+30 rows in set (0.00 sec)
+
+mysql> select job from emp;
++---------------------+
+| job                 |
++---------------------+
+| Compliance officers |
+| Compliance officers |
+| Public Relation     |
+| Public Relation     |
+| CLERK               |
+| CLERK               |
+| CLERK               |
+| SALESMAN            |
+| SALESMAN            |
+| MANAGER             |
+| SALESMAN            |
+| MANAGER             |
+| MANAGER             |
+| ANALYST             |
+| PRESIDENT           |
+| vice PRESIDENT      |
+| SALESMAN            |
+| CLERK               |
+| Network             |
+| vice PRESIDENT      |
+| CLERK               |
+| ANALYST             |
+| MANAGER             |
+| SALESMAN            |
+| CLERK               |
+| SALESMAN            |
+| MANAGER             |
+| CLERK               |
+| Compliance officers |
+| ANALYST             |
++---------------------+
+30 rows in set (0.00 sec)
+
+mysql> select ename, job from emp;
++----------+---------------------+
+| ename    | job                 |
++----------+---------------------+
+| GITA     | Compliance officers |
+| VRUSHALI | Compliance officers |
+| SHARMIN  | Public Relation     |
+| BANDISH  | Public Relation     |
+| SMITH    | CLERK               |
+| AARAV    | CLERK               |
+| THOMAS   | CLERK               |
+| ALLEN    | SALESMAN            |
+| WARD     | SALESMAN            |
+| JONES    | MANAGER             |
+| MARTIN   | SALESMAN            |
+| BLAKE    | MANAGER             |
+| CLARK    | MANAGER             |
+| SCOTT    | ANALYST             |
+| KING     | PRESIDENT           |
+| FRED     | vice PRESIDENT      |
+| TURNER   | SALESMAN            |
+| ADAMS    | CLERK               |
+| Ruhan    | Network             |
+| Neel     | vice PRESIDENT      |
+| JAMES    | CLERK               |
+| FORD     | ANALYST             |
+| HOFFMAN  | MANAGER             |
+| GRASS    | SALESMAN            |
+| MILLER   | CLERK               |
+| AARUSH   | SALESMAN            |
+| ALEX     | MANAGER             |
+| NATASHA  | CLERK               |
+| SANGITA  | Compliance officers |
+| SUPRIYA  | ANALYST             |
++----------+---------------------+
+30 rows in set (0.00 sec)
+
+mysql> select ename, job from emp where job="manager";
++---------+---------+
+| ename   | job     |
++---------+---------+
+| JONES   | MANAGER |
+| BLAKE   | MANAGER |
+| CLARK   | MANAGER |
+| HOFFMAN | MANAGER |
+| ALEX    | MANAGER |
++---------+---------+
+5 rows in set (0.00 sec)
+
+mysql> select ename, job from emp where <> job="manager";
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '<> job="manager"' at line 1
+mysql> select ename, job from emp where  job <> "manager";
++----------+---------------------+
+| ename    | job                 |
++----------+---------------------+
+| GITA     | Compliance officers |
+| VRUSHALI | Compliance officers |
+| SHARMIN  | Public Relation     |
+| BANDISH  | Public Relation     |
+| SMITH    | CLERK               |
+| AARAV    | CLERK               |
+| THOMAS   | CLERK               |
+| ALLEN    | SALESMAN            |
+| WARD     | SALESMAN            |
+| MARTIN   | SALESMAN            |
+| SCOTT    | ANALYST             |
+| KING     | PRESIDENT           |
+| FRED     | vice PRESIDENT      |
+| TURNER   | SALESMAN            |
+| ADAMS    | CLERK               |
+| Ruhan    | Network             |
+| Neel     | vice PRESIDENT      |
+| JAMES    | CLERK               |
+| FORD     | ANALYST             |
+| GRASS    | SALESMAN            |
+| MILLER   | CLERK               |
+| AARUSH   | SALESMAN            |
+| NATASHA  | CLERK               |
+| SANGITA  | Compliance officers |
+| SUPRIYA  | ANALYST             |
++----------+---------------------+
+25 rows in set (0.00 sec)
+
+mysql> show tables like 'sal%';
++------------------------+
+| Tables_in_dac64 (sal%) |
++------------------------+
+| sales                  |
+| sales1                 |
+| sales_channel          |
+| salespeople            |
+| salesperson            |
+| salgrade               |
++------------------------+
+6 rows in set (0.00 sec)
+
+mysql> select * from sales;
++-------+--------+----------------+--------+-------------------------+----------+
+| REPID | CUSTID | CUSTNAME       | PRODID | PRODNAME                | AMOUNT   |
++-------+--------+----------------+--------+-------------------------+----------+
+|  7521 |    106 | SHAPE UP       | 200376 | SB ENERGY BAR-6 PACK    |     2.40 |
+|  7654 |    102 | VOLLYRITE      | 100870 | ACE TENNIS BALLS-3 PACK |  3306.00 |
+|  7654 |    102 | VOLLYRITE      | 100860 | ACE TENNIS RACKET I     | 16569.00 |
+|  7521 |    106 | SHAPE UP       | 100890 | ACE TENNIS NET          |   174.00 |
+|  7521 |    106 | SHAPE UP       | 100861 | ACE TENNIS RACKET II    |    84.00 |
+|  7521 |    106 | SHAPE UP       | 100860 | ACE TENNIS RACKET I     |   440.00 |
+|  7844 |    100 | JOCKSPORTS     | 102130 | RH: "GUIDE TO TENNIS"   |  1703.40 |
+|  7499 |    104 | EVERY MOUNTAIN | 100871 | ACE TENNIS BALLS-6 PACK |   846.80 |
+|  7499 |    104 | EVERY MOUNTAIN | 101860 | SP TENNIS RACKET        |    24.00 |
+|  7844 |    100 | JOCKSPORTS     | 100861 | ACE TENNIS RACKET II    |   485.00 |
+|  7844 |    100 | JOCKSPORTS     | 100870 | ACE TENNIS BALLS-3 PACK |   292.50 |
+|  7844 |    100 | JOCKSPORTS     | 100890 | ACE TENNIS NET          |    50.00 |
+|  7521 |    101 | TKB SPORT SHOP | 100860 | ACE TENNIS RACKET I     |    35.00 |
+|  7521 |    101 | TKB SPORT SHOP | 100870 | ACE TENNIS BALLS-3 PACK |     8.40 |
+|  7521 |    101 | TKB SPORT SHOP | 100890 | ACE TENNIS NET          |    58.00 |
+|  7654 |    102 | VOLLYRITE      | 100861 | ACE TENNIS RACKET II    |  2300.50 |
+|  7499 |    104 | EVERY MOUNTAIN | 100860 | ACE TENNIS RACKET I     |  3000.00 |
+|  7499 |    104 | EVERY MOUNTAIN | 100861 | ACE TENNIS RACKET II    |   810.00 |
+|  7499 |    104 | EVERY MOUNTAIN | 101863 | SP JUNIOR RACKET        |  1500.00 |
+|  7844 |    108 | NORTH WOODS    | 100871 | ACE TENNIS BALLS-6 PACK |   560.00 |
+|  7844 |    108 | NORTH WOODS    | 101860 | SP TENNIS RACKET        |  4800.00 |
+|  7844 |    108 | NORTH WOODS    | 200380 | SB VITA SNACK-6 PACK    |   600.00 |
+|  7844 |    108 | NORTH WOODS    | 200376 | SB ENERGY BAR-6 PACK    |   440.00 |
+|  7654 |    102 | VOLLYRITE      | 100871 | ACE TENNIS BALLS-6 PACK |  5600.00 |
+|  7499 |    107 | WOMENS SPORTS  | 100861 | ACE TENNIS RACKET II    |   180.00 |
+|  7499 |    107 | WOMENS SPORTS  | 100870 | ACE TENNIS BALLS-3 PACK |   280.00 |
+|  7499 |    107 | WOMENS SPORTS  | 100871 | ACE TENNIS BALLS-6 PACK |   250.00 |
+|  7521 |    103 | JUST TENNIS    | 100861 | ACE TENNIS RACKET II    |   450.00 |
+|  7521 |    103 | JUST TENNIS    | 100870 | ACE TENNIS BALLS-3 PACK |   140.00 |
+|  7521 |    103 | JUST TENNIS    | 100890 | ACE TENNIS NET          |   116.00 |
+|  7521 |    103 | JUST TENNIS    | 102130 | RH: "GUIDE TO TENNIS"   |    34.00 |
+|  7521 |    103 | JUST TENNIS    | 200376 | SB ENERGY BAR-6 PACK    |    24.00 |
+|  7844 |    105 | K + T SPORTS   | 100860 | ACE TENNIS RACKET I     |  1750.00 |
+|  7844 |    105 | K + T SPORTS   | 100861 | ACE TENNIS RACKET II    |  4500.00 |
+|  7844 |    105 | K + T SPORTS   | 100870 | ACE TENNIS BALLS-3 PACK |  1400.00 |
+|  7844 |    105 | K + T SPORTS   | 100871 | ACE TENNIS BALLS-6 PACK |  2800.00 |
+|  7844 |    105 | K + T SPORTS   | 100890 | ACE TENNIS NET          | 29000.00 |
+|  7844 |    105 | K + T SPORTS   | 101860 | SP TENNIS RACKET        |  2400.00 |
+|  7844 |    105 | K + T SPORTS   | 101863 | SP JUNIOR RACKET        |  2500.00 |
+|  7844 |    105 | K + T SPORTS   | 102130 | RH: "GUIDE TO TENNIS"   |   340.00 |
+|  7844 |    105 | K + T SPORTS   | 200376 | SB ENERGY BAR-6 PACK    |   480.00 |
+|  7844 |    105 | K + T SPORTS   | 200380 | SB VITA SNACK-6 PACK    |  1200.00 |
+|  7499 |    104 | EVERY MOUNTAIN | 200380 | SB VITA SNACK-6 PACK    |   400.00 |
+|  7499 |    104 | EVERY MOUNTAIN | 200376 | SB ENERGY BAR-6 PACK    |   240.00 |
+|  7499 |    104 | EVERY MOUNTAIN | 102130 | RH: "GUIDE TO TENNIS"   |   340.00 |
+|  7844 |    100 | JOCKSPORTS     | 100860 | ACE TENNIS RACKET I     |   350.00 |
+|  7844 |    100 | JOCKSPORTS     | 200376 | SB ENERGY BAR-6 PACK    |  2400.00 |
++-------+--------+----------------+--------+-------------------------+----------+
+47 rows in set (0.19 sec)
+
+mysql> desc sales;
++----------+--------------+------+-----+---------+-------+
+| Field    | Type         | Null | Key | Default | Extra |
++----------+--------------+------+-----+---------+-------+
+| REPID    | int          | NO   |     | NULL    |       |
+| CUSTID   | int          | YES  |     | NULL    |       |
+| CUSTNAME | varchar(45)  | YES  |     | NULL    |       |
+| PRODID   | int          | NO   |     | NULL    |       |
+| PRODNAME | varchar(30)  | YES  |     | NULL    |       |
+| AMOUNT   | double(19,2) | YES  |     | NULL    |       |
++----------+--------------+------+-----+---------+-------+
+6 rows in set (0.00 sec)
+
+mysql> SELECT product_name, amount
+    -> FROM sales;
+ERROR 1054 (42S22): Unknown column 'product_name' in 'field list'
+mysql> SELECT prodname, amount from sales;
++-------------------------+----------+
+| prodname                | amount   |
++-------------------------+----------+
+| RH: "GUIDE TO TENNIS"   |  1703.40 |
+| ACE TENNIS RACKET II    |   485.00 |
+| ACE TENNIS BALLS-3 PACK |   292.50 |
+| ACE TENNIS NET          |    50.00 |
+| ACE TENNIS RACKET I     |   350.00 |
+| SB ENERGY BAR-6 PACK    |  2400.00 |
+| ACE TENNIS RACKET I     |    35.00 |
+| ACE TENNIS BALLS-3 PACK |     8.40 |
+| ACE TENNIS NET          |    58.00 |
+| ACE TENNIS BALLS-3 PACK |  3306.00 |
+| ACE TENNIS RACKET I     | 16569.00 |
+| ACE TENNIS RACKET II    |  2300.50 |
+| ACE TENNIS BALLS-6 PACK |  5600.00 |
+| ACE TENNIS RACKET II    |   450.00 |
+| ACE TENNIS BALLS-3 PACK |   140.00 |
+| ACE TENNIS NET          |   116.00 |
+| RH: "GUIDE TO TENNIS"   |    34.00 |
+| SB ENERGY BAR-6 PACK    |    24.00 |
+| ACE TENNIS BALLS-6 PACK |   846.80 |
+| SP TENNIS RACKET        |    24.00 |
+| ACE TENNIS RACKET I     |  3000.00 |
+| ACE TENNIS RACKET II    |   810.00 |
+| SP JUNIOR RACKET        |  1500.00 |
+| SB VITA SNACK-6 PACK    |   400.00 |
+| SB ENERGY BAR-6 PACK    |   240.00 |
+| RH: "GUIDE TO TENNIS"   |   340.00 |
+| ACE TENNIS RACKET I     |  1750.00 |
+| ACE TENNIS RACKET II    |  4500.00 |
+| ACE TENNIS BALLS-3 PACK |  1400.00 |
+| ACE TENNIS BALLS-6 PACK |  2800.00 |
+| ACE TENNIS NET          | 29000.00 |
+| SP TENNIS RACKET        |  2400.00 |
+| SP JUNIOR RACKET        |  2500.00 |
+| RH: "GUIDE TO TENNIS"   |   340.00 |
+| SB ENERGY BAR-6 PACK    |   480.00 |
+| SB VITA SNACK-6 PACK    |  1200.00 |
+| SB ENERGY BAR-6 PACK    |     2.40 |
+| ACE TENNIS NET          |   174.00 |
+| ACE TENNIS RACKET II    |    84.00 |
+| ACE TENNIS RACKET I     |   440.00 |
+| ACE TENNIS RACKET II    |   180.00 |
+| ACE TENNIS BALLS-3 PACK |   280.00 |
+| ACE TENNIS BALLS-6 PACK |   250.00 |
+| ACE TENNIS BALLS-6 PACK |   560.00 |
+| SP TENNIS RACKET        |  4800.00 |
+| SB VITA SNACK-6 PACK    |   600.00 |
+| SB ENERGY BAR-6 PACK    |   440.00 |
++-------------------------+----------+
+47 rows in set (0.01 sec)
+
+mysql> select sum(amount) totals_sal from sales;
++------------+
+| totals_sal |
++------------+
+|   95263.00 |
++------------+
+1 row in set (0.00 sec)
+
+mysql> select PRODID, sum(amount) from sales;
+ERROR 1140 (42000): In aggregated query without GROUP BY, expression #1 of SELECT list contains nonaggregated column 'dac64.sales.PRODID'; this is incompatible with sql_mode=only_full_group_by
+mysql> select PRODID, sum(amount) from sales group by 1;
++--------+-------------+
+| PRODID | sum(amount) |
++--------+-------------+
+| 102130 |     2417.40 |
+| 100861 |     8809.50 |
+| 100870 |     5426.90 |
+| 100890 |    29398.00 |
+| 100860 |    22144.00 |
+| 200376 |     3586.40 |
+| 100871 |    10056.80 |
+| 101860 |     7224.00 |
+| 101863 |     4000.00 |
+| 200380 |     2200.00 |
++--------+-------------+
+10 rows in set (0.00 sec)
+
+mysql> select prodid, prodname,sum(amount) as total_sales from sales group by prodid;
++--------+-------------------------+-------------+
+| prodid | prodname                | total_sales |
++--------+-------------------------+-------------+
+| 102130 | RH: "GUIDE TO TENNIS"   |     2417.40 |
+| 100861 | ACE TENNIS RACKET II    |     8809.50 |
+| 100870 | ACE TENNIS BALLS-3 PACK |     5426.90 |
+| 100890 | ACE TENNIS NET          |    29398.00 |
+| 100860 | ACE TENNIS RACKET I     |    22144.00 |
+| 200376 | SB ENERGY BAR-6 PACK    |     3586.40 |
+| 100871 | ACE TENNIS BALLS-6 PACK |    10056.80 |
+| 101860 | SP TENNIS RACKET        |     7224.00 |
+| 101863 | SP JUNIOR RACKET        |     4000.00 |
+| 200380 | SB VITA SNACK-6 PACK    |     2200.00 |
++--------+-------------------------+-------------+
+10 rows in set (0.00 sec)
+
+mysql> select prodid, prodname,sum(amount) as total_sales from sales group by prodname;
+ERROR 1055 (42000): Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'dac64.sales.PRODID' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
+mysql> select prodid, prodname,sum(amount) as total_sales from sales group by prodname,prodid;
++--------+-------------------------+-------------+
+| prodid | prodname                | total_sales |
++--------+-------------------------+-------------+
+| 102130 | RH: "GUIDE TO TENNIS"   |     2417.40 |
+| 100861 | ACE TENNIS RACKET II    |     8809.50 |
+| 100870 | ACE TENNIS BALLS-3 PACK |     5426.90 |
+| 100890 | ACE TENNIS NET          |    29398.00 |
+| 100860 | ACE TENNIS RACKET I     |    22144.00 |
+| 200376 | SB ENERGY BAR-6 PACK    |     3586.40 |
+| 100871 | ACE TENNIS BALLS-6 PACK |    10056.80 |
+| 101860 | SP TENNIS RACKET        |     7224.00 |
+| 101863 | SP JUNIOR RACKET        |     4000.00 |
+| 200380 | SB VITA SNACK-6 PACK    |     2200.00 |
++--------+-------------------------+-------------+
+10 rows in set (0.00 sec)
+
+mysql> SELECT product_name, SUM(amount) AS total_sales
+    -> FROM sales
+    -> GROUP BY product_name
+    -> ORDER BY total_sales DESC
+    -> LIMIT 5;
+ERROR 1054 (42S22): Unknown column 'product_name' in 'field list'
+mysql> select table 'sal%'
+    -> ;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'table 'sal%'' at line 1
+mysql> select tables 'sal%'
+    -> ;
+ERROR 1054 (42S22): Unknown column 'tables' in 'field list'
+mysql> select tables like 'sal%'
+    -> ;
+ERROR 1054 (42S22): Unknown column 'tables' in 'field list'
+mysql> select table like 'sal%'
+    -> ;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'table like 'sal%'' at line 1
+mysql> show table like 'sal%'
+    -> ;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'like 'sal%'' at line 1
+mysql> SHOW TABLES LIKE 'd%';
++----------------------+
+| Tables_in_dac64 (d%) |
++----------------------+
+| demodept1            |
+| demodept2            |
+| dept                 |
+| dept1                |
+| dhl                  |
+| docs                 |
+| doctor               |
+| doctorvisits         |
+| dummy                |
+| duplicate            |
++----------------------+
+10 rows in set (0.00 sec)
+
+mysql> show table like 'sal%'
+    -> show tables like 'sal%';
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'like 'sal%'
+show tables like 'sal%'' at line 1
+mysql> show tables like 'sal%';
++------------------------+
+| Tables_in_dac64 (sal%) |
++------------------------+
+| sales                  |
+| sales1                 |
+| sales_channel          |
+| salespeople            |
+| salesperson            |
+| salgrade               |
++------------------------+
+6 rows in set (0.00 sec)
+
+mysql> desc sales;
++----------+--------------+------+-----+---------+-------+
+| Field    | Type         | Null | Key | Default | Extra |
++----------+--------------+------+-----+---------+-------+
+| REPID    | int          | NO   |     | NULL    |       |
+| CUSTID   | int          | YES  |     | NULL    |       |
+| CUSTNAME | varchar(45)  | YES  |     | NULL    |       |
+| PRODID   | int          | NO   |     | NULL    |       |
+| PRODNAME | varchar(30)  | YES  |     | NULL    |       |
+| AMOUNT   | double(19,2) | YES  |     | NULL    |       |
++----------+--------------+------+-----+---------+-------+
+6 rows in set (0.00 sec)
+
+mysql> SELECT
+    ->   PRODID,
+    ->   PRODNAME,
+    ->   AMOUNT AS original_price,
+    ->   ROUND(AMOUNT * 1.005, 2) AS new_price,
+    ->   ROUND((AMOUNT * 1.005) - AMOUNT, 2) AS price_difference
+    -> FROM sales;
++--------+-------------------------+----------------+-----------+------------------+
+| PRODID | PRODNAME                | original_price | new_price | price_difference |
++--------+-------------------------+----------------+-----------+------------------+
+| 102130 | RH: "GUIDE TO TENNIS"   |        1703.40 |   1711.92 |             8.52 |
+| 100861 | ACE TENNIS RACKET II    |         485.00 |    487.42 |             2.42 |
+| 100870 | ACE TENNIS BALLS-3 PACK |         292.50 |    293.96 |             1.46 |
+| 100890 | ACE TENNIS NET          |          50.00 |     50.25 |             0.25 |
+| 100860 | ACE TENNIS RACKET I     |         350.00 |    351.75 |             1.75 |
+| 200376 | SB ENERGY BAR-6 PACK    |        2400.00 |      2412 |               12 |
+| 100860 | ACE TENNIS RACKET I     |          35.00 |     35.17 |             0.17 |
+| 100870 | ACE TENNIS BALLS-3 PACK |           8.40 |      8.44 |             0.04 |
+| 100890 | ACE TENNIS NET          |          58.00 |     58.29 |             0.29 |
+| 100870 | ACE TENNIS BALLS-3 PACK |        3306.00 |   3322.53 |            16.53 |
+| 100860 | ACE TENNIS RACKET I     |       16569.00 |  16651.84 |            82.84 |
+| 100861 | ACE TENNIS RACKET II    |        2300.50 |      2312 |             11.5 |
+| 100871 | ACE TENNIS BALLS-6 PACK |        5600.00 |      5628 |               28 |
+| 100861 | ACE TENNIS RACKET II    |         450.00 |    452.25 |             2.25 |
+| 100870 | ACE TENNIS BALLS-3 PACK |         140.00 |     140.7 |              0.7 |
+| 100890 | ACE TENNIS NET          |         116.00 |    116.58 |             0.58 |
+| 102130 | RH: "GUIDE TO TENNIS"   |          34.00 |     34.17 |             0.17 |
+| 200376 | SB ENERGY BAR-6 PACK    |          24.00 |     24.12 |             0.12 |
+| 100871 | ACE TENNIS BALLS-6 PACK |         846.80 |    851.03 |             4.23 |
+| 101860 | SP TENNIS RACKET        |          24.00 |     24.12 |             0.12 |
+| 100860 | ACE TENNIS RACKET I     |        3000.00 |      3015 |               15 |
+| 100861 | ACE TENNIS RACKET II    |         810.00 |    814.05 |             4.05 |
+| 101863 | SP JUNIOR RACKET        |        1500.00 |    1507.5 |              7.5 |
+| 200380 | SB VITA SNACK-6 PACK    |         400.00 |       402 |                2 |
+| 200376 | SB ENERGY BAR-6 PACK    |         240.00 |     241.2 |              1.2 |
+| 102130 | RH: "GUIDE TO TENNIS"   |         340.00 |     341.7 |              1.7 |
+| 100860 | ACE TENNIS RACKET I     |        1750.00 |   1758.75 |             8.75 |
+| 100861 | ACE TENNIS RACKET II    |        4500.00 |    4522.5 |             22.5 |
+| 100870 | ACE TENNIS BALLS-3 PACK |        1400.00 |      1407 |                7 |
+| 100871 | ACE TENNIS BALLS-6 PACK |        2800.00 |      2814 |               14 |
+| 100890 | ACE TENNIS NET          |       29000.00 |     29145 |              145 |
+| 101860 | SP TENNIS RACKET        |        2400.00 |      2412 |               12 |
+| 101863 | SP JUNIOR RACKET        |        2500.00 |    2512.5 |             12.5 |
+| 102130 | RH: "GUIDE TO TENNIS"   |         340.00 |     341.7 |              1.7 |
+| 200376 | SB ENERGY BAR-6 PACK    |         480.00 |     482.4 |              2.4 |
+| 200380 | SB VITA SNACK-6 PACK    |        1200.00 |      1206 |                6 |
+| 200376 | SB ENERGY BAR-6 PACK    |           2.40 |      2.41 |             0.01 |
+| 100890 | ACE TENNIS NET          |         174.00 |    174.87 |             0.87 |
+| 100861 | ACE TENNIS RACKET II    |          84.00 |     84.42 |             0.42 |
+| 100860 | ACE TENNIS RACKET I     |         440.00 |     442.2 |              2.2 |
+| 100861 | ACE TENNIS RACKET II    |         180.00 |     180.9 |              0.9 |
+| 100870 | ACE TENNIS BALLS-3 PACK |         280.00 |     281.4 |              1.4 |
+| 100871 | ACE TENNIS BALLS-6 PACK |         250.00 |    251.25 |             1.25 |
+| 100871 | ACE TENNIS BALLS-6 PACK |         560.00 |     562.8 |              2.8 |
+| 101860 | SP TENNIS RACKET        |        4800.00 |      4824 |               24 |
+| 200380 | SB VITA SNACK-6 PACK    |         600.00 |       603 |                3 |
+| 200376 | SB ENERGY BAR-6 PACK    |         440.00 |     442.2 |              2.2 |
++--------+-------------------------+----------------+-----------+------------------+
+47 rows in set (0.00 sec)
+
+mysql> desc emp;
++-----------+-------------+------+-----+---------+-------+
+| Field     | Type        | Null | Key | Default | Extra |
++-----------+-------------+------+-----+---------+-------+
+| EMPNO     | int         | NO   | PRI | NULL    |       |
+| ENAME     | varchar(12) | YES  |     | NULL    |       |
+| GENDER    | char(1)     | YES  |     | NULL    |       |
+| JOB       | varchar(20) | YES  |     | NULL    |       |
+| MGR       | int         | YES  | MUL | NULL    |       |
+| HIREDATE  | date        | YES  |     | NULL    |       |
+| SAL       | int         | YES  |     | NULL    |       |
+| COMM      | int         | YES  |     | NULL    |       |
+| DEPTNO    | int         | NO   | MUL | NULL    |       |
+| BONUSID   | int         | YES  |     | NULL    |       |
+| USER NAME | varchar(20) | YES  |     | NULL    |       |
+| PWD       | varchar(20) | YES  |     | NULL    |       |
+| PHONE     | varchar(45) | YES  |     | NULL    |       |
+| isActive  | tinyint(1)  | YES  |     | NULL    |       |
++-----------+-------------+------+-----+---------+-------+
+14 rows in set (0.01 sec)
+
+mysql> SELECT *
+    -> FROM emp
+    -> WHERE HIREDATE = (
+    ->   SELECT HIREDATE
+    ->   FROM emp
+    ->   WHERE ENAME = 'KING'
+    -> );
++-------+-------+--------+-----------+------+------------+------+------+--------+---------+-----------+--------+------------+----------+
+| EMPNO | ENAME | GENDER | JOB       | MGR  | HIREDATE   | SAL  | COMM | DEPTNO | BONUSID | USER NAME | PWD    | PHONE      | isActive |
++-------+-------+--------+-----------+------+------------+------+------+--------+---------+-----------+--------+------------+----------+
+|  7839 | KING  | M      | PRESIDENT | NULL | 1981-11-17 | 5000 | NULL |     10 |       1 | KING      | r50mpm | 7132300081 |        1 |
++-------+-------+--------+-----------+------+------------+------+------+--------+---------+-----------+--------+------------+----------+
+1 row in set (0.00 sec)
+
+mysql>

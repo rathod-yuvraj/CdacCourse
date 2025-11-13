@@ -1,0 +1,64 @@
+
+The DOM API is split across many interfaces: Document, Element, Node, EventTarget, Window, etc.
+
+Browsers implement lots of methods, and new APIs are added over time.
+
+There are also properties and events, not just methods.
+
+Rough estimate:
+
+The core DOM specification and common browser implementations include around 100–150 standard DOM methods across all the main interfaces.
+
+For example:
+
+Document interface alone has ~20-30 methods (getElementById(), createElement(), etc.).
+
+Element interface has ~30-40 methods (setAttribute(), querySelector(), appendChild(), etc.).
+
+Node interface has ~10-20 methods.
+
+EventTarget has event-related methods (addEventListener(), removeEventListener()).
+
+Other interfaces (e.g., Window, HTMLDocument) add more.
+
+What are DOM methods?
+
+DOM methods are functions provided by the Document Object Model (DOM) API that allow you to interact with and manipulate HTML/XML documents using JavaScript.
+
+There isn’t a fixed number because the DOM API is quite extensive and varies between HTML, XML, and browser implementations.
+
+But there are dozens of commonly used DOM methods that developers use daily.
+
+Some common and important DOM methods include:
+Method	Description
+getElementById()	Select an element by its ID
+getElementsByClassName()	Select all elements with a certain class name
+getElementsByTagName()	Select all elements with a certain tag name
+querySelector()	Select the first element matching a CSS selector
+querySelectorAll()	Select all elements matching a CSS selector
+createElement()	Create a new element
+appendChild()	Add a child node to an element
+removeChild()	Remove a child node from an element
+replaceChild()	Replace a child node with another
+cloneNode()	Clone an element (deep or shallow)
+setAttribute()	Set an attribute on an element
+getAttribute()	Get an attribute from an element
+hasAttribute()	Check if an element has a specific attribute
+addEventListener()	Attach an event listener to an element
+removeEventListener()	Remove an event listener from an element
+parentNode	Get the parent node of an element (property)
+childNodes	Get a list of child nodes (property)
+innerHTML	Get/set HTML content inside an element (property)
+textContent	Get/set text content inside an element (property)
+classList	Add/remove/toggle classes (property)
+Rough count
+
+If you count all methods across Document, Element, Node, EventTarget, etc., there are 50-100+ DOM methods and properties you might encounter.
+
+Browsers keep adding new APIs and extending functionality, so it grows over time.
+
+Summary
+
+No fixed number, but dozens of commonly used DOM methods.
+
+You mainly interact with elements, attributes, nodes, and events using these methods.

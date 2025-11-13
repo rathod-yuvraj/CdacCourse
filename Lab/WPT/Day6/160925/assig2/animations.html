@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Top Corner Divs with Animation</title>
+  <style>
+    body {
+      margin: 0;
+      overflow: hidden;
+    }
+
+    .box {
+      width: 100px;
+      height: 100px;
+      position: absolute;
+      top: 0;
+      background-color: #3498db;
+      opacity: 0.8;
+      transition: transform 1s ease;
+    }
+
+    #box1 {
+      left: 0;
+      background-color: #e74c3c;
+    }
+
+    #box2 {
+      right: 0;
+      background-color: #2ecc71;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="box1" class="box"></div>
+  <div id="box2" class="box"></div>
+
+  <script>
+    const box1 = document.getElementById('box1');
+    const box2 = document.getElementById('box2');
+
+    
+    function animateBox1(callback) {
+      box1.style.transform = 'translateY(200px)';
+      
+      setTimeout(() => {
+        console.log('Box1 animation done');
+        if (callback) callback();
+      }, 1000); 
+    }
+
+   
+    function animateBox2(callback) {
+      box2.style.transform = 'translateY(200px)';
+      setTimeout(() => {
+        console.log('Box2 animation done');
+        if (callback) callback();
+      }, 1000);
+    }
+
+    // Trigger animations with callbacks
+    animateBox1(() => {
+      animateBox2(() => {
+        console.log('Both animations complete.');
+      });
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,23 @@
+package com.demo.test;
+
+import java.io.*;
+
+public class TestFileStream {
+	
+	public static void main(String[] args) {
+		
+		try( FileOutputStream fs=new FileOutputStream("myfile.txt")){
+			System.out.println("File  ");
+			
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			System.out.println("File"+e.getMessage());
+//			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			System.out.println("File"+e.getMessage());
+//			e.printStackTrace();
+		}
+	}
+
+}

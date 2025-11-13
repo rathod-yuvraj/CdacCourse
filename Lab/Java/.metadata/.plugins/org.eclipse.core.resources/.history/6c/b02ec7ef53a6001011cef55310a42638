@@ -1,0 +1,15 @@
+package com.yuvraj.beans;
+
+public class Student {
+	private int sid;
+	private String sname;
+	private int m1;
+	public Student(int sid, String sname, int m1) {
+		super();
+		this.sid = sid;
+		this.sname = sname;
+		this.m1 = m1;
+	}
+	
+
+}

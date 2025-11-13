@@ -1,0 +1,9 @@
+package demo.com.Service;
+
+public interface EmployeeService {
+
+	boolean addNewEmployee();
+
+	
+
+}

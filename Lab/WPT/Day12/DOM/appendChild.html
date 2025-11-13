@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <head>
+    <title>
+        HTML DOM appendChild() Method
+    </title>
+    <style>
+        h1,
+        h2 {
+            font-weight: bold;
+            color: green;
+        }
+
+        body {
+            margin-left: 130px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>GeeksforGeeks</h1>
+    <h2>DOM appendChild() Method</h2>
+    <ul id="gfg">
+        <li>Computer Network</li>
+        <li>Data Structures using C</li>
+    </ul>
+
+    <button onclick="geeks()">
+        Submit
+    </button>
+
+    <script>
+        function geeks() {
+            let node = document.createElement("LI");
+            let textnode = document.createTextNode("Web Technology");
+            node.appendChild(textnode);
+            document.getElementById("gfg").appendChild(node);
+        }
+    </script>
+</body>
+</html>

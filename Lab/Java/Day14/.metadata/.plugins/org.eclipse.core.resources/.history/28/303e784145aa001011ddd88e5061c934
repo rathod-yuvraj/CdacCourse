@@ -1,0 +1,7 @@
+package com.yuvraj.threads;
+
+public class MyPrintTableThread extends Thread {
+	private int n;
+	private FactorialAtable ob;
+
+}

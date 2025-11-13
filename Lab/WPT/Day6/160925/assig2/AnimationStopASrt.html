@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Animated Div</title>
+  <style>
+    #d1 {
+      background-color: rgb(1, 5, 252);
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      position: fixed;
+      top: 0;
+      left: 0;
+    }
+    #d2 {
+      background-color: red;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      position: fixed;
+      top: 0;
+      right: 0;
+    }
+    #sai{
+        border-radius: 50%;
+        border: 2px solid black;
+        width: 100px;
+        height: 100px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <div id="d1"></div>
+    <div id="d2"></div>
+    <div id="sai"></div>
+  </div>
+  
+  <button onclick="setAnimation()">Start Animations</button>
+  <button onclick="stopAnimations()">Stop Animations</button>
+
+  <script>
+    let interval1 = null;
+    let interval2 = null;
+
+    function myMove() {
+      const elem = document.getElementById("d1");
+      let pos = 0;
+     
+      interval1 = setInterval(() => {
+        if (pos >= 700) {
+         
+        } else {
+          pos++;
+          elem.style.top = pos + "px";
+          elem.style.left = pos + "px";
+        }
+      }, 10);
+    }
+
+    function RgtToLft() {
+      const elem = document.getElementById("d2");
+      let pos = 0;
+      if (interval2) ;
+
+      interval2 = setInterval(() => {
+        if (pos >= 700) {
+          
+        } else {
+          pos++;
+          elem.style.top = pos + "px";
+          elem.style.right = pos + "px";
+        }
+      }, 10);
+    }
+   
+
+    function setAnimation() {
+      myMove();
+      RgtToLft();
+    }
+
+    function stopAnimations() {
+      clearInterval(interval1);
+      clearInterval(interval2);
+    }
+  </script>
+</body>
+</html>

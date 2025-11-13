@@ -1,0 +1,20 @@
+package demo.com.dao;
+
+import java.util.Set;
+
+import demo.com.Beans.Employee;
+
+public class EmployeeDaoImpl implements EmployeeDao {
+static Set <Employee> eset;
+ static {
+	 eset= new HashSet<>();
+	 
+ }
+	@Override
+	public boolean save(Employee e) {
+		// TODO Auto-generated method stub
+		return eset.add(e);
+		
+	}
+
+}

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>User Data Form</title>
+  <style>
+    table, th, td {
+      border: 1px solid black;
+      border-collapse: collapse;
+      padding: 8px;
+    }
+    table {
+      margin-top: 20px;
+      width: 50%;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Enter User Details</h2>
+  <form id="userForm" onsubmit="return addUser(event)">
+    <label>First Name: <input type="text" id="firstName" required></label><br><br>
+    <label>Last Name: <input type="text" id="lastName" required></label><br><br>
+    <label>Age: <input type="number" id="age" min="0" required></label><br><br>
+    <button type="submit">Add User</button>
+  </form>
+
+  <h3>User Data Table</h3>
+  <table id="userTable">
+    <thead>
+      <tr>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Age</th>
+      </tr>
+    </thead>
+    <tbody>
+    
+    </tbody>
+  </table>
+
+  <script>
+
+    const users = [];
+
+    function addUser(event) {
+      event.preventDefault(); 
+
+     
+      const firstName = document.getElementById('firstName').value.trim();
+      const lastName = document.getElementById('lastName').value.trim();
+      const age = document.getElementById('age').value.trim();
+
+    
+      const user = {
+        firstName: firstName,
+        lastName: lastName,
+        age: Number(age)
+      };
+
+
+      const userJSON = JSON.stringify(user);
+      console.log("JSON format:", userJSON);
+
+ 
+      users.push(user);
+
+      
+      displayUsers();
+
+  
+      document.getElementById('userForm').reset();
+    }
+
+    function displayUsers() {
+      const tbody = document.querySelector('#userTable tbody');
+      tbody.innerHTML = '';
+
+      users.forEach(user => {
+        const tr = document.createElement('tr');
+
+      
+        for (const key in user) {
+          const td = document.createElement('td');
+          td.textContent = user[key];
+          tr.appendChild(td);
+        }
+
+        tbody.appendChild(tr);
+      });
+    }
+  </script>
+
+</body>
+</html>

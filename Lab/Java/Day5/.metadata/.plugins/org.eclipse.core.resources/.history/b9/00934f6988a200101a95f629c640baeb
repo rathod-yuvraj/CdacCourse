@@ -1,0 +1,12 @@
+package nestedClasses;
+
+public class Book {
+	private int bid;
+	private String bname;
+	public class Lesson{
+		private int lid;
+		private String lname;
+		
+	}
+	
+}

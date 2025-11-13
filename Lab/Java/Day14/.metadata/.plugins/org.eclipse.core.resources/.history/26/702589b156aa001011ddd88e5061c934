@@ -1,0 +1,13 @@
+package com.yuvraj.service;
+
+public class EmployeeServiceImpl implements EmployeeService {
+	
+	private EmployeeDao;
+
+	@Override
+	public boolean addNewEmployee() {
+		
+		return edao.save(e);
+	}
+
+}

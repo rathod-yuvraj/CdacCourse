@@ -1,0 +1,13 @@
+package com.yuvraj.test;
+
+import java.io.FileInputStream;
+public class TestFileHandling {
+
+	public static void main(String[] args) {
+		
+		FileInputStream fis=new FileInputStream("myfile.txt");
+		
+
+	}
+
+}

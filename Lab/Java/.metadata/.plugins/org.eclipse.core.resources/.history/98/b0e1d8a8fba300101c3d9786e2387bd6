@@ -1,0 +1,50 @@
+import java.util.Date;
+
+public class Person {
+	
+	private String pName;
+	private Date pDate;
+	private String pid;
+	static int count;
+	static {
+		count=0;
+	}
+
+	public String getpName() {
+		return pName;
+	}
+
+	public void setpName(String pName) {
+		this.pName = pName;
+	}
+
+	public Date getpDate() {
+		return pDate;
+	}
+
+	public void setpDate(Date pDate) {
+		this.pDate = pDate;
+	}
+
+}
+
+	public Person(String pName, Date pDate) {
+		super();
+		count++;
+		this.pName = pName;
+		this.pDate = pDate;
+		this.pid = "p"+count;
+	}
+
+	public Person() {
+		super();
+		count++;
+		System.out.println("this is Defualt constructor!");
+		pid="p"+count;
+	}
+	
+	public static void main(String[] args) {
+		Person obj=new Person("Rohit",new Date(12/10/2003));
+	
+
+}

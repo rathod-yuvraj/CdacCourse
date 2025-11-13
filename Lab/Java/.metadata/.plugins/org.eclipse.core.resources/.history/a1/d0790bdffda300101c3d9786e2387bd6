@@ -1,0 +1,15 @@
+package bean;
+
+import java.util.Date;
+
+public class ContractEmp {
+
+	private String cName;
+	private Date  cDate;
+	private float hrs;
+	private double charges;
+	public ContractEmp(String string, Date date, String string2, String string3, int i, int j) {
+		// TODO Auto-generated constructor stub
+	}
+
+}

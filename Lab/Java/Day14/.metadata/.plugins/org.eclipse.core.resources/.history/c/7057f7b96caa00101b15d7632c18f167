@@ -1,0 +1,10 @@
+package com.yuvraj.test;
+
+public class TestSerialization {
+	public static void main(String [] args) {
+		System.out.println("Serializations");
+		
+		try(ObjectOutputStream ofs=new ObjectOutputStream("example.txt"))
+	}
+
+}

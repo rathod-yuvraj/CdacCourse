@@ -1,0 +1,69 @@
+What is a Promise?
+
+A Promise is an object that represents the eventual completion (or failure) of an asynchronous operation and its resulting value.
+
+Why use Promises?
+
+JavaScript is single-threaded but often does async things (fetching data, timers, file reading).
+
+Promises provide a cleaner, more manageable way to handle async operations compared to old-style callbacks.
+
+They help avoid “callback hell” (deeply nested callbacks), improving readability and error handling.
+
+Promise States
+
+A Promise has three possible states:
+
+State	Description
+Pending	Initial state, operation not finished yet
+Fulfilled	Operation completed successfully, with a result
+Rejected	Operation failed, with an error reason
+Basic Syntax
+let myPromise = new Promise(function(resolve, reject) {
+  // asynchronous operation, e.g., a timer or network request
+
+  if (/* operation successful */) {
+    resolve("Success!");    // fulfilled with value
+  } else {
+    reject("Error!");       // rejected with reason
+  }
+});
+
+Using Promises
+
+You handle the result with .then() and .catch() methods:
+
+myPromise
+  .then(function(result) {
+    console.log("Success:", result);
+  })
+  .catch(function(error) {
+    console.error("Failed:", error);
+  });
+
+Real Example: Simulating Async with Promise
+function wait(ms) {
+  return new Promise(function(resolve) {
+    setTimeout(() => resolve(`Waited for ${ms} milliseconds`), ms);
+  });
+}
+
+wait(2000).then(msg => {
+  console.log(msg); // Logs after 2 seconds: "Waited for 2000 milliseconds"
+});
+
+Why Promises?
+
+Clearer async flow: You chain .then() calls instead of nesting callbacks.
+
+Better error handling: .catch() captures errors anywhere in the chain.
+
+Compatibility: Modern APIs like fetch() return Promises.
+
+Summary
+Concept	Description
+Promise	Object representing async operation's eventual result
+States	Pending, Fulfilled (success), Rejected (error)
+.then()	Handle success result
+.catch()	Handle errors
+Benefit	Cleaner async code, avoids callback hell

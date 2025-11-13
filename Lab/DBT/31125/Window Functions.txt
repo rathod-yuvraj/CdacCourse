@@ -1,0 +1,371 @@
+What Are SQL Window Functions?
+A window function performs a calculation across a set of rows related to the current row, called a window. Unlike aggregate functions (like SUM() or AVG()), window functions do not collapse rows—they return a result for each row.
+
+Basic Syntax:
+
+sql
+function_name (expression) OVER (
+  PARTITION BY column1
+  ORDER BY column2
+  ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW
+)
+🔧 Common SQL Window Functions
+Function	Purpose
+ROW_NUMBER()	Assigns a unique sequential number to rows
+RANK()	Ranks rows with gaps for ties
+DENSE_RANK()	Ranks rows without gaps for ties
+NTILE(n)	Divides rows into n buckets
+LAG()	Accesses data from a previous row
+LEAD()	Accesses data from a following row
+SUM()	Running total over a window
+AVG()	Moving average over a window
+Sources: Dynamic Duniya, Analytics Engineering
+
+📌 When to Use Window Functions
+To rank or number rows within partitions
+
+To calculate running totals or moving averages
+
+To compare values between rows (e.g., current vs. previous)
+
+To retain row-level detail while performing aggregations
+
+🧩 Sample Problem Statements
+🏢 Scenario: Employee Performance
+Table: Employees
+
+EmpID	Name	Department	Salary
+1	Aditi Sharma	HR	50000
+2	Ravi Kumar	IT	60000
+3	Neha Singh	HR	55000
+4	Aman Verma	IT	70000
+5	Priya Desai	HR	52000
+🔹 Problem 1: Rank Employees by Salary Within Department
+sql
+SELECT Name, Department, Salary,
+       RANK() OVER (PARTITION BY Department ORDER BY Salary DESC) AS SalaryRank
+FROM Employees;
+🔹 Problem 2: Calculate Running Total of Salaries
+sql
+SELECT Name, Department, Salary,
+       SUM(Salary) OVER (PARTITION BY Department ORDER BY Salary) AS RunningTotal
+FROM Employees;
+🔹 Problem 3: Compare Salary with Previous Employee
+sql
+SELECT Name, Department, Salary,
+       LAG(Salary) OVER (PARTITION BY Department ORDER BY Salary) AS PrevSalary
+FROM Employees;
+📋 Concept Checklist: SQL Window Functions
+Concept	Covered
+Basic syntax of window functions	✅
+PARTITION BY and ORDER BY clauses	✅
+Row numbering and ranking (ROW_NUMBER, RANK, DENSE_RANK)	✅
+Running totals and moving averages	✅
+Accessing previous/next rows (LAG, LEAD)	✅
+Use cases: analytics, comparisons, trends	✅
+Difference from aggregate functions	✅
+Real-world examples and queries	✅
+____________________________________________________________
+****************************************************************
+###########################################################
+ROW_NUMBER()
+The ROW_NUMBER() function in SQL assigns a unique sequential number to rows within a result set, 
+making it ideal for tasks like pagination, ranking, and filtering duplicates. 
+Below is a breakdown of its concepts with examples and solutions.
+
+🧠 What Is ROW_NUMBER()?
+It's a window function that assigns a sequential integer to rows.
+
+Syntax:
+
+sql
+ROW_NUMBER() OVER (PARTITION BY column1 ORDER BY column2)
+PARTITION BY: Optional. Divides rows into groups.
+
+ORDER BY: Mandatory. Defines the order of numbering.
+
+📘 Key Concepts with Examples
+1. Basic Usage
+Assign row numbers to all rows in a table.
+
+sql
+SELECT 
+  employee_id, 
+  employee_name, 
+  ROW_NUMBER() OVER (ORDER BY employee_name) AS row_num
+FROM employees;
+✅ Solution: Each employee gets a unique number based on alphabetical order.
+
+2. Using PARTITION BY
+Assign row numbers within each department.
+
+sql
+SELECT 
+  department_id, 
+  employee_name, 
+  ROW_NUMBER() OVER (PARTITION BY department_id ORDER BY employee_name) AS dept_rank
+FROM employees;
+✅ Solution: Resets numbering for each department.
+
+3. Pagination
+Retrieve rows 11–20 from a result set.
+
+sql
+WITH NumberedRows AS (
+  SELECT 
+    employee_id, 
+    ROW_NUMBER() OVER (ORDER BY employee_id) AS row_num
+  FROM employees
+)
+SELECT * FROM NumberedRows
+WHERE row_num BETWEEN 11 AND 20;
+✅ Solution: Efficient pagination without OFFSET.
+
+4. Removing Duplicates
+Keep only the first occurrence of each duplicate.
+
+sql
+WITH Ranked AS (
+  SELECT *, 
+    ROW_NUMBER() OVER (PARTITION BY email ORDER BY user_id) AS rn
+  FROM users
+)
+DELETE FROM Ranked WHERE rn > 1;
+✅ Solution: Deletes duplicate emails, keeping the earliest user.
+
+5. Top-N per Group
+Get top 3 students per class by marks.
+
+sql
+WITH RankedStudents AS (
+  SELECT *, 
+    ROW_NUMBER() OVER (PARTITION BY class_id ORDER BY marks DESC) AS rank
+  FROM students
+)
+SELECT * FROM RankedStudents
+WHERE rank <= 3;
+✅ Solution: Filters top performers in each class.
+
+🧪 Practice Problem
+Problem: You have a table sales(region, salesperson, amount). Write a query to find the top 2 salespeople per region based on sales amount.
+
+Solution:
+
+sql
+WITH RankedSales AS (
+  SELECT *, 
+    ROW_NUMBER() OVER (PARTITION BY region ORDER BY amount DESC) AS rank
+  FROM sales
+)
+SELECT * FROM RankedSales
+WHERE rank <= 2
+__________________________________________________________
+The SQL ROW_NUMBER() function is a powerful window function that assigns a unique sequential number to each row within a partition of a result set. It’s especially useful for ranking, pagination, and filtering top-N results.
+
+🧠 Concept of ROW_NUMBER()
+Syntax:
+
+sql
+ROW_NUMBER() OVER (
+  PARTITION BY column1
+  ORDER BY column2
+)
+PARTITION BY: Optional. Divides the result set into groups.
+
+ORDER BY: Required. Determines the order of numbering within each partition.
+
+🔧 Common Use Cases
+1. Pagination
+Assign row numbers to help paginate results:
+
+sql
+SELECT *
+FROM (
+  SELECT ROW_NUMBER() OVER (ORDER BY created_at) AS row_num, *
+  FROM orders
+) AS numbered_orders
+WHERE row_num BETWEEN 11 AND 20;
+2. Top-N per Group
+Get the top 3 earners per department:
+
+sql
+SELECT *
+FROM (
+  SELECT employee_id, department, salary,
+         ROW_NUMBER() OVER (PARTITION BY department ORDER BY salary DESC) AS rank
+  FROM employees
+) AS ranked_employees
+WHERE rank <= 3;
+3. Deduplication
+Keep only the first occurrence of each duplicate:
+
+sql
+SELECT *
+FROM (
+  SELECT *, ROW_NUMBER() OVER (PARTITION BY email ORDER BY created_at) AS rn
+  FROM users
+) AS deduped
+WHERE rn = 1;
+🧩 Sample Problem Statements
+Assign a unique row number to each student within their class based on score.
+
+Select the most recent transaction per customer.
+
+Filter the top 5 products by revenue in each category.
+
+Remove duplicate entries based on email, keeping the earliest one.
+
+Paginate blog posts 10 at a time using row numbers.
+
+__________________________________________________
+The ROW_NUMBER() function in SQL is a window function that assigns a unique sequential number to each row within a result set. It’s especially useful when you want to rank, paginate, or filter rows based on specific criteria—without collapsing them into groups.
+
+🧠 How ROW_NUMBER() Works
+Syntax:
+
+sql
+ROW_NUMBER() OVER (
+  PARTITION BY column1
+  ORDER BY column2
+)
+PARTITION BY: (Optional) Divides the result set into partitions. Row numbering resets for each partition.
+
+ORDER BY: (Required) Determines the order in which row numbers are assigned.
+
+📊 Example
+Imagine a table called employees:
+
+employee_id	department	salary
+1	Sales	50000
+2	Sales	60000
+3	HR	55000
+4	HR	52000
+You want to rank employees by salary within each department:
+
+sql
+SELECT employee_id, department, salary,
+       ROW_NUMBER() OVER (PARTITION BY department ORDER BY salary DESC) AS rank
+FROM employees;
+Result:
+
+employee_id	department	salary	rank
+2	Sales	60000	1
+1	Sales	50000	2
+3	HR	55000	1
+4	HR	52000	2
+🔧 Common Use Cases
+Top-N filtering: Get the top 3 products per category.
+
+Pagination: Show rows 11–20 in a result set.
+
+Deduplication: Keep only the first occurrence of each duplicate.
+
+Ranking: Assign ranks based on scores or metrics.
+
+
+
+*********************************************************************
+Problem Statements Using ROW_NUMBER()
+1. Rank Employees Alphabetically
+Assign a unique row number to each employee based on their name in alphabetical order.
+
+2. Department-wise Ranking
+Rank employees within each department based on their salary in descending order.
+
+3. Top-N Records per Group
+Retrieve the top 3 highest-paid employees from each department.
+
+4. Pagination
+Display records 21–30 from a list of products ordered by price.
+
+5. Remove Duplicate Emails
+From a user table, delete duplicate email entries keeping only the first occurrence.
+
+6. Latest Orders per Customer
+For each customer, find their most recent order using order date.
+
+7. Identify Duplicate Transactions
+Flag duplicate transactions based on amount and timestamp.
+
+8. Find Second Highest Salary per Department
+Return the second highest salary for each department using ROW_NUMBER().
+
+9. Filter Students Who Are Not in Top 5
+From a student marks table, exclude the top 5 scorers in each class.
+
+10. Detect Outdated Records
+In a product inventory table, identify outdated entries by assigning row numbers based on last updated date.
+
+11. Track Promotion History
+For each employee, list their promotion history ordered by date, and assign a sequence number.
+
+12. Identify First Purchase per User
+From a purchase history table, find the first purchase made by each user.
+
+13. Find Most Recent Login per Device
+For each device, return the most recent login record.
+
+14. Rank Movies by Rating per Genre
+Assign ranks to movies within each genre based on their rating.
+
+15. Detect First Occurrence of Error Logs
+From a system log table, identify the first occurrence of each error code
+******************************************************************
+____________________________________________________________
+****************************************************************
+###########################################################
+What Is LAG() in SQL?
+The LAG() function is a window function that retrieves the value of a column from a row that precedes the current row by a specified offset. It’s commonly used to:
+
+Compare current and previous values
+
+Detect changes or trends
+
+Calculate differences between rows
+
+Syntax:
+
+sql
+LAG(expression [, offset, default]) OVER (
+  PARTITION BY column1
+  ORDER BY column2
+)
+expression: The column to retrieve from the previous row.
+
+offset: How many rows back to look (default is 1).
+
+default: Value to return if the offset row doesn’t exist.
+
+📊 Example Use Cases
+1. Compare Monthly Sales
+sql
+SELECT month, sales,
+       LAG(sales) OVER (ORDER BY month) AS previous_month_sales,
+       sales - LAG(sales) OVER (ORDER BY month) AS sales_difference
+FROM sales_data;
+Shows how sales changed month-over-month.
+
+2. Track Employee Salary Changes
+sql
+SELECT employee_id, salary,
+       LAG(salary) OVER (PARTITION BY employee_id ORDER BY change_date) AS previous_salary
+FROM salary_history;
+Compares each employee’s current salary with their previous one.
+
+3. Detect Status Changes
+sql
+SELECT user_id, status,
+       LAG(status) OVER (PARTITION BY user_id ORDER BY timestamp) AS previous_status
+FROM user_activity;
+Identifies when a user’s status changes (e.g., from "active" to "inactive").
+
+🧩 Sample Problem Statements
+Show the difference in revenue between consecutive quarters for each product.
+
+Identify when a customer’s subscription status changed.
+
+Compare daily temperatures with the previous day’s reading.
+
+Detect when a stock price drops compared to the previous day.
+
+Track login frequency changes for users over time.

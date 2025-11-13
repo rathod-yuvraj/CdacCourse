@@ -1,0 +1,32 @@
+/* HTML Selectors */
+input, p, select {
+    color: navy;
+    background-color: lightyellow;
+    font-style: italic;
+    border: 2px solid green;
+    padding: 5px;
+}
+
+/* Class Selectors */
+.moderate {
+    color: black;
+    background-color: lightgray;
+    font-style: normal;
+    border: 2px dashed blue;
+}
+
+.gaudy {
+    color: white;
+    background-color: purple;
+    font-style: oblique;
+    border: 3px dotted red;
+}
+
+/* ID Selector */
+#id1 {
+    color: darkred;
+    background-color: lightpink;
+    font-style: italic;
+    border: 2px solid black;
+    padding: 5px;
+}

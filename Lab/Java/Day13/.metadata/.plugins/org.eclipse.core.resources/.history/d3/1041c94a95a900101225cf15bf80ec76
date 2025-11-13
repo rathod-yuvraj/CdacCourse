@@ -1,0 +1,21 @@
+package com.yuvraj.test;
+import java.io.File;
+import java.io.IOException;
+
+public class FileCreator {
+    public static void main(String[] args) {
+        // Specify the file path (relative to the project root or absolute)
+        File file = new File("myNewFile.txt"); 
+
+        try {
+            if (file.createNewFile()) {
+                System.out.println("File created successfully: " + file.getName());
+            } else {
+                System.out.println("File already exists.");
+            }
+        } catch (IOException e) {
+            System.err.println("An error occurred during file creation.");
+            e.printStackTrace();
+        }
+    }
+}

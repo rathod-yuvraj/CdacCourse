@@ -1,0 +1,8 @@
+package com.yuvraj.threads;
+
+public class MyThreadPrime extends Thread {
+	
+	private int n;
+	private PrimeNo op;
+
+}

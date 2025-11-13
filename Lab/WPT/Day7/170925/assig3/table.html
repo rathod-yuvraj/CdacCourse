@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Multiplication Table</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        table {
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+        table, th, td {
+            border: 1px solid black;
+            padding: 8px 12px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <label for="num">Number:</label>
+    <input type="number" id="num" min="1" />
+    
+    <label for="from">From:</label>
+    <input type="number" id="from" min="1" />
+    
+    <label for="to">To:</label>
+    <input type="number" id="to" min="1" />
+    
+    <button id="showTable">Show</button>
+    
+    <div id="tableContainer"></div>
+    
+
+    <script>
+        $(document).ready(function() {
+            $('#showTable').click(function() {
+                let num = parseInt($('#num').val());
+                let from = parseInt($('#from').val());
+                let to = parseInt($('#to').val());
+                
+             
+
+                // Create table
+                let html = '<table><thead><tr><th>Expression</th><th>Result</th></tr></thead><tbody>';
+                for (let i = from; i <= to; i++) {
+                    html += `<tr><td>${num} * ${i}</td><td>${num * i}</td></tr>`;
+                }
+                html += '</tbody></table>';
+
+                $('#tableContainer').html(html);
+            });
+        });
+    </script>
+
+</body>
+</html>

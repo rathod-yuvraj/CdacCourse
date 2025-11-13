@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Ad Fade In/Out</title>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<style>
+  #ad {
+    width: 300px;
+    height: 150px;
+    background-color: #ffcc00;
+    color: #333;
+    font-size: 20px;
+    font-weight: bold;
+    display: none; /* start hidden */
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 2px 2px 8px rgba(0,0,0,0.3);
+    margin: 20px auto;
+  }
+
+  #disappearBtn {
+    display: block;
+    margin: 10px auto;
+    padding: 10px 20px;
+    font-size: 16px;
+  }
+</style>
+</head>
+<body>
+
+<div id="ad">
+  Your amazing ad goes here! 🚀🔥
+</div>
+
+<button id="disappearBtn">Disappear</button>
+
+<script>
+  $(document).ready(function() {
+    // Fade in the ad when the page loads
+    $('#ad').fadeIn(1000);
+
+    // On button click, fade out the ad
+    $('#disappearBtn').click(function() {
+      $('#ad').fadeOut(1000);
+    });
+  });
+</script>
+
+</body>
+</html>

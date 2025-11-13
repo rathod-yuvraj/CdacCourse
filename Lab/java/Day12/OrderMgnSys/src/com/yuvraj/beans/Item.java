@@ -1,0 +1,48 @@
+package com.yuvraj.beans;
+
+public class Item {
+	private int iid;
+	private String iName;
+	private double price;
+	private int qyt;
+	public Item() {
+		super();
+	}
+	public Item(int iid, String iName, double price, int qyt) {
+		super();
+		this.iid = iid;
+		this.iName = iName;
+		this.price = price;
+		this.qyt = qyt;
+	}
+	public int getIid() {
+		return iid;
+	}
+	public void setIid(int iid) {
+		this.iid = iid;
+	}
+	public String getiName() {
+		return iName;
+	}
+	public void setiName(String iName) {
+		this.iName = iName;
+	}
+	public double getPrice() {
+		return price;
+	}
+	public void setPrice(double price) {
+		this.price = price;
+	}
+	public int getQyt() {
+		return qyt;
+	}
+	public void setQyt(int qyt) {
+		this.qyt = qyt;
+	}
+	@Override
+	public String toString() {
+		return "Item [iid=" + iid + ", iName=" + iName + ", price=" + price + ", qyt=" + qyt + "]";
+	}
+	
+
+}

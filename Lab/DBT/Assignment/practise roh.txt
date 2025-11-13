@@ -1,0 +1,835 @@
+Microsoft Windows [Version 10.0.19045.6456]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Users\IET>mysql --host=192.168.10.117 --port=3306 --user=dac65 --password=welcome
+mysql: [Warning] Using a password on the command line interface can be insecure.
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 604
+Server version: 8.0.44 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2025, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> show tables;
+ERROR 1046 (3D000): No database selected
+mysql> show database;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'database' at line 1
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| dac65              |
+| information_schema |
+| performance_schema |
++--------------------+
+3 rows in set (0.00 sec)
+
+mysql> use dac65;
+Database changed
+mysql> show tables;
++---------------------+
+| Tables_in_dac65     |
++---------------------+
+| a                   |
+| activity            |
+| agent               |
+| airline_seats       |
+| andor               |
+| atm                 |
+| b                   |
+| bankloan            |
+| batch_schedule      |
+| betweensalary       |
+| bitwise             |
+| blanktablea         |
+| blanktableb         |
+| blog                |
+| bonus               |
+| books               |
+| brands              |
+| bus_stops           |
+| cafe                |
+| candidate           |
+| cardpayments        |
+| cashpayments        |
+| categories          |
+| category            |
+| city                |
+| classandsubjects    |
+| client              |
+| cnumbers            |
+| coalesce            |
+| comments            |
+| company             |
+| countnulls          |
+| countnumbers        |
+| cricketwinnerteam   |
+| customer            |
+| customers           |
+| demodept1           |
+| demodept2           |
+| dept                |
+| dept1               |
+| dhl                 |
+| docs                |
+| doctor              |
+| doctorvisits        |
+| dummy               |
+| duplicate           |
+| emp                 |
+| emp1                |
+| emp2                |
+| emp_attendance      |
+| emp_cards           |
+| emp_phone           |
+| empj                |
+| envelope            |
+| facebook            |
+| fedex               |
+| food                |
+| food_category_tags  |
+| food_items          |
+| fromstoreorders     |
+| fruits              |
+| fullname            |
+| hall_ticket         |
+| hobby               |
+| ipl                 |
+| item                |
+| job_list            |
+| key_parts           |
+| labtestlist         |
+| leading_zeroes      |
+| leadtable           |
+| licence             |
+| linkedin            |
+| location            |
+| managers            |
+| mass_table          |
+| medicinelist        |
+| menucard            |
+| missingnumbers      |
+| nearest             |
+| new                 |
+| newbooks            |
+| null1               |
+| null2               |
+| nullif              |
+| numberstring        |
+| onlineorders        |
+| ord                 |
+| order1              |
+| order_items         |
+| orderdetails        |
+| orders              |
+| overlapping_dates   |
+| overtime            |
+| patient             |
+| phonecall           |
+| pivot_table         |
+| plumber             |
+| plumber_service_map |
+| points              |
+| population          |
+| posts               |
+| price               |
+| product             |
+| product_sales       |
+| products            |
+| pune_metro_stations |
+| quarterly_revenue   |
+| r                   |
+| r1                  |
+| r2                  |
+| races               |
+| regexpr             |
+| repeatingnumbers    |
+| replacedept         |
+| reservations        |
+| revenue             |
+| rockets             |
+| room_assigned       |
+| room_staff          |
+| rooms               |
+| runners             |
+| runningserver       |
+| sales               |
+| sales1              |
+| sales_channel       |
+| salespeople         |
+| salesperson         |
+| salgrade            |
+| server              |
+| service             |
+| seta                |
+| setb                |
+| shop                |
+| softdrink           |
+| sort                |
+| sourcecity          |
+| sourcenames         |
+| stadium             |
+| stages              |
+| states              |
+| station             |
+| status              |
+| stocks              |
+| stringnumber        |
+| student             |
+| students5           |
+| swapcity            |
+| tablea              |
+| tableaa             |
+| tableb              |
+| tablebb             |
+| targetcity          |
+| targetnames         |
+| tasks               |
+| teams               |
+| temp                |
+| temp1               |
+| trainers            |
+| trains              |
+| traintimetable      |
+| transactions        |
+| unpivot_table       |
+| ups                 |
+| vote_response       |
+| votes               |
+| warehouse           |
+| x                   |
+| year_of_service     |
+| yearly_revenue      |
+| years               |
+| yuvraj              |
+| z                   |
++---------------------+
+173 rows in set (0.01 sec)
+
+mysql> show product_sales;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'product_sales' at line 1
+mysql> select * from product_sales;
++--------------+----------------+-----------+
+| product_name | store_location | num_sales |
++--------------+----------------+-----------+
+| Chair        | North          |        55 |
+| Desk         | Central        |       120 |
+| Couch        | Central        |        78 |
+| Chair        | South          |        23 |
+| Chair        | South          |        10 |
+| Chair        | North          |        98 |
+| Desk         | West           |        61 |
+| Couch        | North          |       180 |
+| Chair        | South          |        14 |
+| Desk         | North          |        45 |
+| Chair        | North          |        87 |
+| Chair        | Central        |        34 |
+| Desk         | South          |        42 |
+| Couch        | West           |        58 |
+| Couch        | Central        |        27 |
+| Chair        | South          |        91 |
+| Chair        | West           |        82 |
+| Chair        | North          |        37 |
+| Desk         | North          |        68 |
+| Couch        | Central        |        54 |
+| Chair        | South          |        81 |
+| Desk         | North          |        25 |
+| Chair        | North          |        46 |
+| Chair        | Central        |       121 |
+| Desk         | South          |        85 |
+| Couch        | North          |        43 |
+| Desk         | West           |        10 |
+| Chair        | North          |         5 |
+| Chair        | Central        |        16 |
+| Desk         | South          |         9 |
+| Couch        | West           |        22 |
+| Couch        | Central        |        59 |
+| Chair        | South          |        76 |
+| Chair        | West           |        48 |
+| Chair        | North          |        19 |
+| Desk         | North          |         3 |
+| Couch        | West           |        63 |
+| Chair        | South          |        81 |
+| Desk         | North          |        85 |
+| Chair        | North          |        90 |
+| Chair        | Central        |        47 |
+| Desk         | West           |        63 |
+| Couch        | North          |        28 |
++--------------+----------------+-----------+
+43 rows in set (0.02 sec)
+
+mysql> select * from products;
++-----------+----------------------------------+------------+------------+----------------------+-----------+--------------+--------------+--------------+--------------+
+| ProductID | ProductName                      | SupplierID | CategoryID | QuantityPerUnit      | UnitPrice | UnitsInStock | UnitsOnOrder | ReorderLevel | Discontinued |
++-----------+----------------------------------+------------+------------+----------------------+-----------+--------------+--------------+--------------+--------------+
+|         1 | Chai                             |          1 |          1 | 10 boxes x 20 bags   |   18.0000 |           39 |            0 |           10 |            0 |
+|         2 | Chang                            |          1 |          1 | 24 - 12 oz bottles   |   19.0000 |           17 |           40 |           25 |            0 |
+|         3 | Aniseed Syrup                    |          1 |          2 | 12 - 550 ml bottles  |   10.0000 |           13 |           70 |           25 |            0 |
+|         4 | Chef Anton's Cajun Seasoning     |          2 |          2 | 48 - 6 oz jars       |   22.0000 |           53 |            0 |            0 |            0 |
+|         5 | Chef Anton's Gumbo Mix           |          2 |          2 | 36 boxes             |   21.3500 |            0 |            0 |            0 |            1 |
+|         6 | Grandma's Boysenberry Spread     |          3 |          2 | 12 - 8 oz jars       |   25.0000 |          120 |            0 |           25 |            0 |
+|         7 | Uncle Bob's Organic Dried Pears  |          3 |          7 | 12 - 1 lb pkgs.      |   30.0000 |           15 |            0 |           10 |            0 |
+|         8 | Northwoods Cranberry Sauce       |          3 |          2 | 12 - 12 oz jars      |   40.0000 |            6 |            0 |            0 |            0 |
+|         9 | Mishi Kobe Niku                  |          4 |          6 | 18 - 500 g pkgs.     |   97.0000 |           29 |            0 |            0 |            1 |
+|        10 | Ikura                            |          4 |          8 | 12 - 200 ml jars     |   31.0000 |           31 |            0 |            0 |            0 |
+|        11 | Queso Cabrales                   |          5 |          4 | 1 kg pkg.            |   21.0000 |           22 |           30 |           30 |            0 |
+|        12 | Queso Manchego La Pastora        |          5 |          4 | 10 - 500 g pkgs.     |   38.0000 |           86 |            0 |            0 |            0 |
+|        13 | Konbu                            |          6 |          8 | 2 kg box             |    6.0000 |           24 |            0 |            5 |            0 |
+|        14 | Tofu                             |          6 |          7 | 40 - 100 g pkgs.     |   23.2500 |           35 |            0 |            0 |            0 |
+|        15 | Genen Shouyu                     |          6 |          2 | 40 - 100 g pkgs.     |   15.5000 |           39 |            0 |            5 |            0 |
+|        16 | Pavlova                          |          7 |          3 | 32 - 500 g boxes     |   17.4500 |           29 |            0 |           10 |            0 |
+|        17 | Alice Mutton                     |          7 |          6 | 20 - 1 kg tins       |   39.0000 |            0 |            0 |            0 |            1 |
+|        18 | Carnarvon Tigers                 |          7 |          8 | 16 kg pkg.           |   62.5000 |           42 |            0 |            0 |            0 |
+|        19 | Teatime Chocolate Biscuits       |          8 |          3 | 10 boxes x 12 pieces |    9.2000 |           25 |            0 |            5 |            0 |
+|        20 | Sir Rodney's Marmalade           |          8 |          3 | 30 gift boxes        |   81.0000 |           40 |            0 |            0 |            0 |
+|        21 | Sir Rodney's Scones              |          8 |          3 | 24 pkgs. x 4 pieces  |   10.0000 |            3 |           40 |            5 |            0 |
+|        22 | Gustaf's Knckebrd                |          9 |          5 | 24 - 500 g pkgs.     |   21.0000 |          104 |            0 |           25 |            0 |
+|        23 | Tunnbrd                          |          9 |          5 | 12 - 250 g pkgs.     |    9.0000 |           61 |            0 |           25 |            0 |
+|        24 | Guaran Fantstica                 |         10 |          1 | 12 - 355 ml cans     |    4.5000 |           20 |            0 |            0 |            1 |
+|        25 | NuNuCa Nu-Nougat-Creme           |         11 |          3 | 20 - 450 g glasses   |   14.0000 |           76 |            0 |           30 |            0 |
+|        26 | Gumbr Gummibrchen                |         11 |          3 | 100 - 250 g bags     |   31.2300 |           15 |            0 |            0 |            0 |
+|        27 | Schoggi Schokolade               |         11 |          3 | 100 - 100 g pieces   |   43.9000 |           49 |            0 |           30 |            0 |
+|        28 | Rssle Sauerkraut                 |         12 |          7 | 25 - 825 g cans      |   45.6000 |           26 |            0 |            0 |            1 |
+|        29 | Thringer Rostbratwurst           |         12 |          6 | 50 bags x 30 sausgs. |  123.7900 |            0 |            0 |            0 |            1 |
+|        30 | Nord-Ost Matjeshering            |         13 |          8 | 10 - 200 g glasses   |   25.8900 |           10 |            0 |           15 |            0 |
+|        31 | Gorgonzola Telino                |         14 |          4 | 12 - 100 g pkgs      |   12.5000 |            0 |           70 |           20 |            0 |
+|        32 | Mascarpone Fabioli               |         14 |          4 | 24 - 200 g pkgs.     |   32.0000 |            9 |           40 |           25 |            0 |
+|        33 | Geitost                          |         15 |          4 | 500 g                |    2.5000 |          112 |            0 |           20 |            0 |
+|        34 | Sasquatch Ale                    |         16 |          1 | 24 - 12 oz bottles   |   14.0000 |          111 |            0 |           15 |            0 |
+|        35 | Steeleye Stout                   |         16 |          1 | 24 - 12 oz bottles   |   18.0000 |           20 |            0 |           15 |            0 |
+|        36 | Inlagd Sill                      |         17 |          8 | 24 - 250 g jars      |   19.0000 |          112 |            0 |           20 |            0 |
+|        37 | Gravad lax                       |         17 |          8 | 12 - 500 g pkgs.     |   26.0000 |           11 |           50 |           25 |            0 |
+|        38 | Cte de Blaye                     |         18 |          1 | 12 - 75 cl bottles   |  263.5000 |           17 |            0 |           15 |            0 |
+|        39 | Chartreuse verte                 |         18 |          1 | 750 cc per bottle    |   18.0000 |           69 |            0 |            5 |            0 |
+|        40 | Boston Crab Meat                 |         19 |          8 | 24 - 4 oz tins       |   18.4000 |          123 |            0 |           30 |            0 |
+|        41 | Jack's New England Clam Chowder  |         19 |          8 | 12 - 12 oz cans      |    9.6500 |           85 |            0 |           10 |            0 |
+|        42 | Singaporean Hokkien Fried Mee    |         20 |          5 | 32 - 1 kg pkgs.      |   14.0000 |           26 |            0 |            0 |            1 |
+|        43 | Ipoh Coffee                      |         20 |          1 | 16 - 500 g tins      |   46.0000 |           17 |           10 |           25 |            0 |
+|        44 | Gula Malacca                     |         20 |          2 | 20 - 2 kg bags       |   19.4500 |           27 |            0 |           15 |            0 |
+|        45 | Rogede sild                      |         21 |          8 | 1k pkg.              |    9.5000 |            5 |           70 |           15 |            0 |
+|        46 | Spegesild                        |         21 |          8 | 4 - 450 g glasses    |   12.0000 |           95 |            0 |            0 |            0 |
+|        47 | Zaanse koeken                    |         22 |          3 | 10 - 4 oz boxes      |    9.5000 |           36 |            0 |            0 |            0 |
+|        48 | Chocolade                        |         22 |          3 | 10 pkgs.             |   12.7500 |           15 |           70 |           25 |            0 |
+|        49 | Maxilaku                         |         23 |          3 | 24 - 50 g pkgs.      |   20.0000 |           10 |           60 |           15 |            0 |
+|        50 | Valkoinen suklaa                 |         23 |          3 | 12 - 100 g bars      |   16.2500 |           65 |            0 |           30 |            0 |
+|        51 | Manjimup Dried Apples            |         24 |          7 | 50 - 300 g pkgs.     |   53.0000 |           20 |            0 |           10 |            0 |
+|        52 | Filo Mix                         |         24 |          5 | 16 - 2 kg boxes      |    7.0000 |           38 |            0 |           25 |            0 |
+|        53 | Perth Pasties                    |         24 |          6 | 48 pieces            |   32.8000 |            0 |            0 |            0 |            1 |
+|        54 | Tourtire                         |         25 |          6 | 16 pies              |    7.4500 |           21 |            0 |           10 |            0 |
+|        55 | Pt chinois                       |         25 |          6 | 24 boxes x 2 pies    |   24.0000 |          115 |            0 |           20 |            0 |
+|        56 | Gnocchi di nonna Alice           |         26 |          5 | 24 - 250 g pkgs.     |   38.0000 |           21 |           10 |           30 |            0 |
+|        57 | Ravioli Angelo                   |         26 |          5 | 24 - 250 g pkgs.     |   19.5000 |           36 |            0 |           20 |            0 |
+|        58 | Escargots de Bourgogne           |         27 |          8 | 24 pieces            |   13.2500 |           62 |            0 |           20 |            0 |
+|        59 | Raclette Courdavault             |         28 |          4 | 5 kg pkg.            |   55.0000 |           79 |            0 |            0 |            0 |
+|        60 | Camembert Pierrot                |         28 |          4 | 15 - 300 g rounds    |   34.0000 |           19 |            0 |            0 |            0 |
+|        61 | Sirop d'rable                    |         29 |          2 | 24 - 500 ml bottles  |   28.5000 |          113 |            0 |           25 |            0 |
+|        62 | Tarte au sucre                   |         29 |          3 | 48 pies              |   49.3000 |           17 |            0 |            0 |            0 |
+|        63 | Vegie-spread                     |          7 |          2 | 15 - 625 g jars      |   43.9000 |           24 |            0 |            5 |            0 |
+|        64 | Wimmers gute Semmelkndel         |         12 |          5 | 20 bags x 4 pieces   |   33.2500 |           22 |           80 |           30 |            0 |
+|        65 | Louisiana Fiery Hot Pepper Sauce |          2 |          2 | 32 - 8 oz bottles    |   21.0500 |           76 |            0 |            0 |            0 |
+|        66 | Louisiana Hot Spiced Okra        |          2 |          2 | 24 - 8 oz jars       |   17.0000 |            4 |          100 |           20 |            0 |
+|        67 | Laughing Lumberjack Lager        |         16 |          1 | 24 - 12 oz bottles   |   14.0000 |           52 |            0 |           10 |            0 |
+|        68 | Scottish Longbreads              |          8 |          3 | 10 boxes x 8 pieces  |   12.5000 |            6 |           10 |           15 |            0 |
+|        69 | Gudbrandsdalsost                 |         15 |          4 | 10 kg pkg.           |   36.0000 |           26 |            0 |           15 |            0 |
+|        70 | Outback Lager                    |          7 |          1 | 24 - 355 ml bottles  |   15.0000 |           15 |           10 |           30 |            0 |
+|        71 | Flotemysost                      |         15 |          4 | 10 - 500 g pkgs.     |   21.5000 |           26 |            0 |            0 |            0 |
+|        72 | Mozzarella di Giovanni           |         14 |          4 | 24 - 200 g pkgs.     |   34.8000 |           14 |            0 |            0 |            0 |
+|        73 | Rd Kaviar                        |         17 |          8 | 24 - 150 g jars      |   15.0000 |          101 |            0 |            5 |            0 |
+|        74 | Longlife Tofu                    |          4 |          7 | 5 kg pkg.            |   10.0000 |            4 |           20 |            5 |            0 |
+|        75 | Rhnbru Klosterbier               |         12 |          1 | 24 - 0.5 l bottles   |    7.7500 |          125 |            0 |           25 |            0 |
+|        76 | Lakkalikri                       |         23 |          1 | 500 ml               |   18.0000 |           57 |            0 |           20 |            0 |
+|        77 | Original Frankfurter grne Soe    |         12 |          2 | 12 boxes             |   13.0000 |           32 |            0 |           15 |            0 |
++-----------+----------------------------------+------------+------------+----------------------+-----------+--------------+--------------+--------------+--------------+
+77 rows in set (0.07 sec)
+
+mysql> select * from emp;
++-------+----------+--------+---------------------+------+------------+------+------+--------+---------+--------------+------------+------------+----------+
+| EMPNO | ENAME    | GENDER | JOB                 | MGR  | HIREDATE   | SAL  | COMM | DEPTNO | BONUSID | USER NAME    | PWD        | PHONE      | isActive |
++-------+----------+--------+---------------------+------+------------+------+------+--------+---------+--------------+------------+------------+----------+
+|  6001 | GITA     | F      | Compliance officers | 7920 | 1981-07-19 | 1750 | NULL |     30 |       1 | GITA         | sales@2017 | NULL       |        1 |
+|  6129 | VRUSHALI | F      | Compliance officers | 7920 | 1981-07-19 | 1750 | NULL |     50 |       1 | VRUSHALI     | PUN@8877   | NULL       |        1 |
+|  6473 | SHARMIN  | F      | Public Relation     | 7920 | 1981-07-19 | 1750 | NULL |     20 |       1 | SHARMIN      | a12recmpm  | NULL       |        1 |
+|  6781 | BANDISH  | F      | Public Relation     | 7920 | 1981-07-19 | 1750 | NULL |     20 |       1 | BANDISH      | a12recmpm  | NULL       |        1 |
+|  7369 | SMITH    | M      | CLERK               | 7902 | 1980-12-17 |  800 | NULL |     20 |       2 | TRITONE      | a12recmpm  | 7032300023 |        0 |
+|  7415 | AARAV    | M      | CLERK               | 7902 | 1981-12-31 | 3350 | NULL |     10 |    NULL | AARAV        | NULL       | 7032300084 |        0 |
+|  7421 | THOMAS   | M      | CLERK               | 7920 | 1981-07-19 | 1750 | NULL |     10 |       1 | THOMAS       | r50mpm     | 7032300011 |        0 |
+|  7499 | ALLEN    | M      | SALESMAN            | 7698 | 1981-02-20 | 1600 |  300 |     30 |       4 | ALWAYS TESTE | sales@2017 | 7032300096 |        1 |
+|  7521 | WARD     | M      | SALESMAN            | 7698 | 1981-02-22 | 1250 |  500 |     30 |       1 | WARD         | sales@2017 | 7132300034 |        1 |
+|  7566 | JONES    | M      | MANAGER             | 7839 | 1981-04-02 | 2975 | NULL |     20 |       4 | HONEYCOMB    | a12recmpm  | 7132300039 |        1 |
+|  7654 | MARTIN   | M      | SALESMAN            | 7698 | 1981-09-28 | 1250 | 1400 |     30 |       6 | LIFE RACER   | sales@2017 | 7132300050 |        1 |
+|  7698 | BLAKE    | M      | MANAGER             | 7839 | 1981-05-01 | 2850 | NULL |     30 |       1 | BIG BEN      | sales@2017 | 7132300027 |        1 |
+|  7782 | CLARK    | M      | MANAGER             | 7839 | 1981-06-09 | 2450 | NULL |     10 |       3 | CLARK        | r50mpm     | 7032300001 |        1 |
+|  7788 | SCOTT    | M      | ANALYST             | 7566 | 1982-12-09 | 3000 | NULL |     20 |       3 | WHITE SAND   | a12recmpm  | NULL       |        1 |
+|  7839 | KING     | M      | PRESIDENT           | NULL | 1981-11-17 | 5000 | NULL |     10 |       1 | KING         | r50mpm     | 7132300081 |        1 |
+|  7840 | FRED     | M      | vice PRESIDENT      | 7839 | 1983-08-09 | 5000 | NULL |     20 |       1 | SAND STONE   | a12recmpm  | NULL       |        1 |
+|  7844 | TURNER   | M      | SALESMAN            | 7698 | 1981-09-08 | 1500 |    0 |     30 |       5 | SAND DUST    | sales@2017 | NULL       |        1 |
+|  7876 | ADAMS    | M      | CLERK               | 7788 | 1983-01-12 | 1100 | NULL |     20 |       1 | CRAZY ANYONE | a12recmpm  | 7132300086 |        1 |
+|  7888 | Ruhan    | M      | Network             | 7888 | 1983-08-09 | 2000 | NULL |     60 |       1 | Ruhan        | BRD@1122   | NULL       |        1 |
+|  7889 | Neel     | M      | vice PRESIDENT      | 7839 | 1983-08-09 | 1000 | NULL |     60 |       0 | Neel         | BRD@1122   | NULL       |        1 |
+|  7900 | JAMES    | M      | CLERK               | 7698 | 1981-12-03 |  950 | NULL |     30 |       2 | CRAZY LEADER | sales@2017 | 7132300042 |        1 |
+|  7902 | FORD     | M      | ANALYST             | 7566 | 1981-12-03 | 3000 | NULL |     20 |       4 | CONBRIO      | a12recmpm  | NULL       |        0 |
+|  7919 | HOFFMAN  | M      | MANAGER             | 7566 | 1982-03-24 | 4150 | NULL |     30 |       3 | INTERVAL     | sales@2017 | NULL       |        1 |
+|  7920 | GRASS    | M      | SALESMAN            | 7919 | 1980-02-14 | 2575 | 2700 |     30 |       5 | GRASS        | sales@2017 | NULL       |        1 |
+|  7934 | MILLER   | M      | CLERK               | 7782 | 1982-01-23 | 1300 | 1300 |     10 |       2 | QUARTERNOTE  | r50mpm     | 7132300055 |        0 |
+|  7945 | AARUSH   | M      | SALESMAN            | 7902 | 1980-02-14 | 1350 | 2700 |     30 |    NULL | AARUSH       | ABCDEF     | NULL       |        0 |
+|  7949 | ALEX     | M      | MANAGER             | 7698 | 1982-01-24 | 1250 |  500 |     30 |       5 | QUARTERREST  | sales@2017 | 7156567183 |        1 |
+|  8433 | NATASHA  | F      | CLERK               | 7920 | 1981-07-19 | 1750 | NULL |     30 |       1 | NATASHA      | sales@2017 | NULL       |        1 |
+|  9400 | SANGITA  | F      | Compliance officers | 7920 | 1981-07-19 | 1750 | NULL |     50 |       1 | SANGITA      | NULL       | NULL       |        1 |
+|  9473 | SUPRIYA  | F      | ANALYST             | 7920 | 1981-07-19 | 1750 | NULL |     50 |       1 | SUPRIYA      | XYZ@1234   | NULL       |        1 |
++-------+----------+--------+---------------------+------+------------+------+------+--------+---------+--------------+------------+------------+----------+
+30 rows in set (0.01 sec)
+
+mysql> select ename,job from where job = "manager";
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'where job = "manager"' at line 1
+mysql> select ename,job from emp where job = "manager";
++---------+---------+
+| ename   | job     |
++---------+---------+
+| JONES   | MANAGER |
+| BLAKE   | MANAGER |
+| CLARK   | MANAGER |
+| HOFFMAN | MANAGER |
+| ALEX    | MANAGER |
++---------+---------+
+5 rows in set (0.00 sec)
+
+mysql> SELECT * FROM emp WHERE HIREDATE = ( SELECT HIREDATE FROM emp WHERE ENAME = 'KING' );
++-------+-------+--------+-----------+------+------------+------+------+--------+---------+-----------+--------+------------+----------+
+| EMPNO | ENAME | GENDER | JOB       | MGR  | HIREDATE   | SAL  | COMM | DEPTNO | BONUSID | USER NAME | PWD    | PHONE      | isActive |
++-------+-------+--------+-----------+------+------------+------+------+--------+---------+-----------+--------+------------+----------+
+|  7839 | KING  | M      | PRESIDENT | NULL | 1981-11-17 | 5000 | NULL |     10 |       1 | KING      | r50mpm | 7132300081 |        1 |
++-------+-------+--------+-----------+------+------------+------+------+--------+---------+-----------+--------+------------+----------+
+1 row in set (0.00 sec)
+
+mysql> select ename,job from emp where job ="manager";
++---------+---------+
+| ename   | job     |
++---------+---------+
+| JONES   | MANAGER |
+| BLAKE   | MANAGER |
+| CLARK   | MANAGER |
+| HOFFMAN | MANAGER |
+| ALEX    | MANAGER |
++---------+---------+
+5 rows in set (0.00 sec)
+
+mysql> select ename,job from emp where job !="manager";
++----------+---------------------+
+| ename    | job                 |
++----------+---------------------+
+| GITA     | Compliance officers |
+| VRUSHALI | Compliance officers |
+| SHARMIN  | Public Relation     |
+| BANDISH  | Public Relation     |
+| SMITH    | CLERK               |
+| AARAV    | CLERK               |
+| THOMAS   | CLERK               |
+| ALLEN    | SALESMAN            |
+| WARD     | SALESMAN            |
+| MARTIN   | SALESMAN            |
+| SCOTT    | ANALYST             |
+| KING     | PRESIDENT           |
+| FRED     | vice PRESIDENT      |
+| TURNER   | SALESMAN            |
+| ADAMS    | CLERK               |
+| Ruhan    | Network             |
+| Neel     | vice PRESIDENT      |
+| JAMES    | CLERK               |
+| FORD     | ANALYST             |
+| GRASS    | SALESMAN            |
+| MILLER   | CLERK               |
+| AARUSH   | SALESMAN            |
+| NATASHA  | CLERK               |
+| SANGITA  | Compliance officers |
+| SUPRIYA  | ANALYST             |
++----------+---------------------+
+25 rows in set (0.00 sec)
+
+mysql> select * from emp;
++-------+----------+--------+---------------------+------+------------+------+------+--------+---------+--------------+------------+------------+----------+
+| EMPNO | ENAME    | GENDER | JOB                 | MGR  | HIREDATE   | SAL  | COMM | DEPTNO | BONUSID | USER NAME    | PWD        | PHONE      | isActive |
++-------+----------+--------+---------------------+------+------------+------+------+--------+---------+--------------+------------+------------+----------+
+|  6001 | GITA     | F      | Compliance officers | 7920 | 1981-07-19 | 1750 | NULL |     30 |       1 | GITA         | sales@2017 | NULL       |        1 |
+|  6129 | VRUSHALI | F      | Compliance officers | 7920 | 1981-07-19 | 1750 | NULL |     50 |       1 | VRUSHALI     | PUN@8877   | NULL       |        1 |
+|  6473 | SHARMIN  | F      | Public Relation     | 7920 | 1981-07-19 | 1750 | NULL |     20 |       1 | SHARMIN      | a12recmpm  | NULL       |        1 |
+|  6781 | BANDISH  | F      | Public Relation     | 7920 | 1981-07-19 | 1750 | NULL |     20 |       1 | BANDISH      | a12recmpm  | NULL       |        1 |
+|  7369 | SMITH    | M      | CLERK               | 7902 | 1980-12-17 |  800 | NULL |     20 |       2 | TRITONE      | a12recmpm  | 7032300023 |        0 |
+|  7415 | AARAV    | M      | CLERK               | 7902 | 1981-12-31 | 3350 | NULL |     10 |    NULL | AARAV        | NULL       | 7032300084 |        0 |
+|  7421 | THOMAS   | M      | CLERK               | 7920 | 1981-07-19 | 1750 | NULL |     10 |       1 | THOMAS       | r50mpm     | 7032300011 |        0 |
+|  7499 | ALLEN    | M      | SALESMAN            | 7698 | 1981-02-20 | 1600 |  300 |     30 |       4 | ALWAYS TESTE | sales@2017 | 7032300096 |        1 |
+|  7521 | WARD     | M      | SALESMAN            | 7698 | 1981-02-22 | 1250 |  500 |     30 |       1 | WARD         | sales@2017 | 7132300034 |        1 |
+|  7566 | JONES    | M      | MANAGER             | 7839 | 1981-04-02 | 2975 | NULL |     20 |       4 | HONEYCOMB    | a12recmpm  | 7132300039 |        1 |
+|  7654 | MARTIN   | M      | SALESMAN            | 7698 | 1981-09-28 | 1250 | 1400 |     30 |       6 | LIFE RACER   | sales@2017 | 7132300050 |        1 |
+|  7698 | BLAKE    | M      | MANAGER             | 7839 | 1981-05-01 | 2850 | NULL |     30 |       1 | BIG BEN      | sales@2017 | 7132300027 |        1 |
+|  7782 | CLARK    | M      | MANAGER             | 7839 | 1981-06-09 | 2450 | NULL |     10 |       3 | CLARK        | r50mpm     | 7032300001 |        1 |
+|  7788 | SCOTT    | M      | ANALYST             | 7566 | 1982-12-09 | 3000 | NULL |     20 |       3 | WHITE SAND   | a12recmpm  | NULL       |        1 |
+|  7839 | KING     | M      | PRESIDENT           | NULL | 1981-11-17 | 5000 | NULL |     10 |       1 | KING         | r50mpm     | 7132300081 |        1 |
+|  7840 | FRED     | M      | vice PRESIDENT      | 7839 | 1983-08-09 | 5000 | NULL |     20 |       1 | SAND STONE   | a12recmpm  | NULL       |        1 |
+|  7844 | TURNER   | M      | SALESMAN            | 7698 | 1981-09-08 | 1500 |    0 |     30 |       5 | SAND DUST    | sales@2017 | NULL       |        1 |
+|  7876 | ADAMS    | M      | CLERK               | 7788 | 1983-01-12 | 1100 | NULL |     20 |       1 | CRAZY ANYONE | a12recmpm  | 7132300086 |        1 |
+|  7888 | Ruhan    | M      | Network             | 7888 | 1983-08-09 | 2000 | NULL |     60 |       1 | Ruhan        | BRD@1122   | NULL       |        1 |
+|  7889 | Neel     | M      | vice PRESIDENT      | 7839 | 1983-08-09 | 1000 | NULL |     60 |       0 | Neel         | BRD@1122   | NULL       |        1 |
+|  7900 | JAMES    | M      | CLERK               | 7698 | 1981-12-03 |  950 | NULL |     30 |       2 | CRAZY LEADER | sales@2017 | 7132300042 |        1 |
+|  7902 | FORD     | M      | ANALYST             | 7566 | 1981-12-03 | 3000 | NULL |     20 |       4 | CONBRIO      | a12recmpm  | NULL       |        0 |
+|  7919 | HOFFMAN  | M      | MANAGER             | 7566 | 1982-03-24 | 4150 | NULL |     30 |       3 | INTERVAL     | sales@2017 | NULL       |        1 |
+|  7920 | GRASS    | M      | SALESMAN            | 7919 | 1980-02-14 | 2575 | 2700 |     30 |       5 | GRASS        | sales@2017 | NULL       |        1 |
+|  7934 | MILLER   | M      | CLERK               | 7782 | 1982-01-23 | 1300 | 1300 |     10 |       2 | QUARTERNOTE  | r50mpm     | 7132300055 |        0 |
+|  7945 | AARUSH   | M      | SALESMAN            | 7902 | 1980-02-14 | 1350 | 2700 |     30 |    NULL | AARUSH       | ABCDEF     | NULL       |        0 |
+|  7949 | ALEX     | M      | MANAGER             | 7698 | 1982-01-24 | 1250 |  500 |     30 |       5 | QUARTERREST  | sales@2017 | 7156567183 |        1 |
+|  8433 | NATASHA  | F      | CLERK               | 7920 | 1981-07-19 | 1750 | NULL |     30 |       1 | NATASHA      | sales@2017 | NULL       |        1 |
+|  9400 | SANGITA  | F      | Compliance officers | 7920 | 1981-07-19 | 1750 | NULL |     50 |       1 | SANGITA      | NULL       | NULL       |        1 |
+|  9473 | SUPRIYA  | F      | ANALYST             | 7920 | 1981-07-19 | 1750 | NULL |     50 |       1 | SUPRIYA      | XYZ@1234   | NULL       |        1 |
++-------+----------+--------+---------------------+------+------------+------+------+--------+---------+--------------+------------+------------+----------+
+30 rows in set (0.00 sec)
+
+mysql> SELECT Name, Salary FROM Employees WHERE Department = 'Sales';
+ERROR 1146 (42S02): Table 'dac65.employees' doesn't exist
+mysql> select ename,sal from emp;
++----------+------+
+| ename    | sal  |
++----------+------+
+| GITA     | 1750 |
+| VRUSHALI | 1750 |
+| SHARMIN  | 1750 |
+| BANDISH  | 1750 |
+| SMITH    |  800 |
+| AARAV    | 3350 |
+| THOMAS   | 1750 |
+| ALLEN    | 1600 |
+| WARD     | 1250 |
+| JONES    | 2975 |
+| MARTIN   | 1250 |
+| BLAKE    | 2850 |
+| CLARK    | 2450 |
+| SCOTT    | 3000 |
+| KING     | 5000 |
+| FRED     | 5000 |
+| TURNER   | 1500 |
+| ADAMS    | 1100 |
+| Ruhan    | 2000 |
+| Neel     | 1000 |
+| JAMES    |  950 |
+| FORD     | 3000 |
+| HOFFMAN  | 4150 |
+| GRASS    | 2575 |
+| MILLER   | 1300 |
+| AARUSH   | 1350 |
+| ALEX     | 1250 |
+| NATASHA  | 1750 |
+| SANGITA  | 1750 |
+| SUPRIYA  | 1750 |
++----------+------+
+30 rows in set (0.00 sec)
+
+mysql> show tables like "sal%"
+    -> ;
++------------------------+
+| Tables_in_dac65 (sal%) |
++------------------------+
+| sales                  |
+| sales1                 |
+| sales_channel          |
+| salespeople            |
+| salesperson            |
+| salgrade               |
++------------------------+
+6 rows in set (0.00 sec)
+
+mysql> select * from salesperson;
++------+--------+
+| SID  | SNAME  |
++------+--------+
+| 1001 | ALAN   |
+| 1002 | CALVIN |
+| 1003 | CLIVE  |
+| 1004 | DENNIS |
+| 1005 | EVAN   |
+| 1006 | FOX    |
+| 1007 | PETER  |
++------+--------+
+7 rows in set (0.07 sec)
+
+mysql> select * from sales_channel;
++------------+-----------+
+| channel_id | channel   |
++------------+-----------+
+|          1 | Wholesale |
+|          2 | Retail    |
+|          3 | Agents    |
+|          4 | eCommerce |
++------------+-----------+
+4 rows in set (0.05 sec)
+
+mysql> select * from salesl;
+ERROR 1146 (42S02): Table 'dac65.salesl' doesn't exist
+mysql> select * from sales1;
++---------+--------------+---------+--------------+
+| salesID | customerName | amount  | status_flags |
++---------+--------------+---------+--------------+
+|       1 | Saleel       |  100.00 |            3 |
+|       2 | Sharmin      |   80.00 |            5 |
+|       3 | Vrishali     |  120.00 |           19 |
+|       4 | Ruhan        | 1134.00 |            7 |
+|       5 | Bandish      |  534.00 |            9 |
+|       6 | Supriya      |  153.00 |            4 |
+|       7 | Nitish       |  102.00 |            2 |
+|       8 | Neel         |   78.00 |            4 |
+|       9 | KAushal      |   38.00 |            6 |
++---------+--------------+---------+--------------+
+9 rows in set (0.11 sec)
+
+mysql> select * from sales;
++-------+--------+----------------+--------+-------------------------+----------+
+| REPID | CUSTID | CUSTNAME       | PRODID | PRODNAME                | AMOUNT   |
++-------+--------+----------------+--------+-------------------------+----------+
+|  7521 |    106 | SHAPE UP       | 200376 | SB ENERGY BAR-6 PACK    |     2.40 |
+|  7654 |    102 | VOLLYRITE      | 100870 | ACE TENNIS BALLS-3 PACK |  3306.00 |
+|  7654 |    102 | VOLLYRITE      | 100860 | ACE TENNIS RACKET I     | 16569.00 |
+|  7521 |    106 | SHAPE UP       | 100890 | ACE TENNIS NET          |   174.00 |
+|  7521 |    106 | SHAPE UP       | 100861 | ACE TENNIS RACKET II    |    84.00 |
+|  7521 |    106 | SHAPE UP       | 100860 | ACE TENNIS RACKET I     |   440.00 |
+|  7844 |    100 | JOCKSPORTS     | 102130 | RH: "GUIDE TO TENNIS"   |  1703.40 |
+|  7499 |    104 | EVERY MOUNTAIN | 100871 | ACE TENNIS BALLS-6 PACK |   846.80 |
+|  7499 |    104 | EVERY MOUNTAIN | 101860 | SP TENNIS RACKET        |    24.00 |
+|  7844 |    100 | JOCKSPORTS     | 100861 | ACE TENNIS RACKET II    |   485.00 |
+|  7844 |    100 | JOCKSPORTS     | 100870 | ACE TENNIS BALLS-3 PACK |   292.50 |
+|  7844 |    100 | JOCKSPORTS     | 100890 | ACE TENNIS NET          |    50.00 |
+|  7521 |    101 | TKB SPORT SHOP | 100860 | ACE TENNIS RACKET I     |    35.00 |
+|  7521 |    101 | TKB SPORT SHOP | 100870 | ACE TENNIS BALLS-3 PACK |     8.40 |
+|  7521 |    101 | TKB SPORT SHOP | 100890 | ACE TENNIS NET          |    58.00 |
+|  7654 |    102 | VOLLYRITE      | 100861 | ACE TENNIS RACKET II    |  2300.50 |
+|  7499 |    104 | EVERY MOUNTAIN | 100860 | ACE TENNIS RACKET I     |  3000.00 |
+|  7499 |    104 | EVERY MOUNTAIN | 100861 | ACE TENNIS RACKET II    |   810.00 |
+|  7499 |    104 | EVERY MOUNTAIN | 101863 | SP JUNIOR RACKET        |  1500.00 |
+|  7844 |    108 | NORTH WOODS    | 100871 | ACE TENNIS BALLS-6 PACK |   560.00 |
+|  7844 |    108 | NORTH WOODS    | 101860 | SP TENNIS RACKET        |  4800.00 |
+|  7844 |    108 | NORTH WOODS    | 200380 | SB VITA SNACK-6 PACK    |   600.00 |
+|  7844 |    108 | NORTH WOODS    | 200376 | SB ENERGY BAR-6 PACK    |   440.00 |
+|  7654 |    102 | VOLLYRITE      | 100871 | ACE TENNIS BALLS-6 PACK |  5600.00 |
+|  7499 |    107 | WOMENS SPORTS  | 100861 | ACE TENNIS RACKET II    |   180.00 |
+|  7499 |    107 | WOMENS SPORTS  | 100870 | ACE TENNIS BALLS-3 PACK |   280.00 |
+|  7499 |    107 | WOMENS SPORTS  | 100871 | ACE TENNIS BALLS-6 PACK |   250.00 |
+|  7521 |    103 | JUST TENNIS    | 100861 | ACE TENNIS RACKET II    |   450.00 |
+|  7521 |    103 | JUST TENNIS    | 100870 | ACE TENNIS BALLS-3 PACK |   140.00 |
+|  7521 |    103 | JUST TENNIS    | 100890 | ACE TENNIS NET          |   116.00 |
+|  7521 |    103 | JUST TENNIS    | 102130 | RH: "GUIDE TO TENNIS"   |    34.00 |
+|  7521 |    103 | JUST TENNIS    | 200376 | SB ENERGY BAR-6 PACK    |    24.00 |
+|  7844 |    105 | K + T SPORTS   | 100860 | ACE TENNIS RACKET I     |  1750.00 |
+|  7844 |    105 | K + T SPORTS   | 100861 | ACE TENNIS RACKET II    |  4500.00 |
+|  7844 |    105 | K + T SPORTS   | 100870 | ACE TENNIS BALLS-3 PACK |  1400.00 |
+|  7844 |    105 | K + T SPORTS   | 100871 | ACE TENNIS BALLS-6 PACK |  2800.00 |
+|  7844 |    105 | K + T SPORTS   | 100890 | ACE TENNIS NET          | 29000.00 |
+|  7844 |    105 | K + T SPORTS   | 101860 | SP TENNIS RACKET        |  2400.00 |
+|  7844 |    105 | K + T SPORTS   | 101863 | SP JUNIOR RACKET        |  2500.00 |
+|  7844 |    105 | K + T SPORTS   | 102130 | RH: "GUIDE TO TENNIS"   |   340.00 |
+|  7844 |    105 | K + T SPORTS   | 200376 | SB ENERGY BAR-6 PACK    |   480.00 |
+|  7844 |    105 | K + T SPORTS   | 200380 | SB VITA SNACK-6 PACK    |  1200.00 |
+|  7499 |    104 | EVERY MOUNTAIN | 200380 | SB VITA SNACK-6 PACK    |   400.00 |
+|  7499 |    104 | EVERY MOUNTAIN | 200376 | SB ENERGY BAR-6 PACK    |   240.00 |
+|  7499 |    104 | EVERY MOUNTAIN | 102130 | RH: "GUIDE TO TENNIS"   |   340.00 |
+|  7844 |    100 | JOCKSPORTS     | 100860 | ACE TENNIS RACKET I     |   350.00 |
+|  7844 |    100 | JOCKSPORTS     | 200376 | SB ENERGY BAR-6 PACK    |  2400.00 |
++-------+--------+----------------+--------+-------------------------+----------+
+47 rows in set (0.18 sec)
+
+mysql> SELECT * FROM emp WHERE HIREDATE ;
++-------+----------+--------+---------------------+------+------------+------+------+--------+---------+--------------+------------+------------+----------+
+| EMPNO | ENAME    | GENDER | JOB                 | MGR  | HIREDATE   | SAL  | COMM | DEPTNO | BONUSID | USER NAME    | PWD        | PHONE      | isActive |
++-------+----------+--------+---------------------+------+------------+------+------+--------+---------+--------------+------------+------------+----------+
+|  6001 | GITA     | F      | Compliance officers | 7920 | 1981-07-19 | 1750 | NULL |     30 |       1 | GITA         | sales@2017 | NULL       |        1 |
+|  6129 | VRUSHALI | F      | Compliance officers | 7920 | 1981-07-19 | 1750 | NULL |     50 |       1 | VRUSHALI     | PUN@8877   | NULL       |        1 |
+|  6473 | SHARMIN  | F      | Public Relation     | 7920 | 1981-07-19 | 1750 | NULL |     20 |       1 | SHARMIN      | a12recmpm  | NULL       |        1 |
+|  6781 | BANDISH  | F      | Public Relation     | 7920 | 1981-07-19 | 1750 | NULL |     20 |       1 | BANDISH      | a12recmpm  | NULL       |        1 |
+|  7369 | SMITH    | M      | CLERK               | 7902 | 1980-12-17 |  800 | NULL |     20 |       2 | TRITONE      | a12recmpm  | 7032300023 |        0 |
+|  7415 | AARAV    | M      | CLERK               | 7902 | 1981-12-31 | 3350 | NULL |     10 |    NULL | AARAV        | NULL       | 7032300084 |        0 |
+|  7421 | THOMAS   | M      | CLERK               | 7920 | 1981-07-19 | 1750 | NULL |     10 |       1 | THOMAS       | r50mpm     | 7032300011 |        0 |
+|  7499 | ALLEN    | M      | SALESMAN            | 7698 | 1981-02-20 | 1600 |  300 |     30 |       4 | ALWAYS TESTE | sales@2017 | 7032300096 |        1 |
+|  7521 | WARD     | M      | SALESMAN            | 7698 | 1981-02-22 | 1250 |  500 |     30 |       1 | WARD         | sales@2017 | 7132300034 |        1 |
+|  7566 | JONES    | M      | MANAGER             | 7839 | 1981-04-02 | 2975 | NULL |     20 |       4 | HONEYCOMB    | a12recmpm  | 7132300039 |        1 |
+|  7654 | MARTIN   | M      | SALESMAN            | 7698 | 1981-09-28 | 1250 | 1400 |     30 |       6 | LIFE RACER   | sales@2017 | 7132300050 |        1 |
+|  7698 | BLAKE    | M      | MANAGER             | 7839 | 1981-05-01 | 2850 | NULL |     30 |       1 | BIG BEN      | sales@2017 | 7132300027 |        1 |
+|  7782 | CLARK    | M      | MANAGER             | 7839 | 1981-06-09 | 2450 | NULL |     10 |       3 | CLARK        | r50mpm     | 7032300001 |        1 |
+|  7788 | SCOTT    | M      | ANALYST             | 7566 | 1982-12-09 | 3000 | NULL |     20 |       3 | WHITE SAND   | a12recmpm  | NULL       |        1 |
+|  7839 | KING     | M      | PRESIDENT           | NULL | 1981-11-17 | 5000 | NULL |     10 |       1 | KING         | r50mpm     | 7132300081 |        1 |
+|  7840 | FRED     | M      | vice PRESIDENT      | 7839 | 1983-08-09 | 5000 | NULL |     20 |       1 | SAND STONE   | a12recmpm  | NULL       |        1 |
+|  7844 | TURNER   | M      | SALESMAN            | 7698 | 1981-09-08 | 1500 |    0 |     30 |       5 | SAND DUST    | sales@2017 | NULL       |        1 |
+|  7876 | ADAMS    | M      | CLERK               | 7788 | 1983-01-12 | 1100 | NULL |     20 |       1 | CRAZY ANYONE | a12recmpm  | 7132300086 |        1 |
+|  7888 | Ruhan    | M      | Network             | 7888 | 1983-08-09 | 2000 | NULL |     60 |       1 | Ruhan        | BRD@1122   | NULL       |        1 |
+|  7889 | Neel     | M      | vice PRESIDENT      | 7839 | 1983-08-09 | 1000 | NULL |     60 |       0 | Neel         | BRD@1122   | NULL       |        1 |
+|  7900 | JAMES    | M      | CLERK               | 7698 | 1981-12-03 |  950 | NULL |     30 |       2 | CRAZY LEADER | sales@2017 | 7132300042 |        1 |
+|  7902 | FORD     | M      | ANALYST             | 7566 | 1981-12-03 | 3000 | NULL |     20 |       4 | CONBRIO      | a12recmpm  | NULL       |        0 |
+|  7919 | HOFFMAN  | M      | MANAGER             | 7566 | 1982-03-24 | 4150 | NULL |     30 |       3 | INTERVAL     | sales@2017 | NULL       |        1 |
+|  7920 | GRASS    | M      | SALESMAN            | 7919 | 1980-02-14 | 2575 | 2700 |     30 |       5 | GRASS        | sales@2017 | NULL       |        1 |
+|  7934 | MILLER   | M      | CLERK               | 7782 | 1982-01-23 | 1300 | 1300 |     10 |       2 | QUARTERNOTE  | r50mpm     | 7132300055 |        0 |
+|  7945 | AARUSH   | M      | SALESMAN            | 7902 | 1980-02-14 | 1350 | 2700 |     30 |    NULL | AARUSH       | ABCDEF     | NULL       |        0 |
+|  7949 | ALEX     | M      | MANAGER             | 7698 | 1982-01-24 | 1250 |  500 |     30 |       5 | QUARTERREST  | sales@2017 | 7156567183 |        1 |
+|  8433 | NATASHA  | F      | CLERK               | 7920 | 1981-07-19 | 1750 | NULL |     30 |       1 | NATASHA      | sales@2017 | NULL       |        1 |
+|  9400 | SANGITA  | F      | Compliance officers | 7920 | 1981-07-19 | 1750 | NULL |     50 |       1 | SANGITA      | NULL       | NULL       |        1 |
+|  9473 | SUPRIYA  | F      | ANALYST             | 7920 | 1981-07-19 | 1750 | NULL |     50 |       1 | SUPRIYA      | XYZ@1234   | NULL       |        1 |
++-------+----------+--------+---------------------+------+------------+------+------+--------+---------+--------------+------------+------------+----------+
+30 rows in set (0.00 sec)
+
+mysql> SELECT * FROM emp WHERE HIREDATE ;
++-------+----------+--------+---------------------+------+------------+------+------+--------+---------+--------------+------------+------------+----------+
+| EMPNO | ENAME    | GENDER | JOB                 | MGR  | HIREDATE   | SAL  | COMM | DEPTNO | BONUSID | USER NAME    | PWD        | PHONE      | isActive |
++-------+----------+--------+---------------------+------+------------+------+------+--------+---------+--------------+------------+------------+----------+
+|  6001 | GITA     | F      | Compliance officers | 7920 | 1981-07-19 | 1750 | NULL |     30 |       1 | GITA         | sales@2017 | NULL       |        1 |
+|  6129 | VRUSHALI | F      | Compliance officers | 7920 | 1981-07-19 | 1750 | NULL |     50 |       1 | VRUSHALI     | PUN@8877   | NULL       |        1 |
+|  6473 | SHARMIN  | F      | Public Relation     | 7920 | 1981-07-19 | 1750 | NULL |     20 |       1 | SHARMIN      | a12recmpm  | NULL       |        1 |
+|  6781 | BANDISH  | F      | Public Relation     | 7920 | 1981-07-19 | 1750 | NULL |     20 |       1 | BANDISH      | a12recmpm  | NULL       |        1 |
+|  7369 | SMITH    | M      | CLERK               | 7902 | 1980-12-17 |  800 | NULL |     20 |       2 | TRITONE      | a12recmpm  | 7032300023 |        0 |
+|  7415 | AARAV    | M      | CLERK               | 7902 | 1981-12-31 | 3350 | NULL |     10 |    NULL | AARAV        | NULL       | 7032300084 |        0 |
+|  7421 | THOMAS   | M      | CLERK               | 7920 | 1981-07-19 | 1750 | NULL |     10 |       1 | THOMAS       | r50mpm     | 7032300011 |        0 |
+|  7499 | ALLEN    | M      | SALESMAN            | 7698 | 1981-02-20 | 1600 |  300 |     30 |       4 | ALWAYS TESTE | sales@2017 | 7032300096 |        1 |
+|  7521 | WARD     | M      | SALESMAN            | 7698 | 1981-02-22 | 1250 |  500 |     30 |       1 | WARD         | sales@2017 | 7132300034 |        1 |
+|  7566 | JONES    | M      | MANAGER             | 7839 | 1981-04-02 | 2975 | NULL |     20 |       4 | HONEYCOMB    | a12recmpm  | 7132300039 |        1 |
+|  7654 | MARTIN   | M      | SALESMAN            | 7698 | 1981-09-28 | 1250 | 1400 |     30 |       6 | LIFE RACER   | sales@2017 | 7132300050 |        1 |
+|  7698 | BLAKE    | M      | MANAGER             | 7839 | 1981-05-01 | 2850 | NULL |     30 |       1 | BIG BEN      | sales@2017 | 7132300027 |        1 |
+|  7782 | CLARK    | M      | MANAGER             | 7839 | 1981-06-09 | 2450 | NULL |     10 |       3 | CLARK        | r50mpm     | 7032300001 |        1 |
+|  7788 | SCOTT    | M      | ANALYST             | 7566 | 1982-12-09 | 3000 | NULL |     20 |       3 | WHITE SAND   | a12recmpm  | NULL       |        1 |
+|  7839 | KING     | M      | PRESIDENT           | NULL | 1981-11-17 | 5000 | NULL |     10 |       1 | KING         | r50mpm     | 7132300081 |        1 |
+|  7840 | FRED     | M      | vice PRESIDENT      | 7839 | 1983-08-09 | 5000 | NULL |     20 |       1 | SAND STONE   | a12recmpm  | NULL       |        1 |
+|  7844 | TURNER   | M      | SALESMAN            | 7698 | 1981-09-08 | 1500 |    0 |     30 |       5 | SAND DUST    | sales@2017 | NULL       |        1 |
+|  7876 | ADAMS    | M      | CLERK               | 7788 | 1983-01-12 | 1100 | NULL |     20 |       1 | CRAZY ANYONE | a12recmpm  | 7132300086 |        1 |
+|  7888 | Ruhan    | M      | Network             | 7888 | 1983-08-09 | 2000 | NULL |     60 |       1 | Ruhan        | BRD@1122   | NULL       |        1 |
+|  7889 | Neel     | M      | vice PRESIDENT      | 7839 | 1983-08-09 | 1000 | NULL |     60 |       0 | Neel         | BRD@1122   | NULL       |        1 |
+|  7900 | JAMES    | M      | CLERK               | 7698 | 1981-12-03 |  950 | NULL |     30 |       2 | CRAZY LEADER | sales@2017 | 7132300042 |        1 |
+|  7902 | FORD     | M      | ANALYST             | 7566 | 1981-12-03 | 3000 | NULL |     20 |       4 | CONBRIO      | a12recmpm  | NULL       |        0 |
+|  7919 | HOFFMAN  | M      | MANAGER             | 7566 | 1982-03-24 | 4150 | NULL |     30 |       3 | INTERVAL     | sales@2017 | NULL       |        1 |
+|  7920 | GRASS    | M      | SALESMAN            | 7919 | 1980-02-14 | 2575 | 2700 |     30 |       5 | GRASS        | sales@2017 | NULL       |        1 |
+|  7934 | MILLER   | M      | CLERK               | 7782 | 1982-01-23 | 1300 | 1300 |     10 |       2 | QUARTERNOTE  | r50mpm     | 7132300055 |        0 |
+|  7945 | AARUSH   | M      | SALESMAN            | 7902 | 1980-02-14 | 1350 | 2700 |     30 |    NULL | AARUSH       | ABCDEF     | NULL       |        0 |
+|  7949 | ALEX     | M      | MANAGER             | 7698 | 1982-01-24 | 1250 |  500 |     30 |       5 | QUARTERREST  | sales@2017 | 7156567183 |        1 |
+|  8433 | NATASHA  | F      | CLERK               | 7920 | 1981-07-19 | 1750 | NULL |     30 |       1 | NATASHA      | sales@2017 | NULL       |        1 |
+|  9400 | SANGITA  | F      | Compliance officers | 7920 | 1981-07-19 | 1750 | NULL |     50 |       1 | SANGITA      | NULL       | NULL       |        1 |
+|  9473 | SUPRIYA  | F      | ANALYST             | 7920 | 1981-07-19 | 1750 | NULL |     50 |       1 | SUPRIYA      | XYZ@1234   | NULL       |        1 |
++-------+----------+--------+---------------------+------+------------+------+------+--------+---------+--------------+------------+------------+----------+
+30 rows in set (0.00 sec)
+
+mysql> SELECT * FROM emp WHERE HIREDATE = ( SELECT HIREDATE FROM emp WHERE ENAME = 'KING' );
++-------+-------+--------+-----------+------+------------+------+------+--------+---------+-----------+--------+------------+----------+
+| EMPNO | ENAME | GENDER | JOB       | MGR  | HIREDATE   | SAL  | COMM | DEPTNO | BONUSID | USER NAME | PWD    | PHONE      | isActive |
++-------+-------+--------+-----------+------+------------+------+------+--------+---------+-----------+--------+------------+----------+
+|  7839 | KING  | M      | PRESIDENT | NULL | 1981-11-17 | 5000 | NULL |     10 |       1 | KING      | r50mpm | 7132300081 |        1 |
++-------+-------+--------+-----------+------+------------+------+------+--------+---------+-----------+--------+------------+----------+
+1 row in set (0.00 sec)
+
+mysql> select * from emp;
++-------+----------+--------+---------------------+------+------------+------+------+--------+---------+--------------+------------+------------+----------+
+| EMPNO | ENAME    | GENDER | JOB                 | MGR  | HIREDATE   | SAL  | COMM | DEPTNO | BONUSID | USER NAME    | PWD        | PHONE      | isActive |
++-------+----------+--------+---------------------+------+------------+------+------+--------+---------+--------------+------------+------------+----------+
+|  6001 | GITA     | F      | Compliance officers | 7920 | 1981-07-19 | 1750 | NULL |     30 |       1 | GITA         | sales@2017 | NULL       |        1 |
+|  6129 | VRUSHALI | F      | Compliance officers | 7920 | 1981-07-19 | 1750 | NULL |     50 |       1 | VRUSHALI     | PUN@8877   | NULL       |        1 |
+|  6473 | SHARMIN  | F      | Public Relation     | 7920 | 1981-07-19 | 1750 | NULL |     20 |       1 | SHARMIN      | a12recmpm  | NULL       |        1 |
+|  6781 | BANDISH  | F      | Public Relation     | 7920 | 1981-07-19 | 1750 | NULL |     20 |       1 | BANDISH      | a12recmpm  | NULL       |        1 |
+|  7369 | SMITH    | M      | CLERK               | 7902 | 1980-12-17 |  800 | NULL |     20 |       2 | TRITONE      | a12recmpm  | 7032300023 |        0 |
+|  7415 | AARAV    | M      | CLERK               | 7902 | 1981-12-31 | 3350 | NULL |     10 |    NULL | AARAV        | NULL       | 7032300084 |        0 |
+|  7421 | THOMAS   | M      | CLERK               | 7920 | 1981-07-19 | 1750 | NULL |     10 |       1 | THOMAS       | r50mpm     | 7032300011 |        0 |
+|  7499 | ALLEN    | M      | SALESMAN            | 7698 | 1981-02-20 | 1600 |  300 |     30 |       4 | ALWAYS TESTE | sales@2017 | 7032300096 |        1 |
+|  7521 | WARD     | M      | SALESMAN            | 7698 | 1981-02-22 | 1250 |  500 |     30 |       1 | WARD         | sales@2017 | 7132300034 |        1 |
+|  7566 | JONES    | M      | MANAGER             | 7839 | 1981-04-02 | 2975 | NULL |     20 |       4 | HONEYCOMB    | a12recmpm  | 7132300039 |        1 |
+|  7654 | MARTIN   | M      | SALESMAN            | 7698 | 1981-09-28 | 1250 | 1400 |     30 |       6 | LIFE RACER   | sales@2017 | 7132300050 |        1 |
+|  7698 | BLAKE    | M      | MANAGER             | 7839 | 1981-05-01 | 2850 | NULL |     30 |       1 | BIG BEN      | sales@2017 | 7132300027 |        1 |
+|  7782 | CLARK    | M      | MANAGER             | 7839 | 1981-06-09 | 2450 | NULL |     10 |       3 | CLARK        | r50mpm     | 7032300001 |        1 |
+|  7788 | SCOTT    | M      | ANALYST             | 7566 | 1982-12-09 | 3000 | NULL |     20 |       3 | WHITE SAND   | a12recmpm  | NULL       |        1 |
+|  7839 | KING     | M      | PRESIDENT           | NULL | 1981-11-17 | 5000 | NULL |     10 |       1 | KING         | r50mpm     | 7132300081 |        1 |
+|  7840 | FRED     | M      | vice PRESIDENT      | 7839 | 1983-08-09 | 5000 | NULL |     20 |       1 | SAND STONE   | a12recmpm  | NULL       |        1 |
+|  7844 | TURNER   | M      | SALESMAN            | 7698 | 1981-09-08 | 1500 |    0 |     30 |       5 | SAND DUST    | sales@2017 | NULL       |        1 |
+|  7876 | ADAMS    | M      | CLERK               | 7788 | 1983-01-12 | 1100 | NULL |     20 |       1 | CRAZY ANYONE | a12recmpm  | 7132300086 |        1 |
+|  7888 | Ruhan    | M      | Network             | 7888 | 1983-08-09 | 2000 | NULL |     60 |       1 | Ruhan        | BRD@1122   | NULL       |        1 |
+|  7889 | Neel     | M      | vice PRESIDENT      | 7839 | 1983-08-09 | 1000 | NULL |     60 |       0 | Neel         | BRD@1122   | NULL       |        1 |
+|  7900 | JAMES    | M      | CLERK               | 7698 | 1981-12-03 |  950 | NULL |     30 |       2 | CRAZY LEADER | sales@2017 | 7132300042 |        1 |
+|  7902 | FORD     | M      | ANALYST             | 7566 | 1981-12-03 | 3000 | NULL |     20 |       4 | CONBRIO      | a12recmpm  | NULL       |        0 |
+|  7919 | HOFFMAN  | M      | MANAGER             | 7566 | 1982-03-24 | 4150 | NULL |     30 |       3 | INTERVAL     | sales@2017 | NULL       |        1 |
+|  7920 | GRASS    | M      | SALESMAN            | 7919 | 1980-02-14 | 2575 | 2700 |     30 |       5 | GRASS        | sales@2017 | NULL       |        1 |
+|  7934 | MILLER   | M      | CLERK               | 7782 | 1982-01-23 | 1300 | 1300 |     10 |       2 | QUARTERNOTE  | r50mpm     | 7132300055 |        0 |
+|  7945 | AARUSH   | M      | SALESMAN            | 7902 | 1980-02-14 | 1350 | 2700 |     30 |    NULL | AARUSH       | ABCDEF     | NULL       |        0 |
+|  7949 | ALEX     | M      | MANAGER             | 7698 | 1982-01-24 | 1250 |  500 |     30 |       5 | QUARTERREST  | sales@2017 | 7156567183 |        1 |
+|  8433 | NATASHA  | F      | CLERK               | 7920 | 1981-07-19 | 1750 | NULL |     30 |       1 | NATASHA      | sales@2017 | NULL       |        1 |
+|  9400 | SANGITA  | F      | Compliance officers | 7920 | 1981-07-19 | 1750 | NULL |     50 |       1 | SANGITA      | NULL       | NULL       |        1 |
+|  9473 | SUPRIYA  | F      | ANALYST             | 7920 | 1981-07-19 | 1750 | NULL |     50 |       1 | SUPRIYA      | XYZ@1234   | NULL       |        1 |
++-------+----------+--------+---------------------+------+------------+------+------+--------+---------+--------------+------------+------------+----------+
+30 rows in set (0.00 sec)
+
+mysql> select sal from emp;
++------+
+| sal  |
++------+
+| 1750 |
+| 1750 |
+| 1750 |
+| 1750 |
+|  800 |
+| 3350 |
+| 1750 |
+| 1600 |
+| 1250 |
+| 2975 |
+| 1250 |
+| 2850 |
+| 2450 |
+| 3000 |
+| 5000 |
+| 5000 |
+| 1500 |
+| 1100 |
+| 2000 |
+| 1000 |
+|  950 |
+| 3000 |
+| 4150 |
+| 2575 |
+| 1300 |
+| 1350 |
+| 1250 |
+| 1750 |
+| 1750 |
+| 1750 |
++------+
+30 rows in set (0.00 sec)
+
+mysql> select deptno 10 from emp;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '10 from emp' at line 1
+mysql> select deptno from emp;
++--------+
+| deptno |
++--------+
+|     10 |
+|     10 |
+|     10 |
+|     10 |
+|     10 |
+|     20 |
+|     20 |
+|     20 |
+|     20 |
+|     20 |
+|     20 |
+|     20 |
+|     20 |
+|     30 |
+|     30 |
+|     30 |
+|     30 |
+|     30 |
+|     30 |
+|     30 |
+|     30 |
+|     30 |
+|     30 |
+|     30 |
+|     30 |
+|     50 |
+|     50 |
+|     50 |
+|     60 |
+|     60 |
++--------+
+30 rows in set (0.01 sec)
+
+mysql> select dept^S
