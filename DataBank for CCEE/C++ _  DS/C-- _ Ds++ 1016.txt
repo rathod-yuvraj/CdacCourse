@@ -1,0 +1,75 @@
+1. select Proper option
+  	int main()
+    	{
+	  int x;      or    int x=1,2,3;
+	  x=1,2,3;
+    	  cout<<x; 
+	   }
+   	a. 1  	b.1 2 3 
+	c. 3 2 1     d.  3    e. error	 Ans.: a     for or ans. e
+
+2 .what is output of code
+	void main()
+	{
+	int x=10;
+	int &u=x;
+	
+	x=++u;
+	u=x++;
+
+	cout<<x<<" "<<u;
+	}
+           
+          a. 11,11	b.11,12  
+          c. 12,11 	d.12,12     ans. d 
+
+3. Calculate that how many time base constructor call
+ 	
+	class a
+	{
+	public:
+	a()
+	{
+	cout<<"Ek";
+	}};
+ 	class b: virtual public a{};
+	class c: public a{};
+	class d :public b,public c{};
+	void main (){ d obj; }
+	
+	a. 1      b.2
+	c. 3      d. 4	ans. b
+4  which is true in case of queue
+
+      1. No. of persons stand for a Ticket.
+      2. No of Vehical stoped at a toll Plaza
+      3. Telephone call's .
+      4. All of above
+
+5. what is out put of the code
+	void main()
+	{
+	printf("C\question\bank");
+	}
+
+	a. Cuestioank	b. C\questionank
+	c. Cuestionank	d. Cquestioank		ans. d
+
+6.  can we Delete or unlink a file on the server
+	a. yes    		 b. no  
+	c. cannot determine  d.some time 		ans. a
+
+7. how many nodes in this heap tree of following diagram
+		
+		1
+		/\
+	               2   3
+	               /\   /\
+	              .
+	              .	       / \	
+		     8   9
+	a. 9    b 8
+	c. 4    d 5.		ans. a
+
+8.  
+

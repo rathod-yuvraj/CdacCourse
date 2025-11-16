@@ -1,0 +1,27 @@
+.nav {
+	COLOR: #000000; BACKGROUND-COLOR: #9cadc6
+}
+.navLocked {
+	COLOR: #000000; BACKGROUND-COLOR: #9cadc6
+}
+.nav:hover {
+	COLOR: #000000
+}
+.navLocked:hover {
+	COLOR: #333333
+}
+.crumb {
+	COLOR: #555555
+}
+.curcrumb {
+	COLOR: #000000
+}
+.crumb:hover {
+	COLOR: #000000
+}
+.curnav {
+	COLOR: #ffffff; BACKGROUND-COLOR: #9cadc6
+}
+.navsubhead {
+	COLOR: #000000
+}

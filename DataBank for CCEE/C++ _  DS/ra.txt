@@ -1,0 +1,7 @@
+Q)Private members of a class can be inherited by using
+a)Assignment operator      b)Friend function
+c)Constructor and destructor    d)None of above
+
+Q) What is the size of tree having 15 nodes?
+a) 32767                 b)32768
+c)32677                  d)32678
