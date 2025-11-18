@@ -268,7 +268,11 @@ b1:BEGIN
 	close c1;
 end b1$
 delimiter ;
+<<<<<<< HEAD
 
+=======
+*/
+>>>>>>> 0a9a08ed343597d2b521677db81a8dfe7917c1d1
 
 drop procedure if exists pro1;
 delimiter $
@@ -303,6 +307,7 @@ delimiter ;
 
 
 
+<<<<<<< HEAD
 drop function if exists fn1;
 delimiter $
 create function fn1() returns varchar(20)
@@ -429,3 +434,23 @@ b1:BEGIN
 	set new.when1 := curdate();
 end b1$
 delimiter ;
+=======
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+>>>>>>> 0a9a08ed343597d2b521677db81a8dfe7917c1d1
