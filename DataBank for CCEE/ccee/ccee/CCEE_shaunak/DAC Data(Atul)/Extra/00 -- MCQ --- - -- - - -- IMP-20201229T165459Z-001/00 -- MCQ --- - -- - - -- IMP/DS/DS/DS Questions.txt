@@ -1,0 +1,476 @@
+1. The memory address of the first element of an array is called
+a. floor address
+b. foundation address
+c. first address
+d. base address
+Answers: d
+
+2. The memory address of fifth element of an array can be calculated by the formula
+a. LOC(Array[5]=Base(Array)+w(5-lower bound), where w is the number of words per memory cell for the array
+b. LOC(Array[5])=Base(Array[5])+(5-lower bound), where w is the number of words per memory cell for the array
+c. LOC(Array[5])=Base(Array[4])+(5-Upper bound), where w is the number of words per memory cell for the array
+d. None of above
+Answers:  a
+
+3. Which of the following data structures are indexed structures?
+a. linear arrays
+b. linked lists
+c. both of above
+d. none of above
+Answers:  a
+
+4. Which of the following is not the required condition for binary search algorithm?
+a. The list must be sorted
+b. there should be the direct access to the middle element in any sublist
+c. There must be mechanism to delete and/or insert elements in list
+d. none of above
+Answers:  c
+
+5. Which of the following is not a limitation of binary search algorithm?
+a. must use a sorted array
+b. requirement of sorted array is expensive when a lot of insertion and deletions are needed
+c. there must be a mechanism to access middle element directly
+d. binary search algorithm is not efficient when the data elements are more than 1000.
+Answers:  d
+
+6. Two dimensional arrays are also called
+a. tables arrays
+b. matrix arrays
+c. both of above
+d. none of above
+Answers:  c
+
+7. A variable P is called pointer if
+a. P contains the address of an element in DATA.
+b. P points to the address of first element in DATA
+c. P can store only memory addresses
+d. P contain the DATA and the address of DATA
+Answers: a
+
+8. Which of the following data structure can't store the non-homogeneous data elements?
+a. Arrays
+b. Records
+c. Pointers
+d. None
+Answers:  a
+
+9. Which of the following data structure store the homogeneous data elements?
+a. Arrays
+b. Records
+c. Pointers
+d. None
+Answers:  b
+
+10. Each data item in a record may be a group item composed of sub-items; those items which are indecomposable are called
+a. elementary items
+b. atoms
+c. scalars
+d. all of above
+Answers:  d
+
+11. The difference between linear array and a record is
+a. An array is suitable for homogeneous data but hte data items in a record may have different data type
+b. In a record, there may not be a natural ordering in opposed to linear array.
+c. A record form a hierarchical structure but a lienear array does not
+d. All of above
+Answers:  d
+
+12. Which of the following statement is false?
+a. Arrays are dense lists and static data structure
+b. data elements in linked list need not be stored in adjecent space in memory
+c. pointers store the next data element of a list
+d. linked lists are collection of the nodes that contain information part and next pointer
+Answers:  c
+
+13. Binary search algorithm can not be applied to
+a. sorted linked list
+b. sorted binary trees
+c. sorted linear array
+d. pointer array
+Answers:  a
+
+14. When new data are to be inserted into a data structure, but there is no available space; this situation is usually called
+a. underflow
+b. overflow
+c. housefull
+d. saturated
+Answers:  b
+
+15. The situation when in a linked list START=NULL is
+a. underflow
+b. overflow
+c. housefull
+d. saturated
+Answers:  a
+
+16. Which of the following is two way list?
+a. grounded header list
+b. circular header list
+c. linked list with header and trailer nodes
+d. none of above
+Answers:  d
+
+17. Which of the following name does not relate to stacks?
+a. FIFO lists
+b. LIFO list
+c. Piles
+d. Push-down lists
+Answers:  a
+
+18. The term "push" and "pop" is related to the
+a. array
+b. lists
+c. stacks
+d. all of above
+Answers:  c
+
+19. A data structure where elements can be added or removed at either end but not in the middle
+a. Linked lists
+b. Stacks
+c. Queues
+d. Deque
+Answers:  d
+
+20. When inorder traversing a tree resulted E A C K F H D B G; the preorder traversal would return
+a. FAEKCDBHG
+b. FAEKCDHGB
+c. EAFKHDCBG
+d. FEAKDCHBG
+Answers: b
+
+
+
+
+
+21. Two main measures for the efficiency of an algorithm are
+a. Processor and memory
+b. Complexity and capacity
+c. Time and space
+d. Data and space
+Answers:  c
+
+22. The time factor when determining the efficiency of algorithm is measured by
+a. Counting microseconds
+b. Counting the number of key operations
+c. Counting the number of statements
+d. Counting the kilobytes of algorithm
+Answers:  b
+ 
+23. The space factor when determining the efficiency of algorithm is measured by
+a. Counting the maximum memory needed by the algorithm
+b. Counting the minimum memory needed by the algorithm
+c. Counting the average memory needed by the algorithm
+d. Counting the maximum disk space needed by the algorithm
+Answers:  a
+ 
+24. Which of the following case does not exist in complexity theory
+a. Best case
+b. Worst case
+c. Average case
+d. Null case
+Answers:  d
+ 
+25. The Worst case occur in linear search algorithm when
+a. Item is somewhere in the middle of the array
+b. Item is not in the array at all
+c. Item is the last element in the array
+d. Item is the last element in the array or is not there at all
+Answers: d 
+ 
+26. The Average case occur in linear search algorithm
+a. When Item is somewhere in the middle of the array
+b. When Item is not in the array at all
+c. When Item is the last element in the array
+d. When Item is the last element in the array or is not there at all
+Answers:  a
+ 
+27. The complexity of the average case of an algorithm is
+a. Much more complicated to analyze than that of worst case
+b. Much more simpler to analyze than that of worst case
+c. Sometimes more complicated and some other times simpler than that of worst case
+d. None or above
+Answers:  a
+ 
+28. The complexity of linear search algorithm is
+a. O(n)
+b. O(log n)
+c. O(n2)
+d. O(n log n)
+Answers:  a
+ 
+29. The complexity of Binary search algorithm is
+a. O(n)
+b. O(log )
+c. O(n2)
+d. O(n log n)
+Answers:  b
+ 
+30. The complexity of Bubble sort algorithm is
+a. O(n)
+b. O(log n)
+c. O(n2)
+d. O(n log n)
+Answers:  c
+ 
+31. The complexity of merge sort algorithm is
+a. O(n)
+b. O(log n)
+c. O(n2)
+d. O(n log n)
+Answers:  d
+ 
+32. The indirect change of the values of a variable in one module by another module is called
+a. internal change
+b. inter-module change
+c. side effect
+d. side-module update
+Answers:  c
+ 
+33. Which of the following data structure is not linear data structure?
+a. Arrays
+b. Linked lists
+c. Both of above
+d. None of above
+Answers:  d
+ 
+34. Which of the following data structure is linear data structure?
+a. Trees
+b. Graphs
+c. Arrays
+d. None of above
+Answers:  c
+ 
+35. The operation of processing each element in the list is known as
+a. Sorting
+b. Merging
+c. Inserting
+d. Traversal
+Answers:  d
+ 
+36. Finding the location of the element with a given value is:
+a. Traversal
+b. Search
+c. Sort
+d. None of above
+Answers:  b
+ 
+37. Arrays are best data structures
+a. for relatively permanent collections of data
+b. for the size of the structure and the data in the structure are constantly changing
+c. for both of above situation
+d. for none of above situation
+Answers:  a
+ 
+38. Linked lists are best suited
+a. for relatively permanent collections of data
+b. for the size of the structure and the data in the structure are constantly changing
+c. for both of above situation
+d. for none of above situation
+Answers:  b
+ 
+39. Each array declaration need not give, implicitly or explicitly, the information about
+a. the name of array
+b. the data type of array
+c. the first data from the set to be stored
+d. the index set of the array
+Answers:  c
+ 
+40. The elements of an array are stored successively in memory cells because
+a. by this way computer can keep track only the address of the first element and the addresses of other elements can be calculated
+b. the architecture of computer memory does not allow arrays to store other than serially
+c. both of above
+d. none of above
+Answers:  a
+
+41.Key value pair is usually seen in 
+a. Hash tables
+b. Heaps
+c. Both a and b
+d. Skip lis
+Answers:  a
+
+42. Which of the following ways below is a In order traversal ?
+a. - Root->left sub tree-> right sub tree
+b. - Root->right sub tree-> left sub tree
+c. - right sub tree-> left sub tree->Root
+d. - left sub tree-> root->right sub tree
+Answers:  d
+
+43. On which principle does queue work ?
+a. FILO
+b. FIFO
+c. LILO
+d. Both a and b above
+Answers:  b
+
+44. Breadth first search is used in
+a. Binary trees
+b. Stacks
+c. Graphs
+d. Both a and c above
+Answers:  c
+
+45. Which of the following linked list below have node of the list pointing to the first node ?
+a. circular doubly linked list
+b. circular linked list
+c. circular singly linked list
+d. double linked list
+Answers:  c
+
+46. AVL trees have a faster____
+a. Insertion
+b. Deletion
+c. Updation
+d. Retrieval
+Answers:  d
+
+47. On which principle does stack work ?
+a. FILO
+b. FIFO
+c. LILO
+d. LIFO or FILO
+Answers:  c
+
+48. Items in a priority queue are entered in a___________order ?
+a. random
+b. order of priority
+c. as and when they come
+d. none of the above
+Answers:  a
+
+49. An empty list is the one which has no
+a. nodes
+b. data
+c. both a and b above
+d. address
+Answers:  c
+
+50. In a heap, element with the greatest key always in the_____node
+a. leaf
+b. root
+c. first node of lest sub tree
+d. first node of right sub tree
+Answers:  b
+=============================================================================================================================================
+======================================================Question Without Answers=============================================================
+=============================================================================================================================================
+==============================================================================================================================================
+1.  Which of the following case does not exist in complexity theory
+A. 	Best case
+B. 	Worst case
+C. 	Average case
+D. 	Null case
+
+2.  The indirect change of the values of a variable in one module by another module is called
+A. 	internal change
+B. 	inter-module change
+C. 	side effect
+D. 	side-module update
+
+3.  Which of the following data structure is linear data structure?
+A. 	Trees
+B. 	Graphs
+C. 	Arrays
+D. 	None of above
+
+4.  Which of the following data structure is not linear data structure?
+A. 	Arrays
+B. 	Linked lists
+C. 	Both of above
+D. 	None of above
+
+5.  Linked lists are best suited
+A. 	for relatively permanent collections of data
+B. 	for the size of the structure and the data in the structure are constantly changing
+C. 	for both of above situation
+D. 	for none of above situation
+
+6.  The complexity of the average case of an algorithm is
+A. 	Much more complicated to analyze than that of worst case
+B. 	Much more simpler to analyze than that of worst case
+C. 	Sometimes more complicated and some other times simpler than that of worst case
+D. 	None or above
+
+7.  The elements of an array are stored successively in memory cells because
+A. 	by this way computer can keep track only the address of the first element and the addresses of other elements can be calculated
+B. 	the architecture of computer memory does not allow arrays to store other than serially
+C. 	both of above
+D. 	none of above
+
+8.  Finding the location of the element with a given value is:
+A. 	Traversal
+B. 	Search
+C. 	Sort
+D. 	None of above
+
+9.  The operation of processing each element in the list is known as
+A. 	Sorting
+B. 	Merging
+C. 	Inserting
+D. 	Traversal
+
+10.  The Worst case occur in linear search algorithm when
+A. 	Item is somewhere in the middle of the array
+B. 	Item is not in the array at all
+C. 	Item is the last element in the array
+D. 	Item is the last element in the array or is not there at all
+
+11. The complexity of linear search algorithm is
+A. 	O(n)
+B. 	O(log n)
+C. 	O(n2)
+D. 	O(n log n)
+
+12.  The complexity of merge sort algorithm is
+A. 	O(n)
+B. 	O(log n)
+C. 	O(n2)
+D. 	O(n log n)
+
+13.  Each array declaration need not give, implicitly or explicitly, the information about
+A. 	the name of array
+B. 	the data type of array
+C. 	the first data from the set to be stored
+D. 	the index set of the array
+
+14. The complexity of Binary search algorithm is
+A. 	O(n)
+B. 	O(log )
+C. 	O(n2)
+D. 	O(n log n)
+
+15. The time factor when determining the efficiency of algorithm is measured by
+A. 	Counting microseconds
+B. 	Counting the number of key operations
+C. 	Counting the number of statements
+D. 	Counting the kilobytes of algorithm
+
+16. The complexity of Bubble sort algorithm is
+A. 	O(n)
+B. 	O(log n)
+C. 	O(n2)
+D. 	O(n log n)
+
+17. The Average case occur in linear search algorithm
+A. 	When Item is somewhere in the middle of the array
+B. 	When Item is not in the array at all
+C. 	When Item is the last element in the array
+D. 	When Item is the last element in the array or is not there at all
+
+18. The space factor when determining the efficiency of algorithm is measured by
+A. 	Counting the maximum memory needed by the algorithm
+B. 	Counting the minimum memory needed by the algorithm
+C. 	Counting the average memory needed by the algorithm
+D. 	Counting the maximum disk space needed by the algorithm
+
+19. Two main measures for the efficiency of an algorithm are
+A. 	Processor and memory
+B. 	Complexity and capacity
+C. 	Time and space
+D. 	Data and space
+
+20. Arrays are best data structures
+A. 	for relatively permanent collections of data
+B. 	for the size of the structure and the data in the structure are constantly changing
+C. 	for both of above situation
+D. 	for none of above situation 

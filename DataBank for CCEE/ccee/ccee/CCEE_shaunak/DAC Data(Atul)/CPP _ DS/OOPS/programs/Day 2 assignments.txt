@@ -1,0 +1,208 @@
+1) create a class with constructors and destructors.
+create array of instances and observe how program behaves.
+
+
+2) create a class with constructors and destructor.
+create 2 instances on stack and 1 instance on heap. observe the invocation of constructors and destructors.
+
+3) create a class "book" with
+int bookid
+char *bookname
+int price
+
+define parameterized constructor only for this class.
+define 3 getter functions.
+
+now create 2 instances
+1 on stack and 1 on heap.
+pass the necessary values while creating instances.
+call the getter functions.
+
+4) define a class with non-static members and a static member "int count".
+define necessary constructors and destructor.
+define a static member "int getCount()"
+this function should return count.
+this static member is to keep a track of no. of instances created of a class.
+just create some instances of this class.
+now call "getCount()" and display how many instances are created.
+
+5) Define a class "course"
+with
+char *courseid;
+char *coursename;
+int fees;
+
+define parameterized constructor only.
+define destructor.
+define a function "void display()" ,in which u can display all the members .
+create an instance of this class.
+call "display()" with that instance.
+now initialize an instance with previously created instance.
+call display() with this new instance and check the result.
+
+6) define a class "account"
+with
+char *id
+char *name;
+int balance;
+const int rate;
+
+define necessary constructors ,member functions and destructor.
+create atleast 4 instances and call the memeber functions
+
+ans:-
+
+#include<iostream>
+#include<string.h>
+#include<malloc.h>
+using namespace std;
+class Account
+{
+private:
+	char *id,*name;
+	int balance;
+	const int rate;
+public:
+	Account(char *id,char *name,int balance,int rt):rate(rt)
+	{
+		this->id=new char[strlen(id)+1];
+		strcpy(this->id,id);
+
+		this->name=new char[strlen(name)+1];
+		strcpy(this->name,name);
+		this->balance=balance;
+
+	}
+	Account():rate(3)
+	{
+		id=NULL;
+		name=NULL;
+		balance=0;
+	}
+	void setId(char *id)
+	{
+		this->id=new char[strlen(id)+1];
+		strcpy(this->id,id);
+	}
+	void setName(char *name)
+	{
+		this->name=new char[strlen(name)+1];
+		strcpy(this->name,name);
+	}
+	void setBalance(int balance)
+	{
+		this->balance=balance;
+	}
+	char* getId()
+	{
+		static char *sp=" ";
+		if(id!=NULL)
+		{
+			return id;
+		}
+		else
+		{
+			return sp;
+		}
+	}
+	char* getName()
+	{
+		static char *sp=" ";
+		if(name!=NULL)
+		{
+			return name;
+		}
+		else
+		{
+			//return "hello";		
+			return sp;
+		}
+	}
+	int getBalance()
+	{
+		return balance;
+	}
+	Account(Account &ref):rate(ref.rate)
+	{
+		if(ref.id!=NULL)
+		{
+			id=new char[strlen(ref.id)+1];
+			strcpy(id,ref.id);
+		}
+		else
+		{
+			id=ref.id;
+		}
+
+		if(ref.name!=NULL)
+		{
+			name=new char[strlen(ref.name)+1];
+			strcpy(name,ref.name);
+		}
+		else
+		{
+			name=ref.name;
+		}
+		balance=ref.balance;
+	}
+		~Account()
+		{
+			cout<<"Inside destructor"<<endl;
+			if(id!=NULL)
+			{
+				delete []id;
+			}
+
+			if(name!=NULL)
+			{
+				delete []name;
+			}
+		}
+};
+int main()
+{
+	Account a1("A001","Saving",4000,5);
+	Account a2;
+	Account a3=a1;
+	Account a4=a2;
+
+	cout<<a1.getName()<<a2.getName()<<a3.getName()<<a4.getName()<<endl;
+
+	return 0;
+}
+
+
+
+7)create a class "MyClass1"
+with members and member function "disp1().
+create another class "MyClass2"
+with members and member function "disp2().
+now try to invoke disp1() from disp2()
+in the main() function, create instances of both the classes and invoke their member functions.
+
+8) create a class.
+accept from user, how many instances are required.
+Accordingly create array of instances dynamically.
+Now make sure that u call destructor for each and every instances.
+
+9) create a class with static and non-static members and member functions.
+check out the relationship between static and non-static members.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 

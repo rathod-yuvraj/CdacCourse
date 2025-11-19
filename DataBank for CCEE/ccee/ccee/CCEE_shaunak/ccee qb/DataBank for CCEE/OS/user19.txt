@@ -1,0 +1,35 @@
+1.How many trees can be created using 15 nodes?
+a. 32753
+b.32767
+c.32768
+d.32754
+
+
+2.What is the output of 
+void main()
+{
+int y=0,x;
+x=++y * --y;
+cout<<++y<<' '<<y++<<' '<<x<<endl;
+ 
+
+a. 2 0 0
+b. 0 0 0
+c. 2 2 2
+d. 3 2 2
+
+
+3.Computer works on which language?
+
+a. High Level
+b.Natural
+c.Assembly
+d.Machine
+
+
+4. cycle in wait for represents
+
+a. Deadlock
+b.Preemption
+c. Non-preemption
+d.None

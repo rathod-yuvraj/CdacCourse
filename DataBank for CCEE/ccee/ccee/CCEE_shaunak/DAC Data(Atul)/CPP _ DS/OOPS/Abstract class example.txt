@@ -1,0 +1,66 @@
+
+abstract class Electronic_Appliance
+{
+	public abstract void on();
+	public abstract void off();
+};
+class TV extends Electronic_Appliance
+{
+	public void on()
+        {
+		S.o.p("TV on");
+	}
+	public void off()
+        {
+		S.o.p("TV off");
+	}
+};
+class Iron extends Electronic_Appliance
+{
+	public void on()
+        {
+		S.o.p("Iron on");
+	}
+	public void off()
+        {
+		S.o.p("Iron off");
+	}
+};
+class Refrigerator extends Electronic_Appliance
+{
+	public void on()
+        {
+		S.o.p("Refrigerator on");
+	}
+	public void off()
+        {
+		S.o.p("Refrigerator off");
+	}
+};
+public class Demo
+{
+	static void perform_on(Electronic_Appliance ptr)
+	{
+		ptr.on();
+	}
+	static void perform_off(Electronic_Appliance ptr)
+	{
+		ptr.off();
+	}
+	public static void main(String args[])
+	{
+		perform_on(new Iron());
+		// some code
+		perform_off(new Iron());
+
+		perform_on(new Refrigerator());
+		// some code
+		perform_off(new Refrigerator());
+
+		perform_on(new TV());
+		// some code
+		perform_off(new TV());
+	}
+}
+
+	

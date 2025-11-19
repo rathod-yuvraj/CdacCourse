@@ -1,0 +1,44 @@
+ Introduction to NET 4.0 Framework
+ Application Domain
+ Language Interoperability
+ .NET Framework Class Library
+ Assemblies
+ Introduction of Windows Presentation Foundation
+ Introduction of Windows Workflow Foundation
+ Introduction of Windows Communication Foundation
+ 
+C# .NET 4.0 (60 Hours)
+ Need of C#
+ Operators
+ Namespaces & Assemblies
+ Arrays
+ Preprocessors
+ Delegates and Events
+ Boxing and Unboxing
+ Regular Expression
+ Collections
+ Exceptions Handling
+ Introduction to Win Forms
+ Working with database
+ Windows Communication Foundation
+ 
+ASP .NET (60 Hours)
+ ASP .NET Server Controls and client-side scripts
+ ASP .NET Web Server Controls
+ Validation Controls
+ User Controls in ASP .NET
+ Working with Master-Detail relationship
+ ASP .NET State Management
+ ASP .NET Web Application Security
+ Transaction Management
+ Building .NET components
+ ADO.NET 4.0, Querying with LINQ
+ Custom Control          
+ Master Pages, Themes and skins
+ Introduction to Web Services
+ MVC Architecture
+ MS.NET MVC Framework
+ Enterprise Services
+ Personalization and Localization
+ ASP .NET Mobile Framework
+ Deployment

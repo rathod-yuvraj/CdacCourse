@@ -1,0 +1,44 @@
+MyClass fun()
+{
+	MyClass temp(20);
+	return temp;
+}
+int main()
+{
+	fun();
+}
+
+in the above case when fun() is invoked, temp object is created.
+because of "return temp", the location where u r invoking "fun", a noname object is initialized with "temp" (copy constructor).
+Hence in all 2 objects are created.
+
+
+
+MyClass fun()
+{
+	return MyClass(20);
+}
+int main()
+{
+	fun();
+}
+
+in the above case when fun() is invoked, since we are returning anonymous object, compiler will not create object inside "fun", object will be created at the location from where "fun()" is invoked (inside main)Hence only one object is created.
+This is known as "Return Value Optimization".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

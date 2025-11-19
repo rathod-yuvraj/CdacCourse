@@ -1,0 +1,13 @@
+   Software Engineering
+    Brief concept of Software Life Cycle Models
+    Agile Techniques for software development
+    Software Development Tools & Techniques
+    Software Quality Assurance
+    Introduction to Coding Standards
+    Software Testing
+    Different Testing Tools
+    Test Driven Development (TDD)
+    Project Management
+    Risk Analysis and Management
+    Introduction to MS Project
+    Case Study

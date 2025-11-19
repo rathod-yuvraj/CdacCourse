@@ -1,0 +1,18 @@
+mvc
+configuration file in struts2
+result types, by default result name
+OGNL
+value stack
+defaultStack
+<action tag> default method
+attributes of <%@taglib%>
+interceptors
+life cycle of filters
+rule for validation file name in struts2
+what is tiles.xml file
+maps available in OGNL
+what is the use of result type "chain" ?
+return type of action methods
+life cycle of tag handler class
+how to access request, session in action class?
+

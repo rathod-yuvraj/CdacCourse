@@ -1,0 +1,11 @@
+   Linux Commands, Shell Scripting
+   Processes
+   Scheduling & Synchronization
+   Memory management
+   File Systems
+   Case Study with Linux System Programming
+       Process
+       Signals
+       Semaphores & Mutex
+       Inter – Process Communication
+        POSIX Threads

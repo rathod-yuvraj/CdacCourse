@@ -1,0 +1,25 @@
+1.If five tables are given & three join conditions are given & select Query is applied then what will happen?
+      1)Cartesian product of first 3 tables 
+      2)Three join make relation between four table & keep fifth independent
+      3) We cannot apply 3 joins on 5 tables
+      4)None of above
+
+
+2.Data block is known as _____.
+1)	set of extent
+2)	set of segment
+3)	smallest block of memory
+4)	none of above
+
+3.Which command will delete all data from a table and will not write to the rollback segment?
+ A) DROP 
+ B) DELETE 
+ C) CASCADE 
+ D) TRUNCATE 
+
+
+4.By default,password ‘MANAGER’ is used for 
+1)scott
+2)SYSTEM
+3) SYS
+4)Oracle

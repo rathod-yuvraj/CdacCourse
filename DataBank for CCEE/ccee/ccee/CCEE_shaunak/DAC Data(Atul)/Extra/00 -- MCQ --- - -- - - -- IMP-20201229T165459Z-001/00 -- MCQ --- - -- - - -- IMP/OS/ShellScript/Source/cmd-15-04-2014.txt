@@ -1,0 +1,79 @@
+    1  cd /SoftDev/ShellScript/
+    2  ls
+    3  cd Source/
+    4  ls
+    5  vi filepermission.sh
+    6  chmod +x filepermission.sh
+    7  ls
+    8  ./filepermission.sh 
+    9  ./filepermission.sh fortest.sh 
+   10  ./filepermission.sh abcd
+   11  vi filepermission.sh
+   12  ./filepermission.sh 
+   13  ./filepermission.sh fortest.sh 
+   14  ./filepermission.sh abcd
+   15  ./filepermission.sh pqrs
+   16  vi filepermission.sh
+   17  ls fortest.sh 
+   18  ll fortest.sh 
+   19  ll fortest.sh | cut -c1
+   20  ll fortest.sh | cut -c2
+   21  ll fortest.sh | cut -c3
+   22  ll fortest.sh | cut -c1-14
+   23  ll fortest.sh | cut -c2-4
+   24  vi filepermission.sh
+   25  ./filepermission.sh fortest.sh 
+   26  ll
+   27  vi filepermission.sh
+   28  ls -l
+   29  ll
+   30  clear
+   31  ll
+   32  alias cls=clear
+   33  cls
+   34  vi filepermission.sh 
+   35  ./filepermission.sh fortest.sh 
+   36  ./filepermission.sh names.txt 
+   37  vi filepermission.sh 
+   38  ./filepermission.sh names.txt 
+   39  ./filepermission.sh fortest.sh 
+   40  ll
+   41  vi filepermission.sh 
+   42  vi comparefiles.sh
+   43  ls
+   44  cmp iftest1.sh iftest2.sh 
+   45  echo $?
+   46  cp fortest.sh looptest.sh
+   47  ls
+   48  cp vartest.sh typetest.sh
+   49  cmp fortest.sh looptest.sh 
+   50  echo $?
+   51  cmp iftest1.sh iftest2.sh 
+   52  cmp -s iftest1.sh iftest2.sh 
+   53  echo $?
+   54  vi comparefiles.sh 
+   55  ll
+   56  mkdir Test
+   57  ll
+   58  ls
+   59  ls -l 
+   60  ls -l | grep ^-
+   61  ls -l | grep ^- | cut -f7
+   62  ls -l | grep ^- | tr " " "|"
+   63  ls -l | grep ^- | tr -s " " "|"
+   64  ls -l | grep ^- | tr -s " " "|" | cut -f2
+   65  ls -l | grep ^- | tr -s " " "|" | cut -d"|" -f2
+   66  ls -l | grep ^- | tr -s " " "|" | cut -d"|" -f7
+   67  ls -l | grep ^- | tr -s " " "|" | cut -d"|" -f9
+   68  vi comparefiles.sh 
+   69  chmod +x comparefiles.sh 
+   70  ./comparefiles.sh 
+   71  vi comparefiles.sh 
+   72  ./comparefiles.sh 
+   73  vi comparefiles.sh 
+   74  ./comparefiles.sh 
+   75  vi comparefiles.sh 
+   76  ls
+   77  mv Test/ Rest
+   78  ls
+   79  history > cmd-15-04-2014.txt

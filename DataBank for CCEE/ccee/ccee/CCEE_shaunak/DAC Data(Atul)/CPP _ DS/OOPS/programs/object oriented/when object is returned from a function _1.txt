@@ -1,0 +1,52 @@
+// when object is returned from a function
+
+#include<iostream>
+#include<string.h>
+using namespace std;
+class MyClass
+{
+	private:
+		int num;
+	public:
+		void disp()
+		{
+			cout<<num<<endl;
+		}
+		MyClass(int num)
+		{
+			this->num=num;
+			cout<<"in one param const"<<endl;
+		}
+		~MyClass()
+		{
+			cout<<"in MyClass dest\t"<<num<<endl;
+		}
+		MyClass(MyClass &ref)
+		{
+			cout<<"in copy constr"<<endl;
+			num=ref.num;
+		}
+};
+MyClass fun()
+{
+	MyClass temp(300);
+	temp.disp();
+	return temp;
+}
+void main()
+{
+	MyClass m1(100);
+	m1.disp();
+	fun();
+}
+
+
+
+
+
+
+
+
+
+
+

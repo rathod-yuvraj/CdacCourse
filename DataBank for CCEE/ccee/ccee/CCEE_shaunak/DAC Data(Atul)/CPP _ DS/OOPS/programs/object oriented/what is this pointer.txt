@@ -1,0 +1,6 @@
+member functions are having only one copy in memory irrespective of no. of objects created.
+how does member function comes to know which object they have to work for?
+
+ans-  "this pointer".
+"this" pointer is a pointer pointing to current object or calling object.
+when u call any member function using an object, "this" pointer holds the address of that object. using "this" pointer member function will come to know to which object they have to work for.

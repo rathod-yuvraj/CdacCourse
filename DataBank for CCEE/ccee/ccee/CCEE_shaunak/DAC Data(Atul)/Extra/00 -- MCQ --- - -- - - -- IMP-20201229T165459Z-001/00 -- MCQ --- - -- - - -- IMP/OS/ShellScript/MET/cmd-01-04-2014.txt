@@ -1,0 +1,59 @@
+    1  mkdir ShellScript
+    2  cd ShellScript/
+    3  ls
+    4  tty
+    5  ls
+    6  ls -l
+    7  ls -c
+    8  ls -r
+    9  man ls
+   10  man 2 write
+   11  man write
+   12  man printf
+   13  printf "Hello\n"
+   14  man 3 printf
+   15  man shutdwon
+   16  man shutdown
+   17  cd /
+   18  ls
+   19  cd /SoftDev/ShellScript/
+   20  ls
+   21  ls 
+   22  ls g
+   23* ls 
+   24  ls a*
+   25  ls
+   26  ls ?i*
+   27  ls a* g* l*
+   28  ls [agl]* 
+   29  ls a* g* l*
+   30  ls [agl]* 
+   31  ls [!agl]* 
+   32  ls ???? 
+   33  cd ..
+   34  ls
+   35  ls -r
+   36  ls -R
+   37  cd ShellScript/
+   38  ks
+   39  ls
+   40  mkdir Test
+   41  cd Test/
+   42  mkdir ABC
+   43  cd ..
+   44  ls -R
+   45  mkdir MET MET/IIT MET/ISDR MET/IIT/DAC MET/IIT/DACA MET/ISDR/ADSD
+   46  ls -r
+   47  ls -R
+   48  ls
+   49  rmdir MET
+   50  cd Test/
+   51  ls
+   52  ls ABC/
+   53  rmdir ABC/
+   54  cd ..
+   55  rmdir Test/
+   56  rm -r MET
+   57  mkdir MET MET/IIT MET/ISDR MET/IIT/DAC MET/IIT/DACA MET/ADS/ISDR/ADSD
+   58  mkdir -p MET MET/IIT MET/ISDR MET/IIT/DAC MET/IIT/DACA MET/ADS/ISDR/ADSD
+   59  history > cmd-01-04-2014.txt
