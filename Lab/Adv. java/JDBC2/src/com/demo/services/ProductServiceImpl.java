@@ -33,6 +33,10 @@ public class ProductServiceImpl implements ProductService {
 		
 	
 	}
+	@Override
+	public boolean modifyById(int id, int qty, double price) {
+		return pdao.updateById(id,qty,price);
+	}
 	
 
 }
