@@ -6,21 +6,11 @@
 
 number accept by command line Args
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-
-=======
-=======
->>>>>>> ra
 4) Write a Node program that prints all the numbers between 1 and 100, each on a separate line.
 A few caveats:
 o if the number is divisible by 3, print "foo"
 o if the number is divisible by 5, print "bar"
 o if the number is divisible by both 3 and 5, print "foobar"
-<<<<<<< HEAD
->>>>>>> 782671352c7f183f3f0f66acc85eaf10bd53752a
-=======
->>>>>>> ra
 
 5)use http package and create server in node js 
 
