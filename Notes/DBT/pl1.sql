@@ -268,8 +268,19 @@ b1:BEGIN
 	close c1;
 end b1$
 delimiter ;
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
 */
+>>>>>>> 629827b43d50410d6f85d301cb47816c729e2bdd
 
+=======
+<<<<<<< HEAD
+
+=======
+*/
+>>>>>>> 0a9a08ed343597d2b521677db81a8dfe7917c1d1
+>>>>>>> main
 
 drop procedure if exists pro1;
 delimiter $
@@ -304,6 +315,10 @@ delimiter ;
 
 
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> main
 drop function if exists fn1;
 delimiter $
 create function fn1() returns varchar(20)
@@ -429,5 +444,33 @@ b1:BEGIN
 	set new.who := user();
 	set new.when1 := curdate();
 end b1$
+<<<<<<< HEAD
+<<<<<<< HEAD
+delimiter ;
+=======
+delimiter ;
+=======
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+>>>>>>> 0a9a08ed343597d2b521677db81a8dfe7917c1d1
+>>>>>>> main
+=======
+
+
+>>>>>>> 629827b43d50410d6f85d301cb47816c729e2bdd
