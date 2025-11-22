@@ -27,39 +27,9 @@ public class TestProduct {
 					
 				}else {
 					System.out.println("Not added ");
-				}break;
+				}
 				
 			}
-			
-			
-			case 2->{
-				System.out.println("Enter the id");
-				Int id = sc.nextInt();
-				boolean status = pservice.deletebyid();
-				
-				if(status) {
-					System.out.println("Product Added Succesfully");
-				}else {
-					System.out.println("Product Not Deleted  friend");
-				}break;
-			}
-			
-			case3->{
-				System.out.println("Enter the id");
-				int id sc.nextInt();
-				System.out.println("Enter the the Quantity");
-				int qty = sc.nextInt();
-				System.out.println("enter the price ");
-				double price = sc.nextDouble();
-				boolean status =pservice.modifyByid(id,qty,price);
-				if(status) {
-					System.out.println("Product Updated Succesfully");
-				}else {
-					System.out.println("Not Updated ");
-				}break;
-			}
-			
-			
 			case 7 ->{
 				System.out.println("Thank you my friend for visiting my friends ");
 				sc.close();

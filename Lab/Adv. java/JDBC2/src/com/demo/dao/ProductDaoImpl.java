@@ -21,8 +21,6 @@ public class ProductDaoImpl implements ProductDao {
 	} 
 	
 	
-	
-	
 
 	@Override
 	public boolean save(Products p) {
@@ -42,18 +40,5 @@ public class ProductDaoImpl implements ProductDao {
 		
 		return false;
 	}
-	
-	@Override
-	public boolean removeById(int id) {
-		try {
-			deleteById.setInt(1, id);
-			int n=deleteById.executeUpdate();
-			if(n>0)
-				return true;
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		return false;
-	}
+
 }
