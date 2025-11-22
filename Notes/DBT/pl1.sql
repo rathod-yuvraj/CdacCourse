@@ -268,6 +268,7 @@ b1:BEGIN
 	close c1;
 end b1$
 delimiter ;
+*/
 
 
 drop procedure if exists pro1;
@@ -428,4 +429,5 @@ b1:BEGIN
 	set new.who := user();
 	set new.when1 := curdate();
 end b1$
-delimiter ;
+
+
