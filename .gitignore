@@ -1,16 +1,21 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
  
 >>>>>>> 32558f955f463af33c75ee82b0c9ba8fe2153e5a
+=======
+
+>>>>>>> rathod
 # dependencies
 /node_modules
 node_modules/
 
 # Ignore all node_modules folders my file
 **/node_modules
+<<<<<<< HEAD
 =======
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 <<<<<<< HEAD
@@ -22,7 +27,7 @@ node_modules/
 node_modules/**
 # Ignore all .class files
 *.class
-
+/.project
 # Optionally ignore build directories
 /bin/
 /out/
@@ -39,10 +44,13 @@ js/jquery-*.js
 /node_modules
 node_modules/
 >>>>>>> yuvraj
+=======
+>>>>>>> rathod
 /.pnp
 .pnp.js
 **/jquery-*.min.js
 *.class
+<<<<<<< HEAD
 <<<<<<< HEAD
 
 **/node_modules/
@@ -53,6 +61,14 @@ node_modules/
 >>>>>>> yuvraj
 # testing
 /coverage
+=======
+
+**/node_modules/
+# testing
+/coverage
+.metadata/
+
+>>>>>>> rathod
 
 # production
 /build
@@ -67,6 +83,7 @@ node_modules/
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 <<<<<<< HEAD
@@ -201,3 +218,5 @@ temp/
 =======
 >>>>>>> yuvraj
 >>>>>>> main
+=======
+>>>>>>> rathod

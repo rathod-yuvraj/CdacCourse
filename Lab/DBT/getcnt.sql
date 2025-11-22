@@ -1,0 +1,12 @@
+DROP PROCEDURE  getcnt;
+
+
+DELIMITER $$
+
+CREATE PROCEDURE getcnt(IN a INT, INOUT ecount INT)
+BEGIN
+    SELECT COUNT(*) INTO ecount
+    FROM emp;
+END$$
+
+DELIMITER ;
