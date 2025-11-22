@@ -1,0 +1,18 @@
+package com.yuvraj.test;
+
+import com.yuvraj.threads.MyFactorialThread;
+import com.yuvraj.beans.*;
+public class TestThread {
+
+	public static void main(String[] args) {
+		FactorialAtable ob=new FactorialAtable();
+		
+		MyFactorialThread fth=new MyFactorialThread(4,ob);
+		
+		fth.start();
+	
+		
+
+	}
+
+}

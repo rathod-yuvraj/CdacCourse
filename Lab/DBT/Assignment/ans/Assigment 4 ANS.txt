@@ -1,0 +1,1410 @@
+-- Employee(s) with Maximum Salary
+SELECT *
+FROM employees
+WHERE salary = (SELECT MAX(salary) FROM employees);
+
+-- Employee(s) with Minimum Salary
+SELECT *
+FROM employees
+WHERE salary = (SELECT MIN(salary) FROM employees);
+Microsoft Windows [Version 10.0.19045.6456]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Users\IET>mysql --host=192.168.10.117 --port=3306 --user=dac64 --password=welcome dac64
+mysql: [Warning] Using a password on the command line interface can be insecure.
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 977
+Server version: 8.0.44 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2025, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> \c
+mysql> select table like '%emp';
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'table like '%emp'' at line 1
+mysql> select tables like '%emp';
+ERROR 1054 (42S22): Unknown column 'tables' in 'field list'
+mysql> show tables like '%emp';
++------------------------+
+| Tables_in_dac64 (%emp) |
++------------------------+
+| emp                    |
+| temp                   |
+| ytemp                  |
++------------------------+
+3 rows in set (0.00 sec)
+
+mysql> desc emp
+    -> ;
++-----------+-------------+------+-----+---------+-------+
+| Field     | Type        | Null | Key | Default | Extra |
++-----------+-------------+------+-----+---------+-------+
+| EMPNO     | int         | NO   | PRI | NULL    |       |
+| ENAME     | varchar(12) | YES  |     | NULL    |       |
+| GENDER    | char(1)     | YES  |     | NULL    |       |
+| JOB       | varchar(20) | YES  |     | NULL    |       |
+| MGR       | int         | YES  | MUL | NULL    |       |
+| HIREDATE  | date        | YES  |     | NULL    |       |
+| SAL       | int         | YES  |     | NULL    |       |
+| COMM      | int         | YES  |     | NULL    |       |
+| DEPTNO    | int         | NO   | MUL | NULL    |       |
+| BONUSID   | int         | YES  |     | NULL    |       |
+| USER NAME | varchar(20) | YES  |     | NULL    |       |
+| PWD       | varchar(20) | YES  |     | NULL    |       |
+| PHONE     | varchar(45) | YES  |     | NULL    |       |
+| isActive  | tinyint(1)  | YES  |     | NULL    |       |
+| new_sal   | int         | YES  |     | NULL    |       |
+| Dream_Sal | int         | YES  |     | NULL    |       |
++-----------+-------------+------+-----+---------+-------+
+16 rows in set (0.00 sec)
+
+mysql> select count(*) from emp group by empno;
++----------+
+| count(*) |
++----------+
+|        1 |
+|        1 |
+|        1 |
+|        1 |
+|        1 |
+|        1 |
+|        1 |
+|        1 |
+|        1 |
+|        1 |
+|        1 |
+|        1 |
+|        1 |
+|        1 |
+|        1 |
+|        1 |
+|        1 |
+|        1 |
+|        1 |
+|        1 |
+|        1 |
+|        1 |
+|        1 |
+|        1 |
+|        1 |
+|        1 |
+|        1 |
+|        1 |
+|        1 |
+|        1 |
++----------+
+30 rows in set (0.00 sec)
+
+mysql> select count(*) from emp ;
++----------+
+| count(*) |
++----------+
+|       30 |
++----------+
+1 row in set (0.00 sec)
+
+mysql> select sal from emp;
++------+
+| sal  |
++------+
+| 1750 |
+| 1750 |
+| 1750 |
+| 1750 |
+|  800 |
+| 3350 |
+| 1750 |
+| 1600 |
+| 1250 |
+| 2975 |
+| 1250 |
+| 2850 |
+| 2450 |
+| 3000 |
+| 5000 |
+| 5000 |
+| 1500 |
+| 1100 |
+| 2000 |
+| 1000 |
+|  950 |
+| 3000 |
+| 4150 |
+| 2575 |
+| 1300 |
+| 1350 |
+| 1250 |
+| 1750 |
+| 1750 |
+| 1750 |
++------+
+30 rows in set (0.00 sec)
+
+mysql> select max(sal) from emp;
++----------+
+| max(sal) |
++----------+
+|     5000 |
++----------+
+1 row in set (0.00 sec)
+
+mysql> select min(sal) from emp;
++----------+
+| min(sal) |
++----------+
+|      800 |
++----------+
+1 row in set (0.00 sec)
+
+mysql> select ename,sal  from emp where sal >3000;
++---------+------+
+| ename   | sal  |
++---------+------+
+| AARAV   | 3350 |
+| KING    | 5000 |
+| FRED    | 5000 |
+| HOFFMAN | 4150 |
++---------+------+
+4 rows in set (0.00 sec)
+
+mysql> select  from emp where sal >3000;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'from emp where sal >3000' at line 1
+mysql> select count(sal>3000) from emp;
++-----------------+
+| count(sal>3000) |
++-----------------+
+|              30 |
++-----------------+
+1 row in set (0.00 sec)
+
+mysql> select ename,sal, count(*) hight_Sal  from emp where sal >3000;
+ERROR 1140 (42000): In aggregated query without GROUP BY, expression #1 of SELECT list contains nonaggregated column 'dac64.emp.ENAME'; this is incompatible with sql_mode=only_full_group_by
+mysql> select ename,sal, count(*) hight_Sal  from emp where sal >3000 group by sal;
+ERROR 1055 (42000): Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'dac64.emp.ENAME' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
+mysql> select ename,sal, count(*) hight_Sal  from emp where sal >3000 group by ename,sal;
++---------+------+-----------+
+| ename   | sal  | hight_Sal |
++---------+------+-----------+
+| AARAV   | 3350 |         1 |
+| KING    | 5000 |         1 |
+| FRED    | 5000 |         1 |
+| HOFFMAN | 4150 |         1 |
++---------+------+-----------+
+4 rows in set (0.00 sec)
+
+mysql> select  count(*) hight_Sal  from emp where sal >3000;
++-----------+
+| hight_Sal |
++-----------+
+|         4 |
++-----------+
+1 row in set (0.00 sec)
+
+mysql> select  count(*) high_Sal  from emp where sal >3000;
++----------+
+| high_Sal |
++----------+
+|        4 |
++----------+
+1 row in set (0.00 sec)
+
+mysql> select deptno from emp;
++--------+
+| deptno |
++--------+
+|     10 |
+|     10 |
+|     10 |
+|     10 |
+|     10 |
+|     20 |
+|     20 |
+|     20 |
+|     20 |
+|     20 |
+|     20 |
+|     20 |
+|     20 |
+|     30 |
+|     30 |
+|     30 |
+|     30 |
+|     30 |
+|     30 |
+|     30 |
+|     30 |
+|     30 |
+|     30 |
+|     30 |
+|     30 |
+|     50 |
+|     50 |
+|     50 |
+|     60 |
+|     60 |
++--------+
+30 rows in set (0.00 sec)
+
+mysql> select count(deptno) from emp ;
++---------------+
+| count(deptno) |
++---------------+
+|            30 |
++---------------+
+1 row in set (0.00 sec)
+
+mysql> desc emp;
++-----------+-------------+------+-----+---------+-------+
+| Field     | Type        | Null | Key | Default | Extra |
++-----------+-------------+------+-----+---------+-------+
+| EMPNO     | int         | NO   | PRI | NULL    |       |
+| ENAME     | varchar(12) | YES  |     | NULL    |       |
+| GENDER    | char(1)     | YES  |     | NULL    |       |
+| JOB       | varchar(20) | YES  |     | NULL    |       |
+| MGR       | int         | YES  | MUL | NULL    |       |
+| HIREDATE  | date        | YES  |     | NULL    |       |
+| SAL       | int         | YES  |     | NULL    |       |
+| COMM      | int         | YES  |     | NULL    |       |
+| DEPTNO    | int         | NO   | MUL | NULL    |       |
+| BONUSID   | int         | YES  |     | NULL    |       |
+| USER NAME | varchar(20) | YES  |     | NULL    |       |
+| PWD       | varchar(20) | YES  |     | NULL    |       |
+| PHONE     | varchar(45) | YES  |     | NULL    |       |
+| isActive  | tinyint(1)  | YES  |     | NULL    |       |
+| new_sal   | int         | YES  |     | NULL    |       |
+| Dream_Sal | int         | YES  |     | NULL    |       |
++-----------+-------------+------+-----+---------+-------+
+16 rows in set (0.00 sec)
+
+mysql> select job from emp;
++---------------------+
+| job                 |
++---------------------+
+| Compliance officers |
+| Compliance officers |
+| Public Relation     |
+| Public Relation     |
+| CLERK               |
+| CLERK               |
+| CLERK               |
+| SALESMAN            |
+| SALESMAN            |
+| MANAGER             |
+| SALESMAN            |
+| MANAGER             |
+| MANAGER             |
+| ANALYST             |
+| PRESIDENT           |
+| vice PRESIDENT      |
+| SALESMAN            |
+| CLERK               |
+| Network             |
+| vice PRESIDENT      |
+| CLERK               |
+| ANALYST             |
+| MANAGER             |
+| SALESMAN            |
+| CLERK               |
+| SALESMAN            |
+| MANAGER             |
+| CLERK               |
+| Compliance officers |
+| ANALYST             |
++---------------------+
+30 rows in set (0.00 sec)
+
+mysql> select job from emp where job=count(*) group by deptno;
+ERROR 1111 (HY000): Invalid use of group function
+mysql> select job,  count(*) high_Sal  from emp;
+ERROR 1140 (42000): In aggregated query without GROUP BY, expression #1 of SELECT list contains nonaggregated column 'dac64.emp.JOB'; this is incompatible with sql_mode=only_full_group_by
+mysql> select job,  count(*) high_Sal  from emp group by job;
++---------------------+----------+
+| job                 | high_Sal |
++---------------------+----------+
+| Compliance officers |        3 |
+| Public Relation     |        2 |
+| CLERK               |        7 |
+| SALESMAN            |        6 |
+| MANAGER             |        5 |
+| ANALYST             |        3 |
+| PRESIDENT           |        1 |
+| vice PRESIDENT      |        2 |
+| Network             |        1 |
++---------------------+----------+
+9 rows in set (0.00 sec)
+
+mysql> select job,  count(*) count  from emp group by job;
++---------------------+-------+
+| job                 | count |
++---------------------+-------+
+| Compliance officers |     3 |
+| Public Relation     |     2 |
+| CLERK               |     7 |
+| SALESMAN            |     6 |
+| MANAGER             |     5 |
+| ANALYST             |     3 |
+| PRESIDENT           |     1 |
+| vice PRESIDENT      |     2 |
+| Network             |     1 |
++---------------------+-------+
+9 rows in set (0.00 sec)
+
+mysql> select sal ,max(sal) Max_sal , min(sal) Min_sal from emp;
+ERROR 1140 (42000): In aggregated query without GROUP BY, expression #1 of SELECT list contains nonaggregated column 'dac64.emp.SAL'; this is incompatible with sql_mode=only_full_group_by
+mysql> select sal ,max(sal) Max_sal , min(sal) Min_sal from emp group by sal;
++------+---------+---------+
+| sal  | Max_sal | Min_sal |
++------+---------+---------+
+| 1750 |    1750 |    1750 |
+|  800 |     800 |     800 |
+| 3350 |    3350 |    3350 |
+| 1600 |    1600 |    1600 |
+| 1250 |    1250 |    1250 |
+| 2975 |    2975 |    2975 |
+| 2850 |    2850 |    2850 |
+| 2450 |    2450 |    2450 |
+| 3000 |    3000 |    3000 |
+| 5000 |    5000 |    5000 |
+| 1500 |    1500 |    1500 |
+| 1100 |    1100 |    1100 |
+| 2000 |    2000 |    2000 |
+| 1000 |    1000 |    1000 |
+|  950 |     950 |     950 |
+| 4150 |    4150 |    4150 |
+| 2575 |    2575 |    2575 |
+| 1300 |    1300 |    1300 |
+| 1350 |    1350 |    1350 |
++------+---------+---------+
+19 rows in set (0.00 sec)
+
+mysql> select sal ,max(sal) Max_sal , min(sal) Min_sal from emp group by sal order by sal;
++------+---------+---------+
+| sal  | Max_sal | Min_sal |
++------+---------+---------+
+|  800 |     800 |     800 |
+|  950 |     950 |     950 |
+| 1000 |    1000 |    1000 |
+| 1100 |    1100 |    1100 |
+| 1250 |    1250 |    1250 |
+| 1300 |    1300 |    1300 |
+| 1350 |    1350 |    1350 |
+| 1500 |    1500 |    1500 |
+| 1600 |    1600 |    1600 |
+| 1750 |    1750 |    1750 |
+| 2000 |    2000 |    2000 |
+| 2450 |    2450 |    2450 |
+| 2575 |    2575 |    2575 |
+| 2850 |    2850 |    2850 |
+| 2975 |    2975 |    2975 |
+| 3000 |    3000 |    3000 |
+| 3350 |    3350 |    3350 |
+| 4150 |    4150 |    4150 |
+| 5000 |    5000 |    5000 |
++------+---------+---------+
+19 rows in set (0.00 sec)
+
+mysql> select max(sal) from emp;
++----------+
+| max(sal) |
++----------+
+|     5000 |
++----------+
+1 row in set (0.00 sec)
+
+mysql> select min(sal) from emp;
++----------+
+| min(sal) |
++----------+
+|      800 |
++----------+
+1 row in set (0.00 sec)
+
+mysql> select job ,sal from emp group by job;
+ERROR 1055 (42000): Expression #2 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'dac64.emp.SAL' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
+mysql> select job  from emp group by job;
++---------------------+
+| job                 |
++---------------------+
+| Compliance officers |
+| Public Relation     |
+| CLERK               |
+| SALESMAN            |
+| MANAGER             |
+| ANALYST             |
+| PRESIDENT           |
+| vice PRESIDENT      |
+| Network             |
++---------------------+
+9 rows in set (0.00 sec)
+
+mysql> select job,sal  from emp group by job;
+ERROR 1055 (42000): Expression #2 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'dac64.emp.SAL' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
+mysql> select job,sum(sal)  from emp group by job;
++---------------------+----------+
+| job                 | sum(sal) |
++---------------------+----------+
+| Compliance officers |     5250 |
+| Public Relation     |     3500 |
+| CLERK               |    11000 |
+| SALESMAN            |     9525 |
+| MANAGER             |    13675 |
+| ANALYST             |     7750 |
+| PRESIDENT           |     5000 |
+| vice PRESIDENT      |     6000 |
+| Network             |     2000 |
++---------------------+----------+
+9 rows in set (0.00 sec)
+
+mysql> select job,sum(sal) 'total salary'  from emp group by job;
++---------------------+--------------+
+| job                 | total salary |
++---------------------+--------------+
+| Compliance officers |         5250 |
+| Public Relation     |         3500 |
+| CLERK               |        11000 |
+| SALESMAN            |         9525 |
+| MANAGER             |        13675 |
+| ANALYST             |         7750 |
+| PRESIDENT           |         5000 |
+| vice PRESIDENT      |         6000 |
+| Network             |         2000 |
++---------------------+--------------+
+9 rows in set (0.00 sec)
+
+mysql> select job,max(sal) 'Max Sal' from emp group by job;
++---------------------+---------+
+| job                 | Max Sal |
++---------------------+---------+
+| Compliance officers |    1750 |
+| Public Relation     |    1750 |
+| CLERK               |    3350 |
+| SALESMAN            |    2575 |
+| MANAGER             |    4150 |
+| ANALYST             |    3000 |
+| PRESIDENT           |    5000 |
+| vice PRESIDENT      |    5000 |
+| Network             |    2000 |
++---------------------+---------+
+9 rows in set (0.00 sec)
+
+mysql> select job, sal from emp;
++---------------------+------+
+| job                 | sal  |
++---------------------+------+
+| Compliance officers | 1750 |
+| Compliance officers | 1750 |
+| Public Relation     | 1750 |
+| Public Relation     | 1750 |
+| CLERK               |  800 |
+| CLERK               | 3350 |
+| CLERK               | 1750 |
+| SALESMAN            | 1600 |
+| SALESMAN            | 1250 |
+| MANAGER             | 2975 |
+| SALESMAN            | 1250 |
+| MANAGER             | 2850 |
+| MANAGER             | 2450 |
+| ANALYST             | 3000 |
+| PRESIDENT           | 5000 |
+| vice PRESIDENT      | 5000 |
+| SALESMAN            | 1500 |
+| CLERK               | 1100 |
+| Network             | 2000 |
+| vice PRESIDENT      | 1000 |
+| CLERK               |  950 |
+| ANALYST             | 3000 |
+| MANAGER             | 4150 |
+| SALESMAN            | 2575 |
+| CLERK               | 1300 |
+| SALESMAN            | 1350 |
+| MANAGER             | 1250 |
+| CLERK               | 1750 |
+| Compliance officers | 1750 |
+| ANALYST             | 1750 |
++---------------------+------+
+30 rows in set (0.00 sec)
+
+mysql> select job , avg(sal) from group by job;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'group by job' at line 1
+mysql> select job , avg(sal) from emp group by job;
++---------------------+-----------+
+| job                 | avg(sal)  |
++---------------------+-----------+
+| Compliance officers | 1750.0000 |
+| Public Relation     | 1750.0000 |
+| CLERK               | 1571.4286 |
+| SALESMAN            | 1587.5000 |
+| MANAGER             | 2735.0000 |
+| ANALYST             | 2583.3333 |
+| PRESIDENT           | 5000.0000 |
+| vice PRESIDENT      | 3000.0000 |
+| Network             | 2000.0000 |
++---------------------+-----------+
+9 rows in set (0.00 sec)
+
+mysql> select deptno from emp where deptno =' 20';
++--------+
+| deptno |
++--------+
+|     20 |
+|     20 |
+|     20 |
+|     20 |
+|     20 |
+|     20 |
+|     20 |
+|     20 |
++--------+
+8 rows in set (0.00 sec)
+
+mysql> SELECT COUNT(*) AS employee_count
+    -> FROM employees
+    -> WHERE department_id = 20;
+ERROR 1146 (42S02): Table 'dac64.employees' doesn't exist
+mysql> select count (*) as emp from emp where deptno = '20';
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '*) as emp from emp where deptno = '20'' at line 1
+mysql> select count(*) as deptno from emp where deptnp = '20';
+ERROR 1054 (42S22): Unknown column 'deptnp' in 'where clause'
+mysql> WHERE department_id = 20;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'WHERE department_id = 20' at line 1
+mysql> select count(*)  deptno from emp where deptnp = 20;
+ERROR 1054 (42S22): Unknown column 'deptnp' in 'where clause'
+mysql> select count(*)  deptno from emp where deptno = 20;
++--------+
+| deptno |
++--------+
+|      8 |
++--------+
+1 row in set (0.00 sec)
+
+mysql> select count(*) mgr from emp;
++-----+
+| mgr |
++-----+
+|  30 |
++-----+
+1 row in set (0.00 sec)
+
+mysql> select mgr from emp;
++------+
+| mgr  |
++------+
+| NULL |
+| 7566 |
+| 7566 |
+| 7566 |
+| 7698 |
+| 7698 |
+| 7698 |
+| 7698 |
+| 7698 |
+| 7698 |
+| 7782 |
+| 7788 |
+| 7839 |
+| 7839 |
+| 7839 |
+| 7839 |
+| 7839 |
+| 7888 |
+| 7902 |
+| 7902 |
+| 7902 |
+| 7919 |
+| 7920 |
+| 7920 |
+| 7920 |
+| 7920 |
+| 7920 |
+| 7920 |
+| 7920 |
+| 7920 |
++------+
+30 rows in set (0.00 sec)
+
+mysql> select job from emp;
++---------------------+
+| job                 |
++---------------------+
+| Compliance officers |
+| Compliance officers |
+| Public Relation     |
+| Public Relation     |
+| CLERK               |
+| CLERK               |
+| CLERK               |
+| SALESMAN            |
+| SALESMAN            |
+| MANAGER             |
+| SALESMAN            |
+| MANAGER             |
+| MANAGER             |
+| ANALYST             |
+| PRESIDENT           |
+| vice PRESIDENT      |
+| SALESMAN            |
+| CLERK               |
+| Network             |
+| vice PRESIDENT      |
+| CLERK               |
+| ANALYST             |
+| MANAGER             |
+| SALESMAN            |
+| CLERK               |
+| SALESMAN            |
+| MANAGER             |
+| CLERK               |
+| Compliance officers |
+| ANALYST             |
++---------------------+
+30 rows in set (0.00 sec)
+
+mysql> select deptno from emp where deptno =' 20';
++--------+
+| deptno |
++--------+
+|     20 |
+|     20 |
+|     20 |
+|     20 |
+|     20 |
+|     20 |
+|     20 |
+|     20 |
++--------+
+8 rows in set (0.00 sec)
+
+mysql> select job, deptno from emp where deptno =' 20';
++-----------------+--------+
+| job             | deptno |
++-----------------+--------+
+| Public Relation |     20 |
+| Public Relation |     20 |
+| CLERK           |     20 |
+| MANAGER         |     20 |
+| ANALYST         |     20 |
+| vice PRESIDENT  |     20 |
+| CLERK           |     20 |
+| ANALYST         |     20 |
++-----------------+--------+
+8 rows in set (0.00 sec)
+
+mysql> select job, count(*) count from emp group by job;
++---------------------+-------+
+| job                 | count |
++---------------------+-------+
+| Compliance officers |     3 |
+| Public Relation     |     2 |
+| CLERK               |     7 |
+| SALESMAN            |     6 |
+| MANAGER             |     5 |
+| ANALYST             |     3 |
+| PRESIDENT           |     1 |
+| vice PRESIDENT      |     2 |
+| Network             |     1 |
++---------------------+-------+
+9 rows in set (0.00 sec)
+
+mysql> select job, count(*) count from emp where job='manager' group by job;
++---------+-------+
+| job     | count |
++---------+-------+
+| MANAGER |     5 |
++---------+-------+
+1 row in set (0.00 sec)
+
+mysql> select job ,deptno from emp;
++---------------------+--------+
+| job                 | deptno |
++---------------------+--------+
+| Compliance officers |     30 |
+| Compliance officers |     50 |
+| Public Relation     |     20 |
+| Public Relation     |     20 |
+| CLERK               |     20 |
+| CLERK               |     10 |
+| CLERK               |     10 |
+| SALESMAN            |     30 |
+| SALESMAN            |     30 |
+| MANAGER             |     20 |
+| SALESMAN            |     30 |
+| MANAGER             |     30 |
+| MANAGER             |     10 |
+| ANALYST             |     20 |
+| PRESIDENT           |     10 |
+| vice PRESIDENT      |     20 |
+| SALESMAN            |     30 |
+| CLERK               |     20 |
+| Network             |     60 |
+| vice PRESIDENT      |     60 |
+| CLERK               |     30 |
+| ANALYST             |     20 |
+| MANAGER             |     30 |
+| SALESMAN            |     30 |
+| CLERK               |     10 |
+| SALESMAN            |     30 |
+| MANAGER             |     30 |
+| CLERK               |     30 |
+| Compliance officers |     50 |
+| ANALYST             |     50 |
++---------------------+--------+
+30 rows in set (0.00 sec)
+
+mysql>  select job, count(*) count from emp where job='deptno' group by job;
+Empty set (0.00 sec)
+
+mysql> select comm from emp ;
++------+
+| comm |
++------+
+| NULL |
+| NULL |
+| NULL |
+| NULL |
+| NULL |
+| NULL |
+| NULL |
+|  300 |
+|  500 |
+| NULL |
+| 1400 |
+| NULL |
+| NULL |
+| NULL |
+| NULL |
+| NULL |
+|    0 |
+| NULL |
+| NULL |
+| NULL |
+| NULL |
+| NULL |
+| NULL |
+| 2700 |
+| 1300 |
+| 2700 |
+|  500 |
+| NULL |
+| NULL |
+| NULL |
++------+
+30 rows in set (0.00 sec)
+
+mysql> select ifnull (comm , 0) from emp;
++-------------------+
+| ifnull (comm , 0) |
++-------------------+
+|                 0 |
+|                 0 |
+|                 0 |
+|                 0 |
+|                 0 |
+|                 0 |
+|                 0 |
+|               300 |
+|               500 |
+|                 0 |
+|              1400 |
+|                 0 |
+|                 0 |
+|                 0 |
+|                 0 |
+|                 0 |
+|                 0 |
+|                 0 |
+|                 0 |
+|                 0 |
+|                 0 |
+|                 0 |
+|                 0 |
+|              2700 |
+|              1300 |
+|              2700 |
+|               500 |
+|                 0 |
+|                 0 |
+|                 0 |
++-------------------+
+30 rows in set (0.00 sec)
+
+mysql> select ifnull (comm , 0) comm,count (ifnull(comm,0)count  from emp;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'from emp' at line 1
+mysql> SELECT COUNT(*) AS emp_count
+    -> FROM emp
+    -> WHERE deptno = 20
+    ->   AND comm IS NULL;
++-----------+
+| emp_count |
++-----------+
+|         8 |
++-----------+
+1 row in set (0.03 sec)
+
+mysql> select count (*) as emp_count from emp where deptno =20 and comm is null;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '*) as emp_count from emp where deptno =20 and comm is null' at line 1
+mysql> select count (*) as emp_count from emp where deptno =20 and comm isnull;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '*) as emp_count from emp where deptno =20 and comm isnull' at line 1
+mysql> select count (*)  emp_count from emp where deptno =20 and comm is null;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '*)  emp_count from emp where deptno =20 and comm is null' at line 1
+mysql> select count (*)  emp_count from emp where deptno =20 and comm is null;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '*)  emp_count from emp where deptno =20 and comm is null' at line 1
+mysql>
+mysql>
+mysql>
+mysql>
+mysql> select count(*) count from emp where deptno =20 and is null;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'is null' at line 1
+mysql> select count(*) count from emp where deptno =20 and isnull;
+ERROR 1054 (42S22): Unknown column 'isnull' in 'where clause'
+mysql> select count(*) count from emp where deptno =20 and is not null;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'is not null' at line 1
+mysql>
+mysql>
+mysql>
+mysql>
+mysql> select count(*) from emp where deptno = 20 and comm is null;
++----------+
+| count(*) |
++----------+
+|        8 |
++----------+
+1 row in set (0.00 sec)
+
+mysql> select count(*) from emp where deptno = 20 and comm is not  null;
++----------+
+| count(*) |
++----------+
+|        0 |
++----------+
+1 row in set (0.00 sec)
+
+mysql> select job from emp ;
++---------------------+
+| job                 |
++---------------------+
+| Compliance officers |
+| Compliance officers |
+| Public Relation     |
+| Public Relation     |
+| CLERK               |
+| CLERK               |
+| CLERK               |
+| SALESMAN            |
+| SALESMAN            |
+| MANAGER             |
+| SALESMAN            |
+| MANAGER             |
+| MANAGER             |
+| ANALYST             |
+| PRESIDENT           |
+| vice PRESIDENT      |
+| SALESMAN            |
+| CLERK               |
+| Network             |
+| vice PRESIDENT      |
+| CLERK               |
+| ANALYST             |
+| MANAGER             |
+| SALESMAN            |
+| CLERK               |
+| SALESMAN            |
+| MANAGER             |
+| CLERK               |
+| Compliance officers |
+| ANALYST             |
++---------------------+
+30 rows in set (0.00 sec)
+
+mysql> select * from emp;\
++-------+----------+--------+---------------------+------+------------+------+------+--------+---------+--------------+------------+------------+----------+---------+-----------+
+| EMPNO | ENAME    | GENDER | JOB                 | MGR  | HIREDATE   | SAL  | COMM | DEPTNO | BONUSID | USER NAME    | PWD        | PHONE      | isActive | new_sal | Dream_Sal |
++-------+----------+--------+---------------------+------+------------+------+------+--------+---------+--------------+------------+------------+----------+---------+-----------+
+|  6001 | GITA     | F      | Compliance officers | 7920 | 1981-07-19 | 1750 | NULL |     30 |       1 | GITA         | sales@2017 | NULL       |        1 |       0 |      5250 |
+|  6129 | VRUSHALI | F      | Compliance officers | 7920 | 1981-07-19 | 1750 | NULL |     50 |       1 | VRUSHALI     | PUN@8877   | NULL       |        1 |       0 |      5250 |
+|  6473 | SHARMIN  | F      | Public Relation     | 7920 | 1981-07-19 | 1750 | NULL |     20 |       1 | SHARMIN      | a12recmpm  | NULL       |        1 |       0 |      5250 |
+|  6781 | BANDISH  | F      | Public Relation     | 7920 | 1981-07-19 | 1750 | NULL |     20 |       1 | BANDISH      | a12recmpm  | NULL       |        1 |       0 |      5250 |
+|  7369 | SMITH    | M      | CLERK               | 7902 | 1980-12-17 |  800 | NULL |     20 |       2 | TRITONE      | a12recmpm  | 7032300023 |        0 |       0 |      2400 |
+|  7415 | AARAV    | M      | CLERK               | 7902 | 1981-12-31 | 3350 | NULL |     10 |    NULL | AARAV        | NULL       | 7032300084 |        0 |       0 |     10050 |
+|  7421 | THOMAS   | M      | CLERK               | 7920 | 1981-07-19 | 1750 | NULL |     10 |       1 | THOMAS       | r50mpm     | 7032300011 |        0 |       0 |      5250 |
+|  7499 | ALLEN    | M      | SALESMAN            | 7698 | 1981-02-20 | 1600 |  300 |     30 |       4 | ALWAYS TESTE | sales@2017 | 7032300096 |        1 |    1900 |      4800 |
+|  7521 | WARD     | M      | SALESMAN            | 7698 | 1981-02-22 | 1250 |  500 |     30 |       1 | WARD         | sales@2017 | 7132300034 |        1 |    1750 |      3750 |
+|  7566 | JONES    | M      | MANAGER             | 7839 | 1981-04-02 | 2975 | NULL |     20 |       4 | HONEYCOMB    | a12recmpm  | 7132300039 |        1 |       0 |      8925 |
+|  7654 | MARTIN   | M      | SALESMAN            | 7698 | 1981-09-28 | 1250 | 1400 |     30 |       6 | LIFE RACER   | sales@2017 | 7132300050 |        1 |    2650 |      3750 |
+|  7698 | BLAKE    | M      | MANAGER             | 7839 | 1981-05-01 | 2850 | NULL |     30 |       1 | BIG BEN      | sales@2017 | 7132300027 |        1 |       0 |      8550 |
+|  7782 | CLARK    | M      | MANAGER             | 7839 | 1981-06-09 | 2450 | NULL |     10 |       3 | CLARK        | r50mpm     | 7032300001 |        1 |       0 |      7350 |
+|  7788 | SCOTT    | M      | ANALYST             | 7566 | 1982-12-09 | 3000 | NULL |     20 |       3 | WHITE SAND   | a12recmpm  | NULL       |        1 |       0 |      9000 |
+|  7839 | KING     | M      | PRESIDENT           | NULL | 1981-11-17 | 5000 | NULL |     10 |       1 | KING         | r50mpm     | 7132300081 |        1 |       0 |     15000 |
+|  7840 | FRED     | M      | vice PRESIDENT      | 7839 | 1983-08-09 | 5000 | NULL |     20 |       1 | SAND STONE   | a12recmpm  | NULL       |        1 |       0 |     15000 |
+|  7844 | TURNER   | M      | SALESMAN            | 7698 | 1981-09-08 | 1500 |    0 |     30 |       5 | SAND DUST    | sales@2017 | NULL       |        1 |    1500 |      4500 |
+|  7876 | ADAMS    | M      | CLERK               | 7788 | 1983-01-12 | 1100 | NULL |     20 |       1 | CRAZY ANYONE | a12recmpm  | 7132300086 |        1 |       0 |      3300 |
+|  7888 | Ruhan    | M      | Network             | 7888 | 1983-08-09 | 2000 | NULL |     60 |       1 | Ruhan        | BRD@1122   | NULL       |        1 |       0 |      6000 |
+|  7889 | Neel     | M      | vice PRESIDENT      | 7839 | 1983-08-09 | 1000 | NULL |     60 |       0 | Neel         | BRD@1122   | NULL       |        1 |       0 |      3000 |
+|  7900 | JAMES    | M      | CLERK               | 7698 | 1981-12-03 |  950 | NULL |     30 |       2 | CRAZY LEADER | sales@2017 | 7132300042 |        1 |       0 |      2850 |
+|  7902 | FORD     | M      | ANALYST             | 7566 | 1981-12-03 | 3000 | NULL |     20 |       4 | CONBRIO      | a12recmpm  | NULL       |        0 |       0 |      9000 |
+|  7919 | HOFFMAN  | M      | MANAGER             | 7566 | 1982-03-24 | 4150 | NULL |     30 |       3 | INTERVAL     | sales@2017 | NULL       |        1 |       0 |     12450 |
+|  7920 | GRASS    | M      | SALESMAN            | 7919 | 1980-02-14 | 2575 | 2700 |     30 |       5 | GRASS        | sales@2017 | NULL       |        1 |    5275 |      7725 |
+|  7934 | MILLER   | M      | CLERK               | 7782 | 1982-01-23 | 1300 | 1300 |     10 |       2 | QUARTERNOTE  | r50mpm     | 7132300055 |        0 |    2600 |      3900 |
+|  7945 | AARUSH   | M      | SALESMAN            | 7902 | 1980-02-14 | 1350 | 2700 |     30 |    NULL | AARUSH       | ABCDEF     | NULL       |        0 |    4050 |      4050 |
+|  7949 | ALEX     | M      | MANAGER             | 7698 | 1982-01-24 | 1250 |  500 |     30 |       5 | QUARTERREST  | sales@2017 | 7156567183 |        1 |    1750 |      3750 |
+|  8433 | NATASHA  | F      | CLERK               | 7920 | 1981-07-19 | 1750 | NULL |     30 |       1 | NATASHA      | sales@2017 | NULL       |        1 |       0 |      5250 |
+|  9400 | SANGITA  | F      | Compliance officers | 7920 | 1981-07-19 | 1750 | NULL |     50 |       1 | SANGITA      | NULL       | NULL       |        1 |       0 |      5250 |
+|  9473 | SUPRIYA  | F      | ANALYST             | 7920 | 1981-07-19 | 1750 | NULL |     50 |       1 | SUPRIYA      | XYZ@1234   | NULL       |        1 |       0 |      5250 |
++-------+----------+--------+---------------------+------+------------+------+------+--------+---------+--------------+------------+------------+----------+---------+-----------+
+30 rows in set (0.00 sec)
+
+mysql> show tables;
++---------------------+
+| Tables_in_dac64     |
++---------------------+
+| a                   |
+| activity            |
+| agent               |
+| airline_seats       |
+| andor               |
+| atm                 |
+| b                   |
+| bankloan            |
+| batch_schedule      |
+| betweensalary       |
+| bitwise             |
+| blanktablea         |
+| blanktableb         |
+| blog                |
+| bonus               |
+| books               |
+| brands              |
+| bus_stops           |
+| cafe                |
+| candidate           |
+| cardpayments        |
+| cashpayments        |
+| categories          |
+| category            |
+| city                |
+| classandsubjects    |
+| client              |
+| cnumbers            |
+| coalesce            |
+| comments            |
+| company             |
+| countnulls          |
+| countnumbers        |
+| cricketwinnerteam   |
+| customer            |
+| customers           |
+| demodept1           |
+| demodept2           |
+| dept                |
+| dept1               |
+| dhl                 |
+| docs                |
+| doctor              |
+| doctorvisits        |
+| dummy               |
+| duplicate           |
+| emp                 |
+| emp1                |
+| emp2                |
+| emp_attendance      |
+| emp_cards           |
+| emp_phone           |
+| empj                |
+| envelope            |
+| facebook            |
+| fedex               |
+| food                |
+| food_category_tags  |
+| food_items          |
+| fromstoreorders     |
+| fruits              |
+| fullname            |
+| hall_ticket         |
+| hobby               |
+| ipl                 |
+| item                |
+| job_list            |
+| key_parts           |
+| labtestlist         |
+| leading_zeroes      |
+| leadtable           |
+| licence             |
+| linkedin            |
+| location            |
+| managers            |
+| mass_table          |
+| medicinelist        |
+| menucard            |
+| missingnumbers      |
+| nearest             |
+| new                 |
+| newbooks            |
+| null1               |
+| null2               |
+| nullif              |
+| numberstring        |
+| onlineorders        |
+| ord                 |
+| order1              |
+| order_items         |
+| orderdetails        |
+| orders              |
+| orders1             |
+| overlapping_dates   |
+| overtime            |
+| patient             |
+| phonecall           |
+| pivot_table         |
+| plumber             |
+| plumber_service_map |
+| points              |
+| population          |
+| price               |
+| product             |
+| product_sales       |
+| products            |
+| pune_metro_stations |
+| quarterly_revenue   |
+| r                   |
+| r1                  |
+| r2                  |
+| races               |
+| regexpr             |
+| repeatingnumbers    |
+| replacedept         |
+| reservations        |
+| revenue             |
+| rockets             |
+| rohitauto           |
+| room_assigned       |
+| room_staff          |
+| rooms               |
+| runners             |
+| runningserver       |
+| sales               |
+| sales1              |
+| sales_channel       |
+| salespeople         |
+| salesperson         |
+| salgrade            |
+| server              |
+| service             |
+| seta                |
+| setb                |
+| shop                |
+| softdrink           |
+| sort                |
+| sourcecity          |
+| sourcenames         |
+| stadium             |
+| stages              |
+| states              |
+| station             |
+| status              |
+| stocks              |
+| stringnumber        |
+| student             |
+| sumitauto           |
+| swapcity            |
+| t                   |
+| t1                  |
+| t2                  |
+| tablea              |
+| tableaa             |
+| tableb              |
+| tablebb             |
+| targetcity          |
+| targetnames         |
+| tasks               |
+| teams               |
+| temp                |
+| temp1               |
+| trainers            |
+| trains              |
+| traintimetable      |
+| transactions        |
+| unpivot_table       |
+| ups                 |
+| vote_response       |
+| votes               |
+| warehouse           |
+| x                   |
+| year_of_service     |
+| yearly_revenue      |
+| years               |
+| ytemp               |
+| yuvrajauto          |
+| yuvrajcurdate       |
+| yuvraje1            |
+| yuvraje2            |
+| z                   |
++---------------------+
+181 rows in set (0.01 sec)
+
+mysql> show tables likes 'acc';
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'likes 'acc'' at line 1
+mysql> show tables likes 'acc%';
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'likes 'acc%'' at line 1
+mysql> show tables likes 'a%';
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'likes 'a%'' at line 1
+mysql> select  tables likes 'a%';
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''a%'' at line 1
+mysql> select  tables like 'a%';
+ERROR 1054 (42S22): Unknown column 'tables' in 'field list'
+mysql> show table variable like 'a%'
+    -> ;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'variable like 'a%'' at line 1
+mysql> SELECT ename
+    -> FROM emp
+    -> WHERE deptno = (
+    ->     SELECT deptno
+    ->     FROM dept
+    ->     WHERE dname = 'ACCOUNTS'
+    -> )
+    -> AND sal = (
+    ->     SELECT MAX(sal)
+    ->     FROM emp
+    ->     WHERE deptno = (
+    ->         SELECT deptno
+    ->         FROM dept
+    ->         WHERE dname = 'ACCOUNTS'
+    ->     )
+    -> );
+Empty set (0.01 sec)
+
+mysql>
+mysql> select * from dept;
++--------+------------+----------+------------+------------+
+| DEPTNO | DNAME      | LOC      | PWD        | STARTEDON  |
++--------+------------+----------+------------+------------+
+|     10 | ACCOUNTING | NEW YORK | r50mpm     | 24/03/1989 |
+|     20 | RESEARCH   | DALLAS   | a12recmpm  | 12/04/1989 |
+|     30 | SALES      | CHICAGO  | sales@2017 | 13/04/1989 |
+|     40 | OPERATIONS | BOSTON   | opr@123    | 12/07/1989 |
+|     50 | HR         | PUNE     | PUN@8877   | 22/12/1989 |
+|     60 | IT         | BARODA   | BRD@1122   | 02/10/1989 |
++--------+------------+----------+------------+------------+
+6 rows in set (0.00 sec)
+
+mysql> select from emp where sal <(select AVG(sal) from emp where job ='manager');
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'from emp where sal <(select AVG(sal) from emp where job ='manager')' at line 1
+mysql> SELECT *
+    -> FROM emp
+    -> WHERE sal < (
+    ->     SELECT AVG(sal)
+    ->     FROM emp
+    ->     WHERE job = 'MANAGER'
+    -> );
++-------+----------+--------+---------------------+------+------------+------+------+--------+---------+--------------+------------+------------+----------+---------+-----------+
+| EMPNO | ENAME    | GENDER | JOB                 | MGR  | HIREDATE   | SAL  | COMM | DEPTNO | BONUSID | USER NAME    | PWD        | PHONE      | isActive | new_sal | Dream_Sal |
++-------+----------+--------+---------------------+------+------------+------+------+--------+---------+--------------+------------+------------+----------+---------+-----------+
+|  6001 | GITA     | F      | Compliance officers | 7920 | 1981-07-19 | 1750 | NULL |     30 |       1 | GITA         | sales@2017 | NULL       |        1 |       0 |      5250 |
+|  6129 | VRUSHALI | F      | Compliance officers | 7920 | 1981-07-19 | 1750 | NULL |     50 |       1 | VRUSHALI     | PUN@8877   | NULL       |        1 |       0 |      5250 |
+|  6473 | SHARMIN  | F      | Public Relation     | 7920 | 1981-07-19 | 1750 | NULL |     20 |       1 | SHARMIN      | a12recmpm  | NULL       |        1 |       0 |      5250 |
+|  6781 | BANDISH  | F      | Public Relation     | 7920 | 1981-07-19 | 1750 | NULL |     20 |       1 | BANDISH      | a12recmpm  | NULL       |        1 |       0 |      5250 |
+|  7369 | SMITH    | M      | CLERK               | 7902 | 1980-12-17 |  800 | NULL |     20 |       2 | TRITONE      | a12recmpm  | 7032300023 |        0 |       0 |      2400 |
+|  7421 | THOMAS   | M      | CLERK               | 7920 | 1981-07-19 | 1750 | NULL |     10 |       1 | THOMAS       | r50mpm     | 7032300011 |        0 |       0 |      5250 |
+|  7499 | ALLEN    | M      | SALESMAN            | 7698 | 1981-02-20 | 1600 |  300 |     30 |       4 | ALWAYS TESTE | sales@2017 | 7032300096 |        1 |    1900 |      4800 |
+|  7521 | WARD     | M      | SALESMAN            | 7698 | 1981-02-22 | 1250 |  500 |     30 |       1 | WARD         | sales@2017 | 7132300034 |        1 |    1750 |      3750 |
+|  7654 | MARTIN   | M      | SALESMAN            | 7698 | 1981-09-28 | 1250 | 1400 |     30 |       6 | LIFE RACER   | sales@2017 | 7132300050 |        1 |    2650 |      3750 |
+|  7782 | CLARK    | M      | MANAGER             | 7839 | 1981-06-09 | 2450 | NULL |     10 |       3 | CLARK        | r50mpm     | 7032300001 |        1 |       0 |      7350 |
+|  7844 | TURNER   | M      | SALESMAN            | 7698 | 1981-09-08 | 1500 |    0 |     30 |       5 | SAND DUST    | sales@2017 | NULL       |        1 |    1500 |      4500 |
+|  7876 | ADAMS    | M      | CLERK               | 7788 | 1983-01-12 | 1100 | NULL |     20 |       1 | CRAZY ANYONE | a12recmpm  | 7132300086 |        1 |       0 |      3300 |
+|  7888 | Ruhan    | M      | Network             | 7888 | 1983-08-09 | 2000 | NULL |     60 |       1 | Ruhan        | BRD@1122   | NULL       |        1 |       0 |      6000 |
+|  7889 | Neel     | M      | vice PRESIDENT      | 7839 | 1983-08-09 | 1000 | NULL |     60 |       0 | Neel         | BRD@1122   | NULL       |        1 |       0 |      3000 |
+|  7900 | JAMES    | M      | CLERK               | 7698 | 1981-12-03 |  950 | NULL |     30 |       2 | CRAZY LEADER | sales@2017 | 7132300042 |        1 |       0 |      2850 |
+|  7920 | GRASS    | M      | SALESMAN            | 7919 | 1980-02-14 | 2575 | 2700 |     30 |       5 | GRASS        | sales@2017 | NULL       |        1 |    5275 |      7725 |
+|  7934 | MILLER   | M      | CLERK               | 7782 | 1982-01-23 | 1300 | 1300 |     10 |       2 | QUARTERNOTE  | r50mpm     | 7132300055 |        0 |    2600 |      3900 |
+|  7945 | AARUSH   | M      | SALESMAN            | 7902 | 1980-02-14 | 1350 | 2700 |     30 |    NULL | AARUSH       | ABCDEF     | NULL       |        0 |    4050 |      4050 |
+|  7949 | ALEX     | M      | MANAGER             | 7698 | 1982-01-24 | 1250 |  500 |     30 |       5 | QUARTERREST  | sales@2017 | 7156567183 |        1 |    1750 |      3750 |
+|  8433 | NATASHA  | F      | CLERK               | 7920 | 1981-07-19 | 1750 | NULL |     30 |       1 | NATASHA      | sales@2017 | NULL       |        1 |       0 |      5250 |
+|  9400 | SANGITA  | F      | Compliance officers | 7920 | 1981-07-19 | 1750 | NULL |     50 |       1 | SANGITA      | NULL       | NULL       |        1 |       0 |      5250 |
+|  9473 | SUPRIYA  | F      | ANALYST             | 7920 | 1981-07-19 | 1750 | NULL |     50 |       1 | SUPRIYA      | XYZ@1234   | NULL       |        1 |       0 |      5250 |
++-------+----------+--------+---------------------+------+------------+------+------+--------+---------+--------------+------------+------------+----------+---------+-----------+
+22 rows in set (0.00 sec)
+
+mysql> SELECT deptno,
+    ->        job,
+    ->        AVG(sal * 12) AS avg_annual_salary
+    -> FROM emp
+    -> GROUP BY deptno, job;
++--------+---------------------+-------------------+
+| deptno | job                 | avg_annual_salary |
++--------+---------------------+-------------------+
+|     30 | Compliance officers |        21000.0000 |
+|     50 | Compliance officers |        21000.0000 |
+|     20 | Public Relation     |        21000.0000 |
+|     20 | CLERK               |        11400.0000 |
+|     10 | CLERK               |        25600.0000 |
+|     30 | SALESMAN            |        19050.0000 |
+|     20 | MANAGER             |        35700.0000 |
+|     30 | MANAGER             |        33000.0000 |
+|     10 | MANAGER             |        29400.0000 |
+|     20 | ANALYST             |        36000.0000 |
+|     10 | PRESIDENT           |        60000.0000 |
+|     20 | vice PRESIDENT      |        60000.0000 |
+|     60 | Network             |        24000.0000 |
+|     60 | vice PRESIDENT      |        12000.0000 |
+|     30 | CLERK               |        16200.0000 |
+|     50 | ANALYST             |        21000.0000 |
++--------+---------------------+-------------------+
+16 rows in set (0.00 sec)
+
+mysql> SELECT
+    ->     COUNT(CASE WHEN sal IS NOT NULL THEN 1 END) AS salary_count,
+    ->     COUNT(CASE WHEN comm IS NOT NULL THEN 1 END) AS comm_count
+    -> FROM emp
+    -> WHERE deptno = 30;
++--------------+------------+
+| salary_count | comm_count |
++--------------+------------+
+|           12 |          7 |
++--------------+------------+
+1 row in set (0.00 sec)
+
+mysql> selectSELECT
+    ->     *
+    -> FROM
+    ->     Employees
+    -> WHERE
+    ->     Salary < (
+    ->         SELECT
+    ->             AVG(Salary)
+    ->         FROM
+    ->             Employees
+    ->         WHERE
+    ->             JobTitle = 'MANAGER'
+    ->     );
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'selectSELECT
+    *
+FROM
+    Employees
+WHERE
+    Salary < (
+        SELECT
+      ' at line 1
+mysql> Print employee details having salary less than average salary of MANAGER;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'Print employee details having salary less than average salary of MANAGER' at line 1
+mysql> SELECT
+    ->     COUNT(*)
+    -> FROM
+    ->     Employees
+    -> WHERE
+    ->     DeptNo = 20
+    ->     AND Comm IS NULL;
+ERROR 1146 (42S02): Table 'dac64.employees' doesn't exist
+mysql> select count(*)  from emp;
++----------+
+| count(*) |
++----------+
+|       30 |
++----------+
+1 row in set (0.00 sec)
+
+mysql> select count(*) from emp where comm as null;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'as null' at line 1
+mysql> SELECT
+    ->     Name -- Select the names of the employees
+    -> FROM
+    ->     Employees
+    -> WHERE
+    ->     DeptName = 'ACCOUNTS' -- Filter for the specific department
+    ->     AND Salary = (
+    ->         SELECT
+    ->             MAX(Salary) -- Find the maximum salary
+    ->         FROM
+    ->             Employees
+    ->         WHERE
+    ->             DeptName = 'ACCOUNTS' -- Only consider salaries within this department
+    ->     );
+ERROR 1146 (42S02): Table 'dac64.employees' doesn't exist
+mysql> select accounts from emp where (max) sal;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'sal' at line 1
+mysql> use dac65
+ERROR 1044 (42000): Access denied for user 'dac64'@'%' to database 'dac65'
+mysql> select max (sal) from emp;
+ERROR 1630 (42000): FUNCTION dac64.max does not exist. Check the 'Function Name Parsing and Resolution' section in the Reference Manual
+mysql> select max(sal) from emp;
++----------+
+| max(sal) |
++----------+
+|     5000 |
++----------+
+1 row in set (0.00 sec)
+
+mysql> select AVG(sal) from emp where job = 'manager';
++-----------+
+| AVG(sal)  |
++-----------+
+| 2735.0000 |
++-----------+
+1 row in set (0.00 sec)
+
+mysql> select deptno AVG(sal) from emp where group by deptno;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '(sal) from emp where group by deptno' at line 1
+mysql> select deptno AVG(sal) from emp group by deptno;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '(sal) from emp group by deptno' at line 1
+mysql> select deptno from emp where AVG(sal)\ group by deptno;
+ERROR:
+Unknown command '\ '.
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '\ group by deptno' at line 1
+mysql> select deptno from emp where AVG(sal) group by deptno;
+ERROR 1111 (HY000): Invalid use of group function
+mysql> select deptno from emp where AVG(sal) ;
+ERROR 1111 (HY000): Invalid use of group function
+mysql> select deptno,AVG(sal) from emp group by deptno;
++--------+-----------+
+| deptno | AVG(sal)  |
++--------+-----------+
+|     10 | 2770.0000 |
+|     20 | 2421.8750 |
+|     30 | 1852.0833 |
+|     50 | 1750.0000 |
+|     60 | 1500.0000 |
++--------+-----------+
+5 rows in set (0.00 sec)
+
+mysql> SELECT
+    ->     -- Count of people who have a non-NULL salary (SAL)
+    ->     COUNT(SAL) AS Num_People_Receiving_Salary,
+    ->
+    ->     -- Count of people who have a non-NULL commission (COMM)
+    ->     -- COUNT(COMM) automatically ignores NULL values.
+    ->     COUNT(COMM) AS Num_People_Receiving_Comm
+    -> FROM
+    ->     EMP
+    -> WHERE
+    ->     DEPTNO = 30;
++-----------------------------+---------------------------+
+| Num_People_Receiving_Salary | Num_People_Receiving_Comm |
++-----------------------------+---------------------------+
+|                          12 |                         7 |
++-----------------------------+---------------------------+
+1 row in set (0.00 sec)
+
+mysql> SELECT
+    ->     JOB,                -- The grouping column (CLERK or MANAGER)
+    ->     AVG(SAL) AS Average_Salary,
+    ->     MIN(SAL) AS Minimum_Salary,
+    ->     MAX(SAL) AS Maximum_Salary
+    -> FROM
+    ->     EMP
+    -> WHERE
+    ->     JOB IN ('CLERK', 'MANAGER') -- Filter to include only these two job types
+    -> GROUP BY
+    ->     JOB;
++---------+----------------+----------------+----------------+
+| JOB     | Average_Salary | Minimum_Salary | Maximum_Salary |
++---------+----------------+----------------+----------------+
+| CLERK   |      1571.4286 |            800 |           3350 |
+| MANAGER |      2735.0000 |           1250 |           4150 |
++---------+----------------+----------------+----------------+
+2 rows in set (0.00 sec)
+
+mysql>
+mysql> ^C
+mysql>

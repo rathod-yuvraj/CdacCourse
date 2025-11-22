@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>try {
+    // Code that might throw an error
+    let result = someFunction(); // This could throw an error if the function is undefined or fails
+    console.log("Result: " + result);
+} catch (error) {
+    // This block runs if there’s an error in the try block
+    console.error("An error occurred: " + error.message);
+} finally {
+    // This block always runs, regardless of whether an error occurred or not
+    console.log("This will always run.");
+}
+</script>
+    
+</body>
+</html>

@@ -1,0 +1,2 @@
+mysql --host=192.168.10.117 --port=3306 --user=dac64 --password=welcome dac64
+

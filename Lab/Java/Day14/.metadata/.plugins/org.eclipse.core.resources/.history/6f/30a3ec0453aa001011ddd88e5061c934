@@ -1,0 +1,22 @@
+package com.yuvraj.beans;
+
+import java.time.LocalDate;
+
+public class Employee {
+	private int eid;
+	private String ename;
+	private double sal;
+	private LocalDate jdt;
+	public Employee() {
+		super();
+	}
+	public Employee(int eid, String ename, double sal, LocalDate jdt) {
+		super();
+		this.eid = eid;
+		this.ename = ename;
+		this.sal = sal;
+		this.jdt = jdt;
+	}
+	
+
+}

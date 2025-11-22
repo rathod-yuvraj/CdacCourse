@@ -1,0 +1,14 @@
+package com.yuvraj.test;
+
+
+import java.io.*;
+public class TestFileCreated {
+
+	public static void main(String[] args) {
+		
+		File fs=new File("abc.txt");
+		
+
+	}
+
+}

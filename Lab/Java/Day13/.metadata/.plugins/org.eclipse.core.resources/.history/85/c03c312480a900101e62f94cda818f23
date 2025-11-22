@@ -1,0 +1,12 @@
+package com.demo.Service;
+
+
+
+public interface EmployeeService {
+
+	boolean addnewEmployee();
+
+
+
+	
+}

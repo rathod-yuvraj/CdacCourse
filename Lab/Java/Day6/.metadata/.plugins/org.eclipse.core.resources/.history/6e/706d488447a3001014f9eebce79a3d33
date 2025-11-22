@@ -1,0 +1,11 @@
+
+public class primeService {
+
+	public static boolean isPrime() {
+		
+		return false;
+	}
+
+	
+
+}

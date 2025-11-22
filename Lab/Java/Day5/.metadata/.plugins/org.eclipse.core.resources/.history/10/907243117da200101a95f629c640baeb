@@ -1,0 +1,10 @@
+package hasARelation;
+
+public class Player {
+	int pid;
+	String pname;
+	String speciality;
+	
+	
+
+}

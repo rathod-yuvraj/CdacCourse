@@ -1,0 +1,43 @@
+package demo.com.test;
+import java.util.Scanner;
+
+import demo.com.Service.EmployeeService;
+import demo.com.Service.EmployeeServiceImpl;
+
+
+public class testEmployee {
+	
+	 
+	
+
+	public static void main(String[] args) {
+		Scanner sc =new Scanner(System.in);
+		EmployeeService eservice=new  EmployeeServiceImpl();
+        int choice = 0;
+        do {
+        
+        	
+        	System.out.println("Enter Choice \n 1.Add new Employee\n 2. Display all\n 3. Update Name");
+        	System.out.println("4.Sort by name\n .5 Sort by id \n 6.Sort by name\n 7.Sort by Salary");
+        	System.out.println("8. Delete by id\n 9.Delete by name \n 10.Delete by Salary");
+        choice=sc.nextInt()
+;        	switch(choice) {
+        	case 1->{
+        	System.out.println("Add new Employee");
+        	boolean status=eservice.addNewEmployee(); 
+        	if(status) {
+        		System.out.println("New Employee Successfully!");
+        	}
+        	else {
+        		System.out.println("Employee are Not Added ");
+        	}
+        	}
+        	}
+        }while(choice !=10);
+        
+
+	}
+
+
+}
+

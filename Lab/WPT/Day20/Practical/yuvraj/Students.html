@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stude Info</title>
+</head>
+<body>
+    <div class="container">
+        <form action="" id="reset">
+            <input type="text" id="name" placeholder="Enter the Name" required> <br><br>
+            <input type="text" id="last" placeholder="Enter the Last Name" required> <br><br>
+            <input type="text" id="mark" placeholder="Enter the Mark" required> <br><br>
+        <button onclick="displayData()"  id="addData">Add Data</button>
+        </form>
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Last</th>
+                    <th>Mark</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="tabledata">
+
+                <!-- display the data -->
+            </tbody>
+        </table>
+        
+    </div>
+    <script>
+    
+        function displayData(){
+           event.preventDefault();
+        const fname=document.getElementById("name").value.trim();
+        const lname=document.getElementById("last").value.trim();
+        const m=document.getElementById("mark").value.trim();
+        if(!NaN==m){
+          alert("Please enter valid number!")
+        }
+        const m1 = parseInt(m);
+         const student = {
+            firstName: fname,
+             lastName: lname,
+             mark: m1
+             };
+
+    
+      let tablebody=document.getElementById("tabledata");
+      let row=document.createElement('tr');
+        row.innerHTML=`
+        <td>${student.firstName} </td> 
+        <td>${student.lastName} </td> 
+        <td>${student.mark} </td> 
+        <button  onclick="deletedata(this)">detele </button>
+        `
+        tablebody.appendChild(row);
+        document.getElementById("reset").reset();
+       
+        } 
+        function deletedata(btn){
+             const row = btn.closest("tr");
+             row.remove();
+        }
+    </script>
+    
+</body>
+</html>

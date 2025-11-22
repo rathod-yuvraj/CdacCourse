@@ -1,0 +1,115 @@
+Excellent question 👍 — understanding when to use the Prefix Sum Algorithm is key to mastering array-based problems.
+
+Let’s go step by step 👇
+
+
+---
+
+💡 When to Use Prefix Sum
+
+You use prefix sum when:
+
+> You need to quickly calculate the sum (or count) of elements in a range (for example, from index L to R) — and you might need to do it many times efficiently.
+
+
+
+
+---
+
+🔹 1. Multiple Range Sum Queries
+
+If you have an array and you need to find the sum of elements between two indices many times, recomputing every time takes O(n).
+Prefix Sum reduces this to O(1) per query after O(n) preprocessing.
+
+Example:
+
+arr = [2, 4, 6, 8, 10]
+Queries: (0,2), (1,3), (2,4)
+
+✅ Use prefix sum → Fast sum lookups
+
+
+---
+
+🔹 2. When You Need Cumulative Totals
+
+Sometimes problems require running totals — like cumulative marks, profits, or distances.
+
+Example:
+Daily earnings = [100, 200, 150, 50]
+Prefix sum = [100, 300, 450, 500]
+→ "How much earned up to day 3?" → Directly use prefix[2] = 450
+
+
+---
+
+🔹 3. Subarray or Range Problems
+
+Many subarray sum or range update problems rely on prefix sums.
+
+✅ Common patterns:
+
+Find if a subarray equals a given sum (e.g. subarray sum = k)
+
+Count subarrays with a certain property
+
+Balance points (equal left and right sum)
+
+Difference arrays (for range updates)
+
+
+
+---
+
+🔹 4. Prefix Sum in 2D (Matrix Problems)
+
+If given a matrix, and you must find the sum of elements in a submatrix,
+prefix sums allow you to do it efficiently in O(1) per query (after O(n*m) preprocessing).
+
+Example:
+For a 3×3 grid of rainfall data — quickly get rainfall in a rectangular region.
+
+
+---
+
+🔹 5. Optimizing Algorithms
+
+Prefix sum helps improve performance in:
+
+Sliding window or cumulative computation
+
+Dynamic programming (e.g. DP prefix optimization)
+
+Histogram area calculations
+
+Difference arrays (for range updates in O(1))
+
+
+
+---
+
+🔹 6. Counting or Frequency Problems
+
+Prefix sums aren’t just for addition — you can use them to count occurrences up to a point.
+
+Example:
+Count of even numbers till index i, or count of 1’s in a binary array segment.
+
+
+---
+
+⚙️ In short
+
+Use Case	Example	Why Prefix Sum Helps
+
+Range sum queries	Find sum between L and R	O(1) per query
+Cumulative totals	Total marks till day X	Precomputed
+Subarray problems	Subarray sum = K	Efficient lookup
+2D matrix queries	Sum of rectangle	O(1) query time
+Counting/frequency	Number of 1s till index i	Quick range count
+
+
+
+---
+
+Would you like me to show a real coding example (like "Find range sum using prefix array") with input/output explanation in Java?

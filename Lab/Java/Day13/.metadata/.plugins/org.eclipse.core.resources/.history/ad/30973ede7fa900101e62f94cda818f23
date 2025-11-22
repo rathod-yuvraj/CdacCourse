@@ -1,0 +1,33 @@
+package com.demo.test;
+
+public class Testemployee {
+
+	public static void main(String[] args) {
+	
+		Scanner sc = new Scanner(System.in);
+		EmployeeService eservice = new EmployeeServiceImpl();
+		int choice = 0;
+		do {
+			System.out.println("1. Add new Employee\n  2.Display All \n 3. Update name \n 4. Delete by id \n 5.Delete by name ");
+			System.out.println("6. Delete by name \n 7. Sort by id \n 8.Search by bid \n 9.Search by name \n 10. search byy salary\n" );
+			System.out.println("Enter the choice");
+			
+			switch(choice) {
+			case 1->{
+				boolean status= eservice.addnewEmployee();
+				if(status) {
+					System.out.println("New employee added succesfully");
+					
+					
+				}
+				else {
+					System.out.println("New employee is not added ");
+					
+				}
+			}
+			}
+		}
+
+	}
+
+}

@@ -1,0 +1,11 @@
+package com.yuvraj.beans;
+
+public class StringcountWord {
+	
+	public int CountWord(String mgs) {
+		 String[] words = msg.trim().split("\\s+");
+	        return words.length;
+		
+	}
+
+}

@@ -1,0 +1,21 @@
+package com.yuvraj.test;
+import java.io.*;
+import java.util.*;
+import com.yuvraj.beans.*;
+public class TestSerialization {
+	public static void main(String [] args) {
+		System.out.println("Serializations");
+		List <Employee> elist=new ArrayList<>();
+		
+		try(ObjectOutputStream oof=new ObjectOutputStream(new FileOutputStream("example.txt"))){
+			
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
+}

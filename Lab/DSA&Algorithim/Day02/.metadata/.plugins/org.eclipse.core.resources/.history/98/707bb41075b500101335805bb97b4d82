@@ -1,0 +1,23 @@
+package com.yuvraj.test;
+
+import com.yuvraj.search.BinarySearch;
+
+public class TestBinaryNoRec {
+
+	public static void main(String[] args) {
+		BinarySearch bo=new BinarySearch();
+		
+		 int[] arr = {2, 4, 6, 8, 10, 12, 14};
+	        int x = 10;
+	        int result = BinarySearch.binarySearch(arr, x);
+
+	        if (result == -1) {
+	            System.out.println("Element not found!");
+	        } else {
+	            System.out.println("Element found at index: " + result);
+	        }
+	    
+
+	}
+
+}

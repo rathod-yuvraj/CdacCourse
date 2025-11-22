@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <style>
+        /* Style the form */
+        form {
+            width: 300px;
+            margin: 0 auto;
+        }
+        label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+        input {
+            width: 100%;
+            padding: 8px;
+            margin: 5px 0 20px;
+            box-sizing: border-box;
+        }
+        .error {
+            color: red;
+            font-size: 12px;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Registration Form</h1>
+    <form id="registrationForm" onsubmit="return validateForm()">
+        <label for="username">Username (Min 5 chars):</label>
+        <input type="text" id="username" name="username" required minlength="5" maxlength="15" placeholder="Enter your username">
+        <span class="error" id="usernameError"></span>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required placeholder="Enter your email">
+        <span class="error" id="emailError"></span>
+
+        <label for="password">Password (Min 8 chars):</label>
+        <input type="password" id="password" name="password" required minlength="8" placeholder="Enter your password">
+        <span class="error" id="passwordError"></span>
+
+        <label for="phone">Phone Number (10 digits):</label>
+        <input type="tel" id="phone" name="phone" required pattern="^\d{10}$" placeholder="Enter your phone number">
+        <span class="error" id="phoneError"></span>
+
+        <button type="submit">Register</button>
+    </form>
+
+    <script>
+       
+        function validateForm() {
+            let valid = true;
+            document.getElementById("usernameError").textContent = "";
+            document.getElementById("emailError").textContent = "";
+            document.getElementById("passwordError").textContent = "";
+            document.getElementById("phoneError").textContent = "";
+
+            const username = document.getElementById("username");
+            const email = document.getElementById("email");
+            const password = document.getElementById("password");
+            const phone = document.getElementById("phone");
+
+            // Username validation
+            if (!username.checkValidity()) {
+                valid = false;
+                if (username.validity.valueMissing) {
+                    document.getElementById("usernameError").textContent = "Username is required.";
+                } else if (username.validity.tooShort) {
+                    document.getElementById("usernameError").textContent = "Username must be at least 5 characters long.";
+                } else if (username.validity.tooLong) {
+                    document.getElementById("usernameError").textContent = "Username must not exceed 15 characters.";
+                }
+            }
+
+            // Email validation
+            if (!email.checkValidity()) {
+                valid = false;
+                if (email.validity.valueMissing) {
+                    document.getElementById("emailError").textContent = "Email is required.";
+                } else if (email.validity.typeMismatch) {
+                    document.getElementById("emailError").textContent = "Please enter a valid email address.";
+                }
+            }
+
+            // Password validation
+            if (!password.checkValidity()) {
+                valid = false;
+                if (password.validity.valueMissing) {
+                    document.getElementById("passwordError").textContent = "Password is required.";
+                } else if (password.validity.tooShort) {
+                    document.getElementById("passwordError").textContent = "Password must be at least 8 characters long.";
+                }
+            }
+
+            // Phone validation
+            if (!phone.checkValidity()) {
+                valid = false;
+                if (phone.validity.valueMissing) {
+                    document.getElementById("phoneError").textContent = "Phone number is required.";
+                } else if (phone.validity.patternMismatch) {
+                    document.getElementById("phoneError").textContent = "Phone number must be 10 digits.";
+                }
+            }
+
+            return valid;
+        }
+    </script>
+
+</body>
+</html>
+

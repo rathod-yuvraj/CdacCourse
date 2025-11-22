@@ -1,0 +1,12 @@
+package javaPractise;
+
+public class StrBuildinFun {
+
+	public static void main(String[] args) {
+		String str="yuvraj rathod";
+		
+		System.out.println(str.indexOf("rathod"));
+
+	}
+
+}

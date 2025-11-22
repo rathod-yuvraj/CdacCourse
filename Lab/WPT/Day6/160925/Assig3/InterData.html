@@ -50,7 +50,21 @@
         <input type="text" id="LastName" required><br>
         <label for="age">Enter The Age:</label>
         <input type="text" id="age"><br>
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> yuvraj
+        <button onclick="addData()">Add</button>
+=======
         <button>Add</button>
+>>>>>>> 782671352c7f183f3f0f66acc85eaf10bd53752a
+<<<<<<< HEAD
+=======
+=======
+        <button>Add</button>
+>>>>>>> ra
+>>>>>>> yuvraj
       </div>
       <div class="tablecontainer">
         <table id="data">
@@ -61,7 +75,21 @@
             <th>Age</th>
         </tr>
     </thead>
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> yuvraj
+    <tbody id="myTableData">
+=======
     <tbody>
+>>>>>>> 782671352c7f183f3f0f66acc85eaf10bd53752a
+<<<<<<< HEAD
+=======
+=======
+    <tbody>
+>>>>>>> ra
+>>>>>>> yuvraj
 
     </tbody>
 
@@ -71,6 +99,45 @@
  
 <script>
     function addData(){
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> yuvraj
+        let firstName=document.getElementById("FirstName").value;
+        let lastName=document.getElementById("LastName").value;
+        let getAge=document.getElementById("age").value;
+
+        const getuserdata={
+            Firstname:firstName,
+            Lastname:lastName,
+            Age:getAge
+
+
+        }
+        console.log(getuserdata);
+        const JSONuser=JSON.stringify(getuserdata);
+        console.log(JSONuser);
+
+        const myTable=document.getElementById("myTableData");
+
+        // let Frist=document.getElementById('myTableData').innerHTML=myTable;
+        
+
+        let newData=myTable.insertRow();
+        let ifirstname=newData.insertCell(0);
+        let ilastname=newData.insertCell(1);
+        let iage=newData.insertCell(2);
+
+        ifirstname.textContent=firstName;
+        ilastname.textContent=lastName;
+        iage.textContent=getAge;
+=======
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> ra
+>>>>>>> yuvraj
         let firstname=document.getElementById("fristName");
         let lastName=document.getElementById("lastName");
         let getAge=document.getElementById("age");
@@ -83,6 +150,14 @@
 
         }
         const JSONuser=JSON.stringify(getuserdata)
+<<<<<<< HEAD
+>>>>>>> 782671352c7f183f3f0f66acc85eaf10bd53752a
+=======
+<<<<<<< HEAD
+>>>>>>> 782671352c7f183f3f0f66acc85eaf10bd53752a
+=======
+>>>>>>> ra
+>>>>>>> yuvraj
 
     }
 </script>

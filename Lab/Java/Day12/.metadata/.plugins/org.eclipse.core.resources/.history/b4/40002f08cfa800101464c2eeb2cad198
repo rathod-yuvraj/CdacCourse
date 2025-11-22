@@ -1,0 +1,52 @@
+package com.demo.dao;
+
+import java.util.HashMap;
+import java.util.Map;
+
+public class CustomerDaoImpl implements CustomerDao {
+
+	static Map <String,Integer> hm ;
+	
+	
+	static {
+              
+		hm=new HashMap<>();
+		hm.put("front",40000);
+		hm.put("Back",20000);
+		hm.put("full", 80000);
+		
+	}
+
+
+	@Override
+	public boolean save(String cn, int cp) {
+		// TODO Auto-generated method stub
+		if (hm.containsKey(cn)){
+			return false;
+		}
+		hm.put(cn, cp);
+		return true;
+				
+	}
+
+
+	@Override
+	public Map<String, Integer> displaydata() {
+		// TODO Auto-generated method stub
+		return hm ;
+	}
+
+
+	@Override
+	public boolean removeByName(String cname) {
+		if(hm.containsKey(cname)) {
+			hm.remove(cname);
+			return true;
+		}
+		
+		return false;
+	}
+	
+	
+	
+}

@@ -1,0 +1,21 @@
+package demo.com.dao;
+
+import java.util.Map;
+
+import demo.com.Beans.Employee;
+
+public class EmployeeDaoImpl implements EmployeeDao {
+	static Map<String,Integer> hm;
+	static {
+		hm=new HashMap<>();
+		hm.put("DAC", 240);
+		hm.put("DBDA",65);
+		hm.put("DTISS",60);
+		}
+	@Override
+	public boolean save(Employee e) {
+		
+		return false;
+	}
+
+}

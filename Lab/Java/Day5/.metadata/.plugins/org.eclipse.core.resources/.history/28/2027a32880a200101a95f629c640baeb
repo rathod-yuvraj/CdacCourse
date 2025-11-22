@@ -1,0 +1,55 @@
+package hasARelation;
+
+import java.util.Arrays;
+
+public class Team {
+  private int tid;
+  private String tname;
+ private String captain;
+ private int size;
+ private Player [] plist;
+@Override
+public String toString() {
+	return "Team [tid=" + tid + ", tname=" + tname + ", captain=" + captain + ", size=" + size + ", plist="
+			+ Arrays.toString(plist) + "]";
+}
+public int getTid() {
+	return tid;
+}
+public void setTid(int tid) {
+	this.tid = tid;
+}
+public String getTname() {
+	return tname;
+}
+public void setTname(String tname) {
+	this.tname = tname;
+}
+public String getCaptain() {
+	return captain;
+}
+public void setCaptain(String captain) {
+	this.captain = captain;
+}
+public int getSize() {
+	return size;
+}
+public void setSize(int size) {
+	this.size = size;
+}
+public Player[] getPlist() {
+	return plist;
+}
+public void setPlist(Player[] plist) {
+	this.plist = plist;
+}
+public Team(int tid, String tname, String captain, int size, Player[] plist) {
+	super();
+	this.tid = tid;
+	this.tname = tname;
+	this.captain = captain;
+	this.size = size;
+	this.plist = plist;
+}
+
+}

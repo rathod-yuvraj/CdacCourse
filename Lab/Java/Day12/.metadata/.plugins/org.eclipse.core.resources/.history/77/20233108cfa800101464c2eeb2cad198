@@ -1,0 +1,53 @@
+package com.demo.service;
+
+import java.util.Map;
+import java.util.Scanner;
+
+import com.demo.dao.CustomerDao;
+import com.demo.dao.CustomerDaoImpl;
+
+public class CustomerServiceImpl implements CustomerService {
+	
+	private CustomerDao cdao ;
+	
+
+	public CustomerServiceImpl() {
+		super();
+		cdao = new CustomerDaoImpl();
+	}
+
+
+	
+
+
+	@Override
+	public boolean addNewCustomer() {
+		
+	    Scanner sc = new Scanner(System.in);
+	    System.out.println("enter the new course");
+	    String cn = sc.next();
+	    System.out.println("enter the price");
+	    int cp = sc.nextInt();
+	    
+		
+		return cdao.save(cn,cp);
+	}
+
+
+	@Override
+	public Map<String, Integer> displayAll() {
+		// TODO Auto-generated method stub
+		return cdao.displaydata();
+	}
+
+
+
+
+
+	@Override
+	public boolean deleteByName(String cname) {
+		
+		return cdao.removeByName(cname);
+	}
+
+}

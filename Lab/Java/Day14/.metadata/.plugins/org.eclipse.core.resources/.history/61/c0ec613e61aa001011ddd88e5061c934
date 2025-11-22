@@ -1,0 +1,38 @@
+package com.yuvraj.service;
+
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.List;
+
+import com.yuvraj.beans.Employee;
+import com.yuvraj.service.*;
+public class EmployeeReader {
+	
+
+
+	    public List<Employee> readEmployees(String filePath) {
+	        List<Employee> employees = new ArrayList<>();
+
+	        try (BufferedReader br = new BufferedReader(new FileReader(filePath))) {
+	            String line;
+	            while ((line = br.readLine()) != null) {
+	                String[] arr = line.split(",");
+	                if (arr.length == 4) {
+	                    Employee emp = new Employee(
+	                        Integer.parseInt(arr[0]),
+	                        arr[1],
+	                        arr[2],
+	                        Double.parseDouble(arr[3])
+	                    );
+	                    employees.add(emp);
+	                }
+	            }
+	        } catch (IOException e) {
+	            e.printStackTrace();
+	        }
+
+	        return employees;
+	    }
+	}
+
+}

@@ -1,0 +1,22 @@
+package com.yuvraj.test;
+
+import com.yuvraj.threads.MyFactorialThread;
+import com.yuvraj.beans.*;
+import com.yuvraj.threads.MyPrint3TableThread;
+public class TestThread {
+
+	public static void main(String[] args) {
+		FactorialAtable ob=new FactorialAtable();
+		
+		MyFactorialThread fth=new MyFactorialThread(5,ob);
+		
+		fth.start();
+		
+		MyPrint3TableThread tth=new MyPrint3TableThread(3,ob);
+		tth.start();
+	
+		
+
+	}
+
+}

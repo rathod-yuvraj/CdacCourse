@@ -1,0 +1,9 @@
+package com.yuvraj.beans;
+
+public class Customer {
+	private int cid;
+	private String cName;
+	private String mob;
+	
+
+}

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real-Time Clock</title>
+    <style>
+        /* Apply the styling originally meant for the iframe to the div#time */
+        #time {
+            margin: 10px;
+            padding: 50px;
+            width: 200px; /* Added width/height for visual sizing */
+            height: 200px;
+            background-color: rgb(75, 93, 151);
+            color: aliceblue; /* Sets the text color */
+            display: flex; /* Centers the text */
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2em;
+            text-align: center;
+        }
+    </style>
+ 
+</head>
+<body>
+    
+    <h1>Multiplication table</h1>
+    <h2>Current Date time</h2>
+ 
+    <div id="time">Initializing Clock...</div>
+      
+    <button onclick="TimeDate()">Update Time Now</button>
+    
+</body>
+<script>
+    function TimeDate() {
+        const now = new Date();
+        
+        // Gets the full date and time string based on the user's local settings
+        const dateTimeString = now.toLocaleString(); 
+        
+        // Updates the content of the single element with ID="time"
+        document.getElementById("time").innerHTML = dateTimeString;
+    }
+
+    // This immediately starts the clock and updates it every 1000 milliseconds (1 second).
+    setInterval(TimeDate, 1000);
+    
+    // Call it once immediately so the user doesn't see "Initializing Clock..." for a full second.
+    TimeDate();
+</script>
+</html>

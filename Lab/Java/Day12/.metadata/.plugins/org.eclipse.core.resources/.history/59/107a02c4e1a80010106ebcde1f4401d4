@@ -1,0 +1,20 @@
+package com.yuvraj.service;
+
+
+import com.yuvraj.dao.*;
+public class OrderServiceImpl implements OrderService {
+	
+	private OrderDao odao;
+
+	public OrderServiceImpl() {
+		super();
+		this.odao = new OrderDaoImpl();
+	}
+
+	@Override
+	public boolean addNewCustomer() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+}

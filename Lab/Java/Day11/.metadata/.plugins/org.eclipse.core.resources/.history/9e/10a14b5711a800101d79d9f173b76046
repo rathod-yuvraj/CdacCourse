@@ -1,0 +1,6 @@
+package demo.com.Service;
+
+public class EmployeeServiceImpl implements EmployeeService {
+	private EmployeeDao edao=new EmployeeDaoImpl();
+
+}

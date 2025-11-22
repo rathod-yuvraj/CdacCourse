@@ -1,0 +1,13 @@
+package com.yuvraj.service;
+
+public class OrderServiceImpl implements OrderService {
+	
+	private OrderService odao;
+
+	@Override
+	public boolean addNewCustomer() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+}

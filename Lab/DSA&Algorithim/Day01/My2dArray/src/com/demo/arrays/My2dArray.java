@@ -1,0 +1,38 @@
+package com.demo.arrays;
+
+import java.util.Scanner;
+
+public class My2dArray {
+
+	private int[][] arr;
+	public My2dArray() {
+		arr=new int[3][3];
+		
+	}
+	public My2dArray(int rows,int cols) {
+		arr=new int [rows][cols];
+		
+	}
+	public void acceptData() {
+		Scanner sc=new Scanner(System.in);
+		for(int i=0;i<arr.length;i++) {
+		
+			for(int j=0;j<arr[i].length;j++) {
+				
+				arr[i][j]=sc.nextInt();
+			}
+		}
+		
+	}
+	public void displayAll() {
+		
+		int n=arr.length;
+		
+		for(int i=0;i<n;i++) {
+			for(int j=0;j<n;j++) {
+				System.out.println(" , "+arr[i][j]);
+			}
+		}
+		
+	}
+}

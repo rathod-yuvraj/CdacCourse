@@ -1,0 +1,37 @@
+package com.demo.dao;
+
+import java.time.LocalDate;
+import java.util.List;
+
+import com.demo.beans.Employee;
+import java.util.*;
+public class EmployeeDaoImpl implements EmployeeDao {
+	
+	static List <Employee> lst;
+	static {
+		
+		lst=new ArrayList<>();
+		
+		lst.add(new Employee(101,"Rohit",2003320.00, LocalDate.of(2025, 11, 12)));
+	}
+
+	@Override
+	public boolean save(Employee e) {
+		// TODO Auto-generated method stub
+		if(e!=null) {
+			 lst.add(e);
+			 return true;
+			
+		}
+		return false;
+		   
+		
+	}
+
+	@Override
+	public List<Employee> findAll() {
+		
+		return lst;
+	}
+
+}

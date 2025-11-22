@@ -1,0 +1,1055 @@
+Asigmnet 3 Ans 
+
+1)
+ select ename ,mgr ,job from emp where job = 'manager';
+
+2)
+select ename,job,sal from emp where sal >3000;
+
+3)
+SELECT ename from emp where ename like '_a%';
+
+4)
+select ename, deptno from emp where deptno = 10;
+
+5)
+select ename,job,sal from emp where sal > 2000;
+6)
+select ename from emp where ename like '%b_a%';
+7)
+ select hiredate from emp where hiredate ='1990-12-21';
+8)
+select ename,sal, deptno from emp where deptno = 10;
+9)
+ select ename,job,sal from emp where sal > 2500  order by sal;
+10)
+select ename from emp where ename like '%F%';
+11)same
+\12)
+> select ename ,sal,sal * 1.1 as bonus from emp;
+13)
+ select ename,job,deptno from emp where deptno between 30 and 60 ;
+14)
+SELECT empno, ename,sal,job from emp where job in ('clerk','manager') and sal>1500;
+15)
+select ename,(sal*12)as Annual_Salary, comm from emp where sal > comm;
+16)
+select ename from emp where ename like '_%s';
+17)
+select ename ,job,sal from emp where sal between 1000 and 2200;
+18)
+ select ename ,job from emp where job = 'clerk';
+
+
+mysql> show tables;
+ERROR 1046 (3D000): No database selected
+mysql> mysql --host=192.168.10.117 --port=3306 --user=dac65 --password=welcome
+    -> ;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'mysql --host=192.168.10.117 --port=3306 --user=dac65 --password=welcome' at line 1
+mysql> mysql --host=192.168.10.117 --port=3306 --user=dac1 --password=welcome
+    -> ;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'mysql --host=192.168.10.117 --port=3306 --user=dac1 --password=welcome' at line 1
+mysql> use dac65;
+Database changed
+mysql> show tables;
++---------------------+
+| Tables_in_dac65     |
++---------------------+
+| a                   |
+| activity            |
+| agent               |
+| airline_seats       |
+| andor               |
+| atm                 |
+| b                   |
+| bankloan            |
+| batch_schedule      |
+| betweensalary       |
+| bitwise             |
+| blanktablea         |
+| blanktableb         |
+| blog                |
+| bonus               |
+| books               |
+| brands              |
+| bus_stops           |
+| cafe                |
+| candidate           |
+| cardpayments        |
+| cashpayments        |
+| categories          |
+| category            |
+| city                |
+| classandsubjects    |
+| client              |
+| cnumbers            |
+| coalesce            |
+| comments            |
+| company             |
+| countnulls          |
+| countnumbers        |
+| cricketwinnerteam   |
+| customer            |
+| customers           |
+| demodept1           |
+| demodept2           |
+| dept                |
+| dept1               |
+| dhl                 |
+| docs                |
+| doctor              |
+| doctorvisits        |
+| dummy               |
+| duplicate           |
+| emp                 |
+| emp1                |
+| emp2                |
+| emp_attendance      |
+| emp_cards           |
+| emp_phone           |
+| empj                |
+| envelope            |
+| facebook            |
+| fedex               |
+| food                |
+| food_category_tags  |
+| food_items          |
+| fromstoreorders     |
+| fruits              |
+| fullname            |
+| hall_ticket         |
+| hobby               |
+| ipl                 |
+| item                |
+| job_list            |
+| key_parts           |
+| labtestlist         |
+| leading_zeroes      |
+| leadtable           |
+| licence             |
+| linkedin            |
+| location            |
+| managers            |
+| mass_table          |
+| medicinelist        |
+| menucard            |
+| missingnumbers      |
+| nearest             |
+| new                 |
+| newbooks            |
+| null1               |
+| null2               |
+| nullif              |
+| numberstring        |
+| onlineorders        |
+| ord                 |
+| order1              |
+| order_items         |
+| orderdetails        |
+| orders              |
+| overlapping_dates   |
+| overtime            |
+| patient             |
+| phonecall           |
+| pivot_table         |
+| plumber             |
+| plumber_service_map |
+| points              |
+| population          |
+| posts               |
+| price               |
+| product             |
+| product_sales       |
+| products            |
+| pune_metro_stations |
+| quarterly_revenue   |
+| r                   |
+| r1                  |
+| r2                  |
+| races               |
+| regexpr             |
+| repeatingnumbers    |
+| replacedept         |
+| reservations        |
+| revenue             |
+| rockets             |
+| room_assigned       |
+| room_staff          |
+| rooms               |
+| runners             |
+| runningserver       |
+| sales               |
+| sales1              |
+| sales_channel       |
+| salespeople         |
+| salesperson         |
+| salgrade            |
+| server              |
+| service             |
+| seta                |
+| setb                |
+| shop                |
+| softdrink           |
+| sort                |
+| sourcecity          |
+| sourcenames         |
+| stadium             |
+| stages              |
+| states              |
+| station             |
+| status              |
+| stocks              |
+| stringnumber        |
+| student             |
+| students5           |
+| swapcity            |
+| tablea              |
+| tableaa             |
+| tableb              |
+| tablebb             |
+| targetcity          |
+| targetnames         |
+| tasks               |
+| teams               |
+| temp                |
+| temp1               |
+| trainers            |
+| trains              |
+| traintimetable      |
+| transactions        |
+| unpivot_table       |
+| ups                 |
+| vote_response       |
+| votes               |
+| warehouse           |
+| x                   |
+| year_of_service     |
+| yearly_revenue      |
+| years               |
+| yuvraj              |
+| z                   |
++---------------------+
+173 rows in set (0.01 sec)
+
+mysql> select * from emp;
++-------+----------+--------+---------------------+------+------------+------+------+--------+---------+--------------+------------+------------+----------+
+| EMPNO | ENAME    | GENDER | JOB                 | MGR  | HIREDATE   | SAL  | COMM | DEPTNO | BONUSID | USER NAME    | PWD        | PHONE      | isActive |
++-------+----------+--------+---------------------+------+------------+------+------+--------+---------+--------------+------------+------------+----------+
+|  6001 | GITA     | F      | Compliance officers | 7920 | 1981-07-19 | 1750 | NULL |     30 |       1 | GITA         | sales@2017 | NULL       |        1 |
+|  6129 | VRUSHALI | F      | Compliance officers | 7920 | 1981-07-19 | 1750 | NULL |     50 |       1 | VRUSHALI     | PUN@8877   | NULL       |        1 |
+|  6473 | SHARMIN  | F      | Public Relation     | 7920 | 1981-07-19 | 1750 | NULL |     20 |       1 | SHARMIN      | a12recmpm  | NULL       |        1 |
+|  6781 | BANDISH  | F      | Public Relation     | 7920 | 1981-07-19 | 1750 | NULL |     20 |       1 | BANDISH      | a12recmpm  | NULL       |        1 |
+|  7369 | SMITH    | M      | CLERK               | 7902 | 1980-12-17 |  800 | NULL |     20 |       2 | TRITONE      | a12recmpm  | 7032300023 |        0 |
+|  7415 | AARAV    | M      | CLERK               | 7902 | 1981-12-31 | 3350 | NULL |     10 |    NULL | AARAV        | NULL       | 7032300084 |        0 |
+|  7421 | THOMAS   | M      | CLERK               | 7920 | 1981-07-19 | 1750 | NULL |     10 |       1 | THOMAS       | r50mpm     | 7032300011 |        0 |
+|  7499 | ALLEN    | M      | SALESMAN            | 7698 | 1981-02-20 | 1600 |  300 |     30 |       4 | ALWAYS TESTE | sales@2017 | 7032300096 |        1 |
+|  7521 | WARD     | M      | SALESMAN            | 7698 | 1981-02-22 | 1250 |  500 |     30 |       1 | WARD         | sales@2017 | 7132300034 |        1 |
+|  7566 | JONES    | M      | MANAGER             | 7839 | 1981-04-02 | 2975 | NULL |     20 |       4 | HONEYCOMB    | a12recmpm  | 7132300039 |        1 |
+|  7654 | MARTIN   | M      | SALESMAN            | 7698 | 1981-09-28 | 1250 | 1400 |     30 |       6 | LIFE RACER   | sales@2017 | 7132300050 |        1 |
+|  7698 | BLAKE    | M      | MANAGER             | 7839 | 1981-05-01 | 2850 | NULL |     30 |       1 | BIG BEN      | sales@2017 | 7132300027 |        1 |
+|  7782 | CLARK    | M      | MANAGER             | 7839 | 1981-06-09 | 2450 | NULL |     10 |       3 | CLARK        | r50mpm     | 7032300001 |        1 |
+|  7788 | SCOTT    | M      | ANALYST             | 7566 | 1982-12-09 | 3000 | NULL |     20 |       3 | WHITE SAND   | a12recmpm  | NULL       |        1 |
+|  7839 | KING     | M      | PRESIDENT           | NULL | 1981-11-17 | 5000 | NULL |     10 |       1 | KING         | r50mpm     | 7132300081 |        1 |
+|  7840 | FRED     | M      | vice PRESIDENT      | 7839 | 1983-08-09 | 5000 | NULL |     20 |       1 | SAND STONE   | a12recmpm  | NULL       |        1 |
+|  7844 | TURNER   | M      | SALESMAN            | 7698 | 1981-09-08 | 1500 |    0 |     30 |       5 | SAND DUST    | sales@2017 | NULL       |        1 |
+|  7876 | ADAMS    | M      | CLERK               | 7788 | 1983-01-12 | 1100 | NULL |     20 |       1 | CRAZY ANYONE | a12recmpm  | 7132300086 |        1 |
+|  7888 | Ruhan    | M      | Network             | 7888 | 1983-08-09 | 2000 | NULL |     60 |       1 | Ruhan        | BRD@1122   | NULL       |        1 |
+|  7889 | Neel     | M      | vice PRESIDENT      | 7839 | 1983-08-09 | 1000 | NULL |     60 |       0 | Neel         | BRD@1122   | NULL       |        1 |
+|  7900 | JAMES    | M      | CLERK               | 7698 | 1981-12-03 |  950 | NULL |     30 |       2 | CRAZY LEADER | sales@2017 | 7132300042 |        1 |
+|  7902 | FORD     | M      | ANALYST             | 7566 | 1981-12-03 | 3000 | NULL |     20 |       4 | CONBRIO      | a12recmpm  | NULL       |        0 |
+|  7919 | HOFFMAN  | M      | MANAGER             | 7566 | 1982-03-24 | 4150 | NULL |     30 |       3 | INTERVAL     | sales@2017 | NULL       |        1 |
+|  7920 | GRASS    | M      | SALESMAN            | 7919 | 1980-02-14 | 2575 | 2700 |     30 |       5 | GRASS        | sales@2017 | NULL       |        1 |
+|  7934 | MILLER   | M      | CLERK               | 7782 | 1982-01-23 | 1300 | 1300 |     10 |       2 | QUARTERNOTE  | r50mpm     | 7132300055 |        0 |
+|  7945 | AARUSH   | M      | SALESMAN            | 7902 | 1980-02-14 | 1350 | 2700 |     30 |    NULL | AARUSH       | ABCDEF     | NULL       |        0 |
+|  7949 | ALEX     | M      | MANAGER             | 7698 | 1982-01-24 | 1250 |  500 |     30 |       5 | QUARTERREST  | sales@2017 | 7156567183 |        1 |
+|  8433 | NATASHA  | F      | CLERK               | 7920 | 1981-07-19 | 1750 | NULL |     30 |       1 | NATASHA      | sales@2017 | NULL       |        1 |
+|  9400 | SANGITA  | F      | Compliance officers | 7920 | 1981-07-19 | 1750 | NULL |     50 |       1 | SANGITA      | NULL       | NULL       |        1 |
+|  9473 | SUPRIYA  | F      | ANALYST             | 7920 | 1981-07-19 | 1750 | NULL |     50 |       1 | SUPRIYA      | XYZ@1234   | NULL       |        1 |
++-------+----------+--------+---------------------+------+------------+------+------+--------+---------+--------------+------------+------------+----------+
+30 rows in set (0.01 sec)
+
+mysql> select ename ,mgr ,job from emp where job = manager;
+ERROR 1054 (42S22): Unknown column 'manager' in 'where clause'
+mysql> select ename ,mgr ,job from emp where job = 'manager';
++---------+------+---------+
+| ename   | mgr  | job     |
++---------+------+---------+
+| JONES   | 7839 | MANAGER |
+| BLAKE   | 7839 | MANAGER |
+| CLARK   | 7839 | MANAGER |
+| HOFFMAN | 7566 | MANAGER |
+| ALEX    | 7698 | MANAGER |
++---------+------+---------+
+5 rows in set (0.00 sec)
+
+mysql> ^C
+mysql> select ename,job,sal from emp where sal >3000;
++---------+----------------+------+
+| ename   | job            | sal  |
++---------+----------------+------+
+| AARAV   | CLERK          | 3350 |
+| KING    | PRESIDENT      | 5000 |
+| FRED    | vice PRESIDENT | 5000 |
+| HOFFMAN | MANAGER        | 4150 |
++---------+----------------+------+
+4 rows in set (0.00 sec)
+
+mysql> select ename,job,sal from emp where sal <3000;
++----------+---------------------+------+
+| ename    | job                 | sal  |
++----------+---------------------+------+
+| GITA     | Compliance officers | 1750 |
+| VRUSHALI | Compliance officers | 1750 |
+| SHARMIN  | Public Relation     | 1750 |
+| BANDISH  | Public Relation     | 1750 |
+| SMITH    | CLERK               |  800 |
+| THOMAS   | CLERK               | 1750 |
+| ALLEN    | SALESMAN            | 1600 |
+| WARD     | SALESMAN            | 1250 |
+| JONES    | MANAGER             | 2975 |
+| MARTIN   | SALESMAN            | 1250 |
+| BLAKE    | MANAGER             | 2850 |
+| CLARK    | MANAGER             | 2450 |
+| TURNER   | SALESMAN            | 1500 |
+| ADAMS    | CLERK               | 1100 |
+| Ruhan    | Network             | 2000 |
+| Neel     | vice PRESIDENT      | 1000 |
+| JAMES    | CLERK               |  950 |
+| GRASS    | SALESMAN            | 2575 |
+| MILLER   | CLERK               | 1300 |
+| AARUSH   | SALESMAN            | 1350 |
+| ALEX     | MANAGER             | 1250 |
+| NATASHA  | CLERK               | 1750 |
+| SANGITA  | Compliance officers | 1750 |
+| SUPRIYA  | ANALYST             | 1750 |
++----------+---------------------+------+
+24 rows in set (0.00 sec)
+
+mysql> select ename,job,sal from emp where sal <>3000;
++----------+---------------------+------+
+| ename    | job                 | sal  |
++----------+---------------------+------+
+| GITA     | Compliance officers | 1750 |
+| VRUSHALI | Compliance officers | 1750 |
+| SHARMIN  | Public Relation     | 1750 |
+| BANDISH  | Public Relation     | 1750 |
+| SMITH    | CLERK               |  800 |
+| AARAV    | CLERK               | 3350 |
+| THOMAS   | CLERK               | 1750 |
+| ALLEN    | SALESMAN            | 1600 |
+| WARD     | SALESMAN            | 1250 |
+| JONES    | MANAGER             | 2975 |
+| MARTIN   | SALESMAN            | 1250 |
+| BLAKE    | MANAGER             | 2850 |
+| CLARK    | MANAGER             | 2450 |
+| KING     | PRESIDENT           | 5000 |
+| FRED     | vice PRESIDENT      | 5000 |
+| TURNER   | SALESMAN            | 1500 |
+| ADAMS    | CLERK               | 1100 |
+| Ruhan    | Network             | 2000 |
+| Neel     | vice PRESIDENT      | 1000 |
+| JAMES    | CLERK               |  950 |
+| HOFFMAN  | MANAGER             | 4150 |
+| GRASS    | SALESMAN            | 2575 |
+| MILLER   | CLERK               | 1300 |
+| AARUSH   | SALESMAN            | 1350 |
+| ALEX     | MANAGER             | 1250 |
+| NATASHA  | CLERK               | 1750 |
+| SANGITA  | Compliance officers | 1750 |
+| SUPRIYA  | ANALYST             | 1750 |
++----------+---------------------+------+
+28 rows in set (0.00 sec)
+
+mysql> ^C
+mysql> select ename from emp where like '_a%';
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'like '_a%'' at line 1
+mysql> select ename from emp where like '%_a%';
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'like '%_a%'' at line 1
+mysql> select ename from emp where like '%a%';
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'like '%a%'' at line 1
+mysql> select ename from emp where like '%a%';
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'like '%a%'' at line 1
+mysql> SELECT *
+    -> FROM employees
+    -> WHERE name LIKE '_A%';
+ERROR 1146 (42S02): Table 'dac65.employees' doesn't exist
+mysql> SELECT * from emp where ename like '_a%'
+    -> ;
++-------+---------+--------+---------------------+------+------------+------+------+--------+---------+--------------+------------+------------+----------+
+| EMPNO | ENAME   | GENDER | JOB                 | MGR  | HIREDATE   | SAL  | COMM | DEPTNO | BONUSID | USER NAME    | PWD        | PHONE      | isActive |
++-------+---------+--------+---------------------+------+------------+------+------+--------+---------+--------------+------------+------------+----------+
+|  6781 | BANDISH | F      | Public Relation     | 7920 | 1981-07-19 | 1750 | NULL |     20 |       1 | BANDISH      | a12recmpm  | NULL       |        1 |
+|  7415 | AARAV   | M      | CLERK               | 7902 | 1981-12-31 | 3350 | NULL |     10 |    NULL | AARAV        | NULL       | 7032300084 |        0 |
+|  7521 | WARD    | M      | SALESMAN            | 7698 | 1981-02-22 | 1250 |  500 |     30 |       1 | WARD         | sales@2017 | 7132300034 |        1 |
+|  7654 | MARTIN  | M      | SALESMAN            | 7698 | 1981-09-28 | 1250 | 1400 |     30 |       6 | LIFE RACER   | sales@2017 | 7132300050 |        1 |
+|  7900 | JAMES   | M      | CLERK               | 7698 | 1981-12-03 |  950 | NULL |     30 |       2 | CRAZY LEADER | sales@2017 | 7132300042 |        1 |
+|  7945 | AARUSH  | M      | SALESMAN            | 7902 | 1980-02-14 | 1350 | 2700 |     30 |    NULL | AARUSH       | ABCDEF     | NULL       |        0 |
+|  8433 | NATASHA | F      | CLERK               | 7920 | 1981-07-19 | 1750 | NULL |     30 |       1 | NATASHA      | sales@2017 | NULL       |        1 |
+|  9400 | SANGITA | F      | Compliance officers | 7920 | 1981-07-19 | 1750 | NULL |     50 |       1 | SANGITA      | NULL       | NULL       |        1 |
++-------+---------+--------+---------------------+------+------------+------+------+--------+---------+--------------+------------+------------+----------+
+8 rows in set (0.00 sec)
+
+mysql> SELECT ename from emp where ename like '_a%';
++---------+
+| ename   |
++---------+
+| BANDISH |
+| AARAV   |
+| WARD    |
+| MARTIN  |
+| JAMES   |
+| AARUSH  |
+| NATASHA |
+| SANGITA |
++---------+
+8 rows in set (0.00 sec)
+
+mysql> ^C
+mysql> ^C
+mysql> select ename, deptno from emp where deptno = 10;
++--------+--------+
+| ename  | deptno |
++--------+--------+
+| AARAV  |     10 |
+| THOMAS |     10 |
+| CLARK  |     10 |
+| KING   |     10 |
+| MILLER |     10 |
++--------+--------+
+5 rows in set (0.00 sec)
+
+mysql> select ename,job sal from where sal > 2000;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'where sal > 2000' at line 1
+mysql> select ename,job,sal from emp where sal > 2000;
++---------+----------------+------+
+| ename   | job            | sal  |
++---------+----------------+------+
+| AARAV   | CLERK          | 3350 |
+| JONES   | MANAGER        | 2975 |
+| BLAKE   | MANAGER        | 2850 |
+| CLARK   | MANAGER        | 2450 |
+| SCOTT   | ANALYST        | 3000 |
+| KING    | PRESIDENT      | 5000 |
+| FRED    | vice PRESIDENT | 5000 |
+| FORD    | ANALYST        | 3000 |
+| HOFFMAN | MANAGER        | 4150 |
+| GRASS   | SALESMAN       | 2575 |
++---------+----------------+------+
+10 rows in set (0.00 sec)
+
+mysql> ^C
+mysql> select ename from emp where ename like '_a%b%';
+Empty set (0.00 sec)
+
+mysql> select ename from emp ;
++----------+
+| ename    |
++----------+
+| GITA     |
+| VRUSHALI |
+| SHARMIN  |
+| BANDISH  |
+| SMITH    |
+| AARAV    |
+| THOMAS   |
+| ALLEN    |
+| WARD     |
+| JONES    |
+| MARTIN   |
+| BLAKE    |
+| CLARK    |
+| SCOTT    |
+| KING     |
+| FRED     |
+| TURNER   |
+| ADAMS    |
+| Ruhan    |
+| Neel     |
+| JAMES    |
+| FORD     |
+| HOFFMAN  |
+| GRASS    |
+| MILLER   |
+| AARUSH   |
+| ALEX     |
+| NATASHA  |
+| SANGITA  |
+| SUPRIYA  |
++----------+
+30 rows in set (0.00 sec)
+
+mysql> select ename from emp where ename like '_b%a%';
+Empty set (0.00 sec)
+
+mysql> select ename from emp where ename like '_b%l%';
+Empty set (0.00 sec)
+
+mysql> select ename from emp where ename like '_bl%';
+Empty set (0.00 sec)
+
+mysql> select ename from emp where ename like '%bl%';
++-------+
+| ename |
++-------+
+| BLAKE |
++-------+
+1 row in set (0.00 sec)
+
+mysql> select ename from emp where ename like '%ab%';
+Empty set (0.00 sec)
+
+mysql> select ename from emp where ename like '%b_a%';
++-------+
+| ename |
++-------+
+| BLAKE |
++-------+
+1 row in set (0.00 sec)
+
+mysql> select ename from emp where ename like '_a%b^C;
+mysql> select hiredate from emp where hiredate ='21-12-1990';
+ERROR 1525 (HY000): Incorrect DATE value: '21-12-1990'
+mysql> select hiredate from emp ;
++------------+
+| hiredate   |
++------------+
+| 1981-07-19 |
+| 1981-07-19 |
+| 1981-07-19 |
+| 1981-07-19 |
+| 1980-12-17 |
+| 1981-12-31 |
+| 1981-07-19 |
+| 1981-02-20 |
+| 1981-02-22 |
+| 1981-04-02 |
+| 1981-09-28 |
+| 1981-05-01 |
+| 1981-06-09 |
+| 1982-12-09 |
+| 1981-11-17 |
+| 1983-08-09 |
+| 1981-09-08 |
+| 1983-01-12 |
+| 1983-08-09 |
+| 1983-08-09 |
+| 1981-12-03 |
+| 1981-12-03 |
+| 1982-03-24 |
+| 1980-02-14 |
+| 1982-01-23 |
+| 1980-02-14 |
+| 1982-01-24 |
+| 1981-07-19 |
+| 1981-07-19 |
+| 1981-07-19 |
++------------+
+30 rows in set (0.00 sec)
+
+mysql> select hiredate from emp where hiredate ='1990-12-21';
+Empty set (0.00 sec)
+
+mysql> select hiredate from emp where hiredate ='1981-07-19';
++------------+
+| hiredate   |
++------------+
+| 1981-07-19 |
+| 1981-07-19 |
+| 1981-07-19 |
+| 1981-07-19 |
+| 1981-07-19 |
+| 1981-07-19 |
+| 1981-07-19 |
+| 1981-07-19 |
++------------+
+8 rows in set (0.00 sec)
+
+mysql> select hiredate from emp where hiredate ='1981-07-19';
++------------+
+| hiredate   |
++------------+
+| 1981-07-19 |
+| 1981-07-19 |
+| 1981-07-19 |
+| 1981-07-19 |
+| 1981-07-19 |
+| 1981-07-19 |
+| 1981-07-19 |
+| 1981-07-19 |
++------------+
+8 rows in set (0.00 sec)
+
+mysql> select ename,sal, deptno from emp where deptno = 10;
++--------+------+--------+
+| ename  | sal  | deptno |
++--------+------+--------+
+| AARAV  | 3350 |     10 |
+| THOMAS | 1750 |     10 |
+| CLARK  | 2450 |     10 |
+| KING   | 5000 |     10 |
+| MILLER | 1300 |     10 |
++--------+------+--------+
+5 rows in set (0.00 sec)
+
+mysql> select ename,job,sal from emp where sal > 25000;
+Empty set (0.00 sec)
+
+mysql> select ename,job,sal from emp where sal > 2500;
++---------+----------------+------+
+| ename   | job            | sal  |
++---------+----------------+------+
+| AARAV   | CLERK          | 3350 |
+| JONES   | MANAGER        | 2975 |
+| BLAKE   | MANAGER        | 2850 |
+| SCOTT   | ANALYST        | 3000 |
+| KING    | PRESIDENT      | 5000 |
+| FRED    | vice PRESIDENT | 5000 |
+| FORD    | ANALYST        | 3000 |
+| HOFFMAN | MANAGER        | 4150 |
+| GRASS   | SALESMAN       | 2575 |
++---------+----------------+------+
+9 rows in set (0.01 sec)
+
+mysql> select ename,job,sal from emp where sal > 2500  order by sal;
++---------+----------------+------+
+| ename   | job            | sal  |
++---------+----------------+------+
+| GRASS   | SALESMAN       | 2575 |
+| BLAKE   | MANAGER        | 2850 |
+| JONES   | MANAGER        | 2975 |
+| SCOTT   | ANALYST        | 3000 |
+| FORD    | ANALYST        | 3000 |
+| AARAV   | CLERK          | 3350 |
+| HOFFMAN | MANAGER        | 4150 |
+| KING    | PRESIDENT      | 5000 |
+| FRED    | vice PRESIDENT | 5000 |
++---------+----------------+------+
+9 rows in set (0.04 sec)
+
+mysql> SELECT ename from emp where ename like '_f%';
+Empty set (0.00 sec)
+
+mysql> SELECT ename from emp where ename like '_F%';
+Empty set (0.00 sec)
+
+mysql> select ename from emp where ename like '%F%';
++---------+
+| ename   |
++---------+
+| FRED    |
+| FORD    |
+| HOFFMAN |
++---------+
+3 rows in set (0.00 sec)
+
+mysql> select ename from emp where ename like '%f%';
++---------+
+| ename   |
++---------+
+| FRED    |
+| FORD    |
+| HOFFMAN |
++---------+
+3 rows in set (0.00 sec)
+
+mysql> select ename,sal, deptno from emp where deptno=10;
++--------+------+--------+
+| ename  | sal  | deptno |
++--------+------+--------+
+| AARAV  | 3350 |     10 |
+| THOMAS | 1750 |     10 |
+| CLARK  | 2450 |     10 |
+| KING   | 5000 |     10 |
+| MILLER | 1300 |     10 |
++--------+------+--------+
+5 rows in set (0.00 sec)
+
+mysql> select ename ,sal,sal * 1.1 as bonus from emp;
++----------+------+--------+
+| ename    | sal  | bonus  |
++----------+------+--------+
+| GITA     | 1750 | 1925.0 |
+| VRUSHALI | 1750 | 1925.0 |
+| SHARMIN  | 1750 | 1925.0 |
+| BANDISH  | 1750 | 1925.0 |
+| SMITH    |  800 |  880.0 |
+| AARAV    | 3350 | 3685.0 |
+| THOMAS   | 1750 | 1925.0 |
+| ALLEN    | 1600 | 1760.0 |
+| WARD     | 1250 | 1375.0 |
+| JONES    | 2975 | 3272.5 |
+| MARTIN   | 1250 | 1375.0 |
+| BLAKE    | 2850 | 3135.0 |
+| CLARK    | 2450 | 2695.0 |
+| SCOTT    | 3000 | 3300.0 |
+| KING     | 5000 | 5500.0 |
+| FRED     | 5000 | 5500.0 |
+| TURNER   | 1500 | 1650.0 |
+| ADAMS    | 1100 | 1210.0 |
+| Ruhan    | 2000 | 2200.0 |
+| Neel     | 1000 | 1100.0 |
+| JAMES    |  950 | 1045.0 |
+| FORD     | 3000 | 3300.0 |
+| HOFFMAN  | 4150 | 4565.0 |
+| GRASS    | 2575 | 2832.5 |
+| MILLER   | 1300 | 1430.0 |
+| AARUSH   | 1350 | 1485.0 |
+| ALEX     | 1250 | 1375.0 |
+| NATASHA  | 1750 | 1925.0 |
+| SANGITA  | 1750 | 1925.0 |
+| SUPRIYA  | 1750 | 1925.0 |
++----------+------+--------+
+30 rows in set (0.00 sec)
+
+mysql> select ename,job,deptno from emp where between 30 and 40;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'between 30 and 40' at line 1
+mysql> select ename,job,deptno from emp where deptno between 30 and 40 ;
++---------+---------------------+--------+
+| ename   | job                 | deptno |
++---------+---------------------+--------+
+| GITA    | Compliance officers |     30 |
+| ALLEN   | SALESMAN            |     30 |
+| WARD    | SALESMAN            |     30 |
+| MARTIN  | SALESMAN            |     30 |
+| BLAKE   | MANAGER             |     30 |
+| TURNER  | SALESMAN            |     30 |
+| JAMES   | CLERK               |     30 |
+| HOFFMAN | MANAGER             |     30 |
+| GRASS   | SALESMAN            |     30 |
+| AARUSH  | SALESMAN            |     30 |
+| ALEX    | MANAGER             |     30 |
+| NATASHA | CLERK               |     30 |
++---------+---------------------+--------+
+12 rows in set (0.00 sec)
+
+mysql> select deptno from empo;
+ERROR 1146 (42S02): Table 'dac65.empo' doesn't exist
+mysql> select deptno from emp;
++--------+
+| deptno |
++--------+
+|     10 |
+|     10 |
+|     10 |
+|     10 |
+|     10 |
+|     20 |
+|     20 |
+|     20 |
+|     20 |
+|     20 |
+|     20 |
+|     20 |
+|     20 |
+|     30 |
+|     30 |
+|     30 |
+|     30 |
+|     30 |
+|     30 |
+|     30 |
+|     30 |
+|     30 |
+|     30 |
+|     30 |
+|     30 |
+|     50 |
+|     50 |
+|     50 |
+|     60 |
+|     60 |
++--------+
+30 rows in set (0.00 sec)
+
+mysql> select ename,job,deptno from emp where deptno between 30 and 60 ;
++----------+---------------------+--------+
+| ename    | job                 | deptno |
++----------+---------------------+--------+
+| GITA     | Compliance officers |     30 |
+| VRUSHALI | Compliance officers |     50 |
+| ALLEN    | SALESMAN            |     30 |
+| WARD     | SALESMAN            |     30 |
+| MARTIN   | SALESMAN            |     30 |
+| BLAKE    | MANAGER             |     30 |
+| TURNER   | SALESMAN            |     30 |
+| Ruhan    | Network             |     60 |
+| Neel     | vice PRESIDENT      |     60 |
+| JAMES    | CLERK               |     30 |
+| HOFFMAN  | MANAGER             |     30 |
+| GRASS    | SALESMAN            |     30 |
+| AARUSH   | SALESMAN            |     30 |
+| ALEX     | MANAGER             |     30 |
+| NATASHA  | CLERK               |     30 |
+| SANGITA  | Compliance officers |     50 |
+| SUPRIYA  | ANALYST             |     50 |
++----------+---------------------+--------+
+17 rows in set (0.00 sec)
+
+mysql> SELECT empno, ename
+    -> FROM employees
+    -> WHERE job IN ('CLERK', 'MANAGER')
+    ->   AND sal > 1500;
+ERROR 1146 (42S02): Table 'dac65.employees' doesn't exist
+mysql> SELECT empno, ename from emp where job in ('clerk','manager') and sal>1500;
++-------+---------+
+| empno | ename   |
++-------+---------+
+|  7415 | AARAV   |
+|  7421 | THOMAS  |
+|  7566 | JONES   |
+|  7698 | BLAKE   |
+|  7782 | CLARK   |
+|  7919 | HOFFMAN |
+|  8433 | NATASHA |
++-------+---------+
+7 rows in set (0.00 sec)
+
+mysql> SELECT empno, ename,sal,job from emp where job in ('clerk','manager') and sal>1500;
++-------+---------+------+---------+
+| empno | ename   | sal  | job     |
++-------+---------+------+---------+
+|  7415 | AARAV   | 3350 | CLERK   |
+|  7421 | THOMAS  | 1750 | CLERK   |
+|  7566 | JONES   | 2975 | MANAGER |
+|  7698 | BLAKE   | 2850 | MANAGER |
+|  7782 | CLARK   | 2450 | MANAGER |
+|  7919 | HOFFMAN | 4150 | MANAGER |
+|  8433 | NATASHA | 1750 | CLERK   |
++-------+---------+------+---------+
+7 rows in set (0.00 sec)
+
+mysql> SELECT
+    ->     ename AS Name,
+    ->     (sal * 12) AS Annual_Salary,
+    ->     comm AS Commission_Earned
+    -> FROM employees
+    -> WHERE sal > comm
+    -> ORDER BY sal DESC, ename ASC;
+ERROR 1146 (42S02): Table 'dac65.employees' doesn't exist
+mysql> select ename,(sal*12)as Annual_Salary, comm from emp where sal > comm;
++--------+---------------+------+
+| ename  | Annual_Salary | comm |
++--------+---------------+------+
+| ALLEN  |         19200 |  300 |
+| WARD   |         15000 |  500 |
+| TURNER |         18000 |    0 |
+| ALEX   |         15000 |  500 |
++--------+---------------+------+
+4 rows in set (0.00 sec)
+
+mysql> select * from sales ;
++-------+--------+----------------+--------+-------------------------+----------+
+| REPID | CUSTID | CUSTNAME       | PRODID | PRODNAME                | AMOUNT   |
++-------+--------+----------------+--------+-------------------------+----------+
+|  7844 |    100 | JOCKSPORTS     | 102130 | RH: "GUIDE TO TENNIS"   |  1703.40 |
+|  7844 |    100 | JOCKSPORTS     | 100861 | ACE TENNIS RACKET II    |   485.00 |
+|  7844 |    100 | JOCKSPORTS     | 100870 | ACE TENNIS BALLS-3 PACK |   292.50 |
+|  7844 |    100 | JOCKSPORTS     | 100890 | ACE TENNIS NET          |    50.00 |
+|  7844 |    100 | JOCKSPORTS     | 100860 | ACE TENNIS RACKET I     |   350.00 |
+|  7844 |    100 | JOCKSPORTS     | 200376 | SB ENERGY BAR-6 PACK    |  2400.00 |
+|  7521 |    101 | TKB SPORT SHOP | 100860 | ACE TENNIS RACKET I     |    35.00 |
+|  7521 |    101 | TKB SPORT SHOP | 100870 | ACE TENNIS BALLS-3 PACK |     8.40 |
+|  7521 |    101 | TKB SPORT SHOP | 100890 | ACE TENNIS NET          |    58.00 |
+|  7654 |    102 | VOLLYRITE      | 100870 | ACE TENNIS BALLS-3 PACK |  3306.00 |
+|  7654 |    102 | VOLLYRITE      | 100860 | ACE TENNIS RACKET I     | 16569.00 |
+|  7654 |    102 | VOLLYRITE      | 100861 | ACE TENNIS RACKET II    |  2300.50 |
+|  7654 |    102 | VOLLYRITE      | 100871 | ACE TENNIS BALLS-6 PACK |  5600.00 |
+|  7521 |    103 | JUST TENNIS    | 100861 | ACE TENNIS RACKET II    |   450.00 |
+|  7521 |    103 | JUST TENNIS    | 100870 | ACE TENNIS BALLS-3 PACK |   140.00 |
+|  7521 |    103 | JUST TENNIS    | 100890 | ACE TENNIS NET          |   116.00 |
+|  7521 |    103 | JUST TENNIS    | 102130 | RH: "GUIDE TO TENNIS"   |    34.00 |
+|  7521 |    103 | JUST TENNIS    | 200376 | SB ENERGY BAR-6 PACK    |    24.00 |
+|  7499 |    104 | EVERY MOUNTAIN | 100871 | ACE TENNIS BALLS-6 PACK |   846.80 |
+|  7499 |    104 | EVERY MOUNTAIN | 101860 | SP TENNIS RACKET        |    24.00 |
+|  7499 |    104 | EVERY MOUNTAIN | 100860 | ACE TENNIS RACKET I     |  3000.00 |
+|  7499 |    104 | EVERY MOUNTAIN | 100861 | ACE TENNIS RACKET II    |   810.00 |
+|  7499 |    104 | EVERY MOUNTAIN | 101863 | SP JUNIOR RACKET        |  1500.00 |
+|  7499 |    104 | EVERY MOUNTAIN | 200380 | SB VITA SNACK-6 PACK    |   400.00 |
+|  7499 |    104 | EVERY MOUNTAIN | 200376 | SB ENERGY BAR-6 PACK    |   240.00 |
+|  7499 |    104 | EVERY MOUNTAIN | 102130 | RH: "GUIDE TO TENNIS"   |   340.00 |
+|  7844 |    105 | K + T SPORTS   | 100860 | ACE TENNIS RACKET I     |  1750.00 |
+|  7844 |    105 | K + T SPORTS   | 100861 | ACE TENNIS RACKET II    |  4500.00 |
+|  7844 |    105 | K + T SPORTS   | 100870 | ACE TENNIS BALLS-3 PACK |  1400.00 |
+|  7844 |    105 | K + T SPORTS   | 100871 | ACE TENNIS BALLS-6 PACK |  2800.00 |
+|  7844 |    105 | K + T SPORTS   | 100890 | ACE TENNIS NET          | 29000.00 |
+|  7844 |    105 | K + T SPORTS   | 101860 | SP TENNIS RACKET        |  2400.00 |
+|  7844 |    105 | K + T SPORTS   | 101863 | SP JUNIOR RACKET        |  2500.00 |
+|  7844 |    105 | K + T SPORTS   | 102130 | RH: "GUIDE TO TENNIS"   |   340.00 |
+|  7844 |    105 | K + T SPORTS   | 200376 | SB ENERGY BAR-6 PACK    |   480.00 |
+|  7844 |    105 | K + T SPORTS   | 200380 | SB VITA SNACK-6 PACK    |  1200.00 |
+|  7521 |    106 | SHAPE UP       | 200376 | SB ENERGY BAR-6 PACK    |     2.40 |
+|  7521 |    106 | SHAPE UP       | 100890 | ACE TENNIS NET          |   174.00 |
+|  7521 |    106 | SHAPE UP       | 100861 | ACE TENNIS RACKET II    |    84.00 |
+|  7521 |    106 | SHAPE UP       | 100860 | ACE TENNIS RACKET I     |   440.00 |
+|  7499 |    107 | WOMENS SPORTS  | 100861 | ACE TENNIS RACKET II    |   180.00 |
+|  7499 |    107 | WOMENS SPORTS  | 100870 | ACE TENNIS BALLS-3 PACK |   280.00 |
+|  7499 |    107 | WOMENS SPORTS  | 100871 | ACE TENNIS BALLS-6 PACK |   250.00 |
+|  7844 |    108 | NORTH WOODS    | 100871 | ACE TENNIS BALLS-6 PACK |   560.00 |
+|  7844 |    108 | NORTH WOODS    | 101860 | SP TENNIS RACKET        |  4800.00 |
+|  7844 |    108 | NORTH WOODS    | 200380 | SB VITA SNACK-6 PACK    |   600.00 |
+|  7844 |    108 | NORTH WOODS    | 200376 | SB ENERGY BAR-6 PACK    |   440.00 |
++-------+--------+----------------+--------+-------------------------+----------+
+47 rows in set (0.02 sec)
+
+mysql> select ename from emp where ename like '%s%';
++----------+
+| ename    |
++----------+
+| VRUSHALI |
+| SHARMIN  |
+| BANDISH  |
+| SMITH    |
+| THOMAS   |
+| JONES    |
+| SCOTT    |
+| ADAMS    |
+| JAMES    |
+| GRASS    |
+| AARUSH   |
+| NATASHA  |
+| SANGITA  |
+| SUPRIYA  |
++----------+
+14 rows in set (0.00 sec)
+
+mysql> select ename from emp where ename like '%_s%';
++----------+
+| ename    |
++----------+
+| VRUSHALI |
+| BANDISH  |
+| THOMAS   |
+| JONES    |
+| ADAMS    |
+| JAMES    |
+| GRASS    |
+| AARUSH   |
+| NATASHA  |
++----------+
+9 rows in set (0.00 sec)
+
+mysql> select ename from emp where ename like '_s%';
+Empty set (0.00 sec)
+
+mysql> select ename from emp where ename like '_%s';
++--------+
+| ename  |
++--------+
+| THOMAS |
+| JONES  |
+| ADAMS  |
+| JAMES  |
+| GRASS  |
++--------+
+5 rows in set (0.00 sec)
+
+mysql> select ename,job,sal from emp where sal 1000 > 2200;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '1000 > 2200' at line 1
+mysql> select ename,job,sal from emp where sal between 1000 and inbetween 2200;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '2200' at line 1
+mysql> SELECT ename, job, sal
+    -> FROM emp
+    -> WHERE sal BETWEEN 1000 AND 2200;
++----------+---------------------+------+
+| ename    | job                 | sal  |
++----------+---------------------+------+
+| GITA     | Compliance officers | 1750 |
+| VRUSHALI | Compliance officers | 1750 |
+| SHARMIN  | Public Relation     | 1750 |
+| BANDISH  | Public Relation     | 1750 |
+| THOMAS   | CLERK               | 1750 |
+| ALLEN    | SALESMAN            | 1600 |
+| WARD     | SALESMAN            | 1250 |
+| MARTIN   | SALESMAN            | 1250 |
+| TURNER   | SALESMAN            | 1500 |
+| ADAMS    | CLERK               | 1100 |
+| Ruhan    | Network             | 2000 |
+| Neel     | vice PRESIDENT      | 1000 |
+| MILLER   | CLERK               | 1300 |
+| AARUSH   | SALESMAN            | 1350 |
+| ALEX     | MANAGER             | 1250 |
+| NATASHA  | CLERK               | 1750 |
+| SANGITA  | Compliance officers | 1750 |
+| SUPRIYA  | ANALYST             | 1750 |
++----------+---------------------+------+
+18 rows in set (0.00 sec)
+
+mysql> select ename ,job,sal from emp where sal between 1000 and 2200;
++----------+---------------------+------+
+| ename    | job                 | sal  |
++----------+---------------------+------+
+| GITA     | Compliance officers | 1750 |
+| VRUSHALI | Compliance officers | 1750 |
+| SHARMIN  | Public Relation     | 1750 |
+| BANDISH  | Public Relation     | 1750 |
+| THOMAS   | CLERK               | 1750 |
+| ALLEN    | SALESMAN            | 1600 |
+| WARD     | SALESMAN            | 1250 |
+| MARTIN   | SALESMAN            | 1250 |
+| TURNER   | SALESMAN            | 1500 |
+| ADAMS    | CLERK               | 1100 |
+| Ruhan    | Network             | 2000 |
+| Neel     | vice PRESIDENT      | 1000 |
+| MILLER   | CLERK               | 1300 |
+| AARUSH   | SALESMAN            | 1350 |
+| ALEX     | MANAGER             | 1250 |
+| NATASHA  | CLERK               | 1750 |
+| SANGITA  | Compliance officers | 1750 |
+| SUPRIYA  | ANALYST             | 1750 |
++----------+---------------------+------+
+18 rows in set (0.00 sec)
+
+mysql> select ename ,job,sal from emp where sal not  between 1000 and 2200;
++---------+----------------+------+
+| ename   | job            | sal  |
++---------+----------------+------+
+| SMITH   | CLERK          |  800 |
+| AARAV   | CLERK          | 3350 |
+| JONES   | MANAGER        | 2975 |
+| BLAKE   | MANAGER        | 2850 |
+| CLARK   | MANAGER        | 2450 |
+| SCOTT   | ANALYST        | 3000 |
+| KING    | PRESIDENT      | 5000 |
+| FRED    | vice PRESIDENT | 5000 |
+| JAMES   | CLERK          |  950 |
+| FORD    | ANALYST        | 3000 |
+| HOFFMAN | MANAGER        | 4150 |
+| GRASS   | SALESMAN       | 2575 |
++---------+----------------+------+
+12 rows in set (0.00 sec)
+
+mysql> select ename ,job,sal from emp where sal not  between 1000 and 2200;
++---------+----------------+------+
+| ename   | job            | sal  |
++---------+----------------+------+
+| SMITH   | CLERK          |  800 |
+| AARAV   | CLERK          | 3350 |
+| JONES   | MANAGER        | 2975 |
+| BLAKE   | MANAGER        | 2850 |
+| CLARK   | MANAGER        | 2450 |
+| SCOTT   | ANALYST        | 3000 |
+| KING    | PRESIDENT      | 5000 |
+| FRED    | vice PRESIDENT | 5000 |
+| JAMES   | CLERK          |  950 |
+| FORD    | ANALYST        | 3000 |
+| HOFFMAN | MANAGER        | 4150 |
+| GRASS   | SALESMAN       | 2575 |
++---------+----------------+------+
+12 rows in set (0.00 sec)
+
+mysql> select ename ,job from emp where job = 'clerk';
++---------+-------+
+| ename   | job   |
++---------+-------+
+| SMITH   | CLERK |
+| AARAV   | CLERK |
+| THOMAS  | CLERK |
+| ADAMS   | CLERK |
+| JAMES   | CLERK |
+| MILLER  | CLERK |
+| NATASHA | CLERK |
++---------+-------+
+7 rows in set (0.00 sec)
+
+mysql>
+

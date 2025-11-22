@@ -1,0 +1,12 @@
+package nestedClasses;
+
+public class TestBook {
+
+	public static void main(String[] args) {
+		Book b=new Book();
+		System.out.println("This method are toString()"+b.toString());
+		
+
+	}
+
+}
