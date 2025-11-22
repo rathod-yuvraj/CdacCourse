@@ -1,0 +1,177 @@
+.style15 {
+	BORDER-RIGHT: #ffffff 0px solid; PADDING-RIGHT: 0px; BORDER-TOP: #ffffff 0px solid; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; BORDER-LEFT: #ffffff 0px solid; PADDING-TOP: 0px; BORDER-BOTTOM: #ffffff 0px solid
+}
+.style16 {
+	FONT-SIZE: 10pt; FONT-STYLE: normal; FONT-FAMILY: "tempus Sans ITC", arial
+}
+.style17 {
+	BORDER-RIGHT: #ffffff 0px solid; BORDER-TOP: #ffffff 0px solid; BORDER-LEFT: #ffffff 0px solid; BORDER-BOTTOM: #ffffff 0px solid
+}
+.style18 {
+	FONT-WEIGHT: bold; FONT-SIZE: medium; FONT-STYLE: normal; FONT-FAMILY: Arial, Helvetica, sans-serif
+}
+.feeds-in-forum {
+	MARGIN-LEFT: 22px
+}
+.nrml_rght_indnt {
+	FONT-SIZE: 14px; MARGIN-LEFT: 80px; FONT-FAMILY: "Bookman Old Style", Arial, "Times New Roman"
+}
+.cell_brdr {
+	BORDER-RIGHT: #000000 1px solid; BORDER-TOP: #000000 1px solid; BORDER-LEFT: #000000 1px solid; BORDER-BOTTOM: #000000 1px solid
+}
+.tble_brdr {
+	BORDER-RIGHT: #000000 1px solid; BORDER-TOP: #000000 1px solid; BORDER-LEFT: #000000 1px solid; BORDER-BOTTOM: #000000 1px solid; BORDER-COLLAPSE: collapse
+}
+.collapse_table_brdr {
+	BORDER-COLLAPSE: collapse
+}
+.for_alphabets {
+	FONT-SIZE: 18pt; FONT-FAMILY: "Bookman Old Style", Arial, "Times New Roman"
+}
+.bottom_links {
+	FONT-SIZE: 14px; TEXT-TRANSFORM: capitalize; COLOR: #ff0066; FONT-FAMILY: Arial, Helvetica, sans-serif
+}
+.techprep_down {
+	FONT-SIZE: 11px; COLOR: #3333ff; FONT-FAMILY: BoisterBlack, "tempus Sans ITC", Arial; TEXT-DECORATION: underline overline
+}
+.aptitude_ques {
+	FONT-WEIGHT: bolder; FONT-SIZE: 13px; TEXT-TRANSFORM: capitalize; COLOR: #ffff00; FONT-FAMILY: Arial, Helvetica, sans-serif; FONT-VARIANT: normal; TEXT-DECORATION: none
+}
+.table_interview_q_a {
+	BORDER-TOP-WIDTH: 0px; PADDING-RIGHT: 0px; PADDING-LEFT: 0px; BORDER-LEFT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px; BORDER-RIGHT-WIDTH: 0px; empty-cells: hide
+}
+.top_left_ad {
+	BORDER-TOP-WIDTH: 0px; PADDING-RIGHT: 0px; PADDING-LEFT: 0px; BORDER-LEFT-WIDTH: 0px; FLOAT: left; BORDER-BOTTOM-WIDTH: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px; BORDER-RIGHT-WIDTH: 0px
+}
+.search {
+	BORDER-TOP-WIDTH: 0px; PADDING-RIGHT: 0px; PADDING-LEFT: 0px; BORDER-LEFT-WIDTH: 0px; FLOAT: none; BORDER-BOTTOM-WIDTH: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px; BORDER-RIGHT-WIDTH: 0px
+}
+.tblggl3 {
+	BORDER-RIGHT: #7299bb 2px solid; BORDER-TOP: #7299bb 2px solid; BORDER-LEFT: #7299bb 2px solid; BORDER-BOTTOM: #7299bb 2px solid; BACKGROUND-COLOR: #dce7ef
+}
+.tblggl4 {
+	FONT-SIZE: 13px; FONT-FAMILY: "bookman Old Style", arila
+}
+.tblggl1 {
+	FONT-SIZE: 13px; FONT-FAMILY: "bookman Old Style", arial
+}
+.tblggl2 {
+	BORDER-RIGHT: #7299bb 2px solid; BORDER-TOP: #7299bb 2px solid; BORDER-LEFT: #7299bb 2px solid; BORDER-BOTTOM: #7299bb 2px solid; BACKGROUND-COLOR: #dce7ef
+}
+.style14 {
+	BORDER-TOP-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-RIGHT-WIDTH: 0px
+}
+.newStyle2 {
+	LIST-STYLE-IMAGE: url(../images/job.gif)
+}
+.style9 {
+	COLOR: #000000; TEXT-DECORATION: none
+}
+.tble_right_indent {
+	BORDER-RIGHT: #000000 1px solid; BORDER-TOP: #000000 1px solid; MARGIN-LEFT: 30px; BORDER-LEFT: #000000 1px solid; BORDER-BOTTOM: #000000 1px solid; BACKGROUND-COLOR: #dce7ef
+}
+.table_bckgrnd_grey {
+	BORDER-RIGHT: #000000 1px solid; BORDER-TOP: #000000 1px solid; BORDER-LEFT: #000000 1px solid; BORDER-BOTTOM: #000000 1px solid; BACKGROUND-COLOR: #c0c0c0
+}
+.table_bckgrnd_blue {
+	BORDER-RIGHT: #000000 1px solid; BORDER-TOP: #000000 1px solid; BORDER-LEFT: #000000 1px solid; BORDER-BOTTOM: #000000 1px solid; BACKGROUND-COLOR: #dce7ef
+}
+.answers {
+	FONT-SIZE: 14px; FONT-FAMILY: "Bookman Old Style", Arial, "Times New Roman"
+}
+.for_questions_blue {
+	FONT-WEIGHT: 900; FONT-SIZE: 15px; COLOR: #0000ff; FONT-FAMILY: Arial, Helvetica, sans-serif; TEXT-DECORATION: underline
+}
+.for_questions_red {
+	FONT-WEIGHT: 900; FONT-SIZE: 15px; COLOR: #0000ff; FONT-FAMILY: Arial, Helvetica, sans-serif; TEXT-DECORATION: underline
+}
+.style10 {
+	TEXT-DECORATION: none
+}
+.style11 {
+	COLOR: #ff0000
+}
+.style12 {
+	FONT-WEIGHT: bolder; FONT-SIZE: 13px; TEXT-TRANSFORM: capitalize; FONT-FAMILY: Arial, Helvetica, sans-serif; FONT-VARIANT: normal; TEXT-DECORATION: none
+}
+A:visited {
+	COLOR: #0000ff
+}
+.style13 {
+	COLOR: #ffff66
+}
+.style8 {
+	FONT-WEIGHT: lighter; FONT-SIZE: x-large; COLOR: #ff0000; FONT-STYLE: normal; FONT-FAMILY: Belshaw, Arial; LETTER-SPACING: 2px; TEXT-ALIGN: center; TEXT-DECORATION: underline
+}
+.small_headings {
+	FONT-SIZE: 12px
+}
+.style1 {
+	BORDER-TOP-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px; BORDER-LEFT-COLOR: #008080; BORDER-BOTTOM-WIDTH: 0px; BORDER-BOTTOM-COLOR: #008080; BORDER-TOP-COLOR: #008080; BACKGROUND-COLOR: #ffffff; BORDER-RIGHT-WIDTH: 0px; BORDER-RIGHT-COLOR: #008080
+}
+.white background {
+	BACKGROUND-COLOR: #ffffff
+}
+.style2 {
+	BORDER-RIGHT: #7299bb 2px solid; BORDER-TOP: #7299bb 2px solid; BORDER-LEFT: #7299bb 2px solid; BORDER-BOTTOM: #7299bb 2px solid
+}
+.newStyle1 {
+	BORDER-RIGHT: #c1ebff thin solid; PADDING-RIGHT: 0px; BORDER-TOP: #c1ebff thin solid; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; BORDER-LEFT: #c1ebff thin solid; PADDING-TOP: 0px; BORDER-BOTTOM: #c1ebff thin solid; BACKGROUND-COLOR: #dce7ef
+}
+.style3 {
+	TEXT-ALIGN: left
+}
+.style4 {
+	BORDER-RIGHT: #7299bb 2px solid; PADDING-RIGHT: 0px; BORDER-TOP: #7299bb 2px solid; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; BORDER-LEFT: #7299bb 2px solid; PADDING-TOP: 0px; BORDER-BOTTOM: #7299bb 2px solid; BACKGROUND-COLOR: #dce7ef
+}
+.style5 {
+	BACKGROUND-COLOR: #7299bb
+}
+.techpreparation {
+	FONT-WEIGHT: 800; FONT-SIZE: 32px; TEXT-TRANSFORM: capitalize; COLOR: #000000; FONT-STYLE: oblique; FONT-FAMILY: BoisterBlack, "tempus Sans ITC", Arial, "Times New Roman"; LETTER-SPACING: 2px; TOP: 5px; FONT-VARIANT: normal; TEXT-DECORATION: none
+}
+.helpingyoulearn {
+	FONT-WEIGHT: bold; FONT-SIZE: medium; COLOR: #ff0000; FONT-STYLE: normal; FONT-FAMILY: BoisterBlack, "tempus Sans ITC", Arial; FONT-VARIANT: normal
+}
+.style6 {
+	TEXT-ALIGN: center
+}
+.index_heading {
+	FONT-WEIGHT: bold; FONT-SIZE: 10pt; FONT-STYLE: normal; FONT-FAMILY: "tempus Sans ITC", arial
+}
+.sub_heading {
+	FONT-WEIGHT: normal; FONT-SIZE: 10pt; MARGIN-LEFT: 8px; TEXT-TRANSFORM: capitalize; COLOR: #000000; FONT-STYLE: normal; FONT-FAMILY: Arial, Helvetica, sans-serif; FONT-VARIANT: normal
+}
+.top_nav_link {
+	FONT-WEIGHT: bolder; FONT-SIZE: 13px; TEXT-TRANSFORM: capitalize; COLOR: #ffff66; FONT-FAMILY: Arial, Helvetica, sans-serif; FONT-VARIANT: normal; TEXT-DECORATION: none
+}
+A:hover {
+	COLOR: #ff0000; TEXT-DECORATION: none
+}
+.no_underline {
+	
+}
+.interview_q_and_a {
+	COLOR: #7299bb; BORDER-TOP-STYLE: double; FONT-STYLE: italic; FONT-FAMILY: Alpine, "tempus Sans ITC", Arial; BORDER-BOTTOM-STYLE: double
+}
+.heading_2 {
+	FONT-WEIGHT: 100; FONT-SIZE: 23px; FONT-STYLE: normal; FONT-FAMILY: Belshaw, Arial; LETTER-SPACING: 2px; TEXT-DECORATION: underline
+}
+.all_interview_questions1 {
+	LIST-STYLE-POSITION: outside; FONT-SIZE: 12px; LIST-STYLE-IMAGE: url(../images/job.gif); FONT-FAMILY: "bookman Old Style", arial
+}
+.for_search {
+	BORDER-TOP-WIDTH: 0px; PADDING-RIGHT: 0px; PADDING-LEFT: 0px; BORDER-LEFT-WIDTH: 0px; FLOAT: none; BORDER-BOTTOM-WIDTH: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px; BORDER-RIGHT-WIDTH: 0px
+}
+.c_tutorials_2 {
+	BORDER-LEFT: black 0.75pt solid; COLOR: black; BORDER-TOP-STYLE: none; BORDER-RIGHT-STYLE: none; BACKGROUND-COLOR: #dce7ef; BORDER-BOTTOM-STYLE: none
+}
+.c_tutorials_1 {
+	BORDER-LEFT: black 0.75pt solid; COLOR: black; BORDER-TOP-STYLE: none; BORDER-RIGHT-STYLE: none; BACKGROUND-COLOR: #c0c0c0; BORDER-BOTTOM-STYLE: none
+}
+.c_tutorials_3 {
+	FONT-WEIGHT: bold; BORDER-LEFT: black 0.75pt solid; COLOR: black; BORDER-TOP-STYLE: none; BORDER-BOTTOM: black 0.75pt solid; BORDER-RIGHT-STYLE: none; BACKGROUND-COLOR: #7299bb; TEXT-ALIGN: center
+}
+.tutorials_heading {
+	FONT-WEIGHT: bolder; FONT-SIZE: 14px; COLOR: #ff0000; FONT-STYLE: normal; FONT-FAMILY: "tempus sans itc", Arial, sans-serif; TEXT-DECORATION: underline
+}

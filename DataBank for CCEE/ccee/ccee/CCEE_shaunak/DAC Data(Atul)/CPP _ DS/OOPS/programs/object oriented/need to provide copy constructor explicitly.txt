@@ -1,0 +1,92 @@
+class MyClass
+{
+	private:
+		char *name;
+		int age;
+	public:
+		MyClass(char *str,int k)
+		{
+			this->name=new char[strlen(str)+1];
+			strcpy(this->name,str);
+			age=k;
+		}
+		void disp()
+		{
+			cout<<name<<"\t"<<age<<endl;
+		}
+		~MyClass()
+		{
+			delete []name;
+		}
+};
+int main()
+{
+	MyClass m1("Abc",20);
+	m1.disp();
+	MyClass m2=m1;
+	m2.disp();
+}
+
+// in the above case, compiler's copy constructor does shallow copy. It means that content of m1's "name" pointer is copied to m2's name pointer. 
+That is we end up both the pointer pointing to same memory location.
+when destructor for "m2" is invoked, "delete []name" will deallocate the memory pointed to by "m2" (and also by "m1").
+when destructor for "m1" is invoked for a statement "delete []name" there is no memory in heap. "name" pointer of "m1" is a dangling pointer. Hence it will give runtime error.
+
+solution:
+	define copy constructor explicitly
+
+MyClass(MyClass &ref)
+{
+	this->name=new char[strlen(ref.name)+1];
+	strcpy(this->name,ref.name);
+	this->age=ref.age;
+}
+
+
+MyClass m2=m1;
+
+
+
+When we should define copy constructor explicitly?
+
+ans:-
+
+when pointer is a member of class
+
+we have allocated memory dynamically
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

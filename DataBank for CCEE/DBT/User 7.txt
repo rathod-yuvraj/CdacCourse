@@ -1,0 +1,55 @@
+1. Fetching past the last row of a cursor
+
+A. Raises the NO_DATA_FOUND Exception
+B. Raises the VALUE_ERROR Exception
+C. Raises the CURSOR_NOT_FOUND Exception
+D. Does not raise an exception
+
+
+2.Given this procedure
+Procedure dept_salary
+(v_bonus IN BOOLEAN, v_raise IN BOOLEAN,
+v_issue_chk IN OUT BOOLEAN) IS
+BEGIN
+v_issue_chk := v_bonus OR v_raise;
+END;
+If v_bonus = TRUE and v_raise = NULL, which value is assigned to v_issue_chk?
+
+A. True
+B. False
+C. NULL
+D. None
+
+3.User ‘Janko’ would like to insert a row into the Emp table, which has 3 columns: empid, lastname, salary.
+The user would like to enter data for empid 59694, lastname Harry, but no salary. Which statement would
+work best.
+
+A. INSERT INTO EMP VALUES (59694,’Harry’, NULL);
+B. INSERT INTO EMP VALUES (59694,’Harry’);
+C. INSERT INTO EMP (empid, lastname, salary) VALUES (59694,’Harry’);
+D. INSERT INTO EMP VALUES (Select 59694 from ‘Harris’);
+E. INSERT INTO EMP(empid, lastname) VALUES (59694,’Harry’);
+
+
+4.A user is setting up a join operation between Emp and Dept tables. The query should return all the
+employees, which are assigned dept, as well as the employees which are yet not assigned any dept.
+
+A. Select e.empid, d.head from emp e, dept d;
+B. Select e.empid, d.head from emp e, dept d where e.deptno = d.deptno;
+C. Select e.empid, d.head from emp e, dept d where e.deptno = d.deptno (+);
+D. Select e.empid, d.head from emp e, dept d where e.deptno (+)= d.deptno
+
+
+5.The developer issues the following statement:
+CREATE OR REPLACE TRIGGER soccer_fans_snacks_02 BEFORE DELETE ON
+SOCCER_FANS
+BEGIN
+DELETE FROM soccer_fans_snacks
+WHERE fan_id = :old.fan_id;
+END;
+Why will trigger creation fail?
+
+A. The row trigger does not properly reference the old value in FAN_ID.
+B. The statement trigger should have been defined as a row trigger.
+C. The statement trigger fires after the delete statement is processed.
+D. The row trigger does not properly define the associated table

@@ -1,0 +1,18 @@
+   Client/Server Computing
+   RDBMS Technologies
+   Codd’s Rules
+   Data Models
+   Normalization Techniques
+   ER Diagrams
+
+SQL and PL/SQL
+   Overview of OORD (Oracle)
+   Introduction SQL*Plus
+   DDL, DML and DCL
+   Tables, Indexes and Views
+   Clusters, Sequences and Snapshots
+   Generic PL/SQL
+   Cursors
+   Stored Procedures, Triggers
+   Introduction to No SQL
+   MongoDB (Virtual DB)

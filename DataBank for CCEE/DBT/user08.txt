@@ -1,0 +1,41 @@
+1.
+If five tables are given & three join conditions are given & select Query is applied then what will happen?
+      1)Cartesian product of first 3 tables 
+      2)Three join make relation between four table & keep fifth independent
+      3) We cannot apply 3 joins on 5 tables
+      4)None of above
+
+
+2.
+If the table is deleted and we want the user not allowed to use rollback then which command is used to delete the table
+
+1)DROP
+
+2)DELETE
+
+3)TRUNCATE
+
+4)None of the above
+
+
+3.
+DEFINE Price=46.25
+SELECT Price_id,Price from Price_info
+where price>60
+order by Price_id
+select Price=&Price;
+why this command will not work or where u will find error?
+Answer:
+1.error due to DEFINE
+2.where price
+3.order by price_id
+4.will ask to enter the price.
+
+
+4.
+How many columns are presented after executing this query:
+SELECT address1||','||address2||','||address2 "Address" FROM employee;
+	1) 3
+	2) 2
+	3) 1
+	4)ERROR

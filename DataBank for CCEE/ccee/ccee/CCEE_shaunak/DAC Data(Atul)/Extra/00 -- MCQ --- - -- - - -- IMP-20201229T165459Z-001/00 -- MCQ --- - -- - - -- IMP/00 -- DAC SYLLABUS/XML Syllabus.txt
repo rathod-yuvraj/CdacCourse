@@ -1,0 +1,40 @@
+Web Programming concepts (30 Hrs)
+   Architecture of the Web
+   HTML 5.0 programming
+   DHTML
+   CSS
+   DOM
+   JavaScript
+   jQuery
+   UI Scripting Framework
+ 
+PHP (16 hrs)
+   Introduction to PHP
+   Working with arrays
+   Functions
+   Forms
+   Handling date and Times
+   Working with Files
+ 
+Web services & Web Security (28hrs)
+   The Purpose and Nature of XML
+   XML Syntax and Structure rules
+   XML Document Type Declaration
+   XML and Data Binding
+   XML linking mechanisms
+   XML style language
+   XML parsers
+   Web Data Exchange
+   oData, JSON
+   Joomla
+Web Security
+   SQL Injection
+   Cross-Site Scripting (XSS)
+
+ AJAX (16 hrs)
+   Introduction to Ajax
+    Web services and Ajax
+   Ajax using HTML, CSS, JavaScript
+   Ajax Framework and DOM       
+   XMLHttpRequest
+   Ajax Architecture 

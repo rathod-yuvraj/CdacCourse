@@ -1,0 +1,162 @@
+BODY {
+	FONT-SIZE: 12px; MARGIN: 0px; FONT-FAMILY: verdana, arial, sans-serif
+}
+TD {
+	FONT-SIZE: 12px; MARGIN: 0px; FONT-FAMILY: verdana, arial, sans-serif
+}
+P {
+	FONT-SIZE: 12px; FONT-FAMILY: verdana, arial, sans-serif
+}
+DIV {
+	FONT-SIZE: 12px; FONT-FAMILY: verdana, arial, sans-serif
+}
+SELECT {
+	FONT-SIZE: 10px; FONT-FAMILY: verdana, arial, sans-serif
+}
+TEXTAREA {
+	FONT-SIZE: 11px; FONT-FAMILY: verdana, arial, sans-serif
+}
+DT {
+	FONT-WEIGHT: bold
+}
+INPUT {
+	FONT-SIZE: 11px; FONT-FAMILY: verdana, arial, sans-serif
+}
+H3 {
+	FONT-WEIGHT: bold; FONT-SIZE: 16px; FONT-FAMILY: verdana, arial, sans-serif
+}
+.crumb {
+	FONT-WEIGHT: bold; FONT-SIZE: 10px; TEXT-DECORATION: none
+}
+.crumb:hover {
+	TEXT-DECORATION: underline
+}
+.curcrumb {
+	FONT-WEIGHT: bold; FONT-SIZE: 10px; TEXT-DECORATION: none
+}
+.curnav {
+	FONT-WEIGHT: bold; FONT-SIZE: 11px; TEXT-DECORATION: none
+}
+.navsubhead {
+	FONT-WEIGHT: bold; FONT-SIZE: 11px
+}
+.nav {
+	FONT-SIZE: 11px; TEXT-DECORATION: none
+}
+.nav:hover {
+	TEXT-DECORATION: underline
+}
+.navLocked {
+	FONT-SIZE: 11px; TEXT-DECORATION: none
+}
+.navLocked:hover {
+	FONT-STYLE: italic; TEXT-DECORATION: underline
+}
+.drawerHead {
+	FONT-WEIGHT: bold; FONT-SIZE: 12px; MARGIN-BOTTOM: 1px
+}
+.drawer  {
+	FONT-SIZE: 11px
+}
+.drawer A {
+	TEXT-DECORATION: none
+}
+.drawer A:hover {
+	TEXT-DECORATION: underline
+}
+.drawerLabel {
+	FONT-WEIGHT: bold; FONT-SIZE: 11px; TEXT-ALIGN: right
+}
+.drawer INPUT {
+	BORDER-RIGHT: #cccccc 1px solid; BORDER-TOP: #cccccc 1px solid; FONT-SIZE: 10px; MARGIN: 2px; BORDER-LEFT: #cccccc 1px solid; COLOR: #333300; BORDER-BOTTOM: #cccccc 1px solid; BACKGROUND-COLOR: #ffffff; size: 10px
+}
+.drawer SELECT {
+	BORDER-RIGHT: #cccccc 1px solid; BORDER-TOP: #cccccc 1px solid; FONT-SIZE: 10px; MARGIN: 2px; BORDER-LEFT: #cccccc 1px solid; COLOR: #333300; BORDER-BOTTOM: #cccccc 1px solid; BACKGROUND-COLOR: #ffffff; size: 10px
+}
+.drawer TEXTAREA {
+	BORDER-RIGHT: #cccccc 1px solid; BORDER-TOP: #cccccc 1px solid; FONT-SIZE: 10px; MARGIN: 2px; BORDER-LEFT: #cccccc 1px solid; COLOR: #333300; BORDER-BOTTOM: #cccccc 1px solid; BACKGROUND-COLOR: #ffffff; size: 10px
+}
+.drawerNote {
+	FONT-SIZE: 10px
+}
+.inpagesubhead {
+	FONT-WEIGHT: bold; FONT-SIZE: 11px; COLOR: #000000; TEXT-DECORATION: none
+}
+.inpagenav {
+	FONT-SIZE: 11px; COLOR: #000000; TEXT-DECORATION: none
+}
+.inpagenav:hover {
+	TEXT-DECORATION: underline
+}
+.inpagenavLocked {
+	FONT-SIZE: 11px; COLOR: #000000; TEXT-DECORATION: none
+}
+.inpagenavLocked:hover {
+	COLOR: #000000; FONT-STYLE: italic; TEXT-DECORATION: underline
+}
+SELECT.navTiny {
+	FONT-SIZE: 9px; FONT-FAMILY: verdana, arial, helvetica
+}
+.glossDefTerm {
+	BORDER-RIGHT: #000000 1px solid; PADDING-RIGHT: 5px; BORDER-TOP: #000000 1px solid; DISPLAY: none; PADDING-LEFT: 5px; Z-INDEX: 100; BACKGROUND: #ffff99; LEFT: 0px; PADDING-BOTTOM: 1px; BORDER-LEFT: #000000 1px solid; WIDTH: 150px; PADDING-TOP: 1px; BORDER-BOTTOM: #000000 1px solid; POSITION: absolute; TOP: 0px
+}
+SELECT.sitemap {
+	FONT-WEIGHT: bold; FONT-SIZE: 14px
+}
+.sitemaphead {
+	FONT-WEIGHT: bold; FONT-SIZE: 14px
+}
+.sitemapsubhead {
+	FONT-SIZE: 12px
+}
+.seerelated {
+	FONT-SIZE: 10px; COLOR: #666666; TEXT-DECORATION: none
+}
+.seerelated:hover {
+	TEXT-DECORATION: underline
+}
+.author {
+	FONT-FAMILY: verdana, arial, sans-serif
+}
+.booktitle {
+	FONT-WEIGHT: bold; FONT-SIZE: 16px; FONT-FAMILY: verdana, arial, sans-serif
+}
+.pagetitle {
+	FONT-WEIGHT: bold; FONT-SIZE: 18px; FONT-FAMILY: tahoma, verdana, arial, sans-serif
+}
+.qnum {
+	PADDING-RIGHT: 5px; PADDING-LEFT: 5px; FONT-WEIGHT: bold; FONT-SIZE: 20px; COLOR: #ffffff; FONT-FAMILY: verdana, arial, sans-serif
+}
+.searchresult {
+	FONT-SIZE: 9px; COLOR: #666666; FONT-STYLE: italic; TEXT-DECORATION: none
+}
+.newsfeed {
+	FONT-SIZE: 10px
+}
+A.newsfeed:hover {
+	FONT-SIZE: 10px
+}
+.footer {
+	FONT-SIZE: 10px
+}
+.intro {
+	FONT-SIZE: 12px; FONT-FAMILY: verdana, arial, sans-serif
+}
+TD.grade {
+	PADDING-RIGHT: 5px; PADDING-LEFT: 5px; FONT-WEIGHT: bold; FONT-SIZE: 12px; COLOR: #ffffff; FONT-FAMILY: verdana, arial, sans-serif
+}
+.booktitle {
+	FONT-WEIGHT: bold; FONT-SIZE: 12px; FONT-FAMILY: verdana, arial, helvetica
+}
+.author {
+	FONT-WEIGHT: bold; FONT-SIZE: 12px; FONT-FAMILY: verdana, arial, helvetica
+}
+.diacritic {
+	FONT-WEIGHT: bold; FONT-SIZE: 14px; COLOR: #000000; FONT-FAMILY: verdana, arial, sans-serif; TEXT-DECORATION: none
+}
+.diacritic:hover {
+	TEXT-DECORATION: underline
+}
+.feedback {
+	FONT-WEIGHT: bold
+}

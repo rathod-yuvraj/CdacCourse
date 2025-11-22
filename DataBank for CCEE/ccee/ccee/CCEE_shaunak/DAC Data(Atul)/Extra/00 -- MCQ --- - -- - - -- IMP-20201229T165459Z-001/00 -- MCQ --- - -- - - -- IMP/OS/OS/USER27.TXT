@@ -1,0 +1,186 @@
+1. Round robin is_______?
+	1.preepmtive
+	2.non-preemptive
+	3.both of them
+	4.none of them
+
+	ans:preemptive
+
+2. which is not necessary condition for deadlock
+	1.mutual exclusion
+	2.circular wait
+	3.no preemption
+	4.none of them
+	
+	ans:none of them
+
+3. what happan in pagefault
+	1.page cannot found in memory
+	2.page found in memory
+	3.page cannot found in disk
+	4.page found in disk
+	
+	ans: page cannot found in memory
+
+4. pwd stands for
+	1.parent working directory
+	2.present work directory
+	3.parent work directory
+	4.present work directory
+
+	ans:present working directory
+
+5.  Multiprogramming systems ________. 
+	1.Are easier to develop than single programming systems 
+	2.Execute each job faster 
+	3.Execute more jobs in the same time 
+	4.Are used only on large main frame computers 
+
+	ans: Execute more jobs in the same time
+
+6. Virtual memory is __________. 
+	1 An extremely large main memory 
+	2 An extremely large secondary memory 
+	3 An illusion of extremely large main memory 
+	4 A type of memory used in super computers. 
+
+	ans: An illusion of extremely large main memory
+
+
+1.How many trees can be created using 15 nodes?
+a. 32753
+b.32767
+c.32768
+d.32754
+
+ans:32768
+
+2.What is the output of 
+void main()
+{
+int y=0,x;
+x=++y * --y;
+cout<<++y<<' '<<y++<<' '<<x<<endl;
+ 
+
+a. 2 0 0
+b. 0 0 0
+c. 2 2 2
+d. 3 2 2
+
+ans:a
+
+3.Computer works on which language?
+
+a. High Level
+b.Natural
+c.Assembly
+d.Machine
+
+ans:d
+
+4. cycle in wait for represents
+
+a. Deadlock
+b.Preemption
+c. Non-preemption
+d.None
+
+ans:b
+
+Q)UNIX uses _____ page replacement algorithm.
+a)MRU                     b)LRU
+c)FIFO                   c)FCFS
+
+ans:b
+
+Q)How can we make a directory inside home directory?
+a)mkdir                  b)dir
+c)cd                        d)chdir
+
+ans:a
+
+Q)How can we see the contents of a file?
+a)ls                         b)cat
+c)cp                       d)none of the above
+
+ans:a
+
+Q)System call is invoked by____
+a)Polling               b)Software interrupt
+c)Privileged instruction       d)Indirect jump
+
+Q)Page memory is stored in_____
+a)RAM                  b)ROM
+c)Auxiliary device   d)Disk
+
+ans:d
+
+Q)Swapping is done between main memory and_____
+a)RAM                  b)ROM
+c)Disk                    d)All of above
+
+ans:a
+
+Q)Swap space occurs in_____
+a)RAM                b)Disk
+c)Device contoller    d)None
+
+ans:c
+
+Q)Which of this is not an operating system?
+a)OSD                 b)SuSE
+c)UNIX               d)All of above
+
+ans:a
+
+Q)Page faults can be reduced by
+a)Paging               b)Thrashing
+c)Hit ratio            d)All of above
+
+ans:a
+
+Q)SJF algorithm is done for
+a)Process having less CPU burst
+b)Process which request the CPU first
+c)Process with low priority
+d)Process having high I/O burst
+
+ans:b
+
+Q)Round-robin algorithm is_____
+a)Premptive
+b)Non premptive
+c)It depends 
+d)None of above
+
+ans:a
+
+Q)FCFS algorithm is done for
+a)Process having high CPU burst
+b)Process which request CPU first
+c)Process with high priority
+d)None  
+
+ans:b
+
+Q)Computer itself uses which language?
+a)High level language
+b)Assembly language
+c)Machine language
+d)Natural language
+ans:c
+
+Q)Computer do the transaction in the form of____
+a)Bytes
+b)Bits
+c)Nibbles
+d)Pixels
+ans:a
+
+Q)Computer processes in the form of___
+a)High level language
+b)Binary
+c)All
+d) None
+ans:b

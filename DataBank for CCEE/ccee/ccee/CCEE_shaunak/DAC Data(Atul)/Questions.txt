@@ -1,0 +1,567 @@
+﻿Data Structures n CPP
+
+Q. What is structure in c?
+structure is another user defined data type available in C that allows to combine data items of different kinds.
+You can not define a function in a C structure. But you can have a pointer to a function (as a variable) in C.
+There isn't much of a difference between C and C++ in terms of defining functions inside either structures of classes.
+It's just the way they are implemented that differs. In that, a function inside a C++ struct / class is same as a pointer 
+to the function with first parameter being 'this'.
+
+Q. What is difference between structure and union?
+Difference between Structure and Union in C. A structure is a user-defined data type available in C that allows to combining 
+data items of different kinds. Structures are used to represent a record.A union is a special data type available in C that 
+allows storing different data types in the same memory location.
+
+Q. What is array?
+An array is a data structure that contains a group of elements. Typically these elements are all of the same data type, such 
+as an integer or string. Arrays are commonly used in computer programs to organize data
+so that a related set of values can be easily sorted or searched.
+
+Q. What is string?
+String is an array of characters. Character can store only one character , String is used to store sequence of characters.Such 
+as names,address etc. For printing string format spacifier is %s. String is  automatically terminated by null character ‘’.
+
+Q. What is pointer?
+Pointers in C Programming with examples. ... Unlike other variables that hold values of a certain type, pointer holds the 
+address of a variable. For example, an integer variable holds (or you can say stores) an integer value, however an integer
+pointer holds the address of a integer variable.
+
+Q. What is double pointer?
+We already know that a pointer points to a location in memory and thus used to store address of variables. So, when we define 
+a pointer to pointer. The first pointer is used to store the address of second pointer. That is why they are also known 
+as double pointers.
+
+Q. What is difference between c and c++?
+Difference between C and C++
+
+C was developed by Dennis Ritchie between 1969 and 1973 at AT&T Bell Labs.
+
+C++ was developed by Bjarne Stroustrup in 1979 with C++'s predecessor "C with Classes".
+
+When compared to C++, C is a subset of C++.
+
+C++ is a superset of C. C++ can run most of C code while C cannot run C++ code.
+
+C supports procedural programming paradigm for code development.
+
+C++ supports both procedural and object oriented programming paradigms; therefore C++ is also called a hybrid language.
+
+C does not support object oriented programming; therefore it has no support for polymorphism, encapsulation, and inheritance.
+
+Being an object oriented programming language C++ supports polymorphism, encapsulation, and inheritance.
+
+In C (because it is a procedural programming language), data and functions are separate and free entities.
+
+In C++ (when it is used as object oriented programming language), data and functions are encapsulated together in form of an 
+object. For creating objects class provides a blueprint of structure of the object.
+
+In C, data are free entities and can be manipulated by outside code. This is because C does not support information hiding.
+
+In C++, Encapsulation hides the data to ensure that data structures and operators are used as intended.
+
+C, being a procedural programming, it is a function driven language.
+
+While, C++, being an object oriented programming, it is an object driven language.
+
+C does not support function and operator overloading.
+
+C++ supports both function and operator overloading.
+
+C does not allow functions to be defined inside structures.
+
+In C++, functions can be used inside a structure.
+
+C does not have namespace feature.
+
+C++ uses NAMESPACE which avoid name collisions.
+
+A namespace is a declarative region that provides a scope to the identifiers (the names of types, functions, variables, etc)
+inside it. Namespaces are used to organize code into logical groups and to prevent name collisions that can occur especially 
+when your code base includes multiple libraries. All identifiers at namespace scope are visible to one another without 
+qualification. Identifiers outside the namespace can access the members by using the fully qualified name for each identifier.
+
+C uses functions for input/output. For example scanf and printf.
+
+C++ uses objects for input output. For example cin and cout.
+
+C does not support reference variables.
+
+C++ supports reference variables.
+
+C has no support for virtual and friend functions.
+
+C++ supports virtual and friend functions.
+
+C provides malloc() and calloc() functions for dynamic memory allocation, and free() for memory de-allocation.
+
+C++ provides new operator for memory allocation and delete operator for memory de-allocation.
+
+C does not provide direct support for error handling (also called exception handling)
+
+C++ provides support for exception handling. Exceptions are used for "hard" errors that make the code incorrect.
+
+Q. Why array starts from 0 location?
+This means that the index is used as an offset. The first element of the array is exactly contained in the memory location 
+that array refers (0 elements away), so it should be denoted as array[0]. Most programming languages have been designed
+this way, so indexing from 0 is pretty much inherent to the language.
+
+Q. What is class in c++?
+The building block of C++ that leads to Object Oriented programming is a Class. It is a user defined data type, which holds 
+its own data members and member functions, which can be accessed and used by creating an instance of that class. A class 
+is like a blueprint for an object.
+1) A Class is a user defined data-type which has data members and member functions.
+2) Data members are the data variables and member functions are the functions used to manipulate these variables and together 
+   these data members and member functions defines the properties and behavior of the objects in a Class.
+3) In the above example of class Car, the data member will be speed limit, mileage etc and member functions can be apply brakes, 
+   increase speed etc.
+
+Q. What is difference between class and structure?
+The main difference that exists between them is regarding the access modifier; the members of a class are private by default, 
+whereas members of a struct are public by default. A class in C++ is just an extension of a structure used in the C language.
+It is a user defined data type.
+
+Q. What is oops concepts explain all with example?
+Inheritance
+Encapsulation
+Abstraction
+Polymorphism
+
+Q.What is difference between abstraction and polymorphism?
+Polymorphism needs the great support of Abstraction to power itself, without Abstraction you cannot leverage the power 
+of Polymorphism. Let's understand this by what Abstraction and Polymorphism provide to an object oriented program. 
+Abstraction is a concept to simplify the structure of your code. Abstraction allows you to view things in more general 
+terms rather than looking them as they are at the moment, which gives your code flexibility to deal with the changes coming 
+in future.
+
+Q. What is use of objects?
+C++ Classes and Objects. Class: The building block of C++ that leads to Object Oriented programming is a Class. It is a user 
+defined data type, which holds its own data members and member functions, which can be accessed and used by creating an
+instance of that class. ... For Example: Consider the Class of Cars.
+
+Q. What is inheritance with example
+Q. Explain access specifiers in c++
+Access modifiers (or access specifiers) are keywords in object-oriented languages that set the accessibility of classes, 
+methods, and other members. Access modifiers are a specific part of programming language syntax used to facilitate the
+encapsulation of components. ... A class cannot be declared as private.
+
+Q. What is difference between protected and public Access control specifier
+These are the access specifier, i.e. it specifies the accessibility. One can access a private member within the same class in
+which it is described only. One can access a protected member within all classes in the same package and within the
+subclasses in other package. Public members can be accessed by any class.
+
+Q. What are functions
+A function is a group of statements that together perform a task. Every C program has at least one function, which is main(), 
+and all the most trivial programs can define additional functions. ... A function declaration tells the compiler about a 
+function's name, return type, and parameters.
+
+Q. Can we define functions inside functions
+Nested function is not supported by C because we cannot define a function within another function in C. We can declare a
+function inside a function, but it's not a nested function.
+
+Q. How to define functions outside class
+
+
+Q. How to create objects of a class?
+
+
+Q. What is data members and member function
+
+
+Q. How to call methods of a class.
+
+
+Q.Can main method override in c and c++
+
+
+Q. What are reference variable in c and c++
+
+
+Q. What is difference between call by value and call by reference?
+
+
+Q. What is constructor
+
+
+Q. Rules of a constructor
+
+
+What is constructor chaining in c++
+
+
+Q. What is polymorphism and type's of polymorphism
+
+
+Q.What is dynamic binding
+
+
+Q. What is destructor
+
+
+Q. What is runtime polymorphism how to achieve it
+
+
+Q.What are virtual function
+
+
+Q. What is templates
+
+
+Q. What is operator overloading With example
+
+
+Q. What is function overloading
+
+
+What is function overriding
+
+
+Core JAVA Question
+
+Q. Why cant we use abstract and final together?<in java>
+No, we can not declare abstract method as final. We have to proved implementation to abstract methods in subclasses. 
+and method declared as final mean don't override (or redefine) this method. ...
+This is because, abstract method has to be overridden to provide implementation.
+
+Q. What is difference between Java and c++
+1. Java is platform-independent.C++ is platform dependent.
+ 2. Java doesn't support the goto statement.C++ supports the goto statement. 
+ 3. Java is not so interactive with hardware.C++ is nearer to hardware. 
+ 4. Java doesn't support operator overloading.C++ support operator overloading.
+ <Form JVM perspective supporting operator overloading is more difficult and if the same thing can be achieved by 
+ using method overloadingin more intuitive and clean way it does make sense to not support operator overloading in java.>
+ 5. Java uses compiler and interpreter both. Java source code is converted into bytecode at compilation time. 
+ The interpreter executes this bytecode at runtime and produces output. Java is interpreted that is why it is 
+ platform independent. C++ uses compiler only.C++ is compiled and run using the compiler which converts source code into 
+ machine code so, C++ is platform dependent.
+ 
+Q. Features of java
+Q. Why Java is platform independent
+
+Q. What is top down and bottom up apporch.
+The algorithms are designed using two approaches that are the top-down and bottom-up approach.
+In the top-down approach, the complex module is divided into submodules. On the other hand, bottom-up approach begins 
+with elementary modules and then combine them further. The prior purpose of an algorithm is to operate the data comprised in 
+the data structure.In other words, an algorithm is used to perform the operations on the data inside the data structures.
+
+Q. What is public static void main meaning
+Let's split it and understand one by one.
+1. public- Here public is an access specifier which allows the main method to be accessble everywhere.
+2. static- static helps main method to get loaded without getting alled by any instance/object.
+3. void- void clarifies that the main method will not return any value.
+4. main- It's the name of the method.
+5. String[] args- Here we are defining a String array to pass arguments at command line. args is the variable name of the 
+String array. It can be changed to anything such as String [] a.
+
+Q. can we override main method?
+main method can be overloaded but cannot be overridden in Java. That's all about overloading and overriding main method in Java. 
+Now you know that its possible to overload main in Java but its not possible to override it, simply because its a static method.
+
+Q. What is jdk?
+JDK is a superset of JRE, and contains everything that is in JRE, plus tools such as the compilers and debuggers
+necessary for developing applets and applications. JRE provides the libraries, the Java Virtual Machine (JVM), 
+and other components to run applets and applications written in the Java programming language.
+
+Q. What is JVM
+Q. What is jit
+Sometimes we heard this term and being it a part of JVM it confuses us. JIT is part of JVM that optimise byte code to 
+machine specific language compilation by compiling similar byte codes at same time, hence reducing overall time taken for 
+compilation of byte code to machine specific language.
+
+Q.What is jre
+Difference between jdk and jre and jvm
+Let’s look at some of the important difference between JDK, JRE and JVM.
+1>JDK is for development purpose whereas JRE is for running the java programs.
+2>JDK and JRE both contains JVM so that we can run our java program.
+3>JVM is the heart of java programming language and provides platform independence.
+
+Q. Can Java program run without class?
+Yes, you need at least one class to have a program, but no, you do not need any methods (contrary to some other answers). 
+EDIT : From Java 7 the above code with just static block and no main method does not produce any output. 
+Main method is now compulsory. The code with no main method compiles successfully though.
+
+Q. What is .class file?
+A .java file contains your Java source code while a .class file contains the Java bytecode produced by the Java compiler. 
+It is your .class files that run on the JVM to execute a Java application.
+It is the .class files you will use when you deploy your applet. person can be defined as a class Person.
+
+Q. Can we change the sequence of public static void main?
+If you write static public void main instead of public static void main, then it will make no difference. Program compiles 
+properly and runs.But if you change the sequence of main,
+ then it will you give a compiler error.
+ 
+Q. What is method overriding and methods overloading in Java
+
+Q. What is the difference between final,finally and finalize?
+1) final with Variables : The value of variable cannot be changed once initialized.
+2) final with Class : The class cannot be subclassed. Whenever we declare any class as final, it means that we can’t extend that 
+class or that class can’t be extended or we can’t make subclass of that class.
+3) final with Method : The method cannot be overridden by a subclass. Whenever we declare any method as final, then it means that 
+ we can’t override that method.
+4) If a class is declared as final then by default all of the methods present in that class are automatically final but variables 
+are not.
+5) The finally keyword is used in association with a try/catch block and guarantees that a section of code will be executed, 
+even if an exception is thrown. The finally block will be executed after the try and catch blocks,
+but before control transfers back to its origin.
+6) It is a method that the Garbage Collector always calls just before the deletion/destroying the object which is eligible 
+for Garbage Collection, so as to perform clean-up activity. Clean-up activity means closing the resources associated with that 
+object like Database Connection, Network Connection or we can say resource de-allocation. Remember it is not a reserved keyword.
+Q. What is type casting in Java
+Q. Explain constructor chaining in Java
+Q. What is abstract class in Java
+Q. Explain inheritance in Java with example
+Q.Type of inheritance
+How to achieve multiple inheritance in Java
+Q.Does Java support multiple inheritance
+Q.Difference between interface and abstract class
+Q. What is interface
+What is default nature of variable and function inside interface
+Q.What is final variable, method and class
+Q. What is garbage   collection in Java how to achieve it
+Q.What is finalized method
+Q. What is exception
+What is difference between exception and error
+Q. Explain exception handling in Java
+What is try catch finally explain
+Q. Can we write try inside try
+Q.Can we write try inside Catch
+Q.Can we write try without catch
+Q.Can we write try inside finally
+Q. What is finally block
+Q. What is final, finally and finalize in a single line.
+Q.What are rules of method overriding in Java
+Q. What is type casting in Java
+Q.What are Access specifiers in Java
+Q.What is difference between public and protected
+Q.What is difference between public and default
+Q.What is difference between default and protected
+Q.What is marker interface
+Q. What is singleton class
+Q. What are wrapper classes in Java
+Q. What is collection
+What are types of collection
+Q. Difference between collection and collections
+Q.Difference between arraylist and linkedlist
+Q. What is arraylist
+Q.What is map collection
+Q.Syntax of collection
+Q.Diagram of collection hierarchy
+
+
+DATABASES
+Q.What is rdbms
+Q.Insert query for emp table
+Q.Select query for employee table
+Q.Write create table query for employee table
+Q.What is primary key
+Q.What are table constraints like primary key, foreign key, unique key
+Q.How many primary key created per table
+Q.How many primary key created per table
+Q.What's foreign key
+Q.Can primary key can be null
+Q.Difference between primary and foreign key
+Q.Difference between unique and primary key
+Q.What are joins
+Q.Write query for simple join
+Q.Types of joins and explain
+Q.What are cursors in plsql
+Q.What is pl sql
+Q.What are sequences in plsql
+Q.What are group functions in mysql
+Like sum, avg
+Q.Write alter table query
+Q.Write update table quert
+Query
+Q.Difference between truncate and delete
+Q What are ddl, dml are n database
+Q.What are dml commands
+Q.What is transaction innmysql
+Q.What is commit and rollback
+Q.What is difference between delete truncate and drop table
+Q.What are indexes and type's of index's
+
+
+1. What is a file?
+Answer:
+A file is a named location which stores data or information permanently. 
+A file is always stored inside a storage device using file name (e.g. STUDENT.MARKS). 
+A file name normally has primary and secondary name separated by a “.”(DOT).
+
+2.What is a class?
+Answer:
+A class is a blueprint from which objects are created.
+ A class contains methods and variables associated with an instance of a class.
+
+3.What is an object?
+Answer:
+An object is an instance of a class. For example
+class Abc{ —– This is a class
+int a; —— This is a variable
+public Abc(); —- This is contractor
+public static void main (String args[]) ——- This is a method
+{
+Abc a= new Abc(); —— This is object creation where ‘a’ is the reference variable or object name
+}
+}
+
+4.What is a constructor?
+Answer:
+A constructor is methods which are used to create an Object of class.
+ There are two types of constructor Default & Parameterized constructor.
+
+5.What is the different OOPS principle?
+
+Answer:
+The basic OOPS principle are as follows,
+
+Encapsulation
+Abstraction
+Inheritance
+Polymorphism
+6.What is inheritance?
+Answer:
+Inheritance is property in which the property of a parent class(Superclass) is passed on to child class(Subclass).
+ For example
+class Abc{ —– This is a class
+int a; —— This is a variable
+public void abc(){} — Methods
+}
+class Xyz extends Abc —–(Extend is the keyword, Xyz is the subclass which inherits the properties of ABC parent class.)
+{
+public static void main (String args[]) ——- This is a method
+{
+Abc a= new Abc(); —— This is object creation where ‘a’ is the reference variable or object name
+}
+}
+
+7.What is polymorphism?
+Answer:
+Polymorphism is the ability of an object to take on multiple forms.
+ Most commonly polymorphism is used in OOP when a parent class reference is used to refer to a child class object.
+
+8. What are the instance and class variables?
+Answer:
+Instance variable belongs to a particular instance of that class whereas Class variable. 
+A class variable is also known as static variables. For example
+public class Abc{
+public int a; …….. This is an instance variable
+public static int a1;…….. This is a static or class variable
+……………………..
+……………..
+}
+
+9.Compare method and constructor?
+Answer:
+Constructor: Used to initialize the instance of a class.
+Method: Used to perform some function or operation.
+
+Constructor: Doesn’t have a return type.
+Method: Has a return type.
+
+10. What is a singleton class?
+Answer:
+Singleton class limits the number of objects created for a class to one but gives the flexibility of creating more objects 
+if the situation changes.
+
+11. What are the steps for creating the object?
+Answer:
+An object is first declared then instantiated and at last declared. For example
+Abc a= new Abc();
+
+12. What is the different type of access modifiers?
+Answer:
+There are four type of access modifiers as given below:-
+• Visible to the overall package. No modifier needed.
+• Private – Visible to class only.
+• Public – Visible to the world.
+• Protected – Visible to package and subclass.
+
+13.Which is the highest operator precedence in Java
+Answer:
+The operator with the highest preference is Postfix operators i.e () [].
+
+14.What is an array?
+Answer:
+The array is a container which holds the fixed number of similar data types.
+
+15. What is the difference between equals() and method and == operator?
+Answer:
+The equals() is a method and it matches the content of the strings whereas == is an operator and matches object or reference 
+of the strings.
+
+16. Is string class final?
+Answer:
+Yes
+
+17. What is a wrapper class?
+Answer:
+To access the primitive data type as an object we use wrapper class. They are following:-
+
+Primitive Type	Wrapper class
+boolean	                    Boolean
+char	                    Character
+byte	                    Byte
+short	                    Short
+int	                    Integer
+long	                    Long
+float	                    Float
+double	                    Double
+
+18.Difference between overloading and overriding?
+Answer:
+Overloading is when two or more methods in the same class have the same method name but different parameters
+(i.e different method signatures). Overriding is when two methods having the same method name and parameters 
+(i.e., method signature) but one of the methods is in the parent class and the other is in the child class.
+
+19. What are multiple inheritances in Java?
+Answer:
+Java supports multiple inheritances i.e the ability of a class to implement more than one interface.
+ A class can implement multiple Interfaces but cannot extends multiple classes.
+
+20. What is a stream?
+Answer:
+A stream can be defined as the sequence of data. There is two type of streams.
+InputStream: Used to read data from a source.
+OutPut Stream: Used to write data into a destination.
+
+21. What is a Character stream?
+Answer:
+Java Character stream is basically used to perform input and output for 16 bit Unicode.
+ The main classes users are FileReader and FileWriter which internally uses FileInputStream and FileOutputStream so the basic 
+ difference is that FileReader and FileWriter read and writes two bites at a time respectively.
+
+22. What is a Byte stream?
+Answer:
+Java Byte stream is basically used to perform input and output for 8 bit Unicode.
+The main classes related to byte streams are FileInputStream and FileOutputStream.
+
+23. What is an Interface?
+Answer:
+The interface is a reference type in Java, similar to the class but its collection of abstract methods.
+ A class can implement multiple interfaces.
+ 
+587 to send   and 465 to recieve and 25 for smtp
+25 <for transfer and recieve>
+465 and 587<only for outgoing mails>
+
+
+24.Difference between class and interface?
+Answer:
+Below are the difference between Interface and class:-
+
+The interface cannot be instantiated.
+An interface doesn’t have any constructors.
+Interface only have abstract methods.
+A class implements an interface and extends a class.
+An interface can extend multiple interfaces.
+
+25. What is an abstract class?
+Answer:
+A class which contains the abstract keyword in a declaration is called abstract class. The properties of the abstract class
+ are as follows:-
+
+Abstract classes may or may not contain abstract methods but, if a class has at least one abstract method, then it must be
+ declared abstract.
+The abstract class cannot be instantiated.
+To use an abstract class, we have to inherit it from another class.
+If we inherit an abstract class, then we have to provide implementations to all the abstract methods in it.
+An abstract class can have explicit constructors.

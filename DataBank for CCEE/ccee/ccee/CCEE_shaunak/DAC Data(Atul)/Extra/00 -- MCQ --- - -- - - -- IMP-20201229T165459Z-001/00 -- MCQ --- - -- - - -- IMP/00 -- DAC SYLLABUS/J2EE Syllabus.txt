@@ -1,0 +1,18 @@
+  TCP and Datagram sockets
+   Servlets, Java Server Pages
+   Remote Method Invocation
+   JDBC
+   JavaBeans
+   Enterprise Java Beans
+   Java Security
+   Naming Services
+   Java Mail
+   Java Messaging Services
+   Transactions
+   Introduction to Struts Framework
+   Introduction to hibernate, HQL
+   J2EE (struts) and hibernate
+   Introduction to Spring Framework
+   Hands on Web services – JSON/XML/oData (data format conversation)
+   Introduction to JSF
+   Java Mobile Web Programming

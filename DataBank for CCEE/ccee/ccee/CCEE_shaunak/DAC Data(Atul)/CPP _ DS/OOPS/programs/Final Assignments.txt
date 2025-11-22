@@ -1,0 +1,40 @@
+1) Define the class in order to meet the following needs
+
+a) MyClass m1;
+b) MyClass m2(40,56.29f);
+c) m1.display(m2);
+d) MyClass m3("hello world");
+e) MyClass m4=m3;
+f) int k=MyClass().show();
+
+define destructor with necessary statements inside.
+
+2) define a class "Product", with following members
+
+char *proid;
+char *prodesc;
+int price;
+int qty;
+
+Define no-arg and parameterized constructors , setter and getter functions and destructor inside the class.
+
+3)Define a class "StaticDemo"
+with
+private -static variable
+public - static function
+ In the main() function, prove that in order to display the value of static variable, no need to create an instance.
+
+4) create a library (vita.lib) to define following classes
+a) student b) module c) course
+In all the above mentioned classes add member variables and member functions of your choice.
+	Now create an application to show how will u use above classes.
+
+5) create a library ( mathematics.lib ) 
+in this library create a class "Math"
+In this class define three functions
+a) to accept number and return double of it.
+b) to accept a number and return square of it.
+c) to accept a number ,if it is negative, return positive of it.
+
+make sure that while calling all these functions, client need not create an instance of "Math" class.
+	write application to access "Math" class and all its functions.

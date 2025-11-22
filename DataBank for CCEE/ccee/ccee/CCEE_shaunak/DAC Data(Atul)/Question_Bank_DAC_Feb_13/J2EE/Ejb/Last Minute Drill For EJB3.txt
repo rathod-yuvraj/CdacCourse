@@ -1,0 +1,32 @@
+Ejb client views
+stateful vs stateless beans
+how to declare business method in RMI ?
+
+How do u create EntityManagerFactory ?
+....." ....     EntityManager
+......"......   EntityTransaction
+
+method of MDB , which gets called as the message arrives.
+
+stateless and stateful bean life cycle.
+in distributed object system, when client calls lookup, what client gets?
+
+how do u create remote object in RMI ?
+associations
+	one-to-one
+	one-to-many
+	many-to-many
+	many-to-one
+
+life cycle of Entity.
+location transparency
+ptp vs pub-sub
+importance of JMS API
+ORM implementations
+merge,refresh,persist
+from clause of JPQL
+how to start rmiregistry
+
+
+
+

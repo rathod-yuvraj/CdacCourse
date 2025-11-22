@@ -1,0 +1,18 @@
+1. #include<iostream.h>
+   void main()
+ {
+ 	int x = 1,2,3;
+	cout<< x;
+ }
+ ans:
+
+	a. Compilation Error
+	b. 1
+	c. 2
+	d. 3
+
+2. CPP is:
+   1.Static type
+   2.Dynamic Type
+   3.Both
+   4.None of these

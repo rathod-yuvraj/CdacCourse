@@ -1,0 +1,71 @@
+Q)UNIX uses _____ page replacement algorithm.
+a)MRU                     b)LRU
+c)FIFO                   c)FCFS
+
+Q)How can we make a directory inside home directory?
+a)mkdir                  b)dir
+c)cd                        d)chdir
+
+Q)How can we see the contents of a file?
+a)ls                         b)cat
+c)cp                       d)none of the above
+
+Q)System call is invoked by____
+a)Polling               b)Software interrupt
+c)Privileged instruction       d)Indirect jump
+
+Q)Page memory is stored in_____
+a)RAM                  b)ROM
+c)Auxiliary device   d)Disk
+
+Q)Swapping is done between main memory and_____
+a)RAM                  b)ROM
+c)Disk                    d)All of above
+
+Q)Swap space occurs in_____
+a)RAM                b)Disk
+c)Device contoller    d)None
+
+Q)Which of this is not an operating system?
+a)OSD                 b)SuSE
+c)UNIX               d)All of above
+
+Q)Page faults can be reduced by
+a)Paging               b)Thrashing
+c)Hit ratio            d)All of above
+
+Q)SJF algorithm is done for
+a)Process having less CPU burst
+b)Process which request the CPU first
+c)Process with low priority
+d)Process having high I/O burst
+
+Q)Round-robin algorithm is_____
+a)Premptive
+b)Non premptive
+c)It depends 
+d)None of above
+
+Q)FCFS algorithm is done for
+a)Process having high CPU burst
+b)Process which request CPU first
+c)Process with high priority
+d)None  
+
+Q)Computer itself uses which language?
+a)High level language
+b)Assembly language
+c)Machine language
+d)Natural language
+
+Q)Computer do the transaction in the form of____
+a)Bytes
+b)Bits
+c)Nibbles
+d)Pixels
+
+Q)Computer processes in the form of___
+a)High level language
+b)Binary
+c)All
+d) None
