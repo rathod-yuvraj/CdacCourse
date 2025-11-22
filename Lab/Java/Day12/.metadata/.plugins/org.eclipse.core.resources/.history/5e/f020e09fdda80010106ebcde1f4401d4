@@ -1,5 +1,0 @@
-package com.yuvraj.dao;
-
-public interface OrderDao {
-
-}

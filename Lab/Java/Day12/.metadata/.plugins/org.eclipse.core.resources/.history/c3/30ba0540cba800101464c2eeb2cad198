@@ -1,5 +1,0 @@
-package com.demo.dao;
-
-public class CustomerDaoImpl implements CustomerDao {
-
-}
