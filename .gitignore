@@ -27,7 +27,7 @@ node_modules/
 node_modules/**
 # Ignore all .class files
 *.class
-
+/.project
 # Optionally ignore build directories
 /bin/
 /out/

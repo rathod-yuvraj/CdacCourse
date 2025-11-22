@@ -4,21 +4,21 @@ import java.util.Arrays;
 
 public class MyArray {
 	private int[] arr;
-	private int count;
+	private int index;
 	
 	public MyArray() {
 		arr=new int[10];
-		count=0;
+		index=0;
 	}
 	
-	public MyArray(int[] arr,int count) {
+	public MyArray(int[] arr,int index) {
 		this.arr=arr;
-		this.count=count;
+		this.index=index;
 	}
 	
 	public MyArray(int size) {
 		arr=new int[size];
-		count=0;
+		index=0;
 	}
 	
 	public int getCapacity() {
@@ -26,14 +26,14 @@ public class MyArray {
 	}
 	
 	public int getSize() {
-		return count;
+		return index;
 	}
 	
 	//add at the end
 	public boolean add(int x) {
-		if(count<arr.length) {
-		   arr[count]=x;
-		   count++;
+		if(index<arr.length) {
+		   arr[index]=x;
+		   index++;
 		   return true;
 		}
 		return false;
@@ -41,15 +41,15 @@ public class MyArray {
 	
 	//ad at the given position
 	public boolean add(int value,int pos) {
-		if(count<arr.length && pos<count ) {
+		if(index<arr.length && pos<index ) {
 			//shifting values one location on the rigth side and make place 
 			//at pos location
-			for(int i=count;i>pos;i--) {
+			for(int i=index;i>pos;i--) {
 				arr[i]=arr[i-1];
 		    }
 			//adding value at pos position
 			arr[pos]=value;
-			count++;
+			index++;
 			return true;
 		}
 		return false;
@@ -59,7 +59,7 @@ public class MyArray {
 	
 	//search the value and return its position
     public int searchByValue(int value) {
-    	for(int i=0;i<count;i++) {
+    	for(int i=0;i<index;i++) {
     		if(arr[i]==value) {
     			return i;
     		}
@@ -70,12 +70,12 @@ public class MyArray {
     
     //delete the value at the given position
 	public boolean deleteByPos(int pos) {
-		if(pos<count) {
-			for(int i=pos;i<count-1;i++) {
+		if(pos<index) {
+			for(int i=pos;i<index-1;i++) {
 				arr[i]=arr[i+1];
 			}
-			arr[count-1]=0;
-			count--;
+			arr[index-1]=0;
+			index--;
 			return true;
 		}
 		return false;
@@ -96,8 +96,8 @@ public class MyArray {
 		if(flag) {
 			//right rotation
 			for(int cnt=0;cnt<num;cnt++) {
-				int temp=arr[count-1];
-				for(int i=count-1;i>0;i--) {
+				int temp=arr[index-1];
+				for(int i=index-1;i>0;i--) {
 					arr[i]=arr[i-1];
 				}
 				arr[0]=temp;
@@ -106,10 +106,10 @@ public class MyArray {
 			//left rotation
 			for(int cnt=0;cnt<num;cnt++) {
 				int first=arr[0];
-				for(int i=0;i<count-1;i++) {
+				for(int i=0;i<index-1;i++) {
 					arr[i]=arr[i+1];
 				}
-				arr[count-1]=first;
+				arr[index-1]=first;
 			}
 		}
 		
@@ -118,15 +118,15 @@ public class MyArray {
 	//else reverse the copy of array
 	public int[] reverseArray(boolean flag) {
 		if(flag) {
-			for(int i=0,j=count-1;i<j;i++,j--) {
+			for(int i=0,j=index-1;i<j;i++,j--) {
 				int temp=arr[i];
 				arr[i]=arr[j];
 				arr[j]=temp;
 			}
 			return arr;
 		}else {
-			int[] arr1=new int[count];
-			for(int i=count-1,j=0;i>=0;i--,j++) {
+			int[] arr1=new int[index];
+			for(int i=index-1,j=0;i>=0;i--,j++) {
 				arr1[j]=arr[i];
 			}
 			return arr1;
@@ -136,7 +136,7 @@ public class MyArray {
 	
 	public int findMax() {
 		int max=arr[0];
-		for(int i=1;i<count;i++) {
+		for(int i=1;i<index;i++) {
 			if(max<arr[i]) {
 				max=arr[i];
 			}
@@ -155,7 +155,7 @@ public class MyArray {
 			arr1[i]=-1;
 		}
 		//exchange index with value
-		for(int i=0;i<count;i++) {
+		for(int i=0;i<index;i++) {
 			int idx=arr[i];
 			int value=i;
 			arr1[idx]=value;
@@ -166,7 +166,7 @@ public class MyArray {
 	//find sum of all values
 	public int findSum() {
 		int sum=0;
-		for(int i=0;i<count;i++) {
+		for(int i=0;i<index;i++) {
 			sum=sum+arr[i];
 		}
 		return sum;
