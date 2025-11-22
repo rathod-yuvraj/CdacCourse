@@ -21,27 +21,28 @@ public class LoginDaoImpl implements LoginDao {
 			e.printStackTrace();
 		}
     }
-	
-
 	@Override
 	public MyUser checkedUser(String uname, String pass) {
-		
-		try {
-			seluser.setString(1,uname);
-			seluser.setString(2, pass);
-			ResultSet rs=seluser.executeQuery();
-			if(rs.next()) {
-				MyUser user=new MyUser(rs.getString(1),rs.getString(2),rs.getString(3));
-				return user;
-			}
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		
-		
-		return null;
+	    String sql = "SELECT uname, email, role FROM user WHERE uname=? AND password=?";
+	    try (Connection conn = DBUtil.getMyConnection();
+	         PreparedStatement ps = conn.prepareStatement(sql)) {
+	        
+	        ps.setString(1, uname);
+	        ps.setString(2, pass);
+	        
+	        try (ResultSet rs = ps.executeQuery()) {
+	            if (rs.next()) {
+	                return new MyUser(
+	                    rs.getString("uname"),
+	                    rs.getString("email"),
+	                    rs.getString("role")
+	                );
+	            }
+	        }
+	    } catch (SQLException e) {
+	        logger.error("Login check failed", e);
+	    }
+	    return null;
 	}
-	
 
 }

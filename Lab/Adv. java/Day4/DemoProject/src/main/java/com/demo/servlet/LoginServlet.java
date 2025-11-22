@@ -15,7 +15,7 @@ import com.demo.service.LoginService;
 import com.demo.service.LoginServiceImpl;
 
 public class LoginServlet extends HttpServlet{
-	public void doPost(HttpServletRequest request,HttpServletResponse response) throws IOException, ServletException{
+	public void doGet(HttpServletRequest request,HttpServletResponse response) throws IOException, ServletException{
 		response.setContentType("text/html");
 		PrintWriter out=response.getWriter();
 		String uname=request.getParameter("uname");
