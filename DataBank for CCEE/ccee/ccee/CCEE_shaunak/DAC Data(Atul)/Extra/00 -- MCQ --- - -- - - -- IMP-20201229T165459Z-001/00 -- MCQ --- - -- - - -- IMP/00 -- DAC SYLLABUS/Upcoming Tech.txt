@@ -1,9 +1,0 @@
-  Introduction to Cloud Computing
-  Defining cloud computing
-  Services from the cloud
-  Exploiting Software as a Service (SaaS)
-  Social Networking
-  Single sign up
-  Exploring Infrastructure as a Service (IaaS)
-  Exploring Platform as a Service (PaaS)
-  Virtualization

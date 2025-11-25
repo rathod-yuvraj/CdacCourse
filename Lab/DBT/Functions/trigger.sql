@@ -1,0 +1,9 @@
+DELIMITER //
+CREATE TRIGGER prevent_delete
+BEFORE DELETE ON students
+FOR EACH ROW
+BEGIN
+    SIGNAL SQLSTATE '45000' 
+    SET MESSAGE_TEXT = 'Delete not allowed!';
+END //
+DELIMITER ;

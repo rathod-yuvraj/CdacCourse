@@ -1,8 +1,0 @@
--rw-rw-r-- 1 unipro unipro     59 Apr  3 17:16 second
--rwxr-xr-x 1 unipro unipro  98700 Apr  1 17:26 sort
--rwxr-xr-x 1 unipro unipro  63476 Apr  1 17:26 stty
--rwxr-xr-x 1 unipro unipro  23592 Apr  1 17:26 sync
--rwxr-xr-x 1 unipro unipro 377544 Apr  1 17:26 tcsh
--rwxr-xr-x 1 unipro unipro  23044 Apr  1 17:26 true
--rwxr-xr-x 1 unipro unipro 720792 Apr  1 17:26 view
--rwxr-xr-x 1 unipro unipro     62 Apr  1 17:26 zcat
