@@ -1,0 +1,916 @@
+Microsoft Windows [Version 10.0.19045.6456]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Users\IET>mysql --host=192.168.10.117 --port=3306 --user=dac65 --password=welcome
+mysql: [Warning] Using a password on the command line interface can be insecure.
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 1718
+Server version: 8.0.44 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2025, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> show tables;
+ERROR 1046 (3D000): No database selected
+mysql> show tables
+    -> ;
+ERROR 1046 (3D000): No database selected
+mysql> select * from tables;
+ERROR 1046 (3D000): No database selected
+mysql> select user dac65;
+ERROR 1054 (42S22): Unknown column 'user' in 'field list'
+mysql> user dac65;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'user dac65' at line 1
+mysql> user:dac65;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'user:dac65' at line 1
+mysql> use dac65;
+Database changed
+mysql> show tables;
++---------------------+
+| Tables_in_dac65     |
++---------------------+
+| a                   |
+| activity            |
+| agent               |
+| airline_seats       |
+| andor               |
+| atm                 |
+| b                   |
+| bankloan            |
+| batch_schedule      |
+| betweensalary       |
+| bitwise             |
+| blanktablea         |
+| blanktableb         |
+| blog                |
+| bonus               |
+| books               |
+| brands              |
+| bus_stops           |
+| cafe                |
+| candidate           |
+| cardpayments        |
+| cashpayments        |
+| categories          |
+| category            |
+| city                |
+| classandsubjects    |
+| client              |
+| cnumbers            |
+| coalesce            |
+| comments            |
+| company             |
+| countnulls          |
+| countnumbers        |
+| cricketwinnerteam   |
+| customer            |
+| customers           |
+| demodept1           |
+| demodept2           |
+| dept                |
+| dept1               |
+| dhl                 |
+| docs                |
+| doctor              |
+| doctorvisits        |
+| dummy               |
+| duplicate           |
+| emp                 |
+| emp1                |
+| emp2                |
+| emp_attendance      |
+| emp_cards           |
+| emp_phone           |
+| empj                |
+| envelope            |
+| facebook            |
+| fedex               |
+| food                |
+| food_category_tags  |
+| food_items          |
+| fromstoreorders     |
+| fruits              |
+| fullname            |
+| hall_ticket         |
+| hobby               |
+| ipl                 |
+| item                |
+| job_list            |
+| key_parts           |
+| labtestlist         |
+| leading_zeroes      |
+| leadtable           |
+| licence             |
+| linkedin            |
+| location            |
+| managers            |
+| mass_table          |
+| medicinelist        |
+| menucard            |
+| missingnumbers      |
+| myproduct           |
+| nearest             |
+| new                 |
+| newbooks            |
+| null1               |
+| null2               |
+| nullif              |
+| numberstring        |
+| onlineorders        |
+| ord                 |
+| order1              |
+| order_items         |
+| orderdetails        |
+| orders              |
+| overlapping_dates   |
+| overtime            |
+| patient             |
+| phonecall           |
+| pivot_table         |
+| plumber             |
+| plumber_service_map |
+| points              |
+| population          |
+| posts               |
+| price               |
+| product             |
+| product_sales       |
+| products            |
+| pune_metro_stations |
+| quarterly_revenue   |
+| r                   |
+| r1                  |
+| r2                  |
+| races               |
+| regexpr             |
+| repeatingnumbers    |
+| replacedept         |
+| reservations        |
+| revenue             |
+| rockets             |
+| room_assigned       |
+| room_staff          |
+| rooms               |
+| runners             |
+| runningserver       |
+| sales               |
+| sales1              |
+| sales_channel       |
+| salespeople         |
+| salesperson         |
+| salgrade            |
+| server              |
+| service             |
+| seta                |
+| setb                |
+| shop                |
+| softdrink           |
+| sort                |
+| sourcecity          |
+| sourcenames         |
+| stadium             |
+| stages              |
+| states              |
+| station             |
+| status              |
+| stocks              |
+| stringnumber        |
+| student             |
+| students5           |
+| swapcity            |
+| tablea              |
+| tableaa             |
+| tableb              |
+| tablebb             |
+| targetcity          |
+| targetnames         |
+| tasks               |
+| teams               |
+| temp                |
+| temp1               |
+| trainers            |
+| trains              |
+| traintimetable      |
+| transactions        |
+| unpivot_table       |
+| ups                 |
+| vote_response       |
+| votes               |
+| warehouse           |
+| x                   |
+| year_of_service     |
+| yearly_revenue      |
+| years               |
+| yuvraj              |
+| z                   |
++---------------------+
+174 rows in set (0.01 sec)
+
+mysql> select * from sales;
++-------+--------+----------------+--------+-------------------------+----------+
+| REPID | CUSTID | CUSTNAME       | PRODID | PRODNAME                | AMOUNT   |
++-------+--------+----------------+--------+-------------------------+----------+
+|  7844 |    100 | JOCKSPORTS     | 102130 | RH: "GUIDE TO TENNIS"   |  1703.40 |
+|  7844 |    100 | JOCKSPORTS     | 100861 | ACE TENNIS RACKET II    |   485.00 |
+|  7844 |    100 | JOCKSPORTS     | 100870 | ACE TENNIS BALLS-3 PACK |   292.50 |
+|  7844 |    100 | JOCKSPORTS     | 100890 | ACE TENNIS NET          |    50.00 |
+|  7844 |    100 | JOCKSPORTS     | 100860 | ACE TENNIS RACKET I     |   350.00 |
+|  7844 |    100 | JOCKSPORTS     | 200376 | SB ENERGY BAR-6 PACK    |  2400.00 |
+|  7521 |    101 | TKB SPORT SHOP | 100860 | ACE TENNIS RACKET I     |    35.00 |
+|  7521 |    101 | TKB SPORT SHOP | 100870 | ACE TENNIS BALLS-3 PACK |     8.40 |
+|  7521 |    101 | TKB SPORT SHOP | 100890 | ACE TENNIS NET          |    58.00 |
+|  7654 |    102 | VOLLYRITE      | 100870 | ACE TENNIS BALLS-3 PACK |  3306.00 |
+|  7654 |    102 | VOLLYRITE      | 100860 | ACE TENNIS RACKET I     | 16569.00 |
+|  7654 |    102 | VOLLYRITE      | 100861 | ACE TENNIS RACKET II    |  2300.50 |
+|  7654 |    102 | VOLLYRITE      | 100871 | ACE TENNIS BALLS-6 PACK |  5600.00 |
+|  7521 |    103 | JUST TENNIS    | 100861 | ACE TENNIS RACKET II    |   450.00 |
+|  7521 |    103 | JUST TENNIS    | 100870 | ACE TENNIS BALLS-3 PACK |   140.00 |
+|  7521 |    103 | JUST TENNIS    | 100890 | ACE TENNIS NET          |   116.00 |
+|  7521 |    103 | JUST TENNIS    | 102130 | RH: "GUIDE TO TENNIS"   |    34.00 |
+|  7521 |    103 | JUST TENNIS    | 200376 | SB ENERGY BAR-6 PACK    |    24.00 |
+|  7499 |    104 | EVERY MOUNTAIN | 100871 | ACE TENNIS BALLS-6 PACK |   846.80 |
+|  7499 |    104 | EVERY MOUNTAIN | 101860 | SP TENNIS RACKET        |    24.00 |
+|  7499 |    104 | EVERY MOUNTAIN | 100860 | ACE TENNIS RACKET I     |  3000.00 |
+|  7499 |    104 | EVERY MOUNTAIN | 100861 | ACE TENNIS RACKET II    |   810.00 |
+|  7499 |    104 | EVERY MOUNTAIN | 101863 | SP JUNIOR RACKET        |  1500.00 |
+|  7499 |    104 | EVERY MOUNTAIN | 200380 | SB VITA SNACK-6 PACK    |   400.00 |
+|  7499 |    104 | EVERY MOUNTAIN | 200376 | SB ENERGY BAR-6 PACK    |   240.00 |
+|  7499 |    104 | EVERY MOUNTAIN | 102130 | RH: "GUIDE TO TENNIS"   |   340.00 |
+|  7844 |    105 | K + T SPORTS   | 100860 | ACE TENNIS RACKET I     |  1750.00 |
+|  7844 |    105 | K + T SPORTS   | 100861 | ACE TENNIS RACKET II    |  4500.00 |
+|  7844 |    105 | K + T SPORTS   | 100870 | ACE TENNIS BALLS-3 PACK |  1400.00 |
+|  7844 |    105 | K + T SPORTS   | 100871 | ACE TENNIS BALLS-6 PACK |  2800.00 |
+|  7844 |    105 | K + T SPORTS   | 100890 | ACE TENNIS NET          | 29000.00 |
+|  7844 |    105 | K + T SPORTS   | 101860 | SP TENNIS RACKET        |  2400.00 |
+|  7844 |    105 | K + T SPORTS   | 101863 | SP JUNIOR RACKET        |  2500.00 |
+|  7844 |    105 | K + T SPORTS   | 102130 | RH: "GUIDE TO TENNIS"   |   340.00 |
+|  7844 |    105 | K + T SPORTS   | 200376 | SB ENERGY BAR-6 PACK    |   480.00 |
+|  7844 |    105 | K + T SPORTS   | 200380 | SB VITA SNACK-6 PACK    |  1200.00 |
+|  7521 |    106 | SHAPE UP       | 200376 | SB ENERGY BAR-6 PACK    |     2.40 |
+|  7521 |    106 | SHAPE UP       | 100890 | ACE TENNIS NET          |   174.00 |
+|  7521 |    106 | SHAPE UP       | 100861 | ACE TENNIS RACKET II    |    84.00 |
+|  7521 |    106 | SHAPE UP       | 100860 | ACE TENNIS RACKET I     |   440.00 |
+|  7499 |    107 | WOMENS SPORTS  | 100861 | ACE TENNIS RACKET II    |   180.00 |
+|  7499 |    107 | WOMENS SPORTS  | 100870 | ACE TENNIS BALLS-3 PACK |   280.00 |
+|  7499 |    107 | WOMENS SPORTS  | 100871 | ACE TENNIS BALLS-6 PACK |   250.00 |
+|  7844 |    108 | NORTH WOODS    | 100871 | ACE TENNIS BALLS-6 PACK |   560.00 |
+|  7844 |    108 | NORTH WOODS    | 101860 | SP TENNIS RACKET        |  4800.00 |
+|  7844 |    108 | NORTH WOODS    | 200380 | SB VITA SNACK-6 PACK    |   600.00 |
+|  7844 |    108 | NORTH WOODS    | 200376 | SB ENERGY BAR-6 PACK    |   440.00 |
++-------+--------+----------------+--------+-------------------------+----------+
+47 rows in set (0.69 sec)
+
+mysql> select * from emp;
++-------+----------+--------+---------------------+------+------------+------+------+--------+---------+--------------+------------+------------+----------+
+| EMPNO | ENAME    | GENDER | JOB                 | MGR  | HIREDATE   | SAL  | COMM | DEPTNO | BONUSID | USER NAME    | PWD        | PHONE      | isActive |
++-------+----------+--------+---------------------+------+------------+------+------+--------+---------+--------------+------------+------------+----------+
+|  6001 | GITA     | F      | Compliance officers | 7920 | 1981-07-19 | 1750 | NULL |     30 |       1 | GITA         | sales@2017 | NULL       |        1 |
+|  6129 | VRUSHALI | F      | Compliance officers | 7920 | 1981-07-19 | 1750 | NULL |     50 |       1 | VRUSHALI     | PUN@8877   | NULL       |        1 |
+|  6473 | SHARMIN  | F      | Public Relation     | 7920 | 1981-07-19 | 1750 | NULL |     20 |       1 | SHARMIN      | a12recmpm  | NULL       |        1 |
+|  6781 | BANDISH  | F      | Public Relation     | 7920 | 1981-07-19 | 1750 | NULL |     20 |       1 | BANDISH      | a12recmpm  | NULL       |        1 |
+|  7369 | SMITH    | M      | CLERK               | 7902 | 1980-12-17 |  800 | NULL |     20 |       2 | TRITONE      | a12recmpm  | 7032300023 |        0 |
+|  7415 | AARAV    | M      | CLERK               | 7902 | 1981-12-31 | 3350 | NULL |     10 |    NULL | AARAV        | NULL       | 7032300084 |        0 |
+|  7421 | THOMAS   | M      | CLERK               | 7920 | 1981-07-19 | 1750 | NULL |     10 |       1 | THOMAS       | r50mpm     | 7032300011 |        0 |
+|  7499 | ALLEN    | M      | SALESMAN            | 7698 | 1981-02-20 | 1600 |  300 |     30 |       4 | ALWAYS TESTE | sales@2017 | 7032300096 |        1 |
+|  7521 | WARD     | M      | SALESMAN            | 7698 | 1981-02-22 | 1250 |  500 |     30 |       1 | WARD         | sales@2017 | 7132300034 |        1 |
+|  7566 | JONES    | M      | MANAGER             | 7839 | 1981-04-02 | 2975 | NULL |     20 |       4 | HONEYCOMB    | a12recmpm  | 7132300039 |        1 |
+|  7654 | MARTIN   | M      | SALESMAN            | 7698 | 1981-09-28 | 1250 | 1400 |     30 |       6 | LIFE RACER   | sales@2017 | 7132300050 |        1 |
+|  7698 | BLAKE    | M      | MANAGER             | 7839 | 1981-05-01 | 2850 | NULL |     30 |       1 | BIG BEN      | sales@2017 | 7132300027 |        1 |
+|  7782 | CLARK    | M      | MANAGER             | 7839 | 1981-06-09 | 2450 | NULL |     10 |       3 | CLARK        | r50mpm     | 7032300001 |        1 |
+|  7788 | SCOTT    | M      | ANALYST             | 7566 | 1982-12-09 | 3000 | NULL |     20 |       3 | WHITE SAND   | a12recmpm  | NULL       |        1 |
+|  7839 | KING     | M      | PRESIDENT           | NULL | 1981-11-17 | 5000 | NULL |     10 |       1 | KING         | r50mpm     | 7132300081 |        1 |
+|  7840 | FRED     | M      | vice PRESIDENT      | 7839 | 1983-08-09 | 5000 | NULL |     20 |       1 | SAND STONE   | a12recmpm  | NULL       |        1 |
+|  7844 | TURNER   | M      | SALESMAN            | 7698 | 1981-09-08 | 1500 |    0 |     30 |       5 | SAND DUST    | sales@2017 | NULL       |        1 |
+|  7876 | ADAMS    | M      | CLERK               | 7788 | 1983-01-12 | 1100 | NULL |     20 |       1 | CRAZY ANYONE | a12recmpm  | 7132300086 |        1 |
+|  7888 | Ruhan    | M      | Network             | 7888 | 1983-08-09 | 2000 | NULL |     60 |       1 | Ruhan        | BRD@1122   | NULL       |        1 |
+|  7889 | Neel     | M      | vice PRESIDENT      | 7839 | 1983-08-09 | 1000 | NULL |     60 |       0 | Neel         | BRD@1122   | NULL       |        1 |
+|  7900 | JAMES    | M      | CLERK               | 7698 | 1981-12-03 |  950 | NULL |     30 |       2 | CRAZY LEADER | sales@2017 | 7132300042 |        1 |
+|  7902 | FORD     | M      | ANALYST             | 7566 | 1981-12-03 | 3000 | NULL |     20 |       4 | CONBRIO      | a12recmpm  | NULL       |        0 |
+|  7919 | HOFFMAN  | M      | MANAGER             | 7566 | 1982-03-24 | 4150 | NULL |     30 |       3 | INTERVAL     | sales@2017 | NULL       |        1 |
+|  7920 | GRASS    | M      | SALESMAN            | 7919 | 1980-02-14 | 2575 | 2700 |     30 |       5 | GRASS        | sales@2017 | NULL       |        1 |
+|  7934 | MILLER   | M      | CLERK               | 7782 | 1982-01-23 | 1300 | 1300 |     10 |       2 | QUARTERNOTE  | r50mpm     | 7132300055 |        0 |
+|  7945 | AARUSH   | M      | SALESMAN            | 7902 | 1980-02-14 | 1350 | 2700 |     30 |    NULL | AARUSH       | ABCDEF     | NULL       |        0 |
+|  7949 | ALEX     | M      | MANAGER             | 7698 | 1982-01-24 | 1250 |  500 |     30 |       5 | QUARTERREST  | sales@2017 | 7156567183 |        1 |
+|  8433 | NATASHA  | F      | CLERK               | 7920 | 1981-07-19 | 1750 | NULL |     30 |       1 | NATASHA      | sales@2017 | NULL       |        1 |
+|  9400 | SANGITA  | F      | Compliance officers | 7920 | 1981-07-19 | 1750 | NULL |     50 |       1 | SANGITA      | NULL       | NULL       |        1 |
+|  9473 | SUPRIYA  | F      | ANALYST             | 7920 | 1981-07-19 | 1750 | NULL |     50 |       1 | SUPRIYA      | XYZ@1234   | NULL       |        1 |
++-------+----------+--------+---------------------+------+------------+------+------+--------+---------+--------------+------------+------------+----------+
+30 rows in set (0.00 sec)
+
+mysql> select * from salesperson;
++------+--------+
+| SID  | SNAME  |
++------+--------+
+| 1001 | ALAN   |
+| 1002 | CALVIN |
+| 1003 | CLIVE  |
+| 1004 | DENNIS |
+| 1005 | EVAN   |
+| 1006 | FOX    |
+| 1007 | PETER  |
++------+--------+
+7 rows in set (0.21 sec)
+
+mysql> desc salesperson;
++-------+-------------+------+-----+---------+-------+
+| Field | Type        | Null | Key | Default | Extra |
++-------+-------------+------+-----+---------+-------+
+| SID   | int         | YES  |     | NULL    |       |
+| SNAME | varchar(10) | YES  |     | NULL    |       |
++-------+-------------+------+-----+---------+-------+
+2 rows in set (0.00 sec)
+
+mysql> desc sales;
++----------+--------------+------+-----+---------+-------+
+| Field    | Type         | Null | Key | Default | Extra |
++----------+--------------+------+-----+---------+-------+
+| REPID    | int          | NO   |     | NULL    |       |
+| CUSTID   | int          | YES  |     | NULL    |       |
+| CUSTNAME | varchar(45)  | YES  |     | NULL    |       |
+| PRODID   | int          | NO   |     | NULL    |       |
+| PRODNAME | varchar(30)  | YES  |     | NULL    |       |
+| AMOUNT   | double(19,2) | YES  |     | NULL    |       |
++----------+--------------+------+-----+---------+-------+
+6 rows in set (0.02 sec)
+
+mysql> salesperson union sales;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'salesperson union sales' at line 1
+mysql> select from salesperson where "SNAME";
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'from salesperson where "SNAME"' at line 1
+mysql> SELECT salesperson.name AS SalespersonName, customer.name AS CustomerName, sales.amount AS SalesAmount
+    -> FROM sales
+    -> JOIN salesperson ON sales.salesperson_id = salesperson.id
+    -> JOIN customer ON sales.customer_id = customer.id;
+ERROR 1054 (42S22): Unknown column 'salesperson.name' in 'field list'
+mysql> ;
+ERROR:
+No query specified
+
+mysql> select salesperson.sname as Salesperson ,sales.custname as customerName,sales.amount as SalesAount
+    -> from sales join salesperson on sales.custid=sid
+    -> ;
+Empty set (0.00 sec)
+
+mysql> SELECT salesperson.sname AS Salesperson,
+    ->        sales.custname AS CustomerName,
+    ->        sales.amount AS SalesAmount
+    -> FROM sales
+    -> JOIN salesperson
+    ->   ON sales.salespersonid = salesperson.sid;
+ERROR 1054 (42S22): Unknown column 'sales.salespersonid' in 'on clause'
+mysql>
+mysql>
+mysql>
+mysql>
+mysql>
+mysql>
+mysql>
+mysql>
+mysql>
+mysql>
+mysql>
+mysql>
+mysql>
+mysql>
+mysql>
+mysql> SELECT salesperson.SNAME AS Salesperson,
+    ->        sales.CUSTNAME AS CustomerName,
+    ->        sales.AMOUNT AS SalesAmount
+    -> FROM sales
+    -> JOIN salesperson
+    ->   ON sales.REPID = salesperson.SID;
+Empty set (0.00 sec)
+
+mysql> SELECT salesperson.SNAME AS Salesperson,
+    ->        sales.CUSTNAME AS CustomerName,
+    ->        sales.AMOUNT AS SalesAmount
+    -> FROM sales
+    -> JOIN salesperson
+    ->   ON sales.REPID = salesperson.SID;
+Empty set (0.00 sec)
+
+mysql> SELECT salesperson.SNAME AS Salesperson,
+    ->        sales.CUSTNAME AS CustomerName,
+    ->        sales.AMOUNT AS SalesAmount
+    -> FROM sales
+    ->  left JOIN salesperson
+    ->   ON sales.REPID = salesperson.SID;
++-------------+----------------+-------------+
+| Salesperson | CustomerName   | SalesAmount |
++-------------+----------------+-------------+
+| NULL        | JOCKSPORTS     |     1703.40 |
+| NULL        | JOCKSPORTS     |      485.00 |
+| NULL        | JOCKSPORTS     |      292.50 |
+| NULL        | JOCKSPORTS     |       50.00 |
+| NULL        | JOCKSPORTS     |      350.00 |
+| NULL        | JOCKSPORTS     |     2400.00 |
+| NULL        | TKB SPORT SHOP |       35.00 |
+| NULL        | TKB SPORT SHOP |        8.40 |
+| NULL        | TKB SPORT SHOP |       58.00 |
+| NULL        | VOLLYRITE      |     3306.00 |
+| NULL        | VOLLYRITE      |    16569.00 |
+| NULL        | VOLLYRITE      |     2300.50 |
+| NULL        | VOLLYRITE      |     5600.00 |
+| NULL        | JUST TENNIS    |      450.00 |
+| NULL        | JUST TENNIS    |      140.00 |
+| NULL        | JUST TENNIS    |      116.00 |
+| NULL        | JUST TENNIS    |       34.00 |
+| NULL        | JUST TENNIS    |       24.00 |
+| NULL        | EVERY MOUNTAIN |      846.80 |
+| NULL        | EVERY MOUNTAIN |       24.00 |
+| NULL        | EVERY MOUNTAIN |     3000.00 |
+| NULL        | EVERY MOUNTAIN |      810.00 |
+| NULL        | EVERY MOUNTAIN |     1500.00 |
+| NULL        | EVERY MOUNTAIN |      400.00 |
+| NULL        | EVERY MOUNTAIN |      240.00 |
+| NULL        | EVERY MOUNTAIN |      340.00 |
+| NULL        | K + T SPORTS   |     1750.00 |
+| NULL        | K + T SPORTS   |     4500.00 |
+| NULL        | K + T SPORTS   |     1400.00 |
+| NULL        | K + T SPORTS   |     2800.00 |
+| NULL        | K + T SPORTS   |    29000.00 |
+| NULL        | K + T SPORTS   |     2400.00 |
+| NULL        | K + T SPORTS   |     2500.00 |
+| NULL        | K + T SPORTS   |      340.00 |
+| NULL        | K + T SPORTS   |      480.00 |
+| NULL        | K + T SPORTS   |     1200.00 |
+| NULL        | SHAPE UP       |        2.40 |
+| NULL        | SHAPE UP       |      174.00 |
+| NULL        | SHAPE UP       |       84.00 |
+| NULL        | SHAPE UP       |      440.00 |
+| NULL        | WOMENS SPORTS  |      180.00 |
+| NULL        | WOMENS SPORTS  |      280.00 |
+| NULL        | WOMENS SPORTS  |      250.00 |
+| NULL        | NORTH WOODS    |      560.00 |
+| NULL        | NORTH WOODS    |     4800.00 |
+| NULL        | NORTH WOODS    |      600.00 |
+| NULL        | NORTH WOODS    |      440.00 |
++-------------+----------------+-------------+
+47 rows in set (0.00 sec)
+
+mysql> SELECT salesperson.SNAME AS Salesperson,
+    ->        sales.CUSTNAME AS CustomerName,
+    ->        sales.AMOUNT AS SalesAmount
+    -> FROM sales
+    ->  right JOIN salesperson
+    ->   ON sales.REPID = salesperson.SID;
++-------------+--------------+-------------+
+| Salesperson | CustomerName | SalesAmount |
++-------------+--------------+-------------+
+| ALAN        | NULL         |        NULL |
+| CALVIN      | NULL         |        NULL |
+| CLIVE       | NULL         |        NULL |
+| DENNIS      | NULL         |        NULL |
+| EVAN        | NULL         |        NULL |
+| FOX         | NULL         |        NULL |
+| PETER       | NULL         |        NULL |
++-------------+--------------+-------------+
+7 rows in set (0.00 sec)
+
+mysql> SELECT salesperson.SNAME AS Salesperson,
+    ->        sales.CUSTNAME AS CustomerName,
+    ->        sales.AMOUNT AS SalesAmount
+    -> FROM sales
+    ->  outer JOIN salesperson
+    ->   ON sales.REPID = salesperson.SID;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'outer JOIN salesperson
+  ON sales.REPID = salesperson.SID' at line 5
+mysql> SELECT salesperson.SNAME AS Salesperson,
+    ->        sales.CUSTNAME AS CustomerName,
+    ->        sales.AMOUNT AS SalesAmount
+    -> FROM sales
+    ->  FULL  JOIN salesperson
+    ->   ON sales.REPID = salesperson.SID;
+ERROR 1054 (42S22): Unknown column 'sales.CUSTNAME' in 'field list'
+mysql> select * emp where "ename" and "mng";
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'emp where "ename" and "mng"' at line 1
+mysql> select * emp;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'emp' at line 1
+mysql> select * from emp;
++-------+----------+--------+---------------------+------+------------+------+------+--------+---------+--------------+------------+------------+----------+
+| EMPNO | ENAME    | GENDER | JOB                 | MGR  | HIREDATE   | SAL  | COMM | DEPTNO | BONUSID | USER NAME    | PWD        | PHONE      | isActive |
++-------+----------+--------+---------------------+------+------------+------+------+--------+---------+--------------+------------+------------+----------+
+|  6001 | GITA     | F      | Compliance officers | 7920 | 1981-07-19 | 1750 | NULL |     30 |       1 | GITA         | sales@2017 | NULL       |        1 |
+|  6129 | VRUSHALI | F      | Compliance officers | 7920 | 1981-07-19 | 1750 | NULL |     50 |       1 | VRUSHALI     | PUN@8877   | NULL       |        1 |
+|  6473 | SHARMIN  | F      | Public Relation     | 7920 | 1981-07-19 | 1750 | NULL |     20 |       1 | SHARMIN      | a12recmpm  | NULL       |        1 |
+|  6781 | BANDISH  | F      | Public Relation     | 7920 | 1981-07-19 | 1750 | NULL |     20 |       1 | BANDISH      | a12recmpm  | NULL       |        1 |
+|  7369 | SMITH    | M      | CLERK               | 7902 | 1980-12-17 |  800 | NULL |     20 |       2 | TRITONE      | a12recmpm  | 7032300023 |        0 |
+|  7415 | AARAV    | M      | CLERK               | 7902 | 1981-12-31 | 3350 | NULL |     10 |    NULL | AARAV        | NULL       | 7032300084 |        0 |
+|  7421 | THOMAS   | M      | CLERK               | 7920 | 1981-07-19 | 1750 | NULL |     10 |       1 | THOMAS       | r50mpm     | 7032300011 |        0 |
+|  7499 | ALLEN    | M      | SALESMAN            | 7698 | 1981-02-20 | 1600 |  300 |     30 |       4 | ALWAYS TESTE | sales@2017 | 7032300096 |        1 |
+|  7521 | WARD     | M      | SALESMAN            | 7698 | 1981-02-22 | 1250 |  500 |     30 |       1 | WARD         | sales@2017 | 7132300034 |        1 |
+|  7566 | JONES    | M      | MANAGER             | 7839 | 1981-04-02 | 2975 | NULL |     20 |       4 | HONEYCOMB    | a12recmpm  | 7132300039 |        1 |
+|  7654 | MARTIN   | M      | SALESMAN            | 7698 | 1981-09-28 | 1250 | 1400 |     30 |       6 | LIFE RACER   | sales@2017 | 7132300050 |        1 |
+|  7698 | BLAKE    | M      | MANAGER             | 7839 | 1981-05-01 | 2850 | NULL |     30 |       1 | BIG BEN      | sales@2017 | 7132300027 |        1 |
+|  7782 | CLARK    | M      | MANAGER             | 7839 | 1981-06-09 | 2450 | NULL |     10 |       3 | CLARK        | r50mpm     | 7032300001 |        1 |
+|  7788 | SCOTT    | M      | ANALYST             | 7566 | 1982-12-09 | 3000 | NULL |     20 |       3 | WHITE SAND   | a12recmpm  | NULL       |        1 |
+|  7839 | KING     | M      | PRESIDENT           | NULL | 1981-11-17 | 5000 | NULL |     10 |       1 | KING         | r50mpm     | 7132300081 |        1 |
+|  7840 | FRED     | M      | vice PRESIDENT      | 7839 | 1983-08-09 | 5000 | NULL |     20 |       1 | SAND STONE   | a12recmpm  | NULL       |        1 |
+|  7844 | TURNER   | M      | SALESMAN            | 7698 | 1981-09-08 | 1500 |    0 |     30 |       5 | SAND DUST    | sales@2017 | NULL       |        1 |
+|  7876 | ADAMS    | M      | CLERK               | 7788 | 1983-01-12 | 1100 | NULL |     20 |       1 | CRAZY ANYONE | a12recmpm  | 7132300086 |        1 |
+|  7888 | Ruhan    | M      | Network             | 7888 | 1983-08-09 | 2000 | NULL |     60 |       1 | Ruhan        | BRD@1122   | NULL       |        1 |
+|  7889 | Neel     | M      | vice PRESIDENT      | 7839 | 1983-08-09 | 1000 | NULL |     60 |       0 | Neel         | BRD@1122   | NULL       |        1 |
+|  7900 | JAMES    | M      | CLERK               | 7698 | 1981-12-03 |  950 | NULL |     30 |       2 | CRAZY LEADER | sales@2017 | 7132300042 |        1 |
+|  7902 | FORD     | M      | ANALYST             | 7566 | 1981-12-03 | 3000 | NULL |     20 |       4 | CONBRIO      | a12recmpm  | NULL       |        0 |
+|  7919 | HOFFMAN  | M      | MANAGER             | 7566 | 1982-03-24 | 4150 | NULL |     30 |       3 | INTERVAL     | sales@2017 | NULL       |        1 |
+|  7920 | GRASS    | M      | SALESMAN            | 7919 | 1980-02-14 | 2575 | 2700 |     30 |       5 | GRASS        | sales@2017 | NULL       |        1 |
+|  7934 | MILLER   | M      | CLERK               | 7782 | 1982-01-23 | 1300 | 1300 |     10 |       2 | QUARTERNOTE  | r50mpm     | 7132300055 |        0 |
+|  7945 | AARUSH   | M      | SALESMAN            | 7902 | 1980-02-14 | 1350 | 2700 |     30 |    NULL | AARUSH       | ABCDEF     | NULL       |        0 |
+|  7949 | ALEX     | M      | MANAGER             | 7698 | 1982-01-24 | 1250 |  500 |     30 |       5 | QUARTERREST  | sales@2017 | 7156567183 |        1 |
+|  8433 | NATASHA  | F      | CLERK               | 7920 | 1981-07-19 | 1750 | NULL |     30 |       1 | NATASHA      | sales@2017 | NULL       |        1 |
+|  9400 | SANGITA  | F      | Compliance officers | 7920 | 1981-07-19 | 1750 | NULL |     50 |       1 | SANGITA      | NULL       | NULL       |        1 |
+|  9473 | SUPRIYA  | F      | ANALYST             | 7920 | 1981-07-19 | 1750 | NULL |     50 |       1 | SUPRIYA      | XYZ@1234   | NULL       |        1 |
++-------+----------+--------+---------------------+------+------------+------+------+--------+---------+--------------+------------+------------+----------+
+30 rows in set (0.00 sec)
+
+mysql> select from emp where "USERNAME";
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'from emp where "USERNAME"' at line 1
+mysql> select 'user name ' from emp ;
++------------+
+| user name  |
++------------+
+| user name  |
+| user name  |
+| user name  |
+| user name  |
+| user name  |
+| user name  |
+| user name  |
+| user name  |
+| user name  |
+| user name  |
+| user name  |
+| user name  |
+| user name  |
+| user name  |
+| user name  |
+| user name  |
+| user name  |
+| user name  |
+| user name  |
+| user name  |
+| user name  |
+| user name  |
+| user name  |
+| user name  |
+| user name  |
+| user name  |
+| user name  |
+| user name  |
+| user name  |
+| user name  |
++------------+
+30 rows in set (0.02 sec)
+
+mysql> select ename , `user name` from emp;
++----------+--------------+
+| ename    | user name    |
++----------+--------------+
+| GITA     | GITA         |
+| VRUSHALI | VRUSHALI     |
+| SHARMIN  | SHARMIN      |
+| BANDISH  | BANDISH      |
+| SMITH    | TRITONE      |
+| AARAV    | AARAV        |
+| THOMAS   | THOMAS       |
+| ALLEN    | ALWAYS TESTE |
+| WARD     | WARD         |
+| JONES    | HONEYCOMB    |
+| MARTIN   | LIFE RACER   |
+| BLAKE    | BIG BEN      |
+| CLARK    | CLARK        |
+| SCOTT    | WHITE SAND   |
+| KING     | KING         |
+| FRED     | SAND STONE   |
+| TURNER   | SAND DUST    |
+| ADAMS    | CRAZY ANYONE |
+| Ruhan    | Ruhan        |
+| Neel     | Neel         |
+| JAMES    | CRAZY LEADER |
+| FORD     | CONBRIO      |
+| HOFFMAN  | INTERVAL     |
+| GRASS    | GRASS        |
+| MILLER   | QUARTERNOTE  |
+| AARUSH   | AARUSH       |
+| ALEX     | QUARTERREST  |
+| NATASHA  | NATASHA      |
+| SANGITA  | SANGITA      |
+| SUPRIYA  | SUPRIYA      |
++----------+--------------+
+30 rows in set (0.00 sec)
+
+mysql> select * from dept;
++--------+------------+----------+------------+------------+
+| DEPTNO | DNAME      | LOC      | PWD        | STARTEDON  |
++--------+------------+----------+------------+------------+
+|     10 | ACCOUNTING | NEW YORK | r50mpm     | 24/03/1989 |
+|     20 | RESEARCH   | DALLAS   | a12recmpm  | 12/04/1989 |
+|     30 | SALES      | CHICAGO  | sales@2017 | 13/04/1989 |
+|     40 | OPERATIONS | BOSTON   | opr@123    | 12/07/1989 |
+|     50 | HR         | PUNE     | PUN@8877   | 22/12/1989 |
+|     60 | IT         | BARODA   | BRD@1122   | 02/10/1989 |
++--------+------------+----------+------------+------------+
+6 rows in set (0.17 sec)
+
+mysql> desc emp;
++-----------+-------------+------+-----+---------+-------+
+| Field     | Type        | Null | Key | Default | Extra |
++-----------+-------------+------+-----+---------+-------+
+| EMPNO     | int         | NO   | PRI | NULL    |       |
+| ENAME     | varchar(12) | YES  |     | NULL    |       |
+| GENDER    | char(1)     | YES  |     | NULL    |       |
+| JOB       | varchar(20) | YES  |     | NULL    |       |
+| MGR       | int         | YES  | MUL | NULL    |       |
+| HIREDATE  | date        | YES  |     | NULL    |       |
+| SAL       | int         | YES  |     | NULL    |       |
+| COMM      | int         | YES  |     | NULL    |       |
+| DEPTNO    | int         | NO   | MUL | NULL    |       |
+| BONUSID   | int         | YES  |     | NULL    |       |
+| USER NAME | varchar(20) | YES  |     | NULL    |       |
+| PWD       | varchar(20) | YES  |     | NULL    |       |
+| PHONE     | varchar(45) | YES  |     | NULL    |       |
+| isActive  | tinyint(1)  | YES  |     | NULL    |       |
++-----------+-------------+------+-----+---------+-------+
+14 rows in set (0.05 sec)
+
+mysql> SELECT d.DEPTNO, d.DNAME, d.LOC, e.EMPNO, e.ENAME, e.GENDER, e.JOB, e.SAL, e.HIREDATE
+    -> FROM dept d
+    -> LEFT JOIN emp e
+    -> ON d.DEPTNO = e.DEPTNO
+    -> ORDER BY d.DEPTNO;
++--------+------------+----------+-------+----------+--------+---------------------+------+------------+
+| DEPTNO | DNAME      | LOC      | EMPNO | ENAME    | GENDER | JOB                 | SAL  | HIREDATE   |
++--------+------------+----------+-------+----------+--------+---------------------+------+------------+
+|     10 | ACCOUNTING | NEW YORK |  7415 | AARAV    | M      | CLERK               | 3350 | 1981-12-31 |
+|     10 | ACCOUNTING | NEW YORK |  7421 | THOMAS   | M      | CLERK               | 1750 | 1981-07-19 |
+|     10 | ACCOUNTING | NEW YORK |  7782 | CLARK    | M      | MANAGER             | 2450 | 1981-06-09 |
+|     10 | ACCOUNTING | NEW YORK |  7839 | KING     | M      | PRESIDENT           | 5000 | 1981-11-17 |
+|     10 | ACCOUNTING | NEW YORK |  7934 | MILLER   | M      | CLERK               | 1300 | 1982-01-23 |
+|     20 | RESEARCH   | DALLAS   |  6473 | SHARMIN  | F      | Public Relation     | 1750 | 1981-07-19 |
+|     20 | RESEARCH   | DALLAS   |  6781 | BANDISH  | F      | Public Relation     | 1750 | 1981-07-19 |
+|     20 | RESEARCH   | DALLAS   |  7369 | SMITH    | M      | CLERK               |  800 | 1980-12-17 |
+|     20 | RESEARCH   | DALLAS   |  7566 | JONES    | M      | MANAGER             | 2975 | 1981-04-02 |
+|     20 | RESEARCH   | DALLAS   |  7788 | SCOTT    | M      | ANALYST             | 3000 | 1982-12-09 |
+|     20 | RESEARCH   | DALLAS   |  7840 | FRED     | M      | vice PRESIDENT      | 5000 | 1983-08-09 |
+|     20 | RESEARCH   | DALLAS   |  7876 | ADAMS    | M      | CLERK               | 1100 | 1983-01-12 |
+|     20 | RESEARCH   | DALLAS   |  7902 | FORD     | M      | ANALYST             | 3000 | 1981-12-03 |
+|     30 | SALES      | CHICAGO  |  6001 | GITA     | F      | Compliance officers | 1750 | 1981-07-19 |
+|     30 | SALES      | CHICAGO  |  7499 | ALLEN    | M      | SALESMAN            | 1600 | 1981-02-20 |
+|     30 | SALES      | CHICAGO  |  7521 | WARD     | M      | SALESMAN            | 1250 | 1981-02-22 |
+|     30 | SALES      | CHICAGO  |  7654 | MARTIN   | M      | SALESMAN            | 1250 | 1981-09-28 |
+|     30 | SALES      | CHICAGO  |  7698 | BLAKE    | M      | MANAGER             | 2850 | 1981-05-01 |
+|     30 | SALES      | CHICAGO  |  7844 | TURNER   | M      | SALESMAN            | 1500 | 1981-09-08 |
+|     30 | SALES      | CHICAGO  |  7900 | JAMES    | M      | CLERK               |  950 | 1981-12-03 |
+|     30 | SALES      | CHICAGO  |  7919 | HOFFMAN  | M      | MANAGER             | 4150 | 1982-03-24 |
+|     30 | SALES      | CHICAGO  |  7920 | GRASS    | M      | SALESMAN            | 2575 | 1980-02-14 |
+|     30 | SALES      | CHICAGO  |  7945 | AARUSH   | M      | SALESMAN            | 1350 | 1980-02-14 |
+|     30 | SALES      | CHICAGO  |  7949 | ALEX     | M      | MANAGER             | 1250 | 1982-01-24 |
+|     30 | SALES      | CHICAGO  |  8433 | NATASHA  | F      | CLERK               | 1750 | 1981-07-19 |
+|     40 | OPERATIONS | BOSTON   |  NULL | NULL     | NULL   | NULL                | NULL | NULL       |
+|     50 | HR         | PUNE     |  6129 | VRUSHALI | F      | Compliance officers | 1750 | 1981-07-19 |
+|     50 | HR         | PUNE     |  9400 | SANGITA  | F      | Compliance officers | 1750 | 1981-07-19 |
+|     50 | HR         | PUNE     |  9473 | SUPRIYA  | F      | ANALYST             | 1750 | 1981-07-19 |
+|     60 | IT         | BARODA   |  7888 | Ruhan    | M      | Network             | 2000 | 1983-08-09 |
+|     60 | IT         | BARODA   |  7889 | Neel     | M      | vice PRESIDENT      | 1000 | 1983-08-09 |
++--------+------------+----------+-------+----------+--------+---------------------+------+------------+
+31 rows in set (0.00 sec)
+
+mysql> SELECT c.CustomerName, o.OrderNumber, o.ShipDate
+    -> FROM Customers c
+    -> JOIN Orders o
+    -> ON c.CustomerID = o.CustomerID
+    -> WHERE YEAR(o.ShipDate) = 1987
+    -> ORDER BY o.ShipDate;
+ERROR 1054 (42S22): Unknown column 'c.CustomerName' in 'field list'
+mysql> select * from customer;
++--------+-------------------+----------------------+--------------+-------+--------+------+-----------+-------+-------------+-----------------------------------------------------------------------------------------------------------------------------------------------+
+| CUSTID | NAME              | ADDRESS              | CITY         | STATE | ZIP    | AREA | PHONE     | REPID | CREDITLIMIT | COMMENTS                                                                                                                                      |
++--------+-------------------+----------------------+--------------+-------+--------+------+-----------+-------+-------------+-----------------------------------------------------------------------------------------------------------------------------------------------+
+|    100 | JOCKSPORTS        | 345 VIEWRIDGE        | BELMONT      | CA    | 96711  |  415 | 598-6609  |  7844 |     5000.00 | Very friendly people to work with -- sales rep likes to be called Mike.                                                                       |
+|    101 | TKB SPORT SHOP    | 490 BOLI RD.         | REDWOOD CITY | CA    | 94061  |  415 | 368-1223  |  7521 |    10000.00 | Rep called 5/8 about change in order - contact shipping.                                                                                      |
+|    102 | VOLLYRITE         | 9722 HAMILTON        | BURLINGAME   | CA    | 95133  |  415 | 644-3341  |  7654 |     7000.00 | Company doing heavy promotion beginning 10/89. Prepare for large orders during
+ winter.                                                       |
+|    103 | JUST TENNIS       | HILLVIEW MALL        | BURLINGAME   | CA    | 97544  |  415 | 677-9312  |  7521 |     3000.00 | Contact rep about new line of tennis rackets.                                                                                                 |
+|    104 | EVERY MOUNTAIN    | 574 SURRY RD.        | CUPERTINO    | CA    | 93301  |  408 | 996-2323  |  7499 |    10000.00 | Customer with high market share (23%) due to aggressive advertising.                                                                          |
+|    105 | K + T SPORTS      | 3476 EL PASEO        | SANTA CLARA  | CA    | 91003  |  408 | 376-9966  |  7844 |     5000.00 | Tends to order large amounts of merchandise at once. Accounting is considering
+ raising their credit limit. Usually pays on time.             |
+|    106 | SHAPE UP          | 908 SEQUOIA          | PALO ALTO    | CA    | 94301  |  415 | 364-9777  |  7521 |     6000.00 | Support intensive. Orders small amounts (< 800) of merchandise at a time.                                                                     |
+|    107 | WOMENS SPORTS     | VALCO VILLAGE        | SUNNYVALE    | CA    | 93301  |  408 | 967-4398  |  7499 |    10000.00 | First sporting goods store geared exclusively towards women. Unusual promotional style and very willing to take chances towards new products! |
+|    108 | NORTH WOODS       | 98 LONE PINE WAY     | HIBBING      | MN    | 55649  |  612 | 566-9123  |  7844 |     8000.00 | NULL                                                                                                                                          |
+|    109 | Saleel Sports     | 8 Vaibhav            | baroda       | GJ    | 411038 |  362 | 9850-0483 |  2002 |     8000.00 | Very Good people                                                                                                                              |
+|    110 | Raj Sports Center | 00-22 Kala Ghoda     | baroda       | GJ    | 411038 |  232 | 9833-0434 |  2342 |    25000.00 | Very Good people                                                                                                                              |
+|    117 | West WOODS        | GM Road, Patel Nagar | Surat        | GJ    | 45008  | 7433 | 022-7543  |  7870 |     8000.00 | NULL                                                                                                                                          |
+|    118 | South WOODS       | MG Road              | Baroda       | GJ    | 39007  |  700 | 020-7865  |  7869 |     8000.00 | NULL                                                                                                                                          |
++--------+-------------------+----------------------+--------------+-------+--------+------+-----------+-------+-------------+-----------------------------------------------------------------------------------------------------------------------------------------------+
+13 rows in set (0.00 sec)
+
+mysql> select name from customer;
++-------------------+
+| name              |
++-------------------+
+| JOCKSPORTS        |
+| TKB SPORT SHOP    |
+| VOLLYRITE         |
+| JUST TENNIS       |
+| EVERY MOUNTAIN    |
+| K + T SPORTS      |
+| SHAPE UP          |
+| WOMENS SPORTS     |
+| NORTH WOODS       |
+| Saleel Sports     |
+| Raj Sports Center |
+| West WOODS        |
+| South WOODS       |
++-------------------+
+13 rows in set (0.00 sec)
+
+mysql> select custid comments,name from emp;
+ERROR 1054 (42S22): Unknown column 'custid' in 'field list'
+mysql> select 'custid comments''name' from emp;
++----------------------+
+| custid comments'name |
++----------------------+
+| custid comments'name |
+| custid comments'name |
+| custid comments'name |
+| custid comments'name |
+| custid comments'name |
+| custid comments'name |
+| custid comments'name |
+| custid comments'name |
+| custid comments'name |
+| custid comments'name |
+| custid comments'name |
+| custid comments'name |
+| custid comments'name |
+| custid comments'name |
+| custid comments'name |
+| custid comments'name |
+| custid comments'name |
+| custid comments'name |
+| custid comments'name |
+| custid comments'name |
+| custid comments'name |
+| custid comments'name |
+| custid comments'name |
+| custid comments'name |
+| custid comments'name |
+| custid comments'name |
+| custid comments'name |
+| custid comments'name |
+| custid comments'name |
+| custid comments'name |
++----------------------+
+30 rows in set (0.00 sec)
+
+mysql> SELECT custid, comments, name
+    -> FROM emp;
+ERROR 1054 (42S22): Unknown column 'custid' in 'field list'
+mysql> select * from sales;
++-------+--------+----------------+--------+-------------------------+----------+
+| REPID | CUSTID | CUSTNAME       | PRODID | PRODNAME                | AMOUNT   |
++-------+--------+----------------+--------+-------------------------+----------+
+|  7844 |    100 | JOCKSPORTS     | 102130 | RH: "GUIDE TO TENNIS"   |  1703.40 |
+|  7844 |    100 | JOCKSPORTS     | 100861 | ACE TENNIS RACKET II    |   485.00 |
+|  7844 |    100 | JOCKSPORTS     | 100870 | ACE TENNIS BALLS-3 PACK |   292.50 |
+|  7844 |    100 | JOCKSPORTS     | 100890 | ACE TENNIS NET          |    50.00 |
+|  7844 |    100 | JOCKSPORTS     | 100860 | ACE TENNIS RACKET I     |   350.00 |
+|  7844 |    100 | JOCKSPORTS     | 200376 | SB ENERGY BAR-6 PACK    |  2400.00 |
+|  7521 |    101 | TKB SPORT SHOP | 100860 | ACE TENNIS RACKET I     |    35.00 |
+|  7521 |    101 | TKB SPORT SHOP | 100870 | ACE TENNIS BALLS-3 PACK |     8.40 |
+|  7521 |    101 | TKB SPORT SHOP | 100890 | ACE TENNIS NET          |    58.00 |
+|  7654 |    102 | VOLLYRITE      | 100870 | ACE TENNIS BALLS-3 PACK |  3306.00 |
+|  7654 |    102 | VOLLYRITE      | 100860 | ACE TENNIS RACKET I     | 16569.00 |
+|  7654 |    102 | VOLLYRITE      | 100861 | ACE TENNIS RACKET II    |  2300.50 |
+|  7654 |    102 | VOLLYRITE      | 100871 | ACE TENNIS BALLS-6 PACK |  5600.00 |
+|  7521 |    103 | JUST TENNIS    | 100861 | ACE TENNIS RACKET II    |   450.00 |
+|  7521 |    103 | JUST TENNIS    | 100870 | ACE TENNIS BALLS-3 PACK |   140.00 |
+|  7521 |    103 | JUST TENNIS    | 100890 | ACE TENNIS NET          |   116.00 |
+|  7521 |    103 | JUST TENNIS    | 102130 | RH: "GUIDE TO TENNIS"   |    34.00 |
+|  7521 |    103 | JUST TENNIS    | 200376 | SB ENERGY BAR-6 PACK    |    24.00 |
+|  7499 |    104 | EVERY MOUNTAIN | 100871 | ACE TENNIS BALLS-6 PACK |   846.80 |
+|  7499 |    104 | EVERY MOUNTAIN | 101860 | SP TENNIS RACKET        |    24.00 |
+|  7499 |    104 | EVERY MOUNTAIN | 100860 | ACE TENNIS RACKET I     |  3000.00 |
+|  7499 |    104 | EVERY MOUNTAIN | 100861 | ACE TENNIS RACKET II    |   810.00 |
+|  7499 |    104 | EVERY MOUNTAIN | 101863 | SP JUNIOR RACKET        |  1500.00 |
+|  7499 |    104 | EVERY MOUNTAIN | 200380 | SB VITA SNACK-6 PACK    |   400.00 |
+|  7499 |    104 | EVERY MOUNTAIN | 200376 | SB ENERGY BAR-6 PACK    |   240.00 |
+|  7499 |    104 | EVERY MOUNTAIN | 102130 | RH: "GUIDE TO TENNIS"   |   340.00 |
+|  7844 |    105 | K + T SPORTS   | 100860 | ACE TENNIS RACKET I     |  1750.00 |
+|  7844 |    105 | K + T SPORTS   | 100861 | ACE TENNIS RACKET II    |  4500.00 |
+|  7844 |    105 | K + T SPORTS   | 100870 | ACE TENNIS BALLS-3 PACK |  1400.00 |
+|  7844 |    105 | K + T SPORTS   | 100871 | ACE TENNIS BALLS-6 PACK |  2800.00 |
+|  7844 |    105 | K + T SPORTS   | 100890 | ACE TENNIS NET          | 29000.00 |
+|  7844 |    105 | K + T SPORTS   | 101860 | SP TENNIS RACKET        |  2400.00 |
+|  7844 |    105 | K + T SPORTS   | 101863 | SP JUNIOR RACKET        |  2500.00 |
+|  7844 |    105 | K + T SPORTS   | 102130 | RH: "GUIDE TO TENNIS"   |   340.00 |
+|  7844 |    105 | K + T SPORTS   | 200376 | SB ENERGY BAR-6 PACK    |   480.00 |
+|  7844 |    105 | K + T SPORTS   | 200380 | SB VITA SNACK-6 PACK    |  1200.00 |
+|  7521 |    106 | SHAPE UP       | 200376 | SB ENERGY BAR-6 PACK    |     2.40 |
+|  7521 |    106 | SHAPE UP       | 100890 | ACE TENNIS NET          |   174.00 |
+|  7521 |    106 | SHAPE UP       | 100861 | ACE TENNIS RACKET II    |    84.00 |
+|  7521 |    106 | SHAPE UP       | 100860 | ACE TENNIS RACKET I     |   440.00 |
+|  7499 |    107 | WOMENS SPORTS  | 100861 | ACE TENNIS RACKET II    |   180.00 |
+|  7499 |    107 | WOMENS SPORTS  | 100870 | ACE TENNIS BALLS-3 PACK |   280.00 |
+|  7499 |    107 | WOMENS SPORTS  | 100871 | ACE TENNIS BALLS-6 PACK |   250.00 |
+|  7844 |    108 | NORTH WOODS    | 100871 | ACE TENNIS BALLS-6 PACK |   560.00 |
+|  7844 |    108 | NORTH WOODS    | 101860 | SP TENNIS RACKET        |  4800.00 |
+|  7844 |    108 | NORTH WOODS    | 200380 | SB VITA SNACK-6 PACK    |   600.00 |
+|  7844 |    108 | NORTH WOODS    | 200376 | SB ENERGY BAR-6 PACK    |   440.00 |
++-------+--------+----------------+--------+-------------------------+----------+
+47 rows in set (0.00 sec)
+
+mysql> select job fromemp;
+ERROR 1054 (42S22): Unknown column 'job' in 'field list'
+mysql> select job from emp;
++---------------------+
+| job                 |
++---------------------+
+| Compliance officers |
+| Compliance officers |
+| Public Relation     |
+| Public Relation     |
+| CLERK               |
+| CLERK               |
+| CLERK               |
+| SALESMAN            |
+| SALESMAN            |
+| MANAGER             |
+| SALESMAN            |
+| MANAGER             |
+| MANAGER             |
+| ANALYST             |
+| PRESIDENT           |
+| vice PRESIDENT      |
+| SALESMAN            |
+| CLERK               |
+| Network             |
+| vice PRESIDENT      |
+| CLERK               |
+| ANALYST             |
+| MANAGER             |
+| SALESMAN            |
+| CLERK               |
+| SALESMAN            |
+| MANAGER             |
+| CLERK               |
+| Compliance officers |
+| ANALYST             |
++---------------------+
+30 rows in set (0.00 sec)
+
+mysql> SELECT s.ENAME AS SalesmanName, c.CustomerName
+    -> FROM emp s
+    -> JOIN Customer c
+    -> ON s.EMPNO = c.SalesmanID
+    -> WHERE s.JOB = 'SALESMAN'
+    -> ORDER BY s.ENAME;
+ERROR 1054 (42S22): Unknown column 'c.CustomerName' in 'field list'
+mysql> select s.ename as salesmanname , c,customername from emp s join customer c on s.empno = c.salesmanid where s.job = 'salesmand;
+    '> ;
+    '> ;
+    '>
+    '>
+    '> desc customer;
+    '> ^C
+mysql> desc customer;
++-------------+-------------+------+-----+---------+-------+
+| Field       | Type        | Null | Key | Default | Extra |
++-------------+-------------+------+-----+---------+-------+
+| CUSTID      | int         | NO   | PRI | NULL    |       |
+| NAME        | varchar(45) | YES  |     | NULL    |       |
+| ADDRESS     | varchar(40) | YES  |     | NULL    |       |
+| CITY        | varchar(30) | YES  |     | NULL    |       |
+| STATE       | varchar(2)  | YES  |     | NULL    |       |
+| ZIP         | varchar(9)  | YES  |     | NULL    |       |
+| AREA        | int         | YES  |     | NULL    |       |
+| PHONE       | varchar(9)  | YES  |     | NULL    |       |
+| REPID       | int         | NO   |     | NULL    |       |
+| CREDITLIMIT | float(9,2)  | YES  |     | NULL    |       |
+| COMMENTS    | text        | YES  |     | NULL    |       |
++-------------+-------------+------+-----+---------+-------+
+11 rows in set (0.00 sec)
+
+mysql>  select s.ename as salesmanname ,
+    ->  c,NAME from emp s
+    ->  join customer c on
+    ->  s.empno = c.salesmanid
+    ->  where s.job = 'salesman'
+    -> ;
+ERROR 1054 (42S22): Unknown column 'c' in 'field list'
+mysql>  select s.ename as salesmanname ,
+    ->  c,c.NAME from emp s
+    ->  join customer c on
+    ->  s.empno = c.CUSTID
+    ->  where s.job = 'salesman';
+ERROR 1054 (42S22): Unknown column 'c' in 'field list'
+mysql>
+mysql>
+mysql>
+mysql>
+mysql>

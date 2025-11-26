@@ -4,11 +4,9 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Factorial</title>
+<title>Insert title here</title>
 </head>
 <body>
-       <a href="factorial.jsp"> Factorial</a> <br/>
-       <a href="Calculator.jsp">Calculator</a>
 
 </body>
 </html>
