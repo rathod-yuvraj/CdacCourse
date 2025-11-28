@@ -1,11 +1,4 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-mysql --host=192.168.10.117 --port=3306 --user=dac64 --password=welcome
-=======
-mysql --host=192.168.10.117 --port=3306 --user=dac64 --password=welcome dac64
-tu rukana nahi
->>>>>>> 0a9a08ed343597d2b521677db81a8dfe7917c1d1
-=======
+
 mysql --host=192.168.10.117 --port=3306 --user=dac64 --password=welcome dac64
 
->>>>>>> 629827b43d50410d6f85d301cb47816c729e2bdd
+
