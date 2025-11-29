@@ -14,9 +14,8 @@ public class LoginDaoImpl implements LoginDao{
     	 
     	 try {
     		 conn=DBUtil.getMyConnection();
-			seluser=conn.prepareStatement("select username,email,role from user where username=? and password=?");
-//		
-    	 } catch (SQLException e) {
+			seluser=conn.prepareStatement("select uname,email,role from user where uname=? and password=?");
+		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
@@ -29,7 +28,6 @@ public class LoginDaoImpl implements LoginDao{
 			seluser.setString(2, pass);
 			ResultSet rs=seluser.executeQuery();
 			if(rs.next()) {
-				
 				MyUser user=new MyUser(rs.getString(1),rs.getString(2),rs.getString(3));
 				return user;
 			}
