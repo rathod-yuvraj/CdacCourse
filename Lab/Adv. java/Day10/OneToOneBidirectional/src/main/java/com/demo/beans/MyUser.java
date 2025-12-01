@@ -1,14 +1,28 @@
 package com.demo.beans;
 
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="user12")
 public class MyUser {
 
-	public MyUser() {
-		super();
-	}
+	@Id
 	private int id;
 	private String name;
 	private String Mob;
+	
+	@OneToOne(fetch=FetchType.LAZY) //fetch lazy will avoid join query
+	@JoinColumn(name="addrid") 
 	private Address addr;
+	public MyUser() {
+		super();
+	}
 	public MyUser(int id, String name, String mob, Address addr) {
 		super();
 		this.id = id;
