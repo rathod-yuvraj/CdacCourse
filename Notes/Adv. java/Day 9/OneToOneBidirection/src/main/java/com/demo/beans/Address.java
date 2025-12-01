@@ -1,4 +1,4 @@
-package com.demo.beans;
+epackage com.demo.beans;
 
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
