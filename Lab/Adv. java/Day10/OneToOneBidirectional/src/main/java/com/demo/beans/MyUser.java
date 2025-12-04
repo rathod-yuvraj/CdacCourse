@@ -30,6 +30,13 @@ public class MyUser {
 		Mob = mob;
 		this.addr = addr;
 	}
+	
+	public MyUser(int id, String name, String mob) {
+		super();
+		this.id = id;
+		this.name = name;
+		Mob = mob;
+	}
 	public int getId() {
 		return id;
 	}
@@ -56,8 +63,8 @@ public class MyUser {
 	}
 	@Override
 	public String toString() {
-		return "MyUser [id=" + id + ", name=" + name + ", Mob=" + Mob + "]";
+		return "MyUser [id=" + id + ", name=" + name + ", Mob=" + Mob + ", addr=" + addr + "]";
 	}
-	
+
 	
 }
