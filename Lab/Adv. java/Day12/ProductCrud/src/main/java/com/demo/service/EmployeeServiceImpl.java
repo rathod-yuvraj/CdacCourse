@@ -12,7 +12,7 @@ public class EmployeeServiceImpl implements  EmployeeService {
 
 	
 	private EmployeeDao edao;
-	public EmployeeServiceImpl() {
+	public EmployeeServiceImpl(EmployeeDao edao) {
 		super();
 		this.edao = edao;
 	}

@@ -15,7 +15,7 @@ public class TestEmpprojectCrud {
 		// TODO Auto-generated
 		Scanner sc = new Scanner(System.in);
 		ProjectService pservice = new ProjectServiceImpl();
-		EmployeeService eservice = new EmployeeServiceImpl();
+		EmployeeService eservice = new EmployeeServiceImpl (null);
 		
 		int choice=0;
 		do {
@@ -79,6 +79,8 @@ public class TestEmpprojectCrud {
 		    	eservice.closeMySessionFactory();
 		    	System.out.println("Thank you for visiting .......");
 		    }
+			
+			
 			default ->{
 				System.out.println("ENTER THE CORRECT CHOICE ");
 			}

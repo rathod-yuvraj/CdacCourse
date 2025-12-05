@@ -8,7 +8,7 @@ import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 @Entity
-@Table(name="Project")
+@Table(name="Project4444")
 public class Project {
      @Id
 	private int id;
