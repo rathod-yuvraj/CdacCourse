@@ -6,4 +6,15 @@
   <name>Autowiring</name>
   <description>Autowiring
 Autowiring</description>
+  <properties>
+    
+  </properties>
+  <dependencies>
+    <!-- https://mvnrepository.com/artifact/org.springframework/spring-context -->
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-context</artifactId>
+      <version>6.1.6</version>
+    </dependency>
+    </dependencies>
 </project>

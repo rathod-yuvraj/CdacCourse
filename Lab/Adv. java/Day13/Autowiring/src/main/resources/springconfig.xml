@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="
+  http://www.springframework.org/schema/beans
+https://www.springframework.org/schema/beans/spring-beans.xsd
+  http://www.springframework.org/schema/context
+https://www.springframework.org/schema/context/spring-context.xsd">
+
+
+<bean  id="f1" class="com.demo.beans.Faculty" autowire="byName">
+<property name="fid" value="101"></property>
+<property name="fname" value="yuvraj"></property>
+<!-- <property name="spskil" value="OOOO"  ></property> -->
+
+<!--  <property name="spskill" ref="sk1"></property> -->
+<property name="addr" ref="addr"></property>
+</bean>
+
+
+
+<bean id="addr" class="com.demo.beans.Address">
+   <property name="street" value="prabhat road"></property>
+   <property name="city" value="Pune"></property>
+   <property name="pincode" value="411016"></property>
+</bean>
+
+<bean id="f2" class="com.demo.beans.Faculty" autowire="constructor">
+  <constructor-arg index="0" value="12"></constructor-arg>
+  <constructor-arg index="1" value="Rohit"></constructor-arg>
+</bean>
+
+
+
+
+</beans>

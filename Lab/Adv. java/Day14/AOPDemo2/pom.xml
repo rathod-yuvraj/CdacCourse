@@ -1,10 +1,10 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <groupId>com.yuvraj</groupId>
-  <artifactId>MyAOPDemo</artifactId>
+  <groupId>com.demo</groupId>
+  <artifactId>AOPDemo2</artifactId>
   <version>0.0.1-SNAPSHOT</version>
-  <name>AOPDemo</name>
-  <description>AOPDemo</description>
+  <name>AOPDemo2</name>
+  <description>AOPDemo2</description>
   <properties>
     <springframework.version>6.1.6</springframework.version>
   </properties>
@@ -34,4 +34,4 @@
 		</dependency>
 
   </dependencies>
-</project>ct>
+</project>
