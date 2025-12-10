@@ -1,4 +1,4 @@
-package com.demo.SpringBootRestWebservice.service;
+package com.example.JWTSecurityUsingdatabse.service;
 
 import java.util.List;
 import java.util.Optional;
@@ -8,10 +8,11 @@ import java.util.stream.Collectors;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.demo.SpringBootRestWebservice.beans.Product;
-import com.demo.SpringBootRestWebservice.dao.ProductDao;
-import com.demo.SpringBootRestWebservice.dto.ProductDto;
-import com.demo.SpringBootRestWebservice.mapper.ProductDtoMapper;
+import com.example.JWTSecurityUsingdatabse.beans.Product;
+import com.example.JWTSecurityUsingdatabse.dao.ProductDao;
+import com.example.JWTSecurityUsingdatabse.dto.ProductDto;
+import com.example.JWTSecurityUsingdatabse.mapper.ProductDtoMapper;
+
 
 
 
@@ -40,7 +41,7 @@ public class ProductServiceImpl implements ProductService{
 
 	public ProductDto getById(int pid) {
 		Optional<Product> p= pdao.findById(pid);
-		if(p.isPresent()) { 
+		if(p.isPresent()) {
 			ProductDto prod=ProductDtoMapper.mapToProductDto(p.get());
 			return prod;
 		}
