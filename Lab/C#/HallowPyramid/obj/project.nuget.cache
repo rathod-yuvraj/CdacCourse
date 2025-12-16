@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "rLX+Cq50mHE=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\IET\\Desktop\\250845920064\\Lab\\C#\\HallowPyramid\\HallowPyramid.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\IET\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.22.1\\microsoft.visualstudio.azure.containers.tools.targets.1.22.1.nupkg.sha512"
+  ],
+  "logs": []
+}

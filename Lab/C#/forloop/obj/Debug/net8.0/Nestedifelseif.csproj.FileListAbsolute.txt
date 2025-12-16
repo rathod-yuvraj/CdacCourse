@@ -1,0 +1,15 @@
+C:\Users\IET\Desktop\250845920064\Lab\C#\forloop\bin\Debug\net8.0\Nestedifelseif.exe
+C:\Users\IET\Desktop\250845920064\Lab\C#\forloop\bin\Debug\net8.0\Nestedifelseif.deps.json
+C:\Users\IET\Desktop\250845920064\Lab\C#\forloop\bin\Debug\net8.0\Nestedifelseif.runtimeconfig.json
+C:\Users\IET\Desktop\250845920064\Lab\C#\forloop\bin\Debug\net8.0\Nestedifelseif.dll
+C:\Users\IET\Desktop\250845920064\Lab\C#\forloop\bin\Debug\net8.0\Nestedifelseif.pdb
+C:\Users\IET\Desktop\250845920064\Lab\C#\forloop\obj\Debug\net8.0\Nestedifelseif.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\IET\Desktop\250845920064\Lab\C#\forloop\obj\Debug\net8.0\Nestedifelseif.AssemblyInfoInputs.cache
+C:\Users\IET\Desktop\250845920064\Lab\C#\forloop\obj\Debug\net8.0\Nestedifelseif.AssemblyInfo.cs
+C:\Users\IET\Desktop\250845920064\Lab\C#\forloop\obj\Debug\net8.0\Nestedifelseif.csproj.CoreCompileInputs.cache
+C:\Users\IET\Desktop\250845920064\Lab\C#\forloop\obj\Debug\net8.0\Nestedifelseif.sourcelink.json
+C:\Users\IET\Desktop\250845920064\Lab\C#\forloop\obj\Debug\net8.0\Nestedifelseif.dll
+C:\Users\IET\Desktop\250845920064\Lab\C#\forloop\obj\Debug\net8.0\refint\Nestedifelseif.dll
+C:\Users\IET\Desktop\250845920064\Lab\C#\forloop\obj\Debug\net8.0\Nestedifelseif.pdb
+C:\Users\IET\Desktop\250845920064\Lab\C#\forloop\obj\Debug\net8.0\Nestedifelseif.genruntimeconfig.cache
+C:\Users\IET\Desktop\250845920064\Lab\C#\forloop\obj\Debug\net8.0\ref\Nestedifelseif.dll

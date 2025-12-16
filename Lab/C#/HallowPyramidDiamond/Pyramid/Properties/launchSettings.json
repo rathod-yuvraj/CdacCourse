@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "Pyramid": {
+      "commandName": "Project"
+    },
+    "Container (Dockerfile)": {
+      "commandName": "Docker"
+    }
+  }
+}

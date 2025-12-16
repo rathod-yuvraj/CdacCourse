@@ -1,0 +1,15 @@
+C:\Users\IET\Desktop\250845920064\Lab\C#\HallowPyramid\bin\Debug\net8.0\HallowPyramid.exe
+C:\Users\IET\Desktop\250845920064\Lab\C#\HallowPyramid\bin\Debug\net8.0\HallowPyramid.deps.json
+C:\Users\IET\Desktop\250845920064\Lab\C#\HallowPyramid\bin\Debug\net8.0\HallowPyramid.runtimeconfig.json
+C:\Users\IET\Desktop\250845920064\Lab\C#\HallowPyramid\bin\Debug\net8.0\HallowPyramid.dll
+C:\Users\IET\Desktop\250845920064\Lab\C#\HallowPyramid\bin\Debug\net8.0\HallowPyramid.pdb
+C:\Users\IET\Desktop\250845920064\Lab\C#\HallowPyramid\obj\Debug\net8.0\HallowPyramid.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\IET\Desktop\250845920064\Lab\C#\HallowPyramid\obj\Debug\net8.0\HallowPyramid.AssemblyInfoInputs.cache
+C:\Users\IET\Desktop\250845920064\Lab\C#\HallowPyramid\obj\Debug\net8.0\HallowPyramid.AssemblyInfo.cs
+C:\Users\IET\Desktop\250845920064\Lab\C#\HallowPyramid\obj\Debug\net8.0\HallowPyramid.csproj.CoreCompileInputs.cache
+C:\Users\IET\Desktop\250845920064\Lab\C#\HallowPyramid\obj\Debug\net8.0\HallowPyramid.sourcelink.json
+C:\Users\IET\Desktop\250845920064\Lab\C#\HallowPyramid\obj\Debug\net8.0\HallowPyramid.dll
+C:\Users\IET\Desktop\250845920064\Lab\C#\HallowPyramid\obj\Debug\net8.0\refint\HallowPyramid.dll
+C:\Users\IET\Desktop\250845920064\Lab\C#\HallowPyramid\obj\Debug\net8.0\HallowPyramid.pdb
+C:\Users\IET\Desktop\250845920064\Lab\C#\HallowPyramid\obj\Debug\net8.0\HallowPyramid.genruntimeconfig.cache
+C:\Users\IET\Desktop\250845920064\Lab\C#\HallowPyramid\obj\Debug\net8.0\ref\HallowPyramid.dll

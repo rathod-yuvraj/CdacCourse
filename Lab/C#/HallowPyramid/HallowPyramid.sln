@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36804.6 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HallowPyramid", "HallowPyramid.csproj", "{D15185AE-D21C-4703-9778-FDB819D968F5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D15185AE-D21C-4703-9778-FDB819D968F5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D15185AE-D21C-4703-9778-FDB819D968F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D15185AE-D21C-4703-9778-FDB819D968F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D15185AE-D21C-4703-9778-FDB819D968F5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B14F97A1-E55F-45F3-9D36-10899A163AD7}
+	EndGlobalSection
+EndGlobal

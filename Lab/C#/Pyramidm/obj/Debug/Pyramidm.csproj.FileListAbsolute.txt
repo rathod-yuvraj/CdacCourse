@@ -1,0 +1,8 @@
+C:\Users\IET\Desktop\250845920064\Lab\C#\Pyramidm\bin\Debug\Pyramidm.exe.config
+C:\Users\IET\Desktop\250845920064\Lab\C#\Pyramidm\bin\Debug\Pyramidm.exe
+C:\Users\IET\Desktop\250845920064\Lab\C#\Pyramidm\bin\Debug\Pyramidm.pdb
+C:\Users\IET\Desktop\250845920064\Lab\C#\Pyramidm\obj\Debug\Pyramidm.csproj.AssemblyReference.cache
+C:\Users\IET\Desktop\250845920064\Lab\C#\Pyramidm\obj\Debug\Pyramidm.csproj.CoreCompileInputs.cache
+C:\Users\IET\Desktop\250845920064\Lab\C#\Pyramidm\obj\Debug\Pyramidm.exe
+C:\Users\IET\Desktop\250845920064\Lab\C#\Pyramidm\obj\Debug\Pyramidm.pdb
+C:\Users\IET\Desktop\250845920064\Lab\C#\Pyramidm\obj\Debug\Pyramidm.exe.config

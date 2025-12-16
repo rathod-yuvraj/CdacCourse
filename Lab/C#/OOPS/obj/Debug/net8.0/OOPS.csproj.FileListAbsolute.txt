@@ -1,0 +1,15 @@
+C:\Users\IET\Desktop\250845920064\Lab\C#\OOPS\bin\Debug\net8.0\OOPS.exe
+C:\Users\IET\Desktop\250845920064\Lab\C#\OOPS\bin\Debug\net8.0\OOPS.deps.json
+C:\Users\IET\Desktop\250845920064\Lab\C#\OOPS\bin\Debug\net8.0\OOPS.runtimeconfig.json
+C:\Users\IET\Desktop\250845920064\Lab\C#\OOPS\bin\Debug\net8.0\OOPS.dll
+C:\Users\IET\Desktop\250845920064\Lab\C#\OOPS\bin\Debug\net8.0\OOPS.pdb
+C:\Users\IET\Desktop\250845920064\Lab\C#\OOPS\obj\Debug\net8.0\OOPS.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\IET\Desktop\250845920064\Lab\C#\OOPS\obj\Debug\net8.0\OOPS.AssemblyInfoInputs.cache
+C:\Users\IET\Desktop\250845920064\Lab\C#\OOPS\obj\Debug\net8.0\OOPS.AssemblyInfo.cs
+C:\Users\IET\Desktop\250845920064\Lab\C#\OOPS\obj\Debug\net8.0\OOPS.csproj.CoreCompileInputs.cache
+C:\Users\IET\Desktop\250845920064\Lab\C#\OOPS\obj\Debug\net8.0\OOPS.sourcelink.json
+C:\Users\IET\Desktop\250845920064\Lab\C#\OOPS\obj\Debug\net8.0\OOPS.dll
+C:\Users\IET\Desktop\250845920064\Lab\C#\OOPS\obj\Debug\net8.0\refint\OOPS.dll
+C:\Users\IET\Desktop\250845920064\Lab\C#\OOPS\obj\Debug\net8.0\OOPS.pdb
+C:\Users\IET\Desktop\250845920064\Lab\C#\OOPS\obj\Debug\net8.0\OOPS.genruntimeconfig.cache
+C:\Users\IET\Desktop\250845920064\Lab\C#\OOPS\obj\Debug\net8.0\ref\OOPS.dll

@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "CoreDemo": {
+      "commandName": "Project"
+    },
+    "Container (Dockerfile)": {
+      "commandName": "Docker"
+    }
+  }
+}

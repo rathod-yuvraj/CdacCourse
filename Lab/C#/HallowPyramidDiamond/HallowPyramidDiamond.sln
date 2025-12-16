@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36804.6 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pyramid", "Pyramid\Pyramid.csproj", "{192BB393-B12B-4886-9409-D835C6621DED}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HallowPyramidDiamond", "HallowPyramidDiamond\HallowPyramidDiamond.csproj", "{DE14D512-619F-4064-9D48-C33B750FF4BB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{192BB393-B12B-4886-9409-D835C6621DED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{192BB393-B12B-4886-9409-D835C6621DED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{192BB393-B12B-4886-9409-D835C6621DED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{192BB393-B12B-4886-9409-D835C6621DED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DE14D512-619F-4064-9D48-C33B750FF4BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DE14D512-619F-4064-9D48-C33B750FF4BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DE14D512-619F-4064-9D48-C33B750FF4BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DE14D512-619F-4064-9D48-C33B750FF4BB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C2234AC3-A664-4E72-B30E-F048D243D70C}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,8 @@
+C:\Users\IET\Desktop\250845920064\Lab\C#\CoreDemo1\bin\Debug\CoreDemo1.exe.config
+C:\Users\IET\Desktop\250845920064\Lab\C#\CoreDemo1\bin\Debug\CoreDemo1.exe
+C:\Users\IET\Desktop\250845920064\Lab\C#\CoreDemo1\bin\Debug\CoreDemo1.pdb
+C:\Users\IET\Desktop\250845920064\Lab\C#\CoreDemo1\obj\Debug\CoreDemo1.csproj.AssemblyReference.cache
+C:\Users\IET\Desktop\250845920064\Lab\C#\CoreDemo1\obj\Debug\CoreDemo1.csproj.CoreCompileInputs.cache
+C:\Users\IET\Desktop\250845920064\Lab\C#\CoreDemo1\obj\Debug\CoreDemo1.exe
+C:\Users\IET\Desktop\250845920064\Lab\C#\CoreDemo1\obj\Debug\CoreDemo1.pdb
+C:\Users\IET\Desktop\250845920064\Lab\C#\CoreDemo1\obj\Debug\CoreDemo1.exe.config

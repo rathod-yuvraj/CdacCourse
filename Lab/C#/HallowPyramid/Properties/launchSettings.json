@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "HallowPyramid": {
+      "commandName": "Project"
+    },
+    "Container (Dockerfile)": {
+      "commandName": "Docker"
+    }
+  }
+}

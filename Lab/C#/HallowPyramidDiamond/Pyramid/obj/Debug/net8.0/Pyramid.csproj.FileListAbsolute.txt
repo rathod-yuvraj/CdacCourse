@@ -1,0 +1,15 @@
+C:\Users\IET\Desktop\250845920064\Lab\C#\HallowPyramidDiamond\Pyramid\bin\Debug\net8.0\Pyramid.exe
+C:\Users\IET\Desktop\250845920064\Lab\C#\HallowPyramidDiamond\Pyramid\bin\Debug\net8.0\Pyramid.deps.json
+C:\Users\IET\Desktop\250845920064\Lab\C#\HallowPyramidDiamond\Pyramid\bin\Debug\net8.0\Pyramid.runtimeconfig.json
+C:\Users\IET\Desktop\250845920064\Lab\C#\HallowPyramidDiamond\Pyramid\bin\Debug\net8.0\Pyramid.dll
+C:\Users\IET\Desktop\250845920064\Lab\C#\HallowPyramidDiamond\Pyramid\bin\Debug\net8.0\Pyramid.pdb
+C:\Users\IET\Desktop\250845920064\Lab\C#\HallowPyramidDiamond\Pyramid\obj\Debug\net8.0\Pyramid.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\IET\Desktop\250845920064\Lab\C#\HallowPyramidDiamond\Pyramid\obj\Debug\net8.0\Pyramid.AssemblyInfoInputs.cache
+C:\Users\IET\Desktop\250845920064\Lab\C#\HallowPyramidDiamond\Pyramid\obj\Debug\net8.0\Pyramid.AssemblyInfo.cs
+C:\Users\IET\Desktop\250845920064\Lab\C#\HallowPyramidDiamond\Pyramid\obj\Debug\net8.0\Pyramid.csproj.CoreCompileInputs.cache
+C:\Users\IET\Desktop\250845920064\Lab\C#\HallowPyramidDiamond\Pyramid\obj\Debug\net8.0\Pyramid.sourcelink.json
+C:\Users\IET\Desktop\250845920064\Lab\C#\HallowPyramidDiamond\Pyramid\obj\Debug\net8.0\Pyramid.dll
+C:\Users\IET\Desktop\250845920064\Lab\C#\HallowPyramidDiamond\Pyramid\obj\Debug\net8.0\refint\Pyramid.dll
+C:\Users\IET\Desktop\250845920064\Lab\C#\HallowPyramidDiamond\Pyramid\obj\Debug\net8.0\Pyramid.pdb
+C:\Users\IET\Desktop\250845920064\Lab\C#\HallowPyramidDiamond\Pyramid\obj\Debug\net8.0\Pyramid.genruntimeconfig.cache
+C:\Users\IET\Desktop\250845920064\Lab\C#\HallowPyramidDiamond\Pyramid\obj\Debug\net8.0\ref\Pyramid.dll

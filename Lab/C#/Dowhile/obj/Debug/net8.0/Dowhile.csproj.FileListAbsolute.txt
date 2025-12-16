@@ -1,0 +1,15 @@
+C:\Users\IET\Desktop\250845920064\Lab\C#\Dowhile\bin\Debug\net8.0\Dowhile.exe
+C:\Users\IET\Desktop\250845920064\Lab\C#\Dowhile\bin\Debug\net8.0\Dowhile.deps.json
+C:\Users\IET\Desktop\250845920064\Lab\C#\Dowhile\bin\Debug\net8.0\Dowhile.runtimeconfig.json
+C:\Users\IET\Desktop\250845920064\Lab\C#\Dowhile\bin\Debug\net8.0\Dowhile.dll
+C:\Users\IET\Desktop\250845920064\Lab\C#\Dowhile\bin\Debug\net8.0\Dowhile.pdb
+C:\Users\IET\Desktop\250845920064\Lab\C#\Dowhile\obj\Debug\net8.0\Dowhile.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\IET\Desktop\250845920064\Lab\C#\Dowhile\obj\Debug\net8.0\Dowhile.AssemblyInfoInputs.cache
+C:\Users\IET\Desktop\250845920064\Lab\C#\Dowhile\obj\Debug\net8.0\Dowhile.AssemblyInfo.cs
+C:\Users\IET\Desktop\250845920064\Lab\C#\Dowhile\obj\Debug\net8.0\Dowhile.csproj.CoreCompileInputs.cache
+C:\Users\IET\Desktop\250845920064\Lab\C#\Dowhile\obj\Debug\net8.0\Dowhile.sourcelink.json
+C:\Users\IET\Desktop\250845920064\Lab\C#\Dowhile\obj\Debug\net8.0\Dowhile.dll
+C:\Users\IET\Desktop\250845920064\Lab\C#\Dowhile\obj\Debug\net8.0\refint\Dowhile.dll
+C:\Users\IET\Desktop\250845920064\Lab\C#\Dowhile\obj\Debug\net8.0\Dowhile.pdb
+C:\Users\IET\Desktop\250845920064\Lab\C#\Dowhile\obj\Debug\net8.0\Dowhile.genruntimeconfig.cache
+C:\Users\IET\Desktop\250845920064\Lab\C#\Dowhile\obj\Debug\net8.0\ref\Dowhile.dll

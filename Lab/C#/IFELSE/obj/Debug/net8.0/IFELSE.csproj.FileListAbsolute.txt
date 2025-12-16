@@ -1,0 +1,15 @@
+C:\Users\IET\Desktop\250845920064\Lab\C#\IFELSE\bin\Debug\net8.0\IFELSE.exe
+C:\Users\IET\Desktop\250845920064\Lab\C#\IFELSE\bin\Debug\net8.0\IFELSE.deps.json
+C:\Users\IET\Desktop\250845920064\Lab\C#\IFELSE\bin\Debug\net8.0\IFELSE.runtimeconfig.json
+C:\Users\IET\Desktop\250845920064\Lab\C#\IFELSE\bin\Debug\net8.0\IFELSE.dll
+C:\Users\IET\Desktop\250845920064\Lab\C#\IFELSE\bin\Debug\net8.0\IFELSE.pdb
+C:\Users\IET\Desktop\250845920064\Lab\C#\IFELSE\obj\Debug\net8.0\IFELSE.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\IET\Desktop\250845920064\Lab\C#\IFELSE\obj\Debug\net8.0\IFELSE.AssemblyInfoInputs.cache
+C:\Users\IET\Desktop\250845920064\Lab\C#\IFELSE\obj\Debug\net8.0\IFELSE.AssemblyInfo.cs
+C:\Users\IET\Desktop\250845920064\Lab\C#\IFELSE\obj\Debug\net8.0\IFELSE.csproj.CoreCompileInputs.cache
+C:\Users\IET\Desktop\250845920064\Lab\C#\IFELSE\obj\Debug\net8.0\IFELSE.sourcelink.json
+C:\Users\IET\Desktop\250845920064\Lab\C#\IFELSE\obj\Debug\net8.0\IFELSE.dll
+C:\Users\IET\Desktop\250845920064\Lab\C#\IFELSE\obj\Debug\net8.0\refint\IFELSE.dll
+C:\Users\IET\Desktop\250845920064\Lab\C#\IFELSE\obj\Debug\net8.0\IFELSE.pdb
+C:\Users\IET\Desktop\250845920064\Lab\C#\IFELSE\obj\Debug\net8.0\IFELSE.genruntimeconfig.cache
+C:\Users\IET\Desktop\250845920064\Lab\C#\IFELSE\obj\Debug\net8.0\ref\IFELSE.dll
