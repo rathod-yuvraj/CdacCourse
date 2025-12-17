@@ -16,13 +16,13 @@ public class ProductServiceImpl implements ProductService  {
 	@Autowired
 	private ProductDao pdao;
 
-//	@Override
-//	public List<ProductDto> getAllProducts() {
-//		List<Product> plist=pdao.findAll();
-//		List<ProductDto>plist1=plist.stream().map(prod->ProductDtoMapper.mapToProductDto(prod))
-//				.collect(Collectors.toList());
-//		return plist1;
-//	}
+	@Override
+	public List<ProductDto> getAllProducts() {
+		List<Product> plist=pdao.findAll();
+		List<ProductDto>plist1=plist.stream().map(prod->ProductDtoMapper.mapToProductDto(prod))
+				.collect(Collectors.toList());
+		return plist1;
+	}
 
 	@Override
 	public ProductDto getById(int pid) {
@@ -63,13 +63,18 @@ public class ProductServiceImpl implements ProductService  {
 	}
 
 	@Override
-	public List<ProductDto> getAllProduct() {
+	public List<ProductDto> getAllProducts1() {
 		List<Product> plist=pdao.findAll();
 		List<ProductDto> plist1=plist.stream()
 				.map(p1->ProductDtoMapper.mapToProductDto(p1))
 				.collect(Collectors.toList());
 		return plist1;
 
+	}
+	
+	public List <ProductDto> getAllProduct(){
+		List<Product> pi=pdao.findAll();
+		List<ProductDto>plist.stream().
 	}
 
 }

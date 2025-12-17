@@ -1,0 +1,11 @@
+-- Insert one product
+INSERT INTO myproduct (pid, pname, qty, price, mfgdate)
+VALUES (1, 'Laptop', 10, 75000.00, '2025-01-15');
+
+-- Insert multiple products at once
+INSERT INTO myproduct (pid, pname, qty, price, mfgdate)
+VALUES 
+(2, 'Smartphone', 25, 30000.00, '2025-02-01'),
+(3, 'Headphones', 50, 1500.00, '2025-03-10'),
+(4, 'Keyboard', 40, 1200.00, '2025-04-05'),
+(5, 'Monitor', 15, 18000.00, '2025-05-20');

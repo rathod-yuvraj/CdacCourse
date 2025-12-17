@@ -1,24 +1,15 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 
-=======
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
- 
->>>>>>> 32558f955f463af33c75ee82b0c9ba8fe2153e5a
-=======
 
->>>>>>> rathod
 # dependencies
 /node_modules
 node_modules/
 
 # Ignore all node_modules folders my file
 **/node_modules
-<<<<<<< HEAD
-=======
+
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
-<<<<<<< HEAD
+
 
 # dependencies
 /node_modules
@@ -38,37 +29,33 @@ node_modules/**
 # Ignore jQuery downloaded file
 js/jquery-*.js
 
-=======
+
  
 # dependencies
 /node_modules
 node_modules/
->>>>>>> yuvraj
-=======
->>>>>>> rathod
+
 /.pnp
 .pnp.js
 **/jquery-*.min.js
 *.class
-<<<<<<< HEAD
-<<<<<<< HEAD
+
 
 **/node_modules/
-=======
+
 # Ignore all node_modules folders
 **/node_modules/
->>>>>>> 2aa3f7db35b5f35acd5da642d45d3c2667195b66
->>>>>>> yuvraj
+
 # testing
 /coverage
-=======
+
 
 **/node_modules/
 # testing
 /coverage
 .metadata/
 
->>>>>>> rathod
+
 
 # production
 /build
@@ -83,10 +70,9 @@ node_modules/
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
+
+
+
 
 ###
 # Java
@@ -100,9 +86,7 @@ yarn-error.log*
 .project/**
 
 
-=======
->>>>>>> 2aa3f7db35b5f35acd5da642d45d3c2667195b66
-<<<<<<< HEAD
+
 # ===================================
 # Java / Spring Boot (Backend)
 # ===================================
@@ -215,8 +199,8 @@ Desktop.ini
 # Temporary files
 tmp/
 temp/
-=======
->>>>>>> yuvraj
->>>>>>> main
-=======
->>>>>>> rathod
+# Visual Studio
+.vs/
+bin/
+obj/
+
