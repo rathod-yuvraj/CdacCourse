@@ -11,8 +11,8 @@
                 int choice = Convert.ToInt32(Console.ReadLine());
 
                 ReportFactory factory = new ReportFactory();
-                getReport report = factory.GetSomeReport(choice);
-                report.GenerateReport();
+                getReport r = factory.GetSomeReport(choice);
+                r.GenerateReport();
 
                 Console.WriteLine("DO YOU WANT TO CONTINUE ?? 'y/n'");
                 string ynChoice = Console.ReadLine();
