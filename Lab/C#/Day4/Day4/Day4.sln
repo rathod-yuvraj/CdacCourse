@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DelegateEvents", "DelegateE
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MULTICASTINGDELEGATE", "MULTICASTINGDELEGATE\MULTICASTINGDELEGATE.csproj", "{A64E89DA-3982-491A-8BA2-B49C751DD5F4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ObservePattern", "ObservePattern\ObservePattern.csproj", "{83955592-969A-4276-98C0-98210B8B85F3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{A64E89DA-3982-491A-8BA2-B49C751DD5F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A64E89DA-3982-491A-8BA2-B49C751DD5F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A64E89DA-3982-491A-8BA2-B49C751DD5F4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{83955592-969A-4276-98C0-98210B8B85F3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{83955592-969A-4276-98C0-98210B8B85F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{83955592-969A-4276-98C0-98210B8B85F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{83955592-969A-4276-98C0-98210B8B85F3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
