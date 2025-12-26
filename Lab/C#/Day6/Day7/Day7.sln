@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36804.6 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "31BVS_Atribute", "31BVS_Atribute\31BVS_Atribute.csproj", "{A5407AA9-0496-4CF5-BE86-015FC8E7C57A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSharpFeture", "CSharpFeture\CSharpFeture.csproj", "{1A421464-90EC-4B8C-9B4B-6BB3613531FE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A5407AA9-0496-4CF5-BE86-015FC8E7C57A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A5407AA9-0496-4CF5-BE86-015FC8E7C57A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A5407AA9-0496-4CF5-BE86-015FC8E7C57A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A5407AA9-0496-4CF5-BE86-015FC8E7C57A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1A421464-90EC-4B8C-9B4B-6BB3613531FE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1A421464-90EC-4B8C-9B4B-6BB3613531FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1A421464-90EC-4B8C-9B4B-6BB3613531FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1A421464-90EC-4B8C-9B4B-6BB3613531FE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {EB335D4D-8DBE-49EA-809C-731D75B603C9}
+	EndGlobalSection
+EndGlobal

@@ -8,7 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="MySql\" />
+    <Folder Include="File\" />
   </ItemGroup>
 
 </Project>
