@@ -7,19 +7,19 @@ namespace _37Demo_CSharpFeatures
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Enter a number: ");
-            int no = Convert.ToInt32(Console.ReadLine());
+            //Console.WriteLine("Enter a number: ");
+            //int no = Convert.ToInt32(Console.ReadLine());
 
             #region Normal Function Call for Check Method :
-            var result = Check(no);
-            if (result)
-            {
-                Console.WriteLine($"No : {no} is greater than 10");
-            }
-            else
-            {
-                Console.WriteLine($"No : {no} is NOT greater than 10");
-            }
+            //var result = Check(no);
+            //if (result)
+            //{
+            //    Console.WriteLine($"No : {no} is greater than 10");
+            //}
+            //else
+            //{
+            //    Console.WriteLine($"No : {no} is NOT greater than 10");
+            //} 
             #endregion
 
             #region Check Method Call with MyDelegate :
