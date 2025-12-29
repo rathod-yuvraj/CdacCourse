@@ -89,6 +89,14 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "42Demo_ConnectedAdoNet", "4
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "43Demo_ConnectedADO", "43Demo_ConnectedADO\43Demo_ConnectedADO.csproj", "{88688D8B-EBDD-49E7-B00B-9BD6873EB50C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "44Demo_StoredProcedures", "44Demo_StoredProcedures\44Demo_StoredProcedures.csproj", "{CD230C7B-8BE5-450A-A847-7A56C1F2C1DE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "45Disconnected", "45Disconnected\45Disconnected.csproj", "{7315624E-6E98-4E2D-A21A-C64028752D01}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "46Demo_EntityFramewrok", "46Demo_EntityFramewrok\46Demo_EntityFramewrok.csproj", "{8780F98A-4D04-46EC-9C71-EA95257254B0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "47Demo_ExceptionHandling", "47Demo_ExceptionHandling\47Demo_ExceptionHandling.csproj", "{D0369E51-4DDF-478A-A69D-72C0C410C42E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -267,6 +275,22 @@ Global
 		{88688D8B-EBDD-49E7-B00B-9BD6873EB50C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{88688D8B-EBDD-49E7-B00B-9BD6873EB50C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{88688D8B-EBDD-49E7-B00B-9BD6873EB50C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CD230C7B-8BE5-450A-A847-7A56C1F2C1DE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CD230C7B-8BE5-450A-A847-7A56C1F2C1DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CD230C7B-8BE5-450A-A847-7A56C1F2C1DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CD230C7B-8BE5-450A-A847-7A56C1F2C1DE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7315624E-6E98-4E2D-A21A-C64028752D01}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7315624E-6E98-4E2D-A21A-C64028752D01}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7315624E-6E98-4E2D-A21A-C64028752D01}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7315624E-6E98-4E2D-A21A-C64028752D01}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8780F98A-4D04-46EC-9C71-EA95257254B0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8780F98A-4D04-46EC-9C71-EA95257254B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8780F98A-4D04-46EC-9C71-EA95257254B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8780F98A-4D04-46EC-9C71-EA95257254B0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D0369E51-4DDF-478A-A69D-72C0C410C42E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D0369E51-4DDF-478A-A69D-72C0C410C42E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D0369E51-4DDF-478A-A69D-72C0C410C42E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D0369E51-4DDF-478A-A69D-72C0C410C42E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
