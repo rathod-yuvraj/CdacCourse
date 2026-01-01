@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36804.6 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Connection_MVC", "Connection_MVC\Connection_MVC.csproj", "{AC395830-8D00-44DD-8E23-67B9D02F3874}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "08Demo_BootStrapLayout_PartialView", "08Demo_BootStrapLayout_PartialView\08Demo_BootStrapLayout_PartialView.csproj", "{DB24FAE9-B964-48E2-85CB-96A593941449}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AC395830-8D00-44DD-8E23-67B9D02F3874}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AC395830-8D00-44DD-8E23-67B9D02F3874}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AC395830-8D00-44DD-8E23-67B9D02F3874}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AC395830-8D00-44DD-8E23-67B9D02F3874}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DB24FAE9-B964-48E2-85CB-96A593941449}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DB24FAE9-B964-48E2-85CB-96A593941449}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DB24FAE9-B964-48E2-85CB-96A593941449}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DB24FAE9-B964-48E2-85CB-96A593941449}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {15B3B676-F956-44BD-B27F-D276D2EEE4B8}
+	EndGlobalSection
+EndGlobal

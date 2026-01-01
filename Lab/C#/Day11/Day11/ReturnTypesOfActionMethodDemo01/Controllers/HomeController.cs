@@ -8,5 +8,18 @@ namespace ReturnTypesOfActionMethodDemo01.Controllers
         {
             return View();
         }
+        public ActionResult About()
+        {
+            return View();
+        }
+        public ActionResult<string> Contact()
+        {
+            return "Home Page";
+        }
+        public ActionResult<int> GetNumber()
+        {
+            return 96234;
+        }
+
     }
 }

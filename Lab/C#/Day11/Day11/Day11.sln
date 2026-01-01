@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConventialRoutingDemo01", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AttributeBasedRoutingDemo01", "AttributeBasedRoutingDemo01\AttributeBasedRoutingDemo01.csproj", "{5751B12A-E88B-4AC7-9654-6CF1EC152F92}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReturnTypesOfActionMethodDemo01", "ReturnTypesOfActionMethodDemo01\ReturnTypesOfActionMethodDemo01.csproj", "{7A0FCC7F-8042-4C25-8AC8-0E39F6DCB1A9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +53,10 @@ Global
 		{5751B12A-E88B-4AC7-9654-6CF1EC152F92}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5751B12A-E88B-4AC7-9654-6CF1EC152F92}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5751B12A-E88B-4AC7-9654-6CF1EC152F92}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7A0FCC7F-8042-4C25-8AC8-0E39F6DCB1A9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7A0FCC7F-8042-4C25-8AC8-0E39F6DCB1A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7A0FCC7F-8042-4C25-8AC8-0E39F6DCB1A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7A0FCC7F-8042-4C25-8AC8-0E39F6DCB1A9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
