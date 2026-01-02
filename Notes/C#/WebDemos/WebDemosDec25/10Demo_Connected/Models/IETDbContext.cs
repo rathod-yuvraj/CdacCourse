@@ -25,7 +25,7 @@ namespace _10Demo_Connected.Models
                         {
                             emps.Add(new Emp() { 
                                 Id = Convert.ToInt32(reader["Id"]),
-                                Name = reader["name "].ToString(),
+                                Name = reader[1].ToString(),
                                 Address = reader["Address"].ToString()
                             });
                         }
