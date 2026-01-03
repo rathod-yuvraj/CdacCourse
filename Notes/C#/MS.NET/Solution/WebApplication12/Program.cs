@@ -11,10 +11,12 @@ namespace WebApplication12
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
-            builder.Services.AddControllersWithViews();
+            
             var provider = builder.Services.BuildServiceProvider();
             var confg = provider.GetRequiredService<IConfiguration>();
-            builder.Services.AddDbContext<TestContext>(item => item.UseSqlServer(confg.GetConnectionString("dbcs")));
+            // Register DbContext with DI
+            builder.Services.AddDbContext<TestContext>(options =>
+             options.UseSqlServer(builder.Configuration.GetConnectionString("dbcs")));
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.

@@ -10,10 +10,15 @@ namespace WebApplication1
             builder.Services.AddControllersWithViews();
 
             //making dsb contextr 
-            builder.Services.AddDbContext<IETDbContext>(option =>
+            builder.Services.AddDbContext<DataDbContext>(options =>
             {
-                OptionsBuilderConfigurationExtensions.UseSqlServer("name=IETDB");
+               options.UseSqlServer("name=DataDb");
             });
+            //builder.Services.AddCors(corsoptions => {
+            //    corsoptions.AddPolicy("IET", (corspolicy) => {
+            //        corspolicy.WithOrigins("*").WithMethods("*").WithHeaders("*");
+            //    });
+            //});
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.

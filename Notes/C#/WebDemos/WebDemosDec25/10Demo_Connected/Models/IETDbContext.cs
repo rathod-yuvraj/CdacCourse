@@ -17,7 +17,7 @@ namespace _10Demo_Connected.Models
             using (SqlConnection con = new SqlConnection(_connectionString))
             {
                 con.Open();
-                using (SqlCommand cmd = new SqlCommand("select * from Emp1", con))
+                using (SqlCommand cmd = new SqlCommand("select * from Emp", con))
                 {
                     using (SqlDataReader reader = cmd.ExecuteReader())
                     {
@@ -25,7 +25,7 @@ namespace _10Demo_Connected.Models
                         {
                             emps.Add(new Emp() { 
                                 Id = Convert.ToInt32(reader["Id"]),
-                                Name = reader[1].ToString(),
+                                Name = reader["Name"].ToString(),
                                 Address = reader["Address"].ToString()
                             });
                         }
